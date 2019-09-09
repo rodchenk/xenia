@@ -1,0 +1,9 @@
+grammar com.foliage.xenia.Xenia with org.eclipse.xtext.common.Terminals
+
+generate xenia "http://www.foliage.com/xenia/Xenia"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
