@@ -21,8 +21,9 @@ class XeniaParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			app: mischa
-			with: love
+			app: 
+				Home
+			
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

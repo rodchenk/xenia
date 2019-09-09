@@ -29,9 +29,11 @@ public class XeniaParsingTest {
   public void loadModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("app: mischa");
+      _builder.append("app: ");
       _builder.newLine();
-      _builder.append("with: love");
+      _builder.append("\t");
+      _builder.append("Home");
+      _builder.newLine();
       _builder.newLine();
       final Model result = this.parseHelper.parse(_builder);
       Assertions.assertNotNull(result);
