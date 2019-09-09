@@ -3,7 +3,41 @@ grammar com.foliage.xenia.Xenia with org.eclipse.xtext.common.Terminals
 generate xenia "http://www.foliage.com/xenia/Xenia"
 
 Model:
-	greetings+=Greeting*;
+	entities+=Entity*;
+
+Entity:
+	Property ':' name=ID | {Entity} XtendedProperty
+;
+
+Property:
+	'app' | 'with' | 'sitemap'
+;
+XtendedProperty:
+	'sites' | 'map' | 'info'
+;
 	
 Greeting:
 	'Hello' name=ID '!';
+
+/*
+app: Test
+with: 'php/cake'
+sitemap: 'map.xml' => 'create/write'
+
+sites:
+	Home => modal: (Login, Logout), 
+	Contact, 
+	News => modal: (Create), 
+	User => modal: (Friends, Message, Activities)
+
+map: 
+	Home -> User, 
+	Home -> Contact, 
+	User -> News,
+	User.Friends -> News,
+	User.Messages -> Home
+
+info:
+	User => modified: '01.01.2019', frequenz: 'monthly', priority: 0.75
+	News => modified: '02.11.2018', frequenz: 'monthly', priority: 0.8
+ */
