@@ -5,8 +5,10 @@ package com.foliage.xenia.serializer;
 
 import com.foliage.xenia.services.XeniaGrammarAccess;
 import com.foliage.xenia.xenia.Entity;
-import com.foliage.xenia.xenia.Greeting;
+import com.foliage.xenia.xenia.LinkedProperty;
+import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
+import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.XeniaPackage;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -37,11 +39,17 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case XeniaPackage.ENTITY:
 				sequence_Entity(context, (Entity) semanticObject); 
 				return; 
-			case XeniaPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case XeniaPackage.LINKED_PROPERTY:
+				sequence_LinkedProperty(context, (LinkedProperty) semanticObject); 
+				return; 
+			case XeniaPackage.MAPPED_ENTITY:
+				sequence_MappedEntity(context, (MappedEntity) semanticObject); 
 				return; 
 			case XeniaPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case XeniaPackage.SITE:
+				sequence_Site(context, (Site) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -53,7 +61,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     name=ID?
+	 *     ((appName=ID sites+=Site sites+=Site*) | (prop=Property name=ID))
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -62,19 +70,34 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     LinkedProperty returns LinkedProperty
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID inner_name=ID)
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_LinkedProperty(ISerializationContext context, LinkedProperty semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, XeniaPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__NAME));
+			if (transientValues.isValueTransient(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__INNER_NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__INNER_NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkedPropertyAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkedPropertyAccess().getInner_nameIDTerminalRuleCall_2_0(), semanticObject.getInner_name());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MappedEntity returns MappedEntity
+	 *
+	 * Constraint:
+	 *     (prop=MappedProperty sites+=LinkedProperty*)
+	 */
+	protected void sequence_MappedEntity(ISerializationContext context, MappedEntity semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -83,9 +106,21 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     entities+=Entity+
+	 *     ((entities+=Entity+ mapped_entities+=MappedEntity+) | mapped_entities+=MappedEntity+)?
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Site returns Site
+	 *
+	 * Constraint:
+	 *     (name=ID | (name=ID sites+=Site sites+=Site*))
+	 */
+	protected void sequence_Site(ISerializationContext context, Site semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -3,7 +3,7 @@
  */
 package com.foliage.xenia.xenia.impl;
 
-import com.foliage.xenia.xenia.Greeting;
+import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.XeniaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,18 +15,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Linked Property</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.foliage.xenia.xenia.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getInner_name <em>Inner name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements LinkedProperty
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -49,11 +50,31 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getInner_name() <em>Inner name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInner_name()
+   * @generated
+   * @ordered
+   */
+  protected static final String INNER_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getInner_name() <em>Inner name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInner_name()
+   * @generated
+   * @ordered
+   */
+  protected String inner_name = INNER_NAME_EDEFAULT;
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GreetingImpl()
+  protected LinkedPropertyImpl()
   {
     super();
   }
@@ -66,7 +87,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   @Override
   protected EClass eStaticClass()
   {
-    return XeniaPackage.Literals.GREETING;
+    return XeniaPackage.Literals.LINKED_PROPERTY;
   }
 
   /**
@@ -91,7 +112,32 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.GREETING__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getInner_name()
+  {
+    return inner_name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setInner_name(String newInner_name)
+  {
+    String oldInner_name = inner_name;
+    inner_name = newInner_name;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__INNER_NAME, oldInner_name, inner_name));
   }
 
   /**
@@ -104,8 +150,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case XeniaPackage.GREETING__NAME:
+      case XeniaPackage.LINKED_PROPERTY__NAME:
         return getName();
+      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
+        return getInner_name();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,8 +168,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case XeniaPackage.GREETING__NAME:
+      case XeniaPackage.LINKED_PROPERTY__NAME:
         setName((String)newValue);
+        return;
+      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
+        setInner_name((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +188,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case XeniaPackage.GREETING__NAME:
+      case XeniaPackage.LINKED_PROPERTY__NAME:
         setName(NAME_EDEFAULT);
+        return;
+      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
+        setInner_name(INNER_NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -154,8 +208,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
   {
     switch (featureID)
     {
-      case XeniaPackage.GREETING__NAME:
+      case XeniaPackage.LINKED_PROPERTY__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
+        return INNER_NAME_EDEFAULT == null ? inner_name != null : !INNER_NAME_EDEFAULT.equals(inner_name);
     }
     return super.eIsSet(featureID);
   }
@@ -173,8 +229,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", inner_name: ");
+    result.append(inner_name);
     result.append(')');
     return result.toString();
   }
 
-} //GreetingImpl
+} //LinkedPropertyImpl

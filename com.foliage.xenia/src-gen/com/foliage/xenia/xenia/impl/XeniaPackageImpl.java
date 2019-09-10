@@ -4,8 +4,10 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.Entity;
-import com.foliage.xenia.xenia.Greeting;
+import com.foliage.xenia.xenia.LinkedProperty;
+import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
+import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.XeniaFactory;
 import com.foliage.xenia.xenia.XeniaPackage;
 
@@ -43,7 +45,21 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass mappedEntityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass siteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass linkedPropertyEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -136,6 +152,17 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
+  public EReference getModel_Mapped_entities()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getEntity()
   {
     return entityEClass;
@@ -147,7 +174,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getEntity_Name()
+  public EAttribute getEntity_AppName()
   {
     return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
   }
@@ -158,9 +185,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EClass getGreeting()
+  public EReference getEntity_Sites()
   {
-    return greetingEClass;
+    return (EReference)entityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -169,9 +196,119 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getGreeting_Name()
+  public EAttribute getEntity_Prop()
   {
-    return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)entityEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getEntity_Name()
+  {
+    return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMappedEntity()
+  {
+    return mappedEntityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMappedEntity_Prop()
+  {
+    return (EAttribute)mappedEntityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMappedEntity_Sites()
+  {
+    return (EReference)mappedEntityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSite()
+  {
+    return siteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSite_Name()
+  {
+    return (EAttribute)siteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSite_Sites()
+  {
+    return (EReference)siteEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getLinkedProperty()
+  {
+    return linkedPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLinkedProperty_Name()
+  {
+    return (EAttribute)linkedPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getLinkedProperty_Inner_name()
+  {
+    return (EAttribute)linkedPropertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -207,12 +344,25 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__ENTITIES);
+    createEReference(modelEClass, MODEL__MAPPED_ENTITIES);
 
     entityEClass = createEClass(ENTITY);
+    createEAttribute(entityEClass, ENTITY__APP_NAME);
+    createEReference(entityEClass, ENTITY__SITES);
+    createEAttribute(entityEClass, ENTITY__PROP);
     createEAttribute(entityEClass, ENTITY__NAME);
 
-    greetingEClass = createEClass(GREETING);
-    createEAttribute(greetingEClass, GREETING__NAME);
+    mappedEntityEClass = createEClass(MAPPED_ENTITY);
+    createEAttribute(mappedEntityEClass, MAPPED_ENTITY__PROP);
+    createEReference(mappedEntityEClass, MAPPED_ENTITY__SITES);
+
+    siteEClass = createEClass(SITE);
+    createEAttribute(siteEClass, SITE__NAME);
+    createEReference(siteEClass, SITE__SITES);
+
+    linkedPropertyEClass = createEClass(LINKED_PROPERTY);
+    createEAttribute(linkedPropertyEClass, LINKED_PROPERTY__NAME);
+    createEAttribute(linkedPropertyEClass, LINKED_PROPERTY__INNER_NAME);
   }
 
   /**
@@ -248,12 +398,25 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Entities(), this.getEntity(), null, "entities", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Mapped_entities(), this.getMappedEntity(), null, "mapped_entities", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEntity_AppName(), ecorePackage.getEString(), "appName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntity_Sites(), this.getSite(), null, "sites", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntity_Prop(), ecorePackage.getEString(), "prop", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(mappedEntityEClass, MappedEntity.class, "MappedEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMappedEntity_Prop(), ecorePackage.getEString(), "prop", null, 0, 1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMappedEntity_Sites(), this.getLinkedProperty(), null, "sites", null, 0, -1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSite_Name(), ecorePackage.getEString(), "name", null, 0, 1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSite_Sites(), this.getSite(), null, "sites", null, 0, -1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(linkedPropertyEClass, LinkedProperty.class, "LinkedProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLinkedProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLinkedProperty_Inner_name(), ecorePackage.getEString(), "inner_name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

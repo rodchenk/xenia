@@ -42,13 +42,31 @@ public interface XeniaFactory extends EFactory
   Entity createEntity();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Mapped Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Mapped Entity</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  MappedEntity createMappedEntity();
+
+  /**
+   * Returns a new object of class '<em>Site</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Site</em>'.
+   * @generated
+   */
+  Site createSite();
+
+  /**
+   * Returns a new object of class '<em>Linked Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Linked Property</em>'.
+   * @generated
+   */
+  LinkedProperty createLinkedProperty();
 
   /**
    * Returns the package supported by this factory.

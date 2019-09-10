@@ -8,12 +8,25 @@
       fileExtensions="nia" ecorePackage="Xenia.ecore#/">
     <genClasses ecoreClass="Xenia.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/mapped_entities"/>
     </genClasses>
     <genClasses ecoreClass="Xenia.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/appName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Entity/sites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/prop"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/name"/>
     </genClasses>
-    <genClasses ecoreClass="Xenia.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Xenia.ecore#//MappedEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//MappedEntity/prop"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//MappedEntity/sites"/>
+    </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//Site">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Site/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Site/sites"/>
+    </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//LinkedProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//LinkedProperty/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//LinkedProperty/inner_name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

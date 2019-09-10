@@ -33,13 +33,32 @@ public class XeniaParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, XeniaGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEntityAccess().getAlternatives(), "rule__Entity__Alternatives");
 			builder.put(grammarAccess.getPropertyAccess().getAlternatives(), "rule__Property__Alternatives");
-			builder.put(grammarAccess.getXtendedPropertyAccess().getAlternatives(), "rule__XtendedProperty__Alternatives");
+			builder.put(grammarAccess.getSiteAccess().getAlternatives(), "rule__Site__Alternatives");
+			builder.put(grammarAccess.getMappedPropertyAccess().getAlternatives(), "rule__MappedProperty__Alternatives");
+			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_0(), "rule__Entity__Group_0__0");
+			builder.put(grammarAccess.getEntityAccess().getGroup_0_6(), "rule__Entity__Group_0_6__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup_1(), "rule__Entity__Group_1__0");
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getEntitiesAssignment(), "rule__Model__EntitiesAssignment");
-			builder.put(grammarAccess.getEntityAccess().getNameAssignment_0_2(), "rule__Entity__NameAssignment_0_2");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+			builder.put(grammarAccess.getMappedEntityAccess().getGroup(), "rule__MappedEntity__Group__0");
+			builder.put(grammarAccess.getSiteAccess().getGroup_0(), "rule__Site__Group_0__0");
+			builder.put(grammarAccess.getSiteAccess().getGroup_1(), "rule__Site__Group_1__0");
+			builder.put(grammarAccess.getSiteAccess().getGroup_1_6(), "rule__Site__Group_1_6__0");
+			builder.put(grammarAccess.getLinkedPropertyAccess().getGroup(), "rule__LinkedProperty__Group__0");
+			builder.put(grammarAccess.getModelAccess().getEntitiesAssignment_0(), "rule__Model__EntitiesAssignment_0");
+			builder.put(grammarAccess.getModelAccess().getMapped_entitiesAssignment_1(), "rule__Model__Mapped_entitiesAssignment_1");
+			builder.put(grammarAccess.getEntityAccess().getAppNameAssignment_0_1(), "rule__Entity__AppNameAssignment_0_1");
+			builder.put(grammarAccess.getEntityAccess().getSitesAssignment_0_5(), "rule__Entity__SitesAssignment_0_5");
+			builder.put(grammarAccess.getEntityAccess().getSitesAssignment_0_6_1(), "rule__Entity__SitesAssignment_0_6_1");
+			builder.put(grammarAccess.getEntityAccess().getPropAssignment_1_0(), "rule__Entity__PropAssignment_1_0");
+			builder.put(grammarAccess.getEntityAccess().getNameAssignment_1_2(), "rule__Entity__NameAssignment_1_2");
+			builder.put(grammarAccess.getMappedEntityAccess().getPropAssignment_0(), "rule__MappedEntity__PropAssignment_0");
+			builder.put(grammarAccess.getMappedEntityAccess().getSitesAssignment_2(), "rule__MappedEntity__SitesAssignment_2");
+			builder.put(grammarAccess.getSiteAccess().getNameAssignment_0_1(), "rule__Site__NameAssignment_0_1");
+			builder.put(grammarAccess.getSiteAccess().getNameAssignment_1_1(), "rule__Site__NameAssignment_1_1");
+			builder.put(grammarAccess.getSiteAccess().getSitesAssignment_1_5(), "rule__Site__SitesAssignment_1_5");
+			builder.put(grammarAccess.getSiteAccess().getSitesAssignment_1_6_1(), "rule__Site__SitesAssignment_1_6_1");
+			builder.put(grammarAccess.getLinkedPropertyAccess().getNameAssignment_0(), "rule__LinkedProperty__NameAssignment_0");
+			builder.put(grammarAccess.getLinkedPropertyAccess().getInner_nameAssignment_2(), "rule__LinkedProperty__Inner_nameAssignment_2");
 		}
 	}
 	

@@ -4,6 +4,7 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.Entity;
+import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
 import com.foliage.xenia.xenia.XeniaPackage;
 
@@ -30,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.impl.ModelImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.ModelImpl#getMapped_entities <em>Mapped entities</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +47,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<Entity> entities;
+
+  /**
+   * The cached value of the '{@link #getMapped_entities() <em>Mapped entities</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMapped_entities()
+   * @generated
+   * @ordered
+   */
+  protected EList<MappedEntity> mapped_entities;
 
   /**
    * <!-- begin-user-doc -->
@@ -88,12 +100,29 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    */
   @Override
+  public EList<MappedEntity> getMapped_entities()
+  {
+    if (mapped_entities == null)
+    {
+      mapped_entities = new EObjectContainmentEList<MappedEntity>(MappedEntity.class, this, XeniaPackage.MODEL__MAPPED_ENTITIES);
+    }
+    return mapped_entities;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case XeniaPackage.MODEL__ENTITIES:
         return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
+      case XeniaPackage.MODEL__MAPPED_ENTITIES:
+        return ((InternalEList<?>)getMapped_entities()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -110,6 +139,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case XeniaPackage.MODEL__ENTITIES:
         return getEntities();
+      case XeniaPackage.MODEL__MAPPED_ENTITIES:
+        return getMapped_entities();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,6 +160,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         getEntities().clear();
         getEntities().addAll((Collection<? extends Entity>)newValue);
         return;
+      case XeniaPackage.MODEL__MAPPED_ENTITIES:
+        getMapped_entities().clear();
+        getMapped_entities().addAll((Collection<? extends MappedEntity>)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -146,6 +181,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case XeniaPackage.MODEL__ENTITIES:
         getEntities().clear();
         return;
+      case XeniaPackage.MODEL__MAPPED_ENTITIES:
+        getMapped_entities().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -162,6 +200,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case XeniaPackage.MODEL__ENTITIES:
         return entities != null && !entities.isEmpty();
+      case XeniaPackage.MODEL__MAPPED_ENTITIES:
+        return mapped_entities != null && !mapped_entities.isEmpty();
     }
     return super.eIsSet(featureID);
   }

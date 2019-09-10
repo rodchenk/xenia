@@ -26,34 +26,9 @@ public class XeniaSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getPropertyRule())
-			return getPropertyToken(semanticObject, ruleCall, node);
-		else if (ruleCall.getRule() == grammarAccess.getXtendedPropertyRule())
-			return getXtendedPropertyToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
-	/**
-	 * Property:
-	 * 	'app' | 'with' | 'sitemap'
-	 * ;
-	 */
-	protected String getPropertyToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "app";
-	}
-	
-	/**
-	 * XtendedProperty:
-	 * 	'sites' | 'map' | 'info'
-	 * ;
-	 */
-	protected String getXtendedPropertyToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (node != null)
-			return getTokenText(node);
-		return "sites";
-	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

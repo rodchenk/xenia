@@ -3,6 +3,8 @@
  */
 package com.foliage.xenia.xenia;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getAppName <em>App Name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getSites <em>Sites</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -23,6 +28,62 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Entity extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>App Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>App Name</em>' attribute.
+   * @see #setAppName(String)
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_AppName()
+   * @model
+   * @generated
+   */
+  String getAppName();
+
+  /**
+   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getAppName <em>App Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>App Name</em>' attribute.
+   * @see #getAppName()
+   * @generated
+   */
+  void setAppName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Sites</b></em>' containment reference list.
+   * The list contents are of type {@link com.foliage.xenia.xenia.Site}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sites</em>' containment reference list.
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Sites()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Site> getSites();
+
+  /**
+   * Returns the value of the '<em><b>Prop</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Prop</em>' attribute.
+   * @see #setProp(String)
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Prop()
+   * @model
+   * @generated
+   */
+  String getProp();
+
+  /**
+   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Prop</em>' attribute.
+   * @see #getProp()
+   * @generated
+   */
+  void setProp(String value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

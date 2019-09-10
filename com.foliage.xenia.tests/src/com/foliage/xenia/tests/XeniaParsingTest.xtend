@@ -21,9 +21,11 @@ class XeniaParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			app: 
-				Home
-			
+			app Main has pages[
+				@Home with modal(@Notification, @Login), 
+				@Contact, 
+				@Message
+			]
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

@@ -77,13 +77,22 @@ public interface XeniaPackage extends EPackage
   int MODEL__ENTITIES = 0;
 
   /**
+   * The feature id for the '<em><b>Mapped entities</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__MAPPED_ENTITIES = 1;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 1;
+  int MODEL_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link com.foliage.xenia.xenia.impl.EntityImpl <em>Entity</em>}' class.
@@ -96,13 +105,40 @@ public interface XeniaPackage extends EPackage
   int ENTITY = 1;
 
   /**
+   * The feature id for the '<em><b>App Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__APP_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Sites</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__SITES = 1;
+
+  /**
+   * The feature id for the '<em><b>Prop</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__PROP = 2;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY__NAME = 0;
+  int ENTITY__NAME = 3;
 
   /**
    * The number of structural features of the '<em>Entity</em>' class.
@@ -111,17 +147,54 @@ public interface XeniaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = 1;
+  int ENTITY_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link com.foliage.xenia.xenia.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link com.foliage.xenia.xenia.impl.MappedEntityImpl <em>Mapped Entity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see com.foliage.xenia.xenia.impl.GreetingImpl
-   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getGreeting()
+   * @see com.foliage.xenia.xenia.impl.MappedEntityImpl
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getMappedEntity()
    * @generated
    */
-  int GREETING = 2;
+  int MAPPED_ENTITY = 2;
+
+  /**
+   * The feature id for the '<em><b>Prop</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPED_ENTITY__PROP = 0;
+
+  /**
+   * The feature id for the '<em><b>Sites</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPED_ENTITY__SITES = 1;
+
+  /**
+   * The number of structural features of the '<em>Mapped Entity</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MAPPED_ENTITY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.foliage.xenia.xenia.impl.SiteImpl <em>Site</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.foliage.xenia.xenia.impl.SiteImpl
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getSite()
+   * @generated
+   */
+  int SITE = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -130,16 +203,62 @@ public interface XeniaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int SITE__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The feature id for the '<em><b>Sites</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int SITE__SITES = 1;
+
+  /**
+   * The number of structural features of the '<em>Site</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SITE_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl <em>Linked Property</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.foliage.xenia.xenia.impl.LinkedPropertyImpl
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getLinkedProperty()
+   * @generated
+   */
+  int LINKED_PROPERTY = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKED_PROPERTY__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Inner name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKED_PROPERTY__INNER_NAME = 1;
+
+  /**
+   * The number of structural features of the '<em>Linked Property</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LINKED_PROPERTY_FEATURE_COUNT = 2;
 
 
   /**
@@ -164,6 +283,17 @@ public interface XeniaPackage extends EPackage
   EReference getModel_Entities();
 
   /**
+   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.Model#getMapped_entities <em>Mapped entities</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Mapped entities</em>'.
+   * @see com.foliage.xenia.xenia.Model#getMapped_entities()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_Mapped_entities();
+
+  /**
    * Returns the meta object for class '{@link com.foliage.xenia.xenia.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -172,6 +302,39 @@ public interface XeniaPackage extends EPackage
    * @generated
    */
   EClass getEntity();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getAppName <em>App Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>App Name</em>'.
+   * @see com.foliage.xenia.xenia.Entity#getAppName()
+   * @see #getEntity()
+   * @generated
+   */
+  EAttribute getEntity_AppName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.Entity#getSites <em>Sites</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sites</em>'.
+   * @see com.foliage.xenia.xenia.Entity#getSites()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_Sites();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prop</em>'.
+   * @see com.foliage.xenia.xenia.Entity#getProp()
+   * @see #getEntity()
+   * @generated
+   */
+  EAttribute getEntity_Prop();
 
   /**
    * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}'.
@@ -185,25 +348,100 @@ public interface XeniaPackage extends EPackage
   EAttribute getEntity_Name();
 
   /**
-   * Returns the meta object for class '{@link com.foliage.xenia.xenia.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link com.foliage.xenia.xenia.MappedEntity <em>Mapped Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see com.foliage.xenia.xenia.Greeting
+   * @return the meta object for class '<em>Mapped Entity</em>'.
+   * @see com.foliage.xenia.xenia.MappedEntity
    * @generated
    */
-  EClass getGreeting();
+  EClass getMappedEntity();
 
   /**
-   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.MappedEntity#getProp <em>Prop</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prop</em>'.
+   * @see com.foliage.xenia.xenia.MappedEntity#getProp()
+   * @see #getMappedEntity()
+   * @generated
+   */
+  EAttribute getMappedEntity_Prop();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.MappedEntity#getSites <em>Sites</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sites</em>'.
+   * @see com.foliage.xenia.xenia.MappedEntity#getSites()
+   * @see #getMappedEntity()
+   * @generated
+   */
+  EReference getMappedEntity_Sites();
+
+  /**
+   * Returns the meta object for class '{@link com.foliage.xenia.xenia.Site <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Site</em>'.
+   * @see com.foliage.xenia.xenia.Site
+   * @generated
+   */
+  EClass getSite();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Site#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.foliage.xenia.xenia.Greeting#getName()
-   * @see #getGreeting()
+   * @see com.foliage.xenia.xenia.Site#getName()
+   * @see #getSite()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getSite_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.Site#getSites <em>Sites</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Sites</em>'.
+   * @see com.foliage.xenia.xenia.Site#getSites()
+   * @see #getSite()
+   * @generated
+   */
+  EReference getSite_Sites();
+
+  /**
+   * Returns the meta object for class '{@link com.foliage.xenia.xenia.LinkedProperty <em>Linked Property</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Linked Property</em>'.
+   * @see com.foliage.xenia.xenia.LinkedProperty
+   * @generated
+   */
+  EClass getLinkedProperty();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see com.foliage.xenia.xenia.LinkedProperty#getName()
+   * @see #getLinkedProperty()
+   * @generated
+   */
+  EAttribute getLinkedProperty_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.LinkedProperty#getInner_name <em>Inner name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Inner name</em>'.
+   * @see com.foliage.xenia.xenia.LinkedProperty#getInner_name()
+   * @see #getLinkedProperty()
+   * @generated
+   */
+  EAttribute getLinkedProperty_Inner_name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -247,6 +485,14 @@ public interface XeniaPackage extends EPackage
     EReference MODEL__ENTITIES = eINSTANCE.getModel_Entities();
 
     /**
+     * The meta object literal for the '<em><b>Mapped entities</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__MAPPED_ENTITIES = eINSTANCE.getModel_Mapped_entities();
+
+    /**
      * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.EntityImpl <em>Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -257,6 +503,30 @@ public interface XeniaPackage extends EPackage
     EClass ENTITY = eINSTANCE.getEntity();
 
     /**
+     * The meta object literal for the '<em><b>App Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY__APP_NAME = eINSTANCE.getEntity_AppName();
+
+    /**
+     * The meta object literal for the '<em><b>Sites</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY__SITES = eINSTANCE.getEntity_Sites();
+
+    /**
+     * The meta object literal for the '<em><b>Prop</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENTITY__PROP = eINSTANCE.getEntity_Prop();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -265,14 +535,40 @@ public interface XeniaPackage extends EPackage
     EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
 
     /**
-     * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.MappedEntityImpl <em>Mapped Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see com.foliage.xenia.xenia.impl.GreetingImpl
-     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getGreeting()
+     * @see com.foliage.xenia.xenia.impl.MappedEntityImpl
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getMappedEntity()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass MAPPED_ENTITY = eINSTANCE.getMappedEntity();
+
+    /**
+     * The meta object literal for the '<em><b>Prop</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MAPPED_ENTITY__PROP = eINSTANCE.getMappedEntity_Prop();
+
+    /**
+     * The meta object literal for the '<em><b>Sites</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MAPPED_ENTITY__SITES = eINSTANCE.getMappedEntity_Sites();
+
+    /**
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.SiteImpl <em>Site</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.foliage.xenia.xenia.impl.SiteImpl
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getSite()
+     * @generated
+     */
+    EClass SITE = eINSTANCE.getSite();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -280,7 +576,41 @@ public interface XeniaPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute SITE__NAME = eINSTANCE.getSite_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Sites</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SITE__SITES = eINSTANCE.getSite_Sites();
+
+    /**
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl <em>Linked Property</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.foliage.xenia.xenia.impl.LinkedPropertyImpl
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getLinkedProperty()
+     * @generated
+     */
+    EClass LINKED_PROPERTY = eINSTANCE.getLinkedProperty();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LINKED_PROPERTY__NAME = eINSTANCE.getLinkedProperty_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Inner name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LINKED_PROPERTY__INNER_NAME = eINSTANCE.getLinkedProperty_Inner_name();
 
   }
 

@@ -87,10 +87,24 @@ public class XeniaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case XeniaPackage.GREETING:
+      case XeniaPackage.MAPPED_ENTITY:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        MappedEntity mappedEntity = (MappedEntity)theEObject;
+        T result = caseMappedEntity(mappedEntity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XeniaPackage.SITE:
+      {
+        Site site = (Site)theEObject;
+        T result = caseSite(site);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XeniaPackage.LINKED_PROPERTY:
+      {
+        LinkedProperty linkedProperty = (LinkedProperty)theEObject;
+        T result = caseLinkedProperty(linkedProperty);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -131,17 +145,49 @@ public class XeniaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Mapped Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Mapped Entity</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseMappedEntity(MappedEntity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Site</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Site</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSite(Site object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Linked Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Linked Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLinkedProperty(LinkedProperty object)
   {
     return null;
   }

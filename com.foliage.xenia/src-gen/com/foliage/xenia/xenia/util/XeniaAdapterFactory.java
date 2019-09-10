@@ -86,9 +86,19 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
         return createEntityAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseMappedEntity(MappedEntity object)
       {
-        return createGreetingAdapter();
+        return createMappedEntityAdapter();
+      }
+      @Override
+      public Adapter caseSite(Site object)
+      {
+        return createSiteAdapter();
+      }
+      @Override
+      public Adapter caseLinkedProperty(LinkedProperty object)
+      {
+        return createLinkedPropertyAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -143,16 +153,46 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.MappedEntity <em>Mapped Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.foliage.xenia.xenia.Greeting
+   * @see com.foliage.xenia.xenia.MappedEntity
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createMappedEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.Site <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.Site
+   * @generated
+   */
+  public Adapter createSiteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.LinkedProperty <em>Linked Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.LinkedProperty
+   * @generated
+   */
+  public Adapter createLinkedPropertyAdapter()
   {
     return null;
   }

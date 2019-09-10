@@ -67,7 +67,9 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
     {
       case XeniaPackage.MODEL: return createModel();
       case XeniaPackage.ENTITY: return createEntity();
-      case XeniaPackage.GREETING: return createGreeting();
+      case XeniaPackage.MAPPED_ENTITY: return createMappedEntity();
+      case XeniaPackage.SITE: return createSite();
+      case XeniaPackage.LINKED_PROPERTY: return createLinkedProperty();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -103,10 +105,34 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
    * @generated
    */
   @Override
-  public Greeting createGreeting()
+  public MappedEntity createMappedEntity()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    MappedEntityImpl mappedEntity = new MappedEntityImpl();
+    return mappedEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Site createSite()
+  {
+    SiteImpl site = new SiteImpl();
+    return site;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public LinkedProperty createLinkedProperty()
+  {
+    LinkedPropertyImpl linkedProperty = new LinkedPropertyImpl();
+    return linkedProperty;
   }
 
   /**

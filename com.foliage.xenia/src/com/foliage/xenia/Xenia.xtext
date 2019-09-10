@@ -3,21 +3,32 @@ grammar com.foliage.xenia.Xenia with org.eclipse.xtext.common.Terminals
 generate xenia "http://www.foliage.com/xenia/Xenia"
 
 Model:
-	entities+=Entity* |
+	entities+=Entity*
 	mapped_entities+=MappedEntity*;
 
 Entity:
-	Property ':' name=ID 
+	'app' appName=ID 'has' 'pages' '['
+		sites+=Site (',' sites+=Site)*
+	']' |
+	prop=Property ':' name=ID 
 ;
 
 Property:
-	'app' | 'with' | 'sitemap'
+	'with' | 'sitemap'
 ;
 
 MappedEntity:
-	'sites' ':' LinkedProperty | 
-	'map'  	':' LinkedProperty | 
-	'info'  ':' LinkedProperty 
+	prop=MappedProperty ':'
+		(sites+=LinkedProperty)*
+;
+
+Site:
+	'@' name=ID |
+	'@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')'
+;
+
+MappedProperty:
+	'sites' | 'map'
 ;
 LinkedProperty:
 	name=ID '->' inner_name=ID

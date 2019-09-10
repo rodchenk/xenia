@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.Model#getEntities <em>Entities</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Model#getMapped_entities <em>Mapped entities</em>}</li>
  * </ul>
  *
  * @see com.foliage.xenia.xenia.XeniaPackage#getModel()
@@ -36,5 +37,17 @@ public interface Model extends EObject
    * @generated
    */
   EList<Entity> getEntities();
+
+  /**
+   * Returns the value of the '<em><b>Mapped entities</b></em>' containment reference list.
+   * The list contents are of type {@link com.foliage.xenia.xenia.MappedEntity}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Mapped entities</em>' containment reference list.
+   * @see com.foliage.xenia.xenia.XeniaPackage#getModel_Mapped_entities()
+   * @model containment="true"
+   * @generated
+   */
+  EList<MappedEntity> getMapped_entities();
 
 } // Model
