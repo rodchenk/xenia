@@ -3,8 +3,6 @@
  */
 package com.foliage.xenia.xenia;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.foliage.xenia.xenia.Entity#getAppName <em>App Name</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.Entity#getSites <em>Sites</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getTech <em>Tech</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getPath <em>Path</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}</li>
  * </ul>
@@ -29,38 +27,48 @@ import org.eclipse.emf.ecore.EObject;
 public interface Entity extends EObject
 {
   /**
-   * Returns the value of the '<em><b>App Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Tech</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>App Name</em>' attribute.
-   * @see #setAppName(String)
-   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_AppName()
+   * @return the value of the '<em>Tech</em>' attribute.
+   * @see #setTech(String)
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Tech()
    * @model
    * @generated
    */
-  String getAppName();
+  String getTech();
 
   /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getAppName <em>App Name</em>}' attribute.
+   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getTech <em>Tech</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>App Name</em>' attribute.
-   * @see #getAppName()
+   * @param value the new value of the '<em>Tech</em>' attribute.
+   * @see #getTech()
    * @generated
    */
-  void setAppName(String value);
+  void setTech(String value);
 
   /**
-   * Returns the value of the '<em><b>Sites</b></em>' containment reference list.
-   * The list contents are of type {@link com.foliage.xenia.xenia.Site}.
+   * Returns the value of the '<em><b>Path</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Sites</em>' containment reference list.
-   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Sites()
-   * @model containment="true"
+   * @return the value of the '<em>Path</em>' attribute.
+   * @see #setPath(String)
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Path()
+   * @model
    * @generated
    */
-  EList<Site> getSites();
+  String getPath();
+
+  /**
+   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getPath <em>Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Path</em>' attribute.
+   * @see #getPath()
+   * @generated
+   */
+  void setPath(String value);
 
   /**
    * Returns the value of the '<em><b>Prop</b></em>' attribute.

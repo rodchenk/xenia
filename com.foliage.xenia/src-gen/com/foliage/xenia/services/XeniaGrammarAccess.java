@@ -25,317 +25,547 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cEntitiesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cEntitiesEntityParserRuleCall_0_0 = (RuleCall)cEntitiesAssignment_0.eContents().get(0);
-		private final Assignment cMapped_entitiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cMapped_entitiesMappedEntityParserRuleCall_1_0 = (RuleCall)cMapped_entitiesAssignment_1.eContents().get(0);
+		private final Assignment cHeadersAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cHeadersHeaderParserRuleCall_0_0 = (RuleCall)cHeadersAssignment_0.eContents().get(0);
+		private final Assignment cEntitiesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cEntitiesEntityParserRuleCall_1_0 = (RuleCall)cEntitiesAssignment_1.eContents().get(0);
+		private final Assignment cMapped_entitiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cMapped_entitiesMappedEntityParserRuleCall_2_0 = (RuleCall)cMapped_entitiesAssignment_2.eContents().get(0);
 		
 		//Model:
+		//	headers+=Header
 		//	entities+=Entity*
 		//	mapped_entities+=MappedEntity*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//entities+=Entity* mapped_entities+=MappedEntity*
+		//headers+=Header entities+=Entity* mapped_entities+=MappedEntity*
 		public Group getGroup() { return cGroup; }
 		
+		//headers+=Header
+		public Assignment getHeadersAssignment_0() { return cHeadersAssignment_0; }
+		
+		//Header
+		public RuleCall getHeadersHeaderParserRuleCall_0_0() { return cHeadersHeaderParserRuleCall_0_0; }
+		
 		//entities+=Entity*
-		public Assignment getEntitiesAssignment_0() { return cEntitiesAssignment_0; }
+		public Assignment getEntitiesAssignment_1() { return cEntitiesAssignment_1; }
 		
 		//Entity
-		public RuleCall getEntitiesEntityParserRuleCall_0_0() { return cEntitiesEntityParserRuleCall_0_0; }
+		public RuleCall getEntitiesEntityParserRuleCall_1_0() { return cEntitiesEntityParserRuleCall_1_0; }
 		
 		//mapped_entities+=MappedEntity*
-		public Assignment getMapped_entitiesAssignment_1() { return cMapped_entitiesAssignment_1; }
+		public Assignment getMapped_entitiesAssignment_2() { return cMapped_entitiesAssignment_2; }
 		
 		//MappedEntity
-		public RuleCall getMapped_entitiesMappedEntityParserRuleCall_1_0() { return cMapped_entitiesMappedEntityParserRuleCall_1_0; }
+		public RuleCall getMapped_entitiesMappedEntityParserRuleCall_2_0() { return cMapped_entitiesMappedEntityParserRuleCall_2_0; }
+	}
+	public class HeaderElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Header");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cAppKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cAppNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cAppNameIDTerminalRuleCall_1_0 = (RuleCall)cAppNameAssignment_1.eContents().get(0);
+		private final Keyword cHasKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cPagesKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftSquareBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSitesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSitesSuperSiteParserRuleCall_5_0 = (RuleCall)cSitesAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cSitesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cSitesSuperSiteParserRuleCall_6_1_0 = (RuleCall)cSitesAssignment_6_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//Header:
+		//	'app' appName=ID 'has' 'pages' '['
+		//	sites+=SuperSite (',' sites+=SuperSite)*
+		//	']';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'app' appName=ID 'has' 'pages' '[' sites+=SuperSite (',' sites+=SuperSite)* ']'
+		public Group getGroup() { return cGroup; }
+		
+		//'app'
+		public Keyword getAppKeyword_0() { return cAppKeyword_0; }
+		
+		//appName=ID
+		public Assignment getAppNameAssignment_1() { return cAppNameAssignment_1; }
+		
+		//ID
+		public RuleCall getAppNameIDTerminalRuleCall_1_0() { return cAppNameIDTerminalRuleCall_1_0; }
+		
+		//'has'
+		public Keyword getHasKeyword_2() { return cHasKeyword_2; }
+		
+		//'pages'
+		public Keyword getPagesKeyword_3() { return cPagesKeyword_3; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_4() { return cLeftSquareBracketKeyword_4; }
+		
+		//sites+=SuperSite
+		public Assignment getSitesAssignment_5() { return cSitesAssignment_5; }
+		
+		//SuperSite
+		public RuleCall getSitesSuperSiteParserRuleCall_5_0() { return cSitesSuperSiteParserRuleCall_5_0; }
+		
+		//(',' sites+=SuperSite)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//','
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//sites+=SuperSite
+		public Assignment getSitesAssignment_6_1() { return cSitesAssignment_6_1; }
+		
+		//SuperSite
+		public RuleCall getSitesSuperSiteParserRuleCall_6_1_0() { return cSitesSuperSiteParserRuleCall_6_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_7() { return cRightSquareBracketKeyword_7; }
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Entity");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cAppKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cAppNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cAppNameIDTerminalRuleCall_0_1_0 = (RuleCall)cAppNameAssignment_0_1.eContents().get(0);
-		private final Keyword cHasKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Keyword cPagesKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
-		private final Keyword cLeftSquareBracketKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
-		private final Assignment cSitesAssignment_0_5 = (Assignment)cGroup_0.eContents().get(5);
-		private final RuleCall cSitesSiteParserRuleCall_0_5_0 = (RuleCall)cSitesAssignment_0_5.eContents().get(0);
-		private final Group cGroup_0_6 = (Group)cGroup_0.eContents().get(6);
-		private final Keyword cCommaKeyword_0_6_0 = (Keyword)cGroup_0_6.eContents().get(0);
-		private final Assignment cSitesAssignment_0_6_1 = (Assignment)cGroup_0_6.eContents().get(1);
-		private final RuleCall cSitesSiteParserRuleCall_0_6_1_0 = (RuleCall)cSitesAssignment_0_6_1.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_0_7 = (Keyword)cGroup_0.eContents().get(7);
+		private final Keyword cWithKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Assignment cTechAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
+		private final RuleCall cTechSTRINGTerminalRuleCall_0_2_0 = (RuleCall)cTechAssignment_0_2.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cPropAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cPropPropertyParserRuleCall_1_0_0 = (RuleCall)cPropAssignment_1_0.eContents().get(0);
+		private final Keyword cXmlKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cNameAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_1_2_0 = (RuleCall)cNameAssignment_1_2.eContents().get(0);
+		private final Assignment cPathAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cPathSTRINGTerminalRuleCall_1_2_0 = (RuleCall)cPathAssignment_1_2.eContents().get(0);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Assignment cPropAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cPropPropertyParserRuleCall_2_0_0 = (RuleCall)cPropAssignment_2_0.eContents().get(0);
+		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Assignment cNameAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_2_0 = (RuleCall)cNameAssignment_2_2.eContents().get(0);
 		
 		//Entity:
-		//	'app' appName=ID 'has' 'pages' '['
-		//	sites+=Site (',' sites+=Site)*
-		//	']' | prop=Property ':' name=ID;
+		//	'with' ':' tech=STRING |
+		//	'xml' ':' path=STRING | prop=Property ':' name=ID;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'app' appName=ID 'has' 'pages' '[' sites+=Site (',' sites+=Site)* ']' | prop=Property ':' name=ID
+		//'with' ':' tech=STRING | 'xml' ':' path=STRING | prop=Property ':' name=ID
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'app' appName=ID 'has' 'pages' '[' sites+=Site (',' sites+=Site)* ']'
+		//'with' ':' tech=STRING
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//'app'
-		public Keyword getAppKeyword_0_0() { return cAppKeyword_0_0; }
+		//'with'
+		public Keyword getWithKeyword_0_0() { return cWithKeyword_0_0; }
 		
-		//appName=ID
-		public Assignment getAppNameAssignment_0_1() { return cAppNameAssignment_0_1; }
+		//':'
+		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
 		
-		//ID
-		public RuleCall getAppNameIDTerminalRuleCall_0_1_0() { return cAppNameIDTerminalRuleCall_0_1_0; }
+		//tech=STRING
+		public Assignment getTechAssignment_0_2() { return cTechAssignment_0_2; }
 		
-		//'has'
-		public Keyword getHasKeyword_0_2() { return cHasKeyword_0_2; }
+		//STRING
+		public RuleCall getTechSTRINGTerminalRuleCall_0_2_0() { return cTechSTRINGTerminalRuleCall_0_2_0; }
 		
-		//'pages'
-		public Keyword getPagesKeyword_0_3() { return cPagesKeyword_0_3; }
-		
-		//'['
-		public Keyword getLeftSquareBracketKeyword_0_4() { return cLeftSquareBracketKeyword_0_4; }
-		
-		//sites+=Site
-		public Assignment getSitesAssignment_0_5() { return cSitesAssignment_0_5; }
-		
-		//Site
-		public RuleCall getSitesSiteParserRuleCall_0_5_0() { return cSitesSiteParserRuleCall_0_5_0; }
-		
-		//(',' sites+=Site)*
-		public Group getGroup_0_6() { return cGroup_0_6; }
-		
-		//','
-		public Keyword getCommaKeyword_0_6_0() { return cCommaKeyword_0_6_0; }
-		
-		//sites+=Site
-		public Assignment getSitesAssignment_0_6_1() { return cSitesAssignment_0_6_1; }
-		
-		//Site
-		public RuleCall getSitesSiteParserRuleCall_0_6_1_0() { return cSitesSiteParserRuleCall_0_6_1_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_0_7() { return cRightSquareBracketKeyword_0_7; }
-		
-		//prop=Property ':' name=ID
+		//'xml' ':' path=STRING
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//prop=Property
-		public Assignment getPropAssignment_1_0() { return cPropAssignment_1_0; }
-		
-		//Property
-		public RuleCall getPropPropertyParserRuleCall_1_0_0() { return cPropPropertyParserRuleCall_1_0_0; }
+		//'xml'
+		public Keyword getXmlKeyword_1_0() { return cXmlKeyword_1_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
 		
+		//path=STRING
+		public Assignment getPathAssignment_1_2() { return cPathAssignment_1_2; }
+		
+		//STRING
+		public RuleCall getPathSTRINGTerminalRuleCall_1_2_0() { return cPathSTRINGTerminalRuleCall_1_2_0; }
+		
+		//prop=Property ':' name=ID
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//prop=Property
+		public Assignment getPropAssignment_2_0() { return cPropAssignment_2_0; }
+		
+		//Property
+		public RuleCall getPropPropertyParserRuleCall_2_0_0() { return cPropPropertyParserRuleCall_2_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_2_1() { return cColonKeyword_2_1; }
+		
 		//name=ID
-		public Assignment getNameAssignment_1_2() { return cNameAssignment_1_2; }
+		public Assignment getNameAssignment_2_2() { return cNameAssignment_2_2; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_2_0() { return cNameIDTerminalRuleCall_1_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_2_0() { return cNameIDTerminalRuleCall_2_2_0; }
+	}
+	public class SuperSiteElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.SuperSite");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSiteParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSiteWithModalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SuperSite:
+		//	Site | SiteWithModal;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Site | SiteWithModal
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Site
+		public RuleCall getSiteParserRuleCall_0() { return cSiteParserRuleCall_0; }
+		
+		//SiteWithModal
+		public RuleCall getSiteWithModalParserRuleCall_1() { return cSiteWithModalParserRuleCall_1; }
+	}
+	public class SiteWithModalElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.SiteWithModal");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cWithKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cModalKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSitesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSitesSuperSiteParserRuleCall_5_0 = (RuleCall)cSitesAssignment_5.eContents().get(0);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
+		private final Assignment cSitesAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
+		private final RuleCall cSitesSuperSiteParserRuleCall_6_1_0 = (RuleCall)cSitesAssignment_6_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//SiteWithModal:
+		//	'@' name=ID 'with' 'modal' '(' sites+=SuperSite (',' sites+=SuperSite)* ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'@' name=ID 'with' 'modal' '(' sites+=SuperSite (',' sites+=SuperSite)* ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'@'
+		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'with'
+		public Keyword getWithKeyword_2() { return cWithKeyword_2; }
+		
+		//'modal'
+		public Keyword getModalKeyword_3() { return cModalKeyword_3; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_4() { return cLeftParenthesisKeyword_4; }
+		
+		//sites+=SuperSite
+		public Assignment getSitesAssignment_5() { return cSitesAssignment_5; }
+		
+		//SuperSite
+		public RuleCall getSitesSuperSiteParserRuleCall_5_0() { return cSitesSuperSiteParserRuleCall_5_0; }
+		
+		//(',' sites+=SuperSite)*
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//','
+		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		
+		//sites+=SuperSite
+		public Assignment getSitesAssignment_6_1() { return cSitesAssignment_6_1; }
+		
+		//SuperSite
+		public RuleCall getSitesSuperSiteParserRuleCall_6_1_0() { return cSitesSuperSiteParserRuleCall_6_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class PropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Property");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cWithKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cSitemapKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cTestKeyword = (Keyword)rule.eContents().get(1);
 		
 		//Property:
-		//	'with' | 'sitemap';
+		//	'test';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'with' | 'sitemap'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'with'
-		public Keyword getWithKeyword_0() { return cWithKeyword_0; }
-		
-		//'sitemap'
-		public Keyword getSitemapKeyword_1() { return cSitemapKeyword_1; }
+		//'test'
+		public Keyword getTestKeyword() { return cTestKeyword; }
 	}
 	public class MappedEntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.MappedEntity");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cPropAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPropMappedPropertyParserRuleCall_0_0 = (RuleCall)cPropAssignment_0.eContents().get(0);
-		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cSitesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSitesLinkedPropertyParserRuleCall_2_0 = (RuleCall)cSitesAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Keyword cInfoKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
+		private final Keyword cColonKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
+		private final Assignment cInfoPropsAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
+		private final RuleCall cInfoPropsInfoPropertyParserRuleCall_0_3_0 = (RuleCall)cInfoPropsAssignment_0_3.eContents().get(0);
+		private final Group cGroup_0_4 = (Group)cGroup_0.eContents().get(4);
+		private final Keyword cCommaKeyword_0_4_0 = (Keyword)cGroup_0_4.eContents().get(0);
+		private final Assignment cInfoPropsAssignment_0_4_1 = (Assignment)cGroup_0_4.eContents().get(1);
+		private final RuleCall cInfoPropsInfoPropertyParserRuleCall_0_4_1_0 = (RuleCall)cInfoPropsAssignment_0_4_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Keyword cMapKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Keyword cLeftSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final Assignment cLinkedPropsAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final RuleCall cLinkedPropsLinkedPropertyParserRuleCall_1_3_0 = (RuleCall)cLinkedPropsAssignment_1_3.eContents().get(0);
+		private final Group cGroup_1_4 = (Group)cGroup_1.eContents().get(4);
+		private final Keyword cCommaKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
+		private final Assignment cLinkedPropsAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
+		private final RuleCall cLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0 = (RuleCall)cLinkedPropsAssignment_1_4_1.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
 		
 		//MappedEntity:
-		//	prop=MappedProperty ':'
-		//	sites+=LinkedProperty*;
+		//	'info' ':' '[' infoProps+=InfoProperty (',' infoProps+=InfoProperty)* ']' |
+		//	'map' ':' '[' linkedProps+=LinkedProperty (',' linkedProps+=LinkedProperty)* ']';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//prop=MappedProperty ':' sites+=LinkedProperty*
+		//'info' ':' '[' infoProps+=InfoProperty (',' infoProps+=InfoProperty)* ']' | 'map' ':' '[' linkedProps+=LinkedProperty
+		//(',' linkedProps+=LinkedProperty)* ']'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'info' ':' '[' infoProps+=InfoProperty (',' infoProps+=InfoProperty)* ']'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//'info'
+		public Keyword getInfoKeyword_0_0() { return cInfoKeyword_0_0; }
+		
+		//':'
+		public Keyword getColonKeyword_0_1() { return cColonKeyword_0_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_0_2() { return cLeftSquareBracketKeyword_0_2; }
+		
+		//infoProps+=InfoProperty
+		public Assignment getInfoPropsAssignment_0_3() { return cInfoPropsAssignment_0_3; }
+		
+		//InfoProperty
+		public RuleCall getInfoPropsInfoPropertyParserRuleCall_0_3_0() { return cInfoPropsInfoPropertyParserRuleCall_0_3_0; }
+		
+		//(',' infoProps+=InfoProperty)*
+		public Group getGroup_0_4() { return cGroup_0_4; }
+		
+		//','
+		public Keyword getCommaKeyword_0_4_0() { return cCommaKeyword_0_4_0; }
+		
+		//infoProps+=InfoProperty
+		public Assignment getInfoPropsAssignment_0_4_1() { return cInfoPropsAssignment_0_4_1; }
+		
+		//InfoProperty
+		public RuleCall getInfoPropsInfoPropertyParserRuleCall_0_4_1_0() { return cInfoPropsInfoPropertyParserRuleCall_0_4_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_0_5() { return cRightSquareBracketKeyword_0_5; }
+		
+		//'map' ':' '[' linkedProps+=LinkedProperty (',' linkedProps+=LinkedProperty)* ']'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//'map'
+		public Keyword getMapKeyword_1_0() { return cMapKeyword_1_0; }
+		
+		//':'
+		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
+		
+		//'['
+		public Keyword getLeftSquareBracketKeyword_1_2() { return cLeftSquareBracketKeyword_1_2; }
+		
+		//linkedProps+=LinkedProperty
+		public Assignment getLinkedPropsAssignment_1_3() { return cLinkedPropsAssignment_1_3; }
+		
+		//LinkedProperty
+		public RuleCall getLinkedPropsLinkedPropertyParserRuleCall_1_3_0() { return cLinkedPropsLinkedPropertyParserRuleCall_1_3_0; }
+		
+		//(',' linkedProps+=LinkedProperty)*
+		public Group getGroup_1_4() { return cGroup_1_4; }
+		
+		//','
+		public Keyword getCommaKeyword_1_4_0() { return cCommaKeyword_1_4_0; }
+		
+		//linkedProps+=LinkedProperty
+		public Assignment getLinkedPropsAssignment_1_4_1() { return cLinkedPropsAssignment_1_4_1; }
+		
+		//LinkedProperty
+		public RuleCall getLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0() { return cLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_1_5() { return cRightSquareBracketKeyword_1_5; }
+	}
+	public class InfoPropertyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoProperty");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cPageAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cPageSiteParserRuleCall_0_0 = (RuleCall)cPageAssignment_0.eContents().get(0);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cEntitiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cEntitiesInfoEntityParserRuleCall_2_0 = (RuleCall)cEntitiesAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cEntitiesAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cEntitiesInfoEntityParserRuleCall_3_1_0 = (RuleCall)cEntitiesAssignment_3_1.eContents().get(0);
+		
+		//InfoProperty:
+		//	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*
 		public Group getGroup() { return cGroup; }
 		
-		//prop=MappedProperty
-		public Assignment getPropAssignment_0() { return cPropAssignment_0; }
+		//page=Site
+		public Assignment getPageAssignment_0() { return cPageAssignment_0; }
 		
-		//MappedProperty
-		public RuleCall getPropMappedPropertyParserRuleCall_0_0() { return cPropMappedPropertyParserRuleCall_0_0; }
+		//Site
+		public RuleCall getPageSiteParserRuleCall_0_0() { return cPageSiteParserRuleCall_0_0; }
+		
+		//'->'
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
+		
+		//entities+=InfoEntity
+		public Assignment getEntitiesAssignment_2() { return cEntitiesAssignment_2; }
+		
+		//InfoEntity
+		public RuleCall getEntitiesInfoEntityParserRuleCall_2_0() { return cEntitiesInfoEntityParserRuleCall_2_0; }
+		
+		//(',' entities+=InfoEntity)*
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//','
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+		
+		//entities+=InfoEntity
+		public Assignment getEntitiesAssignment_3_1() { return cEntitiesAssignment_3_1; }
+		
+		//InfoEntity
+		public RuleCall getEntitiesInfoEntityParserRuleCall_3_1_0() { return cEntitiesInfoEntityParserRuleCall_3_1_0; }
+	}
+	public class InfoEntityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoEntity");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cEntriesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cEntriesInfoEntryParserRuleCall_0_0 = (RuleCall)cEntriesAssignment_0.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cInfoValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInfoValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cInfoValueAssignment_2.eContents().get(0);
+		
+		//InfoEntity:
+		//	entries+=InfoEntry ':' infoValue=STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//entries+=InfoEntry ':' infoValue=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//entries+=InfoEntry
+		public Assignment getEntriesAssignment_0() { return cEntriesAssignment_0; }
+		
+		//InfoEntry
+		public RuleCall getEntriesInfoEntryParserRuleCall_0_0() { return cEntriesInfoEntryParserRuleCall_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//sites+=LinkedProperty*
-		public Assignment getSitesAssignment_2() { return cSitesAssignment_2; }
+		//infoValue=STRING
+		public Assignment getInfoValueAssignment_2() { return cInfoValueAssignment_2; }
 		
-		//LinkedProperty
-		public RuleCall getSitesLinkedPropertyParserRuleCall_2_0() { return cSitesLinkedPropertyParserRuleCall_2_0; }
+		//STRING
+		public RuleCall getInfoValueSTRINGTerminalRuleCall_2_0() { return cInfoValueSTRINGTerminalRuleCall_2_0; }
+	}
+	public class InfoEntryElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoEntry");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cModKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cFreqKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cPrioKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//InfoEntry:
+		//	'mod' | 'freq' | 'prio';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'mod' | 'freq' | 'prio'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'mod'
+		public Keyword getModKeyword_0() { return cModKeyword_0; }
+		
+		//'freq'
+		public Keyword getFreqKeyword_1() { return cFreqKeyword_1; }
+		
+		//'prio'
+		public Keyword getPrioKeyword_2() { return cPrioKeyword_2; }
 	}
 	public class SiteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Site");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cCommercialAtKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cCommercialAtKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
-		private final Keyword cWithKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Keyword cModalKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
-		private final Keyword cLeftParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
-		private final Assignment cSitesAssignment_1_5 = (Assignment)cGroup_1.eContents().get(5);
-		private final RuleCall cSitesSiteParserRuleCall_1_5_0 = (RuleCall)cSitesAssignment_1_5.eContents().get(0);
-		private final Group cGroup_1_6 = (Group)cGroup_1.eContents().get(6);
-		private final Keyword cCommaKeyword_1_6_0 = (Keyword)cGroup_1_6.eContents().get(0);
-		private final Assignment cSitesAssignment_1_6_1 = (Assignment)cGroup_1_6.eContents().get(1);
-		private final RuleCall cSitesSiteParserRuleCall_1_6_1_0 = (RuleCall)cSitesAssignment_1_6_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cCommercialAtKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Site:
-		//	'@' name=ID |
-		//	'@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')';
+		//	'@' name=ID;
 		@Override public ParserRule getRule() { return rule; }
-		
-		//'@' name=ID | '@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')'
-		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'@' name=ID
-		public Group getGroup_0() { return cGroup_0; }
+		public Group getGroup() { return cGroup; }
 		
 		//'@'
-		public Keyword getCommercialAtKeyword_0_0() { return cCommercialAtKeyword_0_0; }
+		public Keyword getCommercialAtKeyword_0() { return cCommercialAtKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
-		
-		//'@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')'
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//'@'
-		public Keyword getCommercialAtKeyword_1_0() { return cCommercialAtKeyword_1_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
-		
-		//'with'
-		public Keyword getWithKeyword_1_2() { return cWithKeyword_1_2; }
-		
-		//'modal'
-		public Keyword getModalKeyword_1_3() { return cModalKeyword_1_3; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1_4() { return cLeftParenthesisKeyword_1_4; }
-		
-		//sites+=Site
-		public Assignment getSitesAssignment_1_5() { return cSitesAssignment_1_5; }
-		
-		//Site
-		public RuleCall getSitesSiteParserRuleCall_1_5_0() { return cSitesSiteParserRuleCall_1_5_0; }
-		
-		//(',' sites+=Site)*
-		public Group getGroup_1_6() { return cGroup_1_6; }
-		
-		//','
-		public Keyword getCommaKeyword_1_6_0() { return cCommaKeyword_1_6_0; }
-		
-		//sites+=Site
-		public Assignment getSitesAssignment_1_6_1() { return cSitesAssignment_1_6_1; }
-		
-		//Site
-		public RuleCall getSitesSiteParserRuleCall_1_6_1_0() { return cSitesSiteParserRuleCall_1_6_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_1_7() { return cRightParenthesisKeyword_1_7; }
-	}
-	public class MappedPropertyElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.MappedProperty");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cSitesKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cMapKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//MappedProperty:
-		//	'sites' | 'map';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'sites' | 'map'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'sites'
-		public Keyword getSitesKeyword_0() { return cSitesKeyword_0; }
-		
-		//'map'
-		public Keyword getMapKeyword_1() { return cMapKeyword_1; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 	}
 	public class LinkedPropertyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.LinkedProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
-		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cInner_nameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cInner_nameIDTerminalRuleCall_2_0 = (RuleCall)cInner_nameAssignment_2.eContents().get(0);
+		private final RuleCall cNameSiteParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cHyphenMinusGreaterThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSiteAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSiteSiteParserRuleCall_1_1_0 = (RuleCall)cSiteAssignment_1_1.eContents().get(0);
 		
 		//LinkedProperty:
-		//	name=ID '->' inner_name=ID;
+		//	name=Site ('->' site+=Site)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=ID '->' inner_name=ID
+		//name=Site ('->' site+=Site)*
 		public Group getGroup() { return cGroup; }
 		
-		//name=ID
+		//name=Site
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		//Site
+		public RuleCall getNameSiteParserRuleCall_0_0() { return cNameSiteParserRuleCall_0_0; }
+		
+		//('->' site+=Site)*
+		public Group getGroup_1() { return cGroup_1; }
 		
 		//'->'
-		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
+		public Keyword getHyphenMinusGreaterThanSignKeyword_1_0() { return cHyphenMinusGreaterThanSignKeyword_1_0; }
 		
-		//inner_name=ID
-		public Assignment getInner_nameAssignment_2() { return cInner_nameAssignment_2; }
+		//site+=Site
+		public Assignment getSiteAssignment_1_1() { return cSiteAssignment_1_1; }
 		
-		//ID
-		public RuleCall getInner_nameIDTerminalRuleCall_2_0() { return cInner_nameIDTerminalRuleCall_2_0; }
+		//Site
+		public RuleCall getSiteSiteParserRuleCall_1_1_0() { return cSiteSiteParserRuleCall_1_1_0; }
 	}
 	
 	
 	private final ModelElements pModel;
+	private final HeaderElements pHeader;
 	private final EntityElements pEntity;
+	private final SuperSiteElements pSuperSite;
+	private final SiteWithModalElements pSiteWithModal;
 	private final PropertyElements pProperty;
 	private final MappedEntityElements pMappedEntity;
+	private final InfoPropertyElements pInfoProperty;
+	private final InfoEntityElements pInfoEntity;
+	private final InfoEntryElements pInfoEntry;
 	private final SiteElements pSite;
-	private final MappedPropertyElements pMappedProperty;
 	private final LinkedPropertyElements pLinkedProperty;
 	
 	private final Grammar grammar;
@@ -348,11 +578,16 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
+		this.pHeader = new HeaderElements();
 		this.pEntity = new EntityElements();
+		this.pSuperSite = new SuperSiteElements();
+		this.pSiteWithModal = new SiteWithModalElements();
 		this.pProperty = new PropertyElements();
 		this.pMappedEntity = new MappedEntityElements();
+		this.pInfoProperty = new InfoPropertyElements();
+		this.pInfoEntity = new InfoEntityElements();
+		this.pInfoEntry = new InfoEntryElements();
 		this.pSite = new SiteElements();
-		this.pMappedProperty = new MappedPropertyElements();
 		this.pLinkedProperty = new LinkedPropertyElements();
 	}
 	
@@ -384,6 +619,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
+	//	headers+=Header
 	//	entities+=Entity*
 	//	mapped_entities+=MappedEntity*;
 	public ModelElements getModelAccess() {
@@ -394,10 +630,21 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Entity:
+	//Header:
 	//	'app' appName=ID 'has' 'pages' '['
-	//	sites+=Site (',' sites+=Site)*
-	//	']' | prop=Property ':' name=ID;
+	//	sites+=SuperSite (',' sites+=SuperSite)*
+	//	']';
+	public HeaderElements getHeaderAccess() {
+		return pHeader;
+	}
+	
+	public ParserRule getHeaderRule() {
+		return getHeaderAccess().getRule();
+	}
+	
+	//Entity:
+	//	'with' ':' tech=STRING |
+	//	'xml' ':' path=STRING | prop=Property ':' name=ID;
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -406,8 +653,28 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntityAccess().getRule();
 	}
 	
+	//SuperSite:
+	//	Site | SiteWithModal;
+	public SuperSiteElements getSuperSiteAccess() {
+		return pSuperSite;
+	}
+	
+	public ParserRule getSuperSiteRule() {
+		return getSuperSiteAccess().getRule();
+	}
+	
+	//SiteWithModal:
+	//	'@' name=ID 'with' 'modal' '(' sites+=SuperSite (',' sites+=SuperSite)* ')';
+	public SiteWithModalElements getSiteWithModalAccess() {
+		return pSiteWithModal;
+	}
+	
+	public ParserRule getSiteWithModalRule() {
+		return getSiteWithModalAccess().getRule();
+	}
+	
 	//Property:
-	//	'with' | 'sitemap';
+	//	'test';
 	public PropertyElements getPropertyAccess() {
 		return pProperty;
 	}
@@ -417,8 +684,8 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//MappedEntity:
-	//	prop=MappedProperty ':'
-	//	sites+=LinkedProperty*;
+	//	'info' ':' '[' infoProps+=InfoProperty (',' infoProps+=InfoProperty)* ']' |
+	//	'map' ':' '[' linkedProps+=LinkedProperty (',' linkedProps+=LinkedProperty)* ']';
 	public MappedEntityElements getMappedEntityAccess() {
 		return pMappedEntity;
 	}
@@ -427,9 +694,38 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getMappedEntityAccess().getRule();
 	}
 	
+	//InfoProperty:
+	//	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
+	public InfoPropertyElements getInfoPropertyAccess() {
+		return pInfoProperty;
+	}
+	
+	public ParserRule getInfoPropertyRule() {
+		return getInfoPropertyAccess().getRule();
+	}
+	
+	//InfoEntity:
+	//	entries+=InfoEntry ':' infoValue=STRING;
+	public InfoEntityElements getInfoEntityAccess() {
+		return pInfoEntity;
+	}
+	
+	public ParserRule getInfoEntityRule() {
+		return getInfoEntityAccess().getRule();
+	}
+	
+	//InfoEntry:
+	//	'mod' | 'freq' | 'prio';
+	public InfoEntryElements getInfoEntryAccess() {
+		return pInfoEntry;
+	}
+	
+	public ParserRule getInfoEntryRule() {
+		return getInfoEntryAccess().getRule();
+	}
+	
 	//Site:
-	//	'@' name=ID |
-	//	'@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')';
+	//	'@' name=ID;
 	public SiteElements getSiteAccess() {
 		return pSite;
 	}
@@ -438,18 +734,8 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getSiteAccess().getRule();
 	}
 	
-	//MappedProperty:
-	//	'sites' | 'map';
-	public MappedPropertyElements getMappedPropertyAccess() {
-		return pMappedProperty;
-	}
-	
-	public ParserRule getMappedPropertyRule() {
-		return getMappedPropertyAccess().getRule();
-	}
-	
 	//LinkedProperty:
-	//	name=ID '->' inner_name=ID;
+	//	name=Site ('->' site+=Site)*;
 	public LinkedPropertyElements getLinkedPropertyAccess() {
 		return pLinkedProperty;
 	}

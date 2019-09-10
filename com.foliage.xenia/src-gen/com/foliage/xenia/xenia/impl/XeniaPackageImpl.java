@@ -4,10 +4,15 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.Entity;
+import com.foliage.xenia.xenia.Header;
+import com.foliage.xenia.xenia.InfoEntity;
+import com.foliage.xenia.xenia.InfoProperty;
 import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
 import com.foliage.xenia.xenia.Site;
+import com.foliage.xenia.xenia.SiteWithModal;
+import com.foliage.xenia.xenia.SuperSite;
 import com.foliage.xenia.xenia.XeniaFactory;
 import com.foliage.xenia.xenia.XeniaPackage;
 
@@ -38,6 +43,13 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass headerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass entityEClass = null;
 
   /**
@@ -45,7 +57,35 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass superSiteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass siteWithModalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass mappedEntityEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass infoPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass infoEntityEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -141,7 +181,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EReference getModel_Entities()
+  public EReference getModel_Headers()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -152,9 +192,53 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EReference getModel_Mapped_entities()
+  public EReference getModel_Entities()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getModel_Mapped_entities()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getHeader()
+  {
+    return headerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getHeader_AppName()
+  {
+    return (EAttribute)headerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getHeader_Sites()
+  {
+    return (EReference)headerEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -174,7 +258,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getEntity_AppName()
+  public EAttribute getEntity_Tech()
   {
     return (EAttribute)entityEClass.getEStructuralFeatures().get(0);
   }
@@ -185,9 +269,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EReference getEntity_Sites()
+  public EAttribute getEntity_Path()
   {
-    return (EReference)entityEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)entityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -218,6 +302,50 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
+  public EClass getSuperSite()
+  {
+    return superSiteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSuperSite_Name()
+  {
+    return (EAttribute)superSiteEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSiteWithModal()
+  {
+    return siteWithModalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSiteWithModal_Sites()
+  {
+    return (EReference)siteWithModalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getMappedEntity()
   {
     return mappedEntityEClass;
@@ -229,9 +357,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getMappedEntity_Prop()
+  public EReference getMappedEntity_InfoProps()
   {
-    return (EAttribute)mappedEntityEClass.getEStructuralFeatures().get(0);
+    return (EReference)mappedEntityEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -240,9 +368,75 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EReference getMappedEntity_Sites()
+  public EReference getMappedEntity_LinkedProps()
   {
     return (EReference)mappedEntityEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInfoProperty()
+  {
+    return infoPropertyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInfoProperty_Page()
+  {
+    return (EReference)infoPropertyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInfoProperty_Entities()
+  {
+    return (EReference)infoPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInfoEntity()
+  {
+    return infoEntityEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInfoEntity_Entries()
+  {
+    return (EAttribute)infoEntityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getInfoEntity_InfoValue()
+  {
+    return (EAttribute)infoEntityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -262,28 +456,6 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getSite_Name()
-  {
-    return (EAttribute)siteEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getSite_Sites()
-  {
-    return (EReference)siteEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getLinkedProperty()
   {
     return linkedPropertyEClass;
@@ -295,9 +467,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getLinkedProperty_Name()
+  public EReference getLinkedProperty_Name()
   {
-    return (EAttribute)linkedPropertyEClass.getEStructuralFeatures().get(0);
+    return (EReference)linkedPropertyEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -306,9 +478,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getLinkedProperty_Inner_name()
+  public EReference getLinkedProperty_Site()
   {
-    return (EAttribute)linkedPropertyEClass.getEStructuralFeatures().get(1);
+    return (EReference)linkedPropertyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -343,26 +515,43 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
+    createEReference(modelEClass, MODEL__HEADERS);
     createEReference(modelEClass, MODEL__ENTITIES);
     createEReference(modelEClass, MODEL__MAPPED_ENTITIES);
 
+    headerEClass = createEClass(HEADER);
+    createEAttribute(headerEClass, HEADER__APP_NAME);
+    createEReference(headerEClass, HEADER__SITES);
+
     entityEClass = createEClass(ENTITY);
-    createEAttribute(entityEClass, ENTITY__APP_NAME);
-    createEReference(entityEClass, ENTITY__SITES);
+    createEAttribute(entityEClass, ENTITY__TECH);
+    createEAttribute(entityEClass, ENTITY__PATH);
     createEAttribute(entityEClass, ENTITY__PROP);
     createEAttribute(entityEClass, ENTITY__NAME);
 
+    superSiteEClass = createEClass(SUPER_SITE);
+    createEAttribute(superSiteEClass, SUPER_SITE__NAME);
+
+    siteWithModalEClass = createEClass(SITE_WITH_MODAL);
+    createEReference(siteWithModalEClass, SITE_WITH_MODAL__SITES);
+
     mappedEntityEClass = createEClass(MAPPED_ENTITY);
-    createEAttribute(mappedEntityEClass, MAPPED_ENTITY__PROP);
-    createEReference(mappedEntityEClass, MAPPED_ENTITY__SITES);
+    createEReference(mappedEntityEClass, MAPPED_ENTITY__INFO_PROPS);
+    createEReference(mappedEntityEClass, MAPPED_ENTITY__LINKED_PROPS);
+
+    infoPropertyEClass = createEClass(INFO_PROPERTY);
+    createEReference(infoPropertyEClass, INFO_PROPERTY__PAGE);
+    createEReference(infoPropertyEClass, INFO_PROPERTY__ENTITIES);
+
+    infoEntityEClass = createEClass(INFO_ENTITY);
+    createEAttribute(infoEntityEClass, INFO_ENTITY__ENTRIES);
+    createEAttribute(infoEntityEClass, INFO_ENTITY__INFO_VALUE);
 
     siteEClass = createEClass(SITE);
-    createEAttribute(siteEClass, SITE__NAME);
-    createEReference(siteEClass, SITE__SITES);
 
     linkedPropertyEClass = createEClass(LINKED_PROPERTY);
-    createEAttribute(linkedPropertyEClass, LINKED_PROPERTY__NAME);
-    createEAttribute(linkedPropertyEClass, LINKED_PROPERTY__INNER_NAME);
+    createEReference(linkedPropertyEClass, LINKED_PROPERTY__NAME);
+    createEReference(linkedPropertyEClass, LINKED_PROPERTY__SITE);
   }
 
   /**
@@ -394,29 +583,48 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    siteWithModalEClass.getESuperTypes().add(this.getSuperSite());
+    siteEClass.getESuperTypes().add(this.getSuperSite());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getModel_Headers(), this.getHeader(), null, "headers", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Entities(), this.getEntity(), null, "entities", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Mapped_entities(), this.getMappedEntity(), null, "mapped_entities", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(headerEClass, Header.class, "Header", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getHeader_AppName(), ecorePackage.getEString(), "appName", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getHeader_Sites(), this.getSuperSite(), null, "sites", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEntity_AppName(), ecorePackage.getEString(), "appName", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_Sites(), this.getSite(), null, "sites", null, 0, -1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntity_Tech(), ecorePackage.getEString(), "tech", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntity_Path(), ecorePackage.getEString(), "path", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntity_Prop(), ecorePackage.getEString(), "prop", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(superSiteEClass, SuperSite.class, "SuperSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSuperSite_Name(), ecorePackage.getEString(), "name", null, 0, 1, SuperSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(siteWithModalEClass, SiteWithModal.class, "SiteWithModal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSiteWithModal_Sites(), this.getSuperSite(), null, "sites", null, 0, -1, SiteWithModal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(mappedEntityEClass, MappedEntity.class, "MappedEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMappedEntity_Prop(), ecorePackage.getEString(), "prop", null, 0, 1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMappedEntity_Sites(), this.getLinkedProperty(), null, "sites", null, 0, -1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMappedEntity_InfoProps(), this.getInfoProperty(), null, "infoProps", null, 0, -1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMappedEntity_LinkedProps(), this.getLinkedProperty(), null, "linkedProps", null, 0, -1, MappedEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(infoPropertyEClass, InfoProperty.class, "InfoProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInfoProperty_Page(), this.getSite(), null, "page", null, 0, 1, InfoProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInfoProperty_Entities(), this.getInfoEntity(), null, "entities", null, 0, -1, InfoProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(infoEntityEClass, InfoEntity.class, "InfoEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInfoEntity_Entries(), ecorePackage.getEString(), "entries", null, 0, -1, InfoEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfoEntity_InfoValue(), ecorePackage.getEString(), "infoValue", null, 0, 1, InfoEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSite_Name(), ecorePackage.getEString(), "name", null, 0, 1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSite_Sites(), this.getSite(), null, "sites", null, 0, -1, Site.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(linkedPropertyEClass, LinkedProperty.class, "LinkedProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLinkedProperty_Name(), ecorePackage.getEString(), "name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLinkedProperty_Inner_name(), ecorePackage.getEString(), "inner_name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkedProperty_Name(), this.getSite(), null, "name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkedProperty_Site(), this.getSite(), null, "site", null, 0, -1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

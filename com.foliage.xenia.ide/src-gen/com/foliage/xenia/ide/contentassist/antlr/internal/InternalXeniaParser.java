@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'with'", "'sitemap'", "'sites'", "'map'", "'app'", "'has'", "'pages'", "'['", "']'", "','", "':'", "'@'", "'modal'", "'('", "')'", "'->'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'test'", "'mod'", "'freq'", "'prio'", "'app'", "'has'", "'pages'", "'['", "']'", "','", "'with'", "':'", "'xml'", "'@'", "'modal'", "'('", "')'", "'info'", "'map'", "'->'"
     };
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -36,11 +36,15 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__26=26;
-    public static final int RULE_INT=5;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
@@ -161,12 +165,89 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleModel"
 
 
+    // $ANTLR start "entryRuleHeader"
+    // InternalXenia.g:78:1: entryRuleHeader : ruleHeader EOF ;
+    public final void entryRuleHeader() throws RecognitionException {
+        try {
+            // InternalXenia.g:79:1: ( ruleHeader EOF )
+            // InternalXenia.g:80:1: ruleHeader EOF
+            {
+             before(grammarAccess.getHeaderRule()); 
+            pushFollow(FOLLOW_1);
+            ruleHeader();
+
+            state._fsp--;
+
+             after(grammarAccess.getHeaderRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleHeader"
+
+
+    // $ANTLR start "ruleHeader"
+    // InternalXenia.g:87:1: ruleHeader : ( ( rule__Header__Group__0 ) ) ;
+    public final void ruleHeader() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:91:2: ( ( ( rule__Header__Group__0 ) ) )
+            // InternalXenia.g:92:2: ( ( rule__Header__Group__0 ) )
+            {
+            // InternalXenia.g:92:2: ( ( rule__Header__Group__0 ) )
+            // InternalXenia.g:93:3: ( rule__Header__Group__0 )
+            {
+             before(grammarAccess.getHeaderAccess().getGroup()); 
+            // InternalXenia.g:94:3: ( rule__Header__Group__0 )
+            // InternalXenia.g:94:4: rule__Header__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getHeaderAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleHeader"
+
+
     // $ANTLR start "entryRuleEntity"
-    // InternalXenia.g:78:1: entryRuleEntity : ruleEntity EOF ;
+    // InternalXenia.g:103:1: entryRuleEntity : ruleEntity EOF ;
     public final void entryRuleEntity() throws RecognitionException {
         try {
-            // InternalXenia.g:79:1: ( ruleEntity EOF )
-            // InternalXenia.g:80:1: ruleEntity EOF
+            // InternalXenia.g:104:1: ( ruleEntity EOF )
+            // InternalXenia.g:105:1: ruleEntity EOF
             {
              before(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -192,21 +273,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalXenia.g:87:1: ruleEntity : ( ( rule__Entity__Alternatives ) ) ;
+    // InternalXenia.g:112:1: ruleEntity : ( ( rule__Entity__Alternatives ) ) ;
     public final void ruleEntity() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:91:2: ( ( ( rule__Entity__Alternatives ) ) )
-            // InternalXenia.g:92:2: ( ( rule__Entity__Alternatives ) )
+            // InternalXenia.g:116:2: ( ( ( rule__Entity__Alternatives ) ) )
+            // InternalXenia.g:117:2: ( ( rule__Entity__Alternatives ) )
             {
-            // InternalXenia.g:92:2: ( ( rule__Entity__Alternatives ) )
-            // InternalXenia.g:93:3: ( rule__Entity__Alternatives )
+            // InternalXenia.g:117:2: ( ( rule__Entity__Alternatives ) )
+            // InternalXenia.g:118:3: ( rule__Entity__Alternatives )
             {
              before(grammarAccess.getEntityAccess().getAlternatives()); 
-            // InternalXenia.g:94:3: ( rule__Entity__Alternatives )
-            // InternalXenia.g:94:4: rule__Entity__Alternatives
+            // InternalXenia.g:119:3: ( rule__Entity__Alternatives )
+            // InternalXenia.g:119:4: rule__Entity__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Alternatives();
@@ -238,12 +319,166 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleEntity"
 
 
+    // $ANTLR start "entryRuleSuperSite"
+    // InternalXenia.g:128:1: entryRuleSuperSite : ruleSuperSite EOF ;
+    public final void entryRuleSuperSite() throws RecognitionException {
+        try {
+            // InternalXenia.g:129:1: ( ruleSuperSite EOF )
+            // InternalXenia.g:130:1: ruleSuperSite EOF
+            {
+             before(grammarAccess.getSuperSiteRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSuperSite();
+
+            state._fsp--;
+
+             after(grammarAccess.getSuperSiteRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSuperSite"
+
+
+    // $ANTLR start "ruleSuperSite"
+    // InternalXenia.g:137:1: ruleSuperSite : ( ( rule__SuperSite__Alternatives ) ) ;
+    public final void ruleSuperSite() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:141:2: ( ( ( rule__SuperSite__Alternatives ) ) )
+            // InternalXenia.g:142:2: ( ( rule__SuperSite__Alternatives ) )
+            {
+            // InternalXenia.g:142:2: ( ( rule__SuperSite__Alternatives ) )
+            // InternalXenia.g:143:3: ( rule__SuperSite__Alternatives )
+            {
+             before(grammarAccess.getSuperSiteAccess().getAlternatives()); 
+            // InternalXenia.g:144:3: ( rule__SuperSite__Alternatives )
+            // InternalXenia.g:144:4: rule__SuperSite__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__SuperSite__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSuperSiteAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSuperSite"
+
+
+    // $ANTLR start "entryRuleSiteWithModal"
+    // InternalXenia.g:153:1: entryRuleSiteWithModal : ruleSiteWithModal EOF ;
+    public final void entryRuleSiteWithModal() throws RecognitionException {
+        try {
+            // InternalXenia.g:154:1: ( ruleSiteWithModal EOF )
+            // InternalXenia.g:155:1: ruleSiteWithModal EOF
+            {
+             before(grammarAccess.getSiteWithModalRule()); 
+            pushFollow(FOLLOW_1);
+            ruleSiteWithModal();
+
+            state._fsp--;
+
+             after(grammarAccess.getSiteWithModalRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleSiteWithModal"
+
+
+    // $ANTLR start "ruleSiteWithModal"
+    // InternalXenia.g:162:1: ruleSiteWithModal : ( ( rule__SiteWithModal__Group__0 ) ) ;
+    public final void ruleSiteWithModal() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:166:2: ( ( ( rule__SiteWithModal__Group__0 ) ) )
+            // InternalXenia.g:167:2: ( ( rule__SiteWithModal__Group__0 ) )
+            {
+            // InternalXenia.g:167:2: ( ( rule__SiteWithModal__Group__0 ) )
+            // InternalXenia.g:168:3: ( rule__SiteWithModal__Group__0 )
+            {
+             before(grammarAccess.getSiteWithModalAccess().getGroup()); 
+            // InternalXenia.g:169:3: ( rule__SiteWithModal__Group__0 )
+            // InternalXenia.g:169:4: rule__SiteWithModal__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSiteWithModalAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleSiteWithModal"
+
+
     // $ANTLR start "entryRuleProperty"
-    // InternalXenia.g:103:1: entryRuleProperty : ruleProperty EOF ;
+    // InternalXenia.g:178:1: entryRuleProperty : ruleProperty EOF ;
     public final void entryRuleProperty() throws RecognitionException {
         try {
-            // InternalXenia.g:104:1: ( ruleProperty EOF )
-            // InternalXenia.g:105:1: ruleProperty EOF
+            // InternalXenia.g:179:1: ( ruleProperty EOF )
+            // InternalXenia.g:180:1: ruleProperty EOF
             {
              before(grammarAccess.getPropertyRule()); 
             pushFollow(FOLLOW_1);
@@ -269,31 +504,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleProperty"
-    // InternalXenia.g:112:1: ruleProperty : ( ( rule__Property__Alternatives ) ) ;
+    // InternalXenia.g:187:1: ruleProperty : ( 'test' ) ;
     public final void ruleProperty() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:116:2: ( ( ( rule__Property__Alternatives ) ) )
-            // InternalXenia.g:117:2: ( ( rule__Property__Alternatives ) )
+            // InternalXenia.g:191:2: ( ( 'test' ) )
+            // InternalXenia.g:192:2: ( 'test' )
             {
-            // InternalXenia.g:117:2: ( ( rule__Property__Alternatives ) )
-            // InternalXenia.g:118:3: ( rule__Property__Alternatives )
+            // InternalXenia.g:192:2: ( 'test' )
+            // InternalXenia.g:193:3: 'test'
             {
-             before(grammarAccess.getPropertyAccess().getAlternatives()); 
-            // InternalXenia.g:119:3: ( rule__Property__Alternatives )
-            // InternalXenia.g:119:4: rule__Property__Alternatives
-            {
-            pushFollow(FOLLOW_2);
-            rule__Property__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getPropertyAccess().getAlternatives()); 
+             before(grammarAccess.getPropertyAccess().getTestKeyword()); 
+            match(input,11,FOLLOW_2); 
+             after(grammarAccess.getPropertyAccess().getTestKeyword()); 
 
             }
 
@@ -316,11 +541,11 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleMappedEntity"
-    // InternalXenia.g:128:1: entryRuleMappedEntity : ruleMappedEntity EOF ;
+    // InternalXenia.g:203:1: entryRuleMappedEntity : ruleMappedEntity EOF ;
     public final void entryRuleMappedEntity() throws RecognitionException {
         try {
-            // InternalXenia.g:129:1: ( ruleMappedEntity EOF )
-            // InternalXenia.g:130:1: ruleMappedEntity EOF
+            // InternalXenia.g:204:1: ( ruleMappedEntity EOF )
+            // InternalXenia.g:205:1: ruleMappedEntity EOF
             {
              before(grammarAccess.getMappedEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -346,31 +571,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleMappedEntity"
-    // InternalXenia.g:137:1: ruleMappedEntity : ( ( rule__MappedEntity__Group__0 ) ) ;
+    // InternalXenia.g:212:1: ruleMappedEntity : ( ( rule__MappedEntity__Alternatives ) ) ;
     public final void ruleMappedEntity() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:141:2: ( ( ( rule__MappedEntity__Group__0 ) ) )
-            // InternalXenia.g:142:2: ( ( rule__MappedEntity__Group__0 ) )
+            // InternalXenia.g:216:2: ( ( ( rule__MappedEntity__Alternatives ) ) )
+            // InternalXenia.g:217:2: ( ( rule__MappedEntity__Alternatives ) )
             {
-            // InternalXenia.g:142:2: ( ( rule__MappedEntity__Group__0 ) )
-            // InternalXenia.g:143:3: ( rule__MappedEntity__Group__0 )
+            // InternalXenia.g:217:2: ( ( rule__MappedEntity__Alternatives ) )
+            // InternalXenia.g:218:3: ( rule__MappedEntity__Alternatives )
             {
-             before(grammarAccess.getMappedEntityAccess().getGroup()); 
-            // InternalXenia.g:144:3: ( rule__MappedEntity__Group__0 )
-            // InternalXenia.g:144:4: rule__MappedEntity__Group__0
+             before(grammarAccess.getMappedEntityAccess().getAlternatives()); 
+            // InternalXenia.g:219:3: ( rule__MappedEntity__Alternatives )
+            // InternalXenia.g:219:4: rule__MappedEntity__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__MappedEntity__Group__0();
+            rule__MappedEntity__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMappedEntityAccess().getGroup()); 
+             after(grammarAccess.getMappedEntityAccess().getAlternatives()); 
 
             }
 
@@ -392,12 +617,243 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleMappedEntity"
 
 
+    // $ANTLR start "entryRuleInfoProperty"
+    // InternalXenia.g:228:1: entryRuleInfoProperty : ruleInfoProperty EOF ;
+    public final void entryRuleInfoProperty() throws RecognitionException {
+        try {
+            // InternalXenia.g:229:1: ( ruleInfoProperty EOF )
+            // InternalXenia.g:230:1: ruleInfoProperty EOF
+            {
+             before(grammarAccess.getInfoPropertyRule()); 
+            pushFollow(FOLLOW_1);
+            ruleInfoProperty();
+
+            state._fsp--;
+
+             after(grammarAccess.getInfoPropertyRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleInfoProperty"
+
+
+    // $ANTLR start "ruleInfoProperty"
+    // InternalXenia.g:237:1: ruleInfoProperty : ( ( rule__InfoProperty__Group__0 ) ) ;
+    public final void ruleInfoProperty() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:241:2: ( ( ( rule__InfoProperty__Group__0 ) ) )
+            // InternalXenia.g:242:2: ( ( rule__InfoProperty__Group__0 ) )
+            {
+            // InternalXenia.g:242:2: ( ( rule__InfoProperty__Group__0 ) )
+            // InternalXenia.g:243:3: ( rule__InfoProperty__Group__0 )
+            {
+             before(grammarAccess.getInfoPropertyAccess().getGroup()); 
+            // InternalXenia.g:244:3: ( rule__InfoProperty__Group__0 )
+            // InternalXenia.g:244:4: rule__InfoProperty__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoPropertyAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleInfoProperty"
+
+
+    // $ANTLR start "entryRuleInfoEntity"
+    // InternalXenia.g:253:1: entryRuleInfoEntity : ruleInfoEntity EOF ;
+    public final void entryRuleInfoEntity() throws RecognitionException {
+        try {
+            // InternalXenia.g:254:1: ( ruleInfoEntity EOF )
+            // InternalXenia.g:255:1: ruleInfoEntity EOF
+            {
+             before(grammarAccess.getInfoEntityRule()); 
+            pushFollow(FOLLOW_1);
+            ruleInfoEntity();
+
+            state._fsp--;
+
+             after(grammarAccess.getInfoEntityRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleInfoEntity"
+
+
+    // $ANTLR start "ruleInfoEntity"
+    // InternalXenia.g:262:1: ruleInfoEntity : ( ( rule__InfoEntity__Group__0 ) ) ;
+    public final void ruleInfoEntity() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:266:2: ( ( ( rule__InfoEntity__Group__0 ) ) )
+            // InternalXenia.g:267:2: ( ( rule__InfoEntity__Group__0 ) )
+            {
+            // InternalXenia.g:267:2: ( ( rule__InfoEntity__Group__0 ) )
+            // InternalXenia.g:268:3: ( rule__InfoEntity__Group__0 )
+            {
+             before(grammarAccess.getInfoEntityAccess().getGroup()); 
+            // InternalXenia.g:269:3: ( rule__InfoEntity__Group__0 )
+            // InternalXenia.g:269:4: rule__InfoEntity__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoEntityAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleInfoEntity"
+
+
+    // $ANTLR start "entryRuleInfoEntry"
+    // InternalXenia.g:278:1: entryRuleInfoEntry : ruleInfoEntry EOF ;
+    public final void entryRuleInfoEntry() throws RecognitionException {
+        try {
+            // InternalXenia.g:279:1: ( ruleInfoEntry EOF )
+            // InternalXenia.g:280:1: ruleInfoEntry EOF
+            {
+             before(grammarAccess.getInfoEntryRule()); 
+            pushFollow(FOLLOW_1);
+            ruleInfoEntry();
+
+            state._fsp--;
+
+             after(grammarAccess.getInfoEntryRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleInfoEntry"
+
+
+    // $ANTLR start "ruleInfoEntry"
+    // InternalXenia.g:287:1: ruleInfoEntry : ( ( rule__InfoEntry__Alternatives ) ) ;
+    public final void ruleInfoEntry() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:291:2: ( ( ( rule__InfoEntry__Alternatives ) ) )
+            // InternalXenia.g:292:2: ( ( rule__InfoEntry__Alternatives ) )
+            {
+            // InternalXenia.g:292:2: ( ( rule__InfoEntry__Alternatives ) )
+            // InternalXenia.g:293:3: ( rule__InfoEntry__Alternatives )
+            {
+             before(grammarAccess.getInfoEntryAccess().getAlternatives()); 
+            // InternalXenia.g:294:3: ( rule__InfoEntry__Alternatives )
+            // InternalXenia.g:294:4: rule__InfoEntry__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoEntry__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoEntryAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleInfoEntry"
+
+
     // $ANTLR start "entryRuleSite"
-    // InternalXenia.g:153:1: entryRuleSite : ruleSite EOF ;
+    // InternalXenia.g:303:1: entryRuleSite : ruleSite EOF ;
     public final void entryRuleSite() throws RecognitionException {
         try {
-            // InternalXenia.g:154:1: ( ruleSite EOF )
-            // InternalXenia.g:155:1: ruleSite EOF
+            // InternalXenia.g:304:1: ( ruleSite EOF )
+            // InternalXenia.g:305:1: ruleSite EOF
             {
              before(grammarAccess.getSiteRule()); 
             pushFollow(FOLLOW_1);
@@ -423,31 +879,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleSite"
-    // InternalXenia.g:162:1: ruleSite : ( ( rule__Site__Alternatives ) ) ;
+    // InternalXenia.g:312:1: ruleSite : ( ( rule__Site__Group__0 ) ) ;
     public final void ruleSite() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:166:2: ( ( ( rule__Site__Alternatives ) ) )
-            // InternalXenia.g:167:2: ( ( rule__Site__Alternatives ) )
+            // InternalXenia.g:316:2: ( ( ( rule__Site__Group__0 ) ) )
+            // InternalXenia.g:317:2: ( ( rule__Site__Group__0 ) )
             {
-            // InternalXenia.g:167:2: ( ( rule__Site__Alternatives ) )
-            // InternalXenia.g:168:3: ( rule__Site__Alternatives )
+            // InternalXenia.g:317:2: ( ( rule__Site__Group__0 ) )
+            // InternalXenia.g:318:3: ( rule__Site__Group__0 )
             {
-             before(grammarAccess.getSiteAccess().getAlternatives()); 
-            // InternalXenia.g:169:3: ( rule__Site__Alternatives )
-            // InternalXenia.g:169:4: rule__Site__Alternatives
+             before(grammarAccess.getSiteAccess().getGroup()); 
+            // InternalXenia.g:319:3: ( rule__Site__Group__0 )
+            // InternalXenia.g:319:4: rule__Site__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Site__Alternatives();
+            rule__Site__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSiteAccess().getAlternatives()); 
+             after(grammarAccess.getSiteAccess().getGroup()); 
 
             }
 
@@ -469,89 +925,12 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleSite"
 
 
-    // $ANTLR start "entryRuleMappedProperty"
-    // InternalXenia.g:178:1: entryRuleMappedProperty : ruleMappedProperty EOF ;
-    public final void entryRuleMappedProperty() throws RecognitionException {
-        try {
-            // InternalXenia.g:179:1: ( ruleMappedProperty EOF )
-            // InternalXenia.g:180:1: ruleMappedProperty EOF
-            {
-             before(grammarAccess.getMappedPropertyRule()); 
-            pushFollow(FOLLOW_1);
-            ruleMappedProperty();
-
-            state._fsp--;
-
-             after(grammarAccess.getMappedPropertyRule()); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleMappedProperty"
-
-
-    // $ANTLR start "ruleMappedProperty"
-    // InternalXenia.g:187:1: ruleMappedProperty : ( ( rule__MappedProperty__Alternatives ) ) ;
-    public final void ruleMappedProperty() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:191:2: ( ( ( rule__MappedProperty__Alternatives ) ) )
-            // InternalXenia.g:192:2: ( ( rule__MappedProperty__Alternatives ) )
-            {
-            // InternalXenia.g:192:2: ( ( rule__MappedProperty__Alternatives ) )
-            // InternalXenia.g:193:3: ( rule__MappedProperty__Alternatives )
-            {
-             before(grammarAccess.getMappedPropertyAccess().getAlternatives()); 
-            // InternalXenia.g:194:3: ( rule__MappedProperty__Alternatives )
-            // InternalXenia.g:194:4: rule__MappedProperty__Alternatives
-            {
-            pushFollow(FOLLOW_2);
-            rule__MappedProperty__Alternatives();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMappedPropertyAccess().getAlternatives()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleMappedProperty"
-
-
     // $ANTLR start "entryRuleLinkedProperty"
-    // InternalXenia.g:203:1: entryRuleLinkedProperty : ruleLinkedProperty EOF ;
+    // InternalXenia.g:328:1: entryRuleLinkedProperty : ruleLinkedProperty EOF ;
     public final void entryRuleLinkedProperty() throws RecognitionException {
         try {
-            // InternalXenia.g:204:1: ( ruleLinkedProperty EOF )
-            // InternalXenia.g:205:1: ruleLinkedProperty EOF
+            // InternalXenia.g:329:1: ( ruleLinkedProperty EOF )
+            // InternalXenia.g:330:1: ruleLinkedProperty EOF
             {
              before(grammarAccess.getLinkedPropertyRule()); 
             pushFollow(FOLLOW_1);
@@ -577,21 +956,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleLinkedProperty"
-    // InternalXenia.g:212:1: ruleLinkedProperty : ( ( rule__LinkedProperty__Group__0 ) ) ;
+    // InternalXenia.g:337:1: ruleLinkedProperty : ( ( rule__LinkedProperty__Group__0 ) ) ;
     public final void ruleLinkedProperty() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:216:2: ( ( ( rule__LinkedProperty__Group__0 ) ) )
-            // InternalXenia.g:217:2: ( ( rule__LinkedProperty__Group__0 ) )
+            // InternalXenia.g:341:2: ( ( ( rule__LinkedProperty__Group__0 ) ) )
+            // InternalXenia.g:342:2: ( ( rule__LinkedProperty__Group__0 ) )
             {
-            // InternalXenia.g:217:2: ( ( rule__LinkedProperty__Group__0 ) )
-            // InternalXenia.g:218:3: ( rule__LinkedProperty__Group__0 )
+            // InternalXenia.g:342:2: ( ( rule__LinkedProperty__Group__0 ) )
+            // InternalXenia.g:343:3: ( rule__LinkedProperty__Group__0 )
             {
              before(grammarAccess.getLinkedPropertyAccess().getGroup()); 
-            // InternalXenia.g:219:3: ( rule__LinkedProperty__Group__0 )
-            // InternalXenia.g:219:4: rule__LinkedProperty__Group__0
+            // InternalXenia.g:344:3: ( rule__LinkedProperty__Group__0 )
+            // InternalXenia.g:344:4: rule__LinkedProperty__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__LinkedProperty__Group__0();
@@ -624,38 +1003,47 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Alternatives"
-    // InternalXenia.g:227:1: rule__Entity__Alternatives : ( ( ( rule__Entity__Group_0__0 ) ) | ( ( rule__Entity__Group_1__0 ) ) );
+    // InternalXenia.g:352:1: rule__Entity__Alternatives : ( ( ( rule__Entity__Group_0__0 ) ) | ( ( rule__Entity__Group_1__0 ) ) | ( ( rule__Entity__Group_2__0 ) ) );
     public final void rule__Entity__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:231:1: ( ( ( rule__Entity__Group_0__0 ) ) | ( ( rule__Entity__Group_1__0 ) ) )
-            int alt1=2;
-            int LA1_0 = input.LA(1);
-
-            if ( (LA1_0==15) ) {
+            // InternalXenia.g:356:1: ( ( ( rule__Entity__Group_0__0 ) ) | ( ( rule__Entity__Group_1__0 ) ) | ( ( rule__Entity__Group_2__0 ) ) )
+            int alt1=3;
+            switch ( input.LA(1) ) {
+            case 21:
+                {
                 alt1=1;
-            }
-            else if ( ((LA1_0>=11 && LA1_0<=12)) ) {
+                }
+                break;
+            case 23:
+                {
                 alt1=2;
-            }
-            else {
+                }
+                break;
+            case 11:
+                {
+                alt1=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
+
             switch (alt1) {
                 case 1 :
-                    // InternalXenia.g:232:2: ( ( rule__Entity__Group_0__0 ) )
+                    // InternalXenia.g:357:2: ( ( rule__Entity__Group_0__0 ) )
                     {
-                    // InternalXenia.g:232:2: ( ( rule__Entity__Group_0__0 ) )
-                    // InternalXenia.g:233:3: ( rule__Entity__Group_0__0 )
+                    // InternalXenia.g:357:2: ( ( rule__Entity__Group_0__0 ) )
+                    // InternalXenia.g:358:3: ( rule__Entity__Group_0__0 )
                     {
                      before(grammarAccess.getEntityAccess().getGroup_0()); 
-                    // InternalXenia.g:234:3: ( rule__Entity__Group_0__0 )
-                    // InternalXenia.g:234:4: rule__Entity__Group_0__0
+                    // InternalXenia.g:359:3: ( rule__Entity__Group_0__0 )
+                    // InternalXenia.g:359:4: rule__Entity__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Entity__Group_0__0();
@@ -673,14 +1061,14 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:238:2: ( ( rule__Entity__Group_1__0 ) )
+                    // InternalXenia.g:363:2: ( ( rule__Entity__Group_1__0 ) )
                     {
-                    // InternalXenia.g:238:2: ( ( rule__Entity__Group_1__0 ) )
-                    // InternalXenia.g:239:3: ( rule__Entity__Group_1__0 )
+                    // InternalXenia.g:363:2: ( ( rule__Entity__Group_1__0 ) )
+                    // InternalXenia.g:364:3: ( rule__Entity__Group_1__0 )
                     {
                      before(grammarAccess.getEntityAccess().getGroup_1()); 
-                    // InternalXenia.g:240:3: ( rule__Entity__Group_1__0 )
-                    // InternalXenia.g:240:4: rule__Entity__Group_1__0
+                    // InternalXenia.g:365:3: ( rule__Entity__Group_1__0 )
+                    // InternalXenia.g:365:4: rule__Entity__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Entity__Group_1__0();
@@ -691,6 +1079,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                     }
 
                      after(grammarAccess.getEntityAccess().getGroup_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalXenia.g:369:2: ( ( rule__Entity__Group_2__0 ) )
+                    {
+                    // InternalXenia.g:369:2: ( ( rule__Entity__Group_2__0 ) )
+                    // InternalXenia.g:370:3: ( rule__Entity__Group_2__0 )
+                    {
+                     before(grammarAccess.getEntityAccess().getGroup_2()); 
+                    // InternalXenia.g:371:3: ( rule__Entity__Group_2__0 )
+                    // InternalXenia.g:371:4: rule__Entity__Group_2__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Entity__Group_2__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getEntityAccess().getGroup_2()); 
 
                     }
 
@@ -714,22 +1127,42 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Entity__Alternatives"
 
 
-    // $ANTLR start "rule__Property__Alternatives"
-    // InternalXenia.g:248:1: rule__Property__Alternatives : ( ( 'with' ) | ( 'sitemap' ) );
-    public final void rule__Property__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__SuperSite__Alternatives"
+    // InternalXenia.g:379:1: rule__SuperSite__Alternatives : ( ( ruleSite ) | ( ruleSiteWithModal ) );
+    public final void rule__SuperSite__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:252:1: ( ( 'with' ) | ( 'sitemap' ) )
+            // InternalXenia.g:383:1: ( ( ruleSite ) | ( ruleSiteWithModal ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==11) ) {
-                alt2=1;
-            }
-            else if ( (LA2_0==12) ) {
-                alt2=2;
+            if ( (LA2_0==24) ) {
+                int LA2_1 = input.LA(2);
+
+                if ( (LA2_1==RULE_ID) ) {
+                    int LA2_2 = input.LA(3);
+
+                    if ( (LA2_2==EOF||(LA2_2>=19 && LA2_2<=20)||LA2_2==27) ) {
+                        alt2=1;
+                    }
+                    else if ( (LA2_2==21) ) {
+                        alt2=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 2, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 2, 1, input);
+
+                    throw nvae;
+                }
             }
             else {
                 NoViableAltException nvae =
@@ -739,14 +1172,18 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalXenia.g:253:2: ( 'with' )
+                    // InternalXenia.g:384:2: ( ruleSite )
                     {
-                    // InternalXenia.g:253:2: ( 'with' )
-                    // InternalXenia.g:254:3: 'with'
+                    // InternalXenia.g:384:2: ( ruleSite )
+                    // InternalXenia.g:385:3: ruleSite
                     {
-                     before(grammarAccess.getPropertyAccess().getWithKeyword_0()); 
-                    match(input,11,FOLLOW_2); 
-                     after(grammarAccess.getPropertyAccess().getWithKeyword_0()); 
+                     before(grammarAccess.getSuperSiteAccess().getSiteParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleSite();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getSuperSiteAccess().getSiteParserRuleCall_0()); 
 
                     }
 
@@ -754,14 +1191,18 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:259:2: ( 'sitemap' )
+                    // InternalXenia.g:390:2: ( ruleSiteWithModal )
                     {
-                    // InternalXenia.g:259:2: ( 'sitemap' )
-                    // InternalXenia.g:260:3: 'sitemap'
+                    // InternalXenia.g:390:2: ( ruleSiteWithModal )
+                    // InternalXenia.g:391:3: ruleSiteWithModal
                     {
-                     before(grammarAccess.getPropertyAccess().getSitemapKeyword_1()); 
-                    match(input,12,FOLLOW_2); 
-                     after(grammarAccess.getPropertyAccess().getSitemapKeyword_1()); 
+                     before(grammarAccess.getSuperSiteAccess().getSiteWithModalParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleSiteWithModal();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getSuperSiteAccess().getSiteWithModalParserRuleCall_1()); 
 
                     }
 
@@ -782,45 +1223,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Property__Alternatives"
+    // $ANTLR end "rule__SuperSite__Alternatives"
 
 
-    // $ANTLR start "rule__Site__Alternatives"
-    // InternalXenia.g:269:1: rule__Site__Alternatives : ( ( ( rule__Site__Group_0__0 ) ) | ( ( rule__Site__Group_1__0 ) ) );
-    public final void rule__Site__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Alternatives"
+    // InternalXenia.g:400:1: rule__MappedEntity__Alternatives : ( ( ( rule__MappedEntity__Group_0__0 ) ) | ( ( rule__MappedEntity__Group_1__0 ) ) );
+    public final void rule__MappedEntity__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:273:1: ( ( ( rule__Site__Group_0__0 ) ) | ( ( rule__Site__Group_1__0 ) ) )
+            // InternalXenia.g:404:1: ( ( ( rule__MappedEntity__Group_0__0 ) ) | ( ( rule__MappedEntity__Group_1__0 ) ) )
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( (LA3_0==22) ) {
-                int LA3_1 = input.LA(2);
-
-                if ( (LA3_1==RULE_ID) ) {
-                    int LA3_2 = input.LA(3);
-
-                    if ( (LA3_2==11) ) {
-                        alt3=2;
-                    }
-                    else if ( (LA3_2==EOF||(LA3_2>=19 && LA3_2<=20)||LA3_2==25) ) {
-                        alt3=1;
-                    }
-                    else {
-                        NoViableAltException nvae =
-                            new NoViableAltException("", 3, 2, input);
-
-                        throw nvae;
-                    }
-                }
-                else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 3, 1, input);
-
-                    throw nvae;
-                }
+            if ( (LA3_0==28) ) {
+                alt3=1;
+            }
+            else if ( (LA3_0==29) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
@@ -830,24 +1251,24 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
             }
             switch (alt3) {
                 case 1 :
-                    // InternalXenia.g:274:2: ( ( rule__Site__Group_0__0 ) )
+                    // InternalXenia.g:405:2: ( ( rule__MappedEntity__Group_0__0 ) )
                     {
-                    // InternalXenia.g:274:2: ( ( rule__Site__Group_0__0 ) )
-                    // InternalXenia.g:275:3: ( rule__Site__Group_0__0 )
+                    // InternalXenia.g:405:2: ( ( rule__MappedEntity__Group_0__0 ) )
+                    // InternalXenia.g:406:3: ( rule__MappedEntity__Group_0__0 )
                     {
-                     before(grammarAccess.getSiteAccess().getGroup_0()); 
-                    // InternalXenia.g:276:3: ( rule__Site__Group_0__0 )
-                    // InternalXenia.g:276:4: rule__Site__Group_0__0
+                     before(grammarAccess.getMappedEntityAccess().getGroup_0()); 
+                    // InternalXenia.g:407:3: ( rule__MappedEntity__Group_0__0 )
+                    // InternalXenia.g:407:4: rule__MappedEntity__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Site__Group_0__0();
+                    rule__MappedEntity__Group_0__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getSiteAccess().getGroup_0()); 
+                     after(grammarAccess.getMappedEntityAccess().getGroup_0()); 
 
                     }
 
@@ -855,24 +1276,24 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:280:2: ( ( rule__Site__Group_1__0 ) )
+                    // InternalXenia.g:411:2: ( ( rule__MappedEntity__Group_1__0 ) )
                     {
-                    // InternalXenia.g:280:2: ( ( rule__Site__Group_1__0 ) )
-                    // InternalXenia.g:281:3: ( rule__Site__Group_1__0 )
+                    // InternalXenia.g:411:2: ( ( rule__MappedEntity__Group_1__0 ) )
+                    // InternalXenia.g:412:3: ( rule__MappedEntity__Group_1__0 )
                     {
-                     before(grammarAccess.getSiteAccess().getGroup_1()); 
-                    // InternalXenia.g:282:3: ( rule__Site__Group_1__0 )
-                    // InternalXenia.g:282:4: rule__Site__Group_1__0
+                     before(grammarAccess.getMappedEntityAccess().getGroup_1()); 
+                    // InternalXenia.g:413:3: ( rule__MappedEntity__Group_1__0 )
+                    // InternalXenia.g:413:4: rule__MappedEntity__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Site__Group_1__0();
+                    rule__MappedEntity__Group_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getSiteAccess().getGroup_1()); 
+                     after(grammarAccess.getMappedEntityAccess().getGroup_1()); 
 
                     }
 
@@ -893,42 +1314,51 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Alternatives"
+    // $ANTLR end "rule__MappedEntity__Alternatives"
 
 
-    // $ANTLR start "rule__MappedProperty__Alternatives"
-    // InternalXenia.g:290:1: rule__MappedProperty__Alternatives : ( ( 'sites' ) | ( 'map' ) );
-    public final void rule__MappedProperty__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__InfoEntry__Alternatives"
+    // InternalXenia.g:421:1: rule__InfoEntry__Alternatives : ( ( 'mod' ) | ( 'freq' ) | ( 'prio' ) );
+    public final void rule__InfoEntry__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:294:1: ( ( 'sites' ) | ( 'map' ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
-
-            if ( (LA4_0==13) ) {
+            // InternalXenia.g:425:1: ( ( 'mod' ) | ( 'freq' ) | ( 'prio' ) )
+            int alt4=3;
+            switch ( input.LA(1) ) {
+            case 12:
+                {
                 alt4=1;
-            }
-            else if ( (LA4_0==14) ) {
+                }
+                break;
+            case 13:
+                {
                 alt4=2;
-            }
-            else {
+                }
+                break;
+            case 14:
+                {
+                alt4=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 4, 0, input);
 
                 throw nvae;
             }
+
             switch (alt4) {
                 case 1 :
-                    // InternalXenia.g:295:2: ( 'sites' )
+                    // InternalXenia.g:426:2: ( 'mod' )
                     {
-                    // InternalXenia.g:295:2: ( 'sites' )
-                    // InternalXenia.g:296:3: 'sites'
+                    // InternalXenia.g:426:2: ( 'mod' )
+                    // InternalXenia.g:427:3: 'mod'
                     {
-                     before(grammarAccess.getMappedPropertyAccess().getSitesKeyword_0()); 
-                    match(input,13,FOLLOW_2); 
-                     after(grammarAccess.getMappedPropertyAccess().getSitesKeyword_0()); 
+                     before(grammarAccess.getInfoEntryAccess().getModKeyword_0()); 
+                    match(input,12,FOLLOW_2); 
+                     after(grammarAccess.getInfoEntryAccess().getModKeyword_0()); 
 
                     }
 
@@ -936,14 +1366,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:301:2: ( 'map' )
+                    // InternalXenia.g:432:2: ( 'freq' )
                     {
-                    // InternalXenia.g:301:2: ( 'map' )
-                    // InternalXenia.g:302:3: 'map'
+                    // InternalXenia.g:432:2: ( 'freq' )
+                    // InternalXenia.g:433:3: 'freq'
                     {
-                     before(grammarAccess.getMappedPropertyAccess().getMapKeyword_1()); 
+                     before(grammarAccess.getInfoEntryAccess().getFreqKeyword_1()); 
+                    match(input,13,FOLLOW_2); 
+                     after(grammarAccess.getInfoEntryAccess().getFreqKeyword_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalXenia.g:438:2: ( 'prio' )
+                    {
+                    // InternalXenia.g:438:2: ( 'prio' )
+                    // InternalXenia.g:439:3: 'prio'
+                    {
+                     before(grammarAccess.getInfoEntryAccess().getPrioKeyword_2()); 
                     match(input,14,FOLLOW_2); 
-                     after(grammarAccess.getMappedPropertyAccess().getMapKeyword_1()); 
+                     after(grammarAccess.getInfoEntryAccess().getPrioKeyword_2()); 
 
                     }
 
@@ -964,18 +1409,18 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedProperty__Alternatives"
+    // $ANTLR end "rule__InfoEntry__Alternatives"
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalXenia.g:311:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalXenia.g:448:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:315:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalXenia.g:316:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalXenia.g:452:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalXenia.g:453:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -1006,49 +1451,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalXenia.g:323:1: rule__Model__Group__0__Impl : ( ( rule__Model__EntitiesAssignment_0 )* ) ;
+    // InternalXenia.g:460:1: rule__Model__Group__0__Impl : ( ( rule__Model__HeadersAssignment_0 ) ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:327:1: ( ( ( rule__Model__EntitiesAssignment_0 )* ) )
-            // InternalXenia.g:328:1: ( ( rule__Model__EntitiesAssignment_0 )* )
+            // InternalXenia.g:464:1: ( ( ( rule__Model__HeadersAssignment_0 ) ) )
+            // InternalXenia.g:465:1: ( ( rule__Model__HeadersAssignment_0 ) )
             {
-            // InternalXenia.g:328:1: ( ( rule__Model__EntitiesAssignment_0 )* )
-            // InternalXenia.g:329:2: ( rule__Model__EntitiesAssignment_0 )*
+            // InternalXenia.g:465:1: ( ( rule__Model__HeadersAssignment_0 ) )
+            // InternalXenia.g:466:2: ( rule__Model__HeadersAssignment_0 )
             {
-             before(grammarAccess.getModelAccess().getEntitiesAssignment_0()); 
-            // InternalXenia.g:330:2: ( rule__Model__EntitiesAssignment_0 )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+             before(grammarAccess.getModelAccess().getHeadersAssignment_0()); 
+            // InternalXenia.g:467:2: ( rule__Model__HeadersAssignment_0 )
+            // InternalXenia.g:467:3: rule__Model__HeadersAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Model__HeadersAssignment_0();
 
-                if ( ((LA5_0>=11 && LA5_0<=12)||LA5_0==15) ) {
-                    alt5=1;
-                }
+            state._fsp--;
 
 
-                switch (alt5) {
-            	case 1 :
-            	    // InternalXenia.g:330:3: rule__Model__EntitiesAssignment_0
-            	    {
-            	    pushFollow(FOLLOW_4);
-            	    rule__Model__EntitiesAssignment_0();
+            }
 
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-             after(grammarAccess.getModelAccess().getEntitiesAssignment_0()); 
+             after(grammarAccess.getModelAccess().getHeadersAssignment_0()); 
 
             }
 
@@ -1071,17 +1498,22 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalXenia.g:338:1: rule__Model__Group__1 : rule__Model__Group__1__Impl ;
+    // InternalXenia.g:475:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:342:1: ( rule__Model__Group__1__Impl )
-            // InternalXenia.g:343:2: rule__Model__Group__1__Impl
+            // InternalXenia.g:479:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalXenia.g:480:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_3);
             rule__Model__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Model__Group__2();
 
             state._fsp--;
 
@@ -1104,36 +1536,36 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalXenia.g:349:1: rule__Model__Group__1__Impl : ( ( rule__Model__Mapped_entitiesAssignment_1 )* ) ;
+    // InternalXenia.g:487:1: rule__Model__Group__1__Impl : ( ( rule__Model__EntitiesAssignment_1 )* ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:353:1: ( ( ( rule__Model__Mapped_entitiesAssignment_1 )* ) )
-            // InternalXenia.g:354:1: ( ( rule__Model__Mapped_entitiesAssignment_1 )* )
+            // InternalXenia.g:491:1: ( ( ( rule__Model__EntitiesAssignment_1 )* ) )
+            // InternalXenia.g:492:1: ( ( rule__Model__EntitiesAssignment_1 )* )
             {
-            // InternalXenia.g:354:1: ( ( rule__Model__Mapped_entitiesAssignment_1 )* )
-            // InternalXenia.g:355:2: ( rule__Model__Mapped_entitiesAssignment_1 )*
+            // InternalXenia.g:492:1: ( ( rule__Model__EntitiesAssignment_1 )* )
+            // InternalXenia.g:493:2: ( rule__Model__EntitiesAssignment_1 )*
             {
-             before(grammarAccess.getModelAccess().getMapped_entitiesAssignment_1()); 
-            // InternalXenia.g:356:2: ( rule__Model__Mapped_entitiesAssignment_1 )*
-            loop6:
+             before(grammarAccess.getModelAccess().getEntitiesAssignment_1()); 
+            // InternalXenia.g:494:2: ( rule__Model__EntitiesAssignment_1 )*
+            loop5:
             do {
-                int alt6=2;
-                int LA6_0 = input.LA(1);
+                int alt5=2;
+                int LA5_0 = input.LA(1);
 
-                if ( ((LA6_0>=13 && LA6_0<=14)) ) {
-                    alt6=1;
+                if ( (LA5_0==11||LA5_0==21||LA5_0==23) ) {
+                    alt5=1;
                 }
 
 
-                switch (alt6) {
+                switch (alt5) {
             	case 1 :
-            	    // InternalXenia.g:356:3: rule__Model__Mapped_entitiesAssignment_1
+            	    // InternalXenia.g:494:3: rule__Model__EntitiesAssignment_1
             	    {
-            	    pushFollow(FOLLOW_5);
-            	    rule__Model__Mapped_entitiesAssignment_1();
+            	    pushFollow(FOLLOW_4);
+            	    rule__Model__EntitiesAssignment_1();
 
             	    state._fsp--;
 
@@ -1142,11 +1574,11 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop6;
+            	    break loop5;
                 }
             } while (true);
 
-             after(grammarAccess.getModelAccess().getMapped_entitiesAssignment_1()); 
+             after(grammarAccess.getModelAccess().getEntitiesAssignment_1()); 
 
             }
 
@@ -1168,17 +1600,913 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Model__Group__1__Impl"
 
 
+    // $ANTLR start "rule__Model__Group__2"
+    // InternalXenia.g:502:1: rule__Model__Group__2 : rule__Model__Group__2__Impl ;
+    public final void rule__Model__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:506:1: ( rule__Model__Group__2__Impl )
+            // InternalXenia.g:507:2: rule__Model__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Model__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Model__Group__2"
+
+
+    // $ANTLR start "rule__Model__Group__2__Impl"
+    // InternalXenia.g:513:1: rule__Model__Group__2__Impl : ( ( rule__Model__Mapped_entitiesAssignment_2 )* ) ;
+    public final void rule__Model__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:517:1: ( ( ( rule__Model__Mapped_entitiesAssignment_2 )* ) )
+            // InternalXenia.g:518:1: ( ( rule__Model__Mapped_entitiesAssignment_2 )* )
+            {
+            // InternalXenia.g:518:1: ( ( rule__Model__Mapped_entitiesAssignment_2 )* )
+            // InternalXenia.g:519:2: ( rule__Model__Mapped_entitiesAssignment_2 )*
+            {
+             before(grammarAccess.getModelAccess().getMapped_entitiesAssignment_2()); 
+            // InternalXenia.g:520:2: ( rule__Model__Mapped_entitiesAssignment_2 )*
+            loop6:
+            do {
+                int alt6=2;
+                int LA6_0 = input.LA(1);
+
+                if ( ((LA6_0>=28 && LA6_0<=29)) ) {
+                    alt6=1;
+                }
+
+
+                switch (alt6) {
+            	case 1 :
+            	    // InternalXenia.g:520:3: rule__Model__Mapped_entitiesAssignment_2
+            	    {
+            	    pushFollow(FOLLOW_5);
+            	    rule__Model__Mapped_entitiesAssignment_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop6;
+                }
+            } while (true);
+
+             after(grammarAccess.getModelAccess().getMapped_entitiesAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Model__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__0"
+    // InternalXenia.g:529:1: rule__Header__Group__0 : rule__Header__Group__0__Impl rule__Header__Group__1 ;
+    public final void rule__Header__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:533:1: ( rule__Header__Group__0__Impl rule__Header__Group__1 )
+            // InternalXenia.g:534:2: rule__Header__Group__0__Impl rule__Header__Group__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Header__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__0"
+
+
+    // $ANTLR start "rule__Header__Group__0__Impl"
+    // InternalXenia.g:541:1: rule__Header__Group__0__Impl : ( 'app' ) ;
+    public final void rule__Header__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:545:1: ( ( 'app' ) )
+            // InternalXenia.g:546:1: ( 'app' )
+            {
+            // InternalXenia.g:546:1: ( 'app' )
+            // InternalXenia.g:547:2: 'app'
+            {
+             before(grammarAccess.getHeaderAccess().getAppKeyword_0()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getAppKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__1"
+    // InternalXenia.g:556:1: rule__Header__Group__1 : rule__Header__Group__1__Impl rule__Header__Group__2 ;
+    public final void rule__Header__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:560:1: ( rule__Header__Group__1__Impl rule__Header__Group__2 )
+            // InternalXenia.g:561:2: rule__Header__Group__1__Impl rule__Header__Group__2
+            {
+            pushFollow(FOLLOW_7);
+            rule__Header__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__1"
+
+
+    // $ANTLR start "rule__Header__Group__1__Impl"
+    // InternalXenia.g:568:1: rule__Header__Group__1__Impl : ( ( rule__Header__AppNameAssignment_1 ) ) ;
+    public final void rule__Header__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:572:1: ( ( ( rule__Header__AppNameAssignment_1 ) ) )
+            // InternalXenia.g:573:1: ( ( rule__Header__AppNameAssignment_1 ) )
+            {
+            // InternalXenia.g:573:1: ( ( rule__Header__AppNameAssignment_1 ) )
+            // InternalXenia.g:574:2: ( rule__Header__AppNameAssignment_1 )
+            {
+             before(grammarAccess.getHeaderAccess().getAppNameAssignment_1()); 
+            // InternalXenia.g:575:2: ( rule__Header__AppNameAssignment_1 )
+            // InternalXenia.g:575:3: rule__Header__AppNameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__AppNameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getHeaderAccess().getAppNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__2"
+    // InternalXenia.g:583:1: rule__Header__Group__2 : rule__Header__Group__2__Impl rule__Header__Group__3 ;
+    public final void rule__Header__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:587:1: ( rule__Header__Group__2__Impl rule__Header__Group__3 )
+            // InternalXenia.g:588:2: rule__Header__Group__2__Impl rule__Header__Group__3
+            {
+            pushFollow(FOLLOW_8);
+            rule__Header__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__2"
+
+
+    // $ANTLR start "rule__Header__Group__2__Impl"
+    // InternalXenia.g:595:1: rule__Header__Group__2__Impl : ( 'has' ) ;
+    public final void rule__Header__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:599:1: ( ( 'has' ) )
+            // InternalXenia.g:600:1: ( 'has' )
+            {
+            // InternalXenia.g:600:1: ( 'has' )
+            // InternalXenia.g:601:2: 'has'
+            {
+             before(grammarAccess.getHeaderAccess().getHasKeyword_2()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getHasKeyword_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__3"
+    // InternalXenia.g:610:1: rule__Header__Group__3 : rule__Header__Group__3__Impl rule__Header__Group__4 ;
+    public final void rule__Header__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:614:1: ( rule__Header__Group__3__Impl rule__Header__Group__4 )
+            // InternalXenia.g:615:2: rule__Header__Group__3__Impl rule__Header__Group__4
+            {
+            pushFollow(FOLLOW_9);
+            rule__Header__Group__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__3"
+
+
+    // $ANTLR start "rule__Header__Group__3__Impl"
+    // InternalXenia.g:622:1: rule__Header__Group__3__Impl : ( 'pages' ) ;
+    public final void rule__Header__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:626:1: ( ( 'pages' ) )
+            // InternalXenia.g:627:1: ( 'pages' )
+            {
+            // InternalXenia.g:627:1: ( 'pages' )
+            // InternalXenia.g:628:2: 'pages'
+            {
+             before(grammarAccess.getHeaderAccess().getPagesKeyword_3()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getPagesKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__3__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__4"
+    // InternalXenia.g:637:1: rule__Header__Group__4 : rule__Header__Group__4__Impl rule__Header__Group__5 ;
+    public final void rule__Header__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:641:1: ( rule__Header__Group__4__Impl rule__Header__Group__5 )
+            // InternalXenia.g:642:2: rule__Header__Group__4__Impl rule__Header__Group__5
+            {
+            pushFollow(FOLLOW_10);
+            rule__Header__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__4"
+
+
+    // $ANTLR start "rule__Header__Group__4__Impl"
+    // InternalXenia.g:649:1: rule__Header__Group__4__Impl : ( '[' ) ;
+    public final void rule__Header__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:653:1: ( ( '[' ) )
+            // InternalXenia.g:654:1: ( '[' )
+            {
+            // InternalXenia.g:654:1: ( '[' )
+            // InternalXenia.g:655:2: '['
+            {
+             before(grammarAccess.getHeaderAccess().getLeftSquareBracketKeyword_4()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getLeftSquareBracketKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__4__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__5"
+    // InternalXenia.g:664:1: rule__Header__Group__5 : rule__Header__Group__5__Impl rule__Header__Group__6 ;
+    public final void rule__Header__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:668:1: ( rule__Header__Group__5__Impl rule__Header__Group__6 )
+            // InternalXenia.g:669:2: rule__Header__Group__5__Impl rule__Header__Group__6
+            {
+            pushFollow(FOLLOW_11);
+            rule__Header__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__6();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__5"
+
+
+    // $ANTLR start "rule__Header__Group__5__Impl"
+    // InternalXenia.g:676:1: rule__Header__Group__5__Impl : ( ( rule__Header__SitesAssignment_5 ) ) ;
+    public final void rule__Header__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:680:1: ( ( ( rule__Header__SitesAssignment_5 ) ) )
+            // InternalXenia.g:681:1: ( ( rule__Header__SitesAssignment_5 ) )
+            {
+            // InternalXenia.g:681:1: ( ( rule__Header__SitesAssignment_5 ) )
+            // InternalXenia.g:682:2: ( rule__Header__SitesAssignment_5 )
+            {
+             before(grammarAccess.getHeaderAccess().getSitesAssignment_5()); 
+            // InternalXenia.g:683:2: ( rule__Header__SitesAssignment_5 )
+            // InternalXenia.g:683:3: rule__Header__SitesAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__SitesAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getHeaderAccess().getSitesAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__5__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__6"
+    // InternalXenia.g:691:1: rule__Header__Group__6 : rule__Header__Group__6__Impl rule__Header__Group__7 ;
+    public final void rule__Header__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:695:1: ( rule__Header__Group__6__Impl rule__Header__Group__7 )
+            // InternalXenia.g:696:2: rule__Header__Group__6__Impl rule__Header__Group__7
+            {
+            pushFollow(FOLLOW_11);
+            rule__Header__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__7();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__6"
+
+
+    // $ANTLR start "rule__Header__Group__6__Impl"
+    // InternalXenia.g:703:1: rule__Header__Group__6__Impl : ( ( rule__Header__Group_6__0 )* ) ;
+    public final void rule__Header__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:707:1: ( ( ( rule__Header__Group_6__0 )* ) )
+            // InternalXenia.g:708:1: ( ( rule__Header__Group_6__0 )* )
+            {
+            // InternalXenia.g:708:1: ( ( rule__Header__Group_6__0 )* )
+            // InternalXenia.g:709:2: ( rule__Header__Group_6__0 )*
+            {
+             before(grammarAccess.getHeaderAccess().getGroup_6()); 
+            // InternalXenia.g:710:2: ( rule__Header__Group_6__0 )*
+            loop7:
+            do {
+                int alt7=2;
+                int LA7_0 = input.LA(1);
+
+                if ( (LA7_0==20) ) {
+                    alt7=1;
+                }
+
+
+                switch (alt7) {
+            	case 1 :
+            	    // InternalXenia.g:710:3: rule__Header__Group_6__0
+            	    {
+            	    pushFollow(FOLLOW_12);
+            	    rule__Header__Group_6__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop7;
+                }
+            } while (true);
+
+             after(grammarAccess.getHeaderAccess().getGroup_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__6__Impl"
+
+
+    // $ANTLR start "rule__Header__Group__7"
+    // InternalXenia.g:718:1: rule__Header__Group__7 : rule__Header__Group__7__Impl ;
+    public final void rule__Header__Group__7() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:722:1: ( rule__Header__Group__7__Impl )
+            // InternalXenia.g:723:2: rule__Header__Group__7__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__Group__7__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__7"
+
+
+    // $ANTLR start "rule__Header__Group__7__Impl"
+    // InternalXenia.g:729:1: rule__Header__Group__7__Impl : ( ']' ) ;
+    public final void rule__Header__Group__7__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:733:1: ( ( ']' ) )
+            // InternalXenia.g:734:1: ( ']' )
+            {
+            // InternalXenia.g:734:1: ( ']' )
+            // InternalXenia.g:735:2: ']'
+            {
+             before(grammarAccess.getHeaderAccess().getRightSquareBracketKeyword_7()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getRightSquareBracketKeyword_7()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group__7__Impl"
+
+
+    // $ANTLR start "rule__Header__Group_6__0"
+    // InternalXenia.g:745:1: rule__Header__Group_6__0 : rule__Header__Group_6__0__Impl rule__Header__Group_6__1 ;
+    public final void rule__Header__Group_6__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:749:1: ( rule__Header__Group_6__0__Impl rule__Header__Group_6__1 )
+            // InternalXenia.g:750:2: rule__Header__Group_6__0__Impl rule__Header__Group_6__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__Header__Group_6__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Header__Group_6__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group_6__0"
+
+
+    // $ANTLR start "rule__Header__Group_6__0__Impl"
+    // InternalXenia.g:757:1: rule__Header__Group_6__0__Impl : ( ',' ) ;
+    public final void rule__Header__Group_6__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:761:1: ( ( ',' ) )
+            // InternalXenia.g:762:1: ( ',' )
+            {
+            // InternalXenia.g:762:1: ( ',' )
+            // InternalXenia.g:763:2: ','
+            {
+             before(grammarAccess.getHeaderAccess().getCommaKeyword_6_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getHeaderAccess().getCommaKeyword_6_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group_6__0__Impl"
+
+
+    // $ANTLR start "rule__Header__Group_6__1"
+    // InternalXenia.g:772:1: rule__Header__Group_6__1 : rule__Header__Group_6__1__Impl ;
+    public final void rule__Header__Group_6__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:776:1: ( rule__Header__Group_6__1__Impl )
+            // InternalXenia.g:777:2: rule__Header__Group_6__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__Group_6__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group_6__1"
+
+
+    // $ANTLR start "rule__Header__Group_6__1__Impl"
+    // InternalXenia.g:783:1: rule__Header__Group_6__1__Impl : ( ( rule__Header__SitesAssignment_6_1 ) ) ;
+    public final void rule__Header__Group_6__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:787:1: ( ( ( rule__Header__SitesAssignment_6_1 ) ) )
+            // InternalXenia.g:788:1: ( ( rule__Header__SitesAssignment_6_1 ) )
+            {
+            // InternalXenia.g:788:1: ( ( rule__Header__SitesAssignment_6_1 ) )
+            // InternalXenia.g:789:2: ( rule__Header__SitesAssignment_6_1 )
+            {
+             before(grammarAccess.getHeaderAccess().getSitesAssignment_6_1()); 
+            // InternalXenia.g:790:2: ( rule__Header__SitesAssignment_6_1 )
+            // InternalXenia.g:790:3: rule__Header__SitesAssignment_6_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Header__SitesAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getHeaderAccess().getSitesAssignment_6_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Header__Group_6__1__Impl"
+
+
     // $ANTLR start "rule__Entity__Group_0__0"
-    // InternalXenia.g:365:1: rule__Entity__Group_0__0 : rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1 ;
+    // InternalXenia.g:799:1: rule__Entity__Group_0__0 : rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1 ;
     public final void rule__Entity__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:369:1: ( rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1 )
-            // InternalXenia.g:370:2: rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1
+            // InternalXenia.g:803:1: ( rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1 )
+            // InternalXenia.g:804:2: rule__Entity__Group_0__0__Impl rule__Entity__Group_0__1
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_13);
             rule__Entity__Group_0__0__Impl();
 
             state._fsp--;
@@ -1207,21 +2535,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_0__0__Impl"
-    // InternalXenia.g:377:1: rule__Entity__Group_0__0__Impl : ( 'app' ) ;
+    // InternalXenia.g:811:1: rule__Entity__Group_0__0__Impl : ( 'with' ) ;
     public final void rule__Entity__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:381:1: ( ( 'app' ) )
-            // InternalXenia.g:382:1: ( 'app' )
+            // InternalXenia.g:815:1: ( ( 'with' ) )
+            // InternalXenia.g:816:1: ( 'with' )
             {
-            // InternalXenia.g:382:1: ( 'app' )
-            // InternalXenia.g:383:2: 'app'
+            // InternalXenia.g:816:1: ( 'with' )
+            // InternalXenia.g:817:2: 'with'
             {
-             before(grammarAccess.getEntityAccess().getAppKeyword_0_0()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getAppKeyword_0_0()); 
+             before(grammarAccess.getEntityAccess().getWithKeyword_0_0()); 
+            match(input,21,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getWithKeyword_0_0()); 
 
             }
 
@@ -1244,16 +2572,16 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_0__1"
-    // InternalXenia.g:392:1: rule__Entity__Group_0__1 : rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2 ;
+    // InternalXenia.g:826:1: rule__Entity__Group_0__1 : rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2 ;
     public final void rule__Entity__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:396:1: ( rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2 )
-            // InternalXenia.g:397:2: rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2
+            // InternalXenia.g:830:1: ( rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2 )
+            // InternalXenia.g:831:2: rule__Entity__Group_0__1__Impl rule__Entity__Group_0__2
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_14);
             rule__Entity__Group_0__1__Impl();
 
             state._fsp--;
@@ -1282,31 +2610,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_0__1__Impl"
-    // InternalXenia.g:404:1: rule__Entity__Group_0__1__Impl : ( ( rule__Entity__AppNameAssignment_0_1 ) ) ;
+    // InternalXenia.g:838:1: rule__Entity__Group_0__1__Impl : ( ':' ) ;
     public final void rule__Entity__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:408:1: ( ( ( rule__Entity__AppNameAssignment_0_1 ) ) )
-            // InternalXenia.g:409:1: ( ( rule__Entity__AppNameAssignment_0_1 ) )
+            // InternalXenia.g:842:1: ( ( ':' ) )
+            // InternalXenia.g:843:1: ( ':' )
             {
-            // InternalXenia.g:409:1: ( ( rule__Entity__AppNameAssignment_0_1 ) )
-            // InternalXenia.g:410:2: ( rule__Entity__AppNameAssignment_0_1 )
+            // InternalXenia.g:843:1: ( ':' )
+            // InternalXenia.g:844:2: ':'
             {
-             before(grammarAccess.getEntityAccess().getAppNameAssignment_0_1()); 
-            // InternalXenia.g:411:2: ( rule__Entity__AppNameAssignment_0_1 )
-            // InternalXenia.g:411:3: rule__Entity__AppNameAssignment_0_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__AppNameAssignment_0_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEntityAccess().getAppNameAssignment_0_1()); 
+             before(grammarAccess.getEntityAccess().getColonKeyword_0_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getColonKeyword_0_1()); 
 
             }
 
@@ -1329,22 +2647,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_0__2"
-    // InternalXenia.g:419:1: rule__Entity__Group_0__2 : rule__Entity__Group_0__2__Impl rule__Entity__Group_0__3 ;
+    // InternalXenia.g:853:1: rule__Entity__Group_0__2 : rule__Entity__Group_0__2__Impl ;
     public final void rule__Entity__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:423:1: ( rule__Entity__Group_0__2__Impl rule__Entity__Group_0__3 )
-            // InternalXenia.g:424:2: rule__Entity__Group_0__2__Impl rule__Entity__Group_0__3
+            // InternalXenia.g:857:1: ( rule__Entity__Group_0__2__Impl )
+            // InternalXenia.g:858:2: rule__Entity__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_8);
-            rule__Entity__Group_0__2__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__3();
+            rule__Entity__Group_0__2__Impl();
 
             state._fsp--;
 
@@ -1367,21 +2680,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_0__2__Impl"
-    // InternalXenia.g:431:1: rule__Entity__Group_0__2__Impl : ( 'has' ) ;
+    // InternalXenia.g:864:1: rule__Entity__Group_0__2__Impl : ( ( rule__Entity__TechAssignment_0_2 ) ) ;
     public final void rule__Entity__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:435:1: ( ( 'has' ) )
-            // InternalXenia.g:436:1: ( 'has' )
+            // InternalXenia.g:868:1: ( ( ( rule__Entity__TechAssignment_0_2 ) ) )
+            // InternalXenia.g:869:1: ( ( rule__Entity__TechAssignment_0_2 ) )
             {
-            // InternalXenia.g:436:1: ( 'has' )
-            // InternalXenia.g:437:2: 'has'
+            // InternalXenia.g:869:1: ( ( rule__Entity__TechAssignment_0_2 ) )
+            // InternalXenia.g:870:2: ( rule__Entity__TechAssignment_0_2 )
             {
-             before(grammarAccess.getEntityAccess().getHasKeyword_0_2()); 
-            match(input,16,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getHasKeyword_0_2()); 
+             before(grammarAccess.getEntityAccess().getTechAssignment_0_2()); 
+            // InternalXenia.g:871:2: ( rule__Entity__TechAssignment_0_2 )
+            // InternalXenia.g:871:3: rule__Entity__TechAssignment_0_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__TechAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityAccess().getTechAssignment_0_2()); 
 
             }
 
@@ -1403,578 +2726,15 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Entity__Group_0__2__Impl"
 
 
-    // $ANTLR start "rule__Entity__Group_0__3"
-    // InternalXenia.g:446:1: rule__Entity__Group_0__3 : rule__Entity__Group_0__3__Impl rule__Entity__Group_0__4 ;
-    public final void rule__Entity__Group_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:450:1: ( rule__Entity__Group_0__3__Impl rule__Entity__Group_0__4 )
-            // InternalXenia.g:451:2: rule__Entity__Group_0__3__Impl rule__Entity__Group_0__4
-            {
-            pushFollow(FOLLOW_9);
-            rule__Entity__Group_0__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__3"
-
-
-    // $ANTLR start "rule__Entity__Group_0__3__Impl"
-    // InternalXenia.g:458:1: rule__Entity__Group_0__3__Impl : ( 'pages' ) ;
-    public final void rule__Entity__Group_0__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:462:1: ( ( 'pages' ) )
-            // InternalXenia.g:463:1: ( 'pages' )
-            {
-            // InternalXenia.g:463:1: ( 'pages' )
-            // InternalXenia.g:464:2: 'pages'
-            {
-             before(grammarAccess.getEntityAccess().getPagesKeyword_0_3()); 
-            match(input,17,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getPagesKeyword_0_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__3__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0__4"
-    // InternalXenia.g:473:1: rule__Entity__Group_0__4 : rule__Entity__Group_0__4__Impl rule__Entity__Group_0__5 ;
-    public final void rule__Entity__Group_0__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:477:1: ( rule__Entity__Group_0__4__Impl rule__Entity__Group_0__5 )
-            // InternalXenia.g:478:2: rule__Entity__Group_0__4__Impl rule__Entity__Group_0__5
-            {
-            pushFollow(FOLLOW_10);
-            rule__Entity__Group_0__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__4"
-
-
-    // $ANTLR start "rule__Entity__Group_0__4__Impl"
-    // InternalXenia.g:485:1: rule__Entity__Group_0__4__Impl : ( '[' ) ;
-    public final void rule__Entity__Group_0__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:489:1: ( ( '[' ) )
-            // InternalXenia.g:490:1: ( '[' )
-            {
-            // InternalXenia.g:490:1: ( '[' )
-            // InternalXenia.g:491:2: '['
-            {
-             before(grammarAccess.getEntityAccess().getLeftSquareBracketKeyword_0_4()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getLeftSquareBracketKeyword_0_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__4__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0__5"
-    // InternalXenia.g:500:1: rule__Entity__Group_0__5 : rule__Entity__Group_0__5__Impl rule__Entity__Group_0__6 ;
-    public final void rule__Entity__Group_0__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:504:1: ( rule__Entity__Group_0__5__Impl rule__Entity__Group_0__6 )
-            // InternalXenia.g:505:2: rule__Entity__Group_0__5__Impl rule__Entity__Group_0__6
-            {
-            pushFollow(FOLLOW_11);
-            rule__Entity__Group_0__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__5"
-
-
-    // $ANTLR start "rule__Entity__Group_0__5__Impl"
-    // InternalXenia.g:512:1: rule__Entity__Group_0__5__Impl : ( ( rule__Entity__SitesAssignment_0_5 ) ) ;
-    public final void rule__Entity__Group_0__5__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:516:1: ( ( ( rule__Entity__SitesAssignment_0_5 ) ) )
-            // InternalXenia.g:517:1: ( ( rule__Entity__SitesAssignment_0_5 ) )
-            {
-            // InternalXenia.g:517:1: ( ( rule__Entity__SitesAssignment_0_5 ) )
-            // InternalXenia.g:518:2: ( rule__Entity__SitesAssignment_0_5 )
-            {
-             before(grammarAccess.getEntityAccess().getSitesAssignment_0_5()); 
-            // InternalXenia.g:519:2: ( rule__Entity__SitesAssignment_0_5 )
-            // InternalXenia.g:519:3: rule__Entity__SitesAssignment_0_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__SitesAssignment_0_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEntityAccess().getSitesAssignment_0_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__5__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0__6"
-    // InternalXenia.g:527:1: rule__Entity__Group_0__6 : rule__Entity__Group_0__6__Impl rule__Entity__Group_0__7 ;
-    public final void rule__Entity__Group_0__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:531:1: ( rule__Entity__Group_0__6__Impl rule__Entity__Group_0__7 )
-            // InternalXenia.g:532:2: rule__Entity__Group_0__6__Impl rule__Entity__Group_0__7
-            {
-            pushFollow(FOLLOW_11);
-            rule__Entity__Group_0__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__6"
-
-
-    // $ANTLR start "rule__Entity__Group_0__6__Impl"
-    // InternalXenia.g:539:1: rule__Entity__Group_0__6__Impl : ( ( rule__Entity__Group_0_6__0 )* ) ;
-    public final void rule__Entity__Group_0__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:543:1: ( ( ( rule__Entity__Group_0_6__0 )* ) )
-            // InternalXenia.g:544:1: ( ( rule__Entity__Group_0_6__0 )* )
-            {
-            // InternalXenia.g:544:1: ( ( rule__Entity__Group_0_6__0 )* )
-            // InternalXenia.g:545:2: ( rule__Entity__Group_0_6__0 )*
-            {
-             before(grammarAccess.getEntityAccess().getGroup_0_6()); 
-            // InternalXenia.g:546:2: ( rule__Entity__Group_0_6__0 )*
-            loop7:
-            do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
-
-                if ( (LA7_0==20) ) {
-                    alt7=1;
-                }
-
-
-                switch (alt7) {
-            	case 1 :
-            	    // InternalXenia.g:546:3: rule__Entity__Group_0_6__0
-            	    {
-            	    pushFollow(FOLLOW_12);
-            	    rule__Entity__Group_0_6__0();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop7;
-                }
-            } while (true);
-
-             after(grammarAccess.getEntityAccess().getGroup_0_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__6__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0__7"
-    // InternalXenia.g:554:1: rule__Entity__Group_0__7 : rule__Entity__Group_0__7__Impl ;
-    public final void rule__Entity__Group_0__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:558:1: ( rule__Entity__Group_0__7__Impl )
-            // InternalXenia.g:559:2: rule__Entity__Group_0__7__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0__7__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__7"
-
-
-    // $ANTLR start "rule__Entity__Group_0__7__Impl"
-    // InternalXenia.g:565:1: rule__Entity__Group_0__7__Impl : ( ']' ) ;
-    public final void rule__Entity__Group_0__7__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:569:1: ( ( ']' ) )
-            // InternalXenia.g:570:1: ( ']' )
-            {
-            // InternalXenia.g:570:1: ( ']' )
-            // InternalXenia.g:571:2: ']'
-            {
-             before(grammarAccess.getEntityAccess().getRightSquareBracketKeyword_0_7()); 
-            match(input,19,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getRightSquareBracketKeyword_0_7()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0__7__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0_6__0"
-    // InternalXenia.g:581:1: rule__Entity__Group_0_6__0 : rule__Entity__Group_0_6__0__Impl rule__Entity__Group_0_6__1 ;
-    public final void rule__Entity__Group_0_6__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:585:1: ( rule__Entity__Group_0_6__0__Impl rule__Entity__Group_0_6__1 )
-            // InternalXenia.g:586:2: rule__Entity__Group_0_6__0__Impl rule__Entity__Group_0_6__1
-            {
-            pushFollow(FOLLOW_10);
-            rule__Entity__Group_0_6__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0_6__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0_6__0"
-
-
-    // $ANTLR start "rule__Entity__Group_0_6__0__Impl"
-    // InternalXenia.g:593:1: rule__Entity__Group_0_6__0__Impl : ( ',' ) ;
-    public final void rule__Entity__Group_0_6__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:597:1: ( ( ',' ) )
-            // InternalXenia.g:598:1: ( ',' )
-            {
-            // InternalXenia.g:598:1: ( ',' )
-            // InternalXenia.g:599:2: ','
-            {
-             before(grammarAccess.getEntityAccess().getCommaKeyword_0_6_0()); 
-            match(input,20,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getCommaKeyword_0_6_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0_6__0__Impl"
-
-
-    // $ANTLR start "rule__Entity__Group_0_6__1"
-    // InternalXenia.g:608:1: rule__Entity__Group_0_6__1 : rule__Entity__Group_0_6__1__Impl ;
-    public final void rule__Entity__Group_0_6__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:612:1: ( rule__Entity__Group_0_6__1__Impl )
-            // InternalXenia.g:613:2: rule__Entity__Group_0_6__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__Group_0_6__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0_6__1"
-
-
-    // $ANTLR start "rule__Entity__Group_0_6__1__Impl"
-    // InternalXenia.g:619:1: rule__Entity__Group_0_6__1__Impl : ( ( rule__Entity__SitesAssignment_0_6_1 ) ) ;
-    public final void rule__Entity__Group_0_6__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:623:1: ( ( ( rule__Entity__SitesAssignment_0_6_1 ) ) )
-            // InternalXenia.g:624:1: ( ( rule__Entity__SitesAssignment_0_6_1 ) )
-            {
-            // InternalXenia.g:624:1: ( ( rule__Entity__SitesAssignment_0_6_1 ) )
-            // InternalXenia.g:625:2: ( rule__Entity__SitesAssignment_0_6_1 )
-            {
-             before(grammarAccess.getEntityAccess().getSitesAssignment_0_6_1()); 
-            // InternalXenia.g:626:2: ( rule__Entity__SitesAssignment_0_6_1 )
-            // InternalXenia.g:626:3: rule__Entity__SitesAssignment_0_6_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__SitesAssignment_0_6_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEntityAccess().getSitesAssignment_0_6_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Entity__Group_0_6__1__Impl"
-
-
     // $ANTLR start "rule__Entity__Group_1__0"
-    // InternalXenia.g:635:1: rule__Entity__Group_1__0 : rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1 ;
+    // InternalXenia.g:880:1: rule__Entity__Group_1__0 : rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1 ;
     public final void rule__Entity__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:639:1: ( rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1 )
-            // InternalXenia.g:640:2: rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1
+            // InternalXenia.g:884:1: ( rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1 )
+            // InternalXenia.g:885:2: rule__Entity__Group_1__0__Impl rule__Entity__Group_1__1
             {
             pushFollow(FOLLOW_13);
             rule__Entity__Group_1__0__Impl();
@@ -2005,31 +2765,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_1__0__Impl"
-    // InternalXenia.g:647:1: rule__Entity__Group_1__0__Impl : ( ( rule__Entity__PropAssignment_1_0 ) ) ;
+    // InternalXenia.g:892:1: rule__Entity__Group_1__0__Impl : ( 'xml' ) ;
     public final void rule__Entity__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:651:1: ( ( ( rule__Entity__PropAssignment_1_0 ) ) )
-            // InternalXenia.g:652:1: ( ( rule__Entity__PropAssignment_1_0 ) )
+            // InternalXenia.g:896:1: ( ( 'xml' ) )
+            // InternalXenia.g:897:1: ( 'xml' )
             {
-            // InternalXenia.g:652:1: ( ( rule__Entity__PropAssignment_1_0 ) )
-            // InternalXenia.g:653:2: ( rule__Entity__PropAssignment_1_0 )
+            // InternalXenia.g:897:1: ( 'xml' )
+            // InternalXenia.g:898:2: 'xml'
             {
-             before(grammarAccess.getEntityAccess().getPropAssignment_1_0()); 
-            // InternalXenia.g:654:2: ( rule__Entity__PropAssignment_1_0 )
-            // InternalXenia.g:654:3: rule__Entity__PropAssignment_1_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__Entity__PropAssignment_1_0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEntityAccess().getPropAssignment_1_0()); 
+             before(grammarAccess.getEntityAccess().getXmlKeyword_1_0()); 
+            match(input,23,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getXmlKeyword_1_0()); 
 
             }
 
@@ -2052,16 +2802,16 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_1__1"
-    // InternalXenia.g:662:1: rule__Entity__Group_1__1 : rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2 ;
+    // InternalXenia.g:907:1: rule__Entity__Group_1__1 : rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2 ;
     public final void rule__Entity__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:666:1: ( rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2 )
-            // InternalXenia.g:667:2: rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2
+            // InternalXenia.g:911:1: ( rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2 )
+            // InternalXenia.g:912:2: rule__Entity__Group_1__1__Impl rule__Entity__Group_1__2
             {
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_14);
             rule__Entity__Group_1__1__Impl();
 
             state._fsp--;
@@ -2090,20 +2840,20 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_1__1__Impl"
-    // InternalXenia.g:674:1: rule__Entity__Group_1__1__Impl : ( ':' ) ;
+    // InternalXenia.g:919:1: rule__Entity__Group_1__1__Impl : ( ':' ) ;
     public final void rule__Entity__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:678:1: ( ( ':' ) )
-            // InternalXenia.g:679:1: ( ':' )
+            // InternalXenia.g:923:1: ( ( ':' ) )
+            // InternalXenia.g:924:1: ( ':' )
             {
-            // InternalXenia.g:679:1: ( ':' )
-            // InternalXenia.g:680:2: ':'
+            // InternalXenia.g:924:1: ( ':' )
+            // InternalXenia.g:925:2: ':'
             {
              before(grammarAccess.getEntityAccess().getColonKeyword_1_1()); 
-            match(input,21,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getEntityAccess().getColonKeyword_1_1()); 
 
             }
@@ -2127,14 +2877,14 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_1__2"
-    // InternalXenia.g:689:1: rule__Entity__Group_1__2 : rule__Entity__Group_1__2__Impl ;
+    // InternalXenia.g:934:1: rule__Entity__Group_1__2 : rule__Entity__Group_1__2__Impl ;
     public final void rule__Entity__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:693:1: ( rule__Entity__Group_1__2__Impl )
-            // InternalXenia.g:694:2: rule__Entity__Group_1__2__Impl
+            // InternalXenia.g:938:1: ( rule__Entity__Group_1__2__Impl )
+            // InternalXenia.g:939:2: rule__Entity__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group_1__2__Impl();
@@ -2160,31 +2910,31 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__Group_1__2__Impl"
-    // InternalXenia.g:700:1: rule__Entity__Group_1__2__Impl : ( ( rule__Entity__NameAssignment_1_2 ) ) ;
+    // InternalXenia.g:945:1: rule__Entity__Group_1__2__Impl : ( ( rule__Entity__PathAssignment_1_2 ) ) ;
     public final void rule__Entity__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:704:1: ( ( ( rule__Entity__NameAssignment_1_2 ) ) )
-            // InternalXenia.g:705:1: ( ( rule__Entity__NameAssignment_1_2 ) )
+            // InternalXenia.g:949:1: ( ( ( rule__Entity__PathAssignment_1_2 ) ) )
+            // InternalXenia.g:950:1: ( ( rule__Entity__PathAssignment_1_2 ) )
             {
-            // InternalXenia.g:705:1: ( ( rule__Entity__NameAssignment_1_2 ) )
-            // InternalXenia.g:706:2: ( rule__Entity__NameAssignment_1_2 )
+            // InternalXenia.g:950:1: ( ( rule__Entity__PathAssignment_1_2 ) )
+            // InternalXenia.g:951:2: ( rule__Entity__PathAssignment_1_2 )
             {
-             before(grammarAccess.getEntityAccess().getNameAssignment_1_2()); 
-            // InternalXenia.g:707:2: ( rule__Entity__NameAssignment_1_2 )
-            // InternalXenia.g:707:3: rule__Entity__NameAssignment_1_2
+             before(grammarAccess.getEntityAccess().getPathAssignment_1_2()); 
+            // InternalXenia.g:952:2: ( rule__Entity__PathAssignment_1_2 )
+            // InternalXenia.g:952:3: rule__Entity__PathAssignment_1_2
             {
             pushFollow(FOLLOW_2);
-            rule__Entity__NameAssignment_1_2();
+            rule__Entity__PathAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEntityAccess().getNameAssignment_1_2()); 
+             after(grammarAccess.getEntityAccess().getPathAssignment_1_2()); 
 
             }
 
@@ -2206,23 +2956,23 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Entity__Group_1__2__Impl"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__0"
-    // InternalXenia.g:716:1: rule__MappedEntity__Group__0 : rule__MappedEntity__Group__0__Impl rule__MappedEntity__Group__1 ;
-    public final void rule__MappedEntity__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__0"
+    // InternalXenia.g:961:1: rule__Entity__Group_2__0 : rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 ;
+    public final void rule__Entity__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:720:1: ( rule__MappedEntity__Group__0__Impl rule__MappedEntity__Group__1 )
-            // InternalXenia.g:721:2: rule__MappedEntity__Group__0__Impl rule__MappedEntity__Group__1
+            // InternalXenia.g:965:1: ( rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1 )
+            // InternalXenia.g:966:2: rule__Entity__Group_2__0__Impl rule__Entity__Group_2__1
             {
             pushFollow(FOLLOW_13);
-            rule__MappedEntity__Group__0__Impl();
+            rule__Entity__Group_2__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__MappedEntity__Group__1();
+            rule__Entity__Group_2__1();
 
             state._fsp--;
 
@@ -2241,35 +2991,35 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__0"
+    // $ANTLR end "rule__Entity__Group_2__0"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__0__Impl"
-    // InternalXenia.g:728:1: rule__MappedEntity__Group__0__Impl : ( ( rule__MappedEntity__PropAssignment_0 ) ) ;
-    public final void rule__MappedEntity__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__0__Impl"
+    // InternalXenia.g:973:1: rule__Entity__Group_2__0__Impl : ( ( rule__Entity__PropAssignment_2_0 ) ) ;
+    public final void rule__Entity__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:732:1: ( ( ( rule__MappedEntity__PropAssignment_0 ) ) )
-            // InternalXenia.g:733:1: ( ( rule__MappedEntity__PropAssignment_0 ) )
+            // InternalXenia.g:977:1: ( ( ( rule__Entity__PropAssignment_2_0 ) ) )
+            // InternalXenia.g:978:1: ( ( rule__Entity__PropAssignment_2_0 ) )
             {
-            // InternalXenia.g:733:1: ( ( rule__MappedEntity__PropAssignment_0 ) )
-            // InternalXenia.g:734:2: ( rule__MappedEntity__PropAssignment_0 )
+            // InternalXenia.g:978:1: ( ( rule__Entity__PropAssignment_2_0 ) )
+            // InternalXenia.g:979:2: ( rule__Entity__PropAssignment_2_0 )
             {
-             before(grammarAccess.getMappedEntityAccess().getPropAssignment_0()); 
-            // InternalXenia.g:735:2: ( rule__MappedEntity__PropAssignment_0 )
-            // InternalXenia.g:735:3: rule__MappedEntity__PropAssignment_0
+             before(grammarAccess.getEntityAccess().getPropAssignment_2_0()); 
+            // InternalXenia.g:980:2: ( rule__Entity__PropAssignment_2_0 )
+            // InternalXenia.g:980:3: rule__Entity__PropAssignment_2_0
             {
             pushFollow(FOLLOW_2);
-            rule__MappedEntity__PropAssignment_0();
+            rule__Entity__PropAssignment_2_0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMappedEntityAccess().getPropAssignment_0()); 
+             after(grammarAccess.getEntityAccess().getPropAssignment_2_0()); 
 
             }
 
@@ -2288,26 +3038,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__0__Impl"
+    // $ANTLR end "rule__Entity__Group_2__0__Impl"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__1"
-    // InternalXenia.g:743:1: rule__MappedEntity__Group__1 : rule__MappedEntity__Group__1__Impl rule__MappedEntity__Group__2 ;
-    public final void rule__MappedEntity__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__1"
+    // InternalXenia.g:988:1: rule__Entity__Group_2__1 : rule__Entity__Group_2__1__Impl rule__Entity__Group_2__2 ;
+    public final void rule__Entity__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:747:1: ( rule__MappedEntity__Group__1__Impl rule__MappedEntity__Group__2 )
-            // InternalXenia.g:748:2: rule__MappedEntity__Group__1__Impl rule__MappedEntity__Group__2
+            // InternalXenia.g:992:1: ( rule__Entity__Group_2__1__Impl rule__Entity__Group_2__2 )
+            // InternalXenia.g:993:2: rule__Entity__Group_2__1__Impl rule__Entity__Group_2__2
             {
             pushFollow(FOLLOW_6);
-            rule__MappedEntity__Group__1__Impl();
+            rule__Entity__Group_2__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__MappedEntity__Group__2();
+            rule__Entity__Group_2__2();
 
             state._fsp--;
 
@@ -2326,25 +3076,340 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__1"
+    // $ANTLR end "rule__Entity__Group_2__1"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__1__Impl"
-    // InternalXenia.g:755:1: rule__MappedEntity__Group__1__Impl : ( ':' ) ;
-    public final void rule__MappedEntity__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Entity__Group_2__1__Impl"
+    // InternalXenia.g:1000:1: rule__Entity__Group_2__1__Impl : ( ':' ) ;
+    public final void rule__Entity__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:759:1: ( ( ':' ) )
-            // InternalXenia.g:760:1: ( ':' )
+            // InternalXenia.g:1004:1: ( ( ':' ) )
+            // InternalXenia.g:1005:1: ( ':' )
             {
-            // InternalXenia.g:760:1: ( ':' )
-            // InternalXenia.g:761:2: ':'
+            // InternalXenia.g:1005:1: ( ':' )
+            // InternalXenia.g:1006:2: ':'
             {
-             before(grammarAccess.getMappedEntityAccess().getColonKeyword_1()); 
+             before(grammarAccess.getEntityAccess().getColonKeyword_2_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getColonKeyword_2_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__Entity__Group_2__2"
+    // InternalXenia.g:1015:1: rule__Entity__Group_2__2 : rule__Entity__Group_2__2__Impl ;
+    public final void rule__Entity__Group_2__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1019:1: ( rule__Entity__Group_2__2__Impl )
+            // InternalXenia.g:1020:2: rule__Entity__Group_2__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__Group_2__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_2__2"
+
+
+    // $ANTLR start "rule__Entity__Group_2__2__Impl"
+    // InternalXenia.g:1026:1: rule__Entity__Group_2__2__Impl : ( ( rule__Entity__NameAssignment_2_2 ) ) ;
+    public final void rule__Entity__Group_2__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1030:1: ( ( ( rule__Entity__NameAssignment_2_2 ) ) )
+            // InternalXenia.g:1031:1: ( ( rule__Entity__NameAssignment_2_2 ) )
+            {
+            // InternalXenia.g:1031:1: ( ( rule__Entity__NameAssignment_2_2 ) )
+            // InternalXenia.g:1032:2: ( rule__Entity__NameAssignment_2_2 )
+            {
+             before(grammarAccess.getEntityAccess().getNameAssignment_2_2()); 
+            // InternalXenia.g:1033:2: ( rule__Entity__NameAssignment_2_2 )
+            // InternalXenia.g:1033:3: rule__Entity__NameAssignment_2_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Entity__NameAssignment_2_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getEntityAccess().getNameAssignment_2_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__Group_2__2__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__0"
+    // InternalXenia.g:1042:1: rule__SiteWithModal__Group__0 : rule__SiteWithModal__Group__0__Impl rule__SiteWithModal__Group__1 ;
+    public final void rule__SiteWithModal__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1046:1: ( rule__SiteWithModal__Group__0__Impl rule__SiteWithModal__Group__1 )
+            // InternalXenia.g:1047:2: rule__SiteWithModal__Group__0__Impl rule__SiteWithModal__Group__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__SiteWithModal__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__0"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__0__Impl"
+    // InternalXenia.g:1054:1: rule__SiteWithModal__Group__0__Impl : ( '@' ) ;
+    public final void rule__SiteWithModal__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1058:1: ( ( '@' ) )
+            // InternalXenia.g:1059:1: ( '@' )
+            {
+            // InternalXenia.g:1059:1: ( '@' )
+            // InternalXenia.g:1060:2: '@'
+            {
+             before(grammarAccess.getSiteWithModalAccess().getCommercialAtKeyword_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getCommercialAtKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__0__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__1"
+    // InternalXenia.g:1069:1: rule__SiteWithModal__Group__1 : rule__SiteWithModal__Group__1__Impl rule__SiteWithModal__Group__2 ;
+    public final void rule__SiteWithModal__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1073:1: ( rule__SiteWithModal__Group__1__Impl rule__SiteWithModal__Group__2 )
+            // InternalXenia.g:1074:2: rule__SiteWithModal__Group__1__Impl rule__SiteWithModal__Group__2
+            {
+            pushFollow(FOLLOW_15);
+            rule__SiteWithModal__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__1"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__1__Impl"
+    // InternalXenia.g:1081:1: rule__SiteWithModal__Group__1__Impl : ( ( rule__SiteWithModal__NameAssignment_1 ) ) ;
+    public final void rule__SiteWithModal__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1085:1: ( ( ( rule__SiteWithModal__NameAssignment_1 ) ) )
+            // InternalXenia.g:1086:1: ( ( rule__SiteWithModal__NameAssignment_1 ) )
+            {
+            // InternalXenia.g:1086:1: ( ( rule__SiteWithModal__NameAssignment_1 ) )
+            // InternalXenia.g:1087:2: ( rule__SiteWithModal__NameAssignment_1 )
+            {
+             before(grammarAccess.getSiteWithModalAccess().getNameAssignment_1()); 
+            // InternalXenia.g:1088:2: ( rule__SiteWithModal__NameAssignment_1 )
+            // InternalXenia.g:1088:3: rule__SiteWithModal__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSiteWithModalAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__1__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__2"
+    // InternalXenia.g:1096:1: rule__SiteWithModal__Group__2 : rule__SiteWithModal__Group__2__Impl rule__SiteWithModal__Group__3 ;
+    public final void rule__SiteWithModal__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1100:1: ( rule__SiteWithModal__Group__2__Impl rule__SiteWithModal__Group__3 )
+            // InternalXenia.g:1101:2: rule__SiteWithModal__Group__2__Impl rule__SiteWithModal__Group__3
+            {
+            pushFollow(FOLLOW_16);
+            rule__SiteWithModal__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__2"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__2__Impl"
+    // InternalXenia.g:1108:1: rule__SiteWithModal__Group__2__Impl : ( 'with' ) ;
+    public final void rule__SiteWithModal__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1112:1: ( ( 'with' ) )
+            // InternalXenia.g:1113:1: ( 'with' )
+            {
+            // InternalXenia.g:1113:1: ( 'with' )
+            // InternalXenia.g:1114:2: 'with'
+            {
+             before(grammarAccess.getSiteWithModalAccess().getWithKeyword_2()); 
             match(input,21,FOLLOW_2); 
-             after(grammarAccess.getMappedEntityAccess().getColonKeyword_1()); 
+             after(grammarAccess.getSiteWithModalAccess().getWithKeyword_2()); 
 
             }
 
@@ -2363,21 +3428,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__1__Impl"
+    // $ANTLR end "rule__SiteWithModal__Group__2__Impl"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__2"
-    // InternalXenia.g:770:1: rule__MappedEntity__Group__2 : rule__MappedEntity__Group__2__Impl ;
-    public final void rule__MappedEntity__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group__3"
+    // InternalXenia.g:1123:1: rule__SiteWithModal__Group__3 : rule__SiteWithModal__Group__3__Impl rule__SiteWithModal__Group__4 ;
+    public final void rule__SiteWithModal__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:774:1: ( rule__MappedEntity__Group__2__Impl )
-            // InternalXenia.g:775:2: rule__MappedEntity__Group__2__Impl
+            // InternalXenia.g:1127:1: ( rule__SiteWithModal__Group__3__Impl rule__SiteWithModal__Group__4 )
+            // InternalXenia.g:1128:2: rule__SiteWithModal__Group__3__Impl rule__SiteWithModal__Group__4
             {
+            pushFollow(FOLLOW_17);
+            rule__SiteWithModal__Group__3__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__MappedEntity__Group__2__Impl();
+            rule__SiteWithModal__Group__4();
 
             state._fsp--;
 
@@ -2396,40 +3466,275 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__2"
+    // $ANTLR end "rule__SiteWithModal__Group__3"
 
 
-    // $ANTLR start "rule__MappedEntity__Group__2__Impl"
-    // InternalXenia.g:781:1: rule__MappedEntity__Group__2__Impl : ( ( rule__MappedEntity__SitesAssignment_2 )* ) ;
-    public final void rule__MappedEntity__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group__3__Impl"
+    // InternalXenia.g:1135:1: rule__SiteWithModal__Group__3__Impl : ( 'modal' ) ;
+    public final void rule__SiteWithModal__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:785:1: ( ( ( rule__MappedEntity__SitesAssignment_2 )* ) )
-            // InternalXenia.g:786:1: ( ( rule__MappedEntity__SitesAssignment_2 )* )
+            // InternalXenia.g:1139:1: ( ( 'modal' ) )
+            // InternalXenia.g:1140:1: ( 'modal' )
             {
-            // InternalXenia.g:786:1: ( ( rule__MappedEntity__SitesAssignment_2 )* )
-            // InternalXenia.g:787:2: ( rule__MappedEntity__SitesAssignment_2 )*
+            // InternalXenia.g:1140:1: ( 'modal' )
+            // InternalXenia.g:1141:2: 'modal'
             {
-             before(grammarAccess.getMappedEntityAccess().getSitesAssignment_2()); 
-            // InternalXenia.g:788:2: ( rule__MappedEntity__SitesAssignment_2 )*
+             before(grammarAccess.getSiteWithModalAccess().getModalKeyword_3()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getModalKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__3__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__4"
+    // InternalXenia.g:1150:1: rule__SiteWithModal__Group__4 : rule__SiteWithModal__Group__4__Impl rule__SiteWithModal__Group__5 ;
+    public final void rule__SiteWithModal__Group__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1154:1: ( rule__SiteWithModal__Group__4__Impl rule__SiteWithModal__Group__5 )
+            // InternalXenia.g:1155:2: rule__SiteWithModal__Group__4__Impl rule__SiteWithModal__Group__5
+            {
+            pushFollow(FOLLOW_10);
+            rule__SiteWithModal__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__4"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__4__Impl"
+    // InternalXenia.g:1162:1: rule__SiteWithModal__Group__4__Impl : ( '(' ) ;
+    public final void rule__SiteWithModal__Group__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1166:1: ( ( '(' ) )
+            // InternalXenia.g:1167:1: ( '(' )
+            {
+            // InternalXenia.g:1167:1: ( '(' )
+            // InternalXenia.g:1168:2: '('
+            {
+             before(grammarAccess.getSiteWithModalAccess().getLeftParenthesisKeyword_4()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getLeftParenthesisKeyword_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__4__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__5"
+    // InternalXenia.g:1177:1: rule__SiteWithModal__Group__5 : rule__SiteWithModal__Group__5__Impl rule__SiteWithModal__Group__6 ;
+    public final void rule__SiteWithModal__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1181:1: ( rule__SiteWithModal__Group__5__Impl rule__SiteWithModal__Group__6 )
+            // InternalXenia.g:1182:2: rule__SiteWithModal__Group__5__Impl rule__SiteWithModal__Group__6
+            {
+            pushFollow(FOLLOW_18);
+            rule__SiteWithModal__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__6();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__5"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__5__Impl"
+    // InternalXenia.g:1189:1: rule__SiteWithModal__Group__5__Impl : ( ( rule__SiteWithModal__SitesAssignment_5 ) ) ;
+    public final void rule__SiteWithModal__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1193:1: ( ( ( rule__SiteWithModal__SitesAssignment_5 ) ) )
+            // InternalXenia.g:1194:1: ( ( rule__SiteWithModal__SitesAssignment_5 ) )
+            {
+            // InternalXenia.g:1194:1: ( ( rule__SiteWithModal__SitesAssignment_5 ) )
+            // InternalXenia.g:1195:2: ( rule__SiteWithModal__SitesAssignment_5 )
+            {
+             before(grammarAccess.getSiteWithModalAccess().getSitesAssignment_5()); 
+            // InternalXenia.g:1196:2: ( rule__SiteWithModal__SitesAssignment_5 )
+            // InternalXenia.g:1196:3: rule__SiteWithModal__SitesAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__SitesAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSiteWithModalAccess().getSitesAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__5__Impl"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__6"
+    // InternalXenia.g:1204:1: rule__SiteWithModal__Group__6 : rule__SiteWithModal__Group__6__Impl rule__SiteWithModal__Group__7 ;
+    public final void rule__SiteWithModal__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1208:1: ( rule__SiteWithModal__Group__6__Impl rule__SiteWithModal__Group__7 )
+            // InternalXenia.g:1209:2: rule__SiteWithModal__Group__6__Impl rule__SiteWithModal__Group__7
+            {
+            pushFollow(FOLLOW_18);
+            rule__SiteWithModal__Group__6__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group__7();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group__6"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group__6__Impl"
+    // InternalXenia.g:1216:1: rule__SiteWithModal__Group__6__Impl : ( ( rule__SiteWithModal__Group_6__0 )* ) ;
+    public final void rule__SiteWithModal__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1220:1: ( ( ( rule__SiteWithModal__Group_6__0 )* ) )
+            // InternalXenia.g:1221:1: ( ( rule__SiteWithModal__Group_6__0 )* )
+            {
+            // InternalXenia.g:1221:1: ( ( rule__SiteWithModal__Group_6__0 )* )
+            // InternalXenia.g:1222:2: ( rule__SiteWithModal__Group_6__0 )*
+            {
+             before(grammarAccess.getSiteWithModalAccess().getGroup_6()); 
+            // InternalXenia.g:1223:2: ( rule__SiteWithModal__Group_6__0 )*
             loop8:
             do {
                 int alt8=2;
                 int LA8_0 = input.LA(1);
 
-                if ( (LA8_0==RULE_ID) ) {
+                if ( (LA8_0==20) ) {
                     alt8=1;
                 }
 
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalXenia.g:788:3: rule__MappedEntity__SitesAssignment_2
+            	    // InternalXenia.g:1223:3: rule__SiteWithModal__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_14);
-            	    rule__MappedEntity__SitesAssignment_2();
+            	    pushFollow(FOLLOW_12);
+            	    rule__SiteWithModal__Group_6__0();
 
             	    state._fsp--;
 
@@ -2442,7 +3747,7 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getMappedEntityAccess().getSitesAssignment_2()); 
+             after(grammarAccess.getSiteWithModalAccess().getGroup_6()); 
 
             }
 
@@ -2461,96 +3766,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__Group__2__Impl"
+    // $ANTLR end "rule__SiteWithModal__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_0__0"
-    // InternalXenia.g:797:1: rule__Site__Group_0__0 : rule__Site__Group_0__0__Impl rule__Site__Group_0__1 ;
-    public final void rule__Site__Group_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:801:1: ( rule__Site__Group_0__0__Impl rule__Site__Group_0__1 )
-            // InternalXenia.g:802:2: rule__Site__Group_0__0__Impl rule__Site__Group_0__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Site__Group_0__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Site__Group_0__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_0__0"
-
-
-    // $ANTLR start "rule__Site__Group_0__0__Impl"
-    // InternalXenia.g:809:1: rule__Site__Group_0__0__Impl : ( '@' ) ;
-    public final void rule__Site__Group_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group__7"
+    // InternalXenia.g:1231:1: rule__SiteWithModal__Group__7 : rule__SiteWithModal__Group__7__Impl ;
+    public final void rule__SiteWithModal__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:813:1: ( ( '@' ) )
-            // InternalXenia.g:814:1: ( '@' )
-            {
-            // InternalXenia.g:814:1: ( '@' )
-            // InternalXenia.g:815:2: '@'
-            {
-             before(grammarAccess.getSiteAccess().getCommercialAtKeyword_0_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getCommercialAtKeyword_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__Site__Group_0__1"
-    // InternalXenia.g:824:1: rule__Site__Group_0__1 : rule__Site__Group_0__1__Impl ;
-    public final void rule__Site__Group_0__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:828:1: ( rule__Site__Group_0__1__Impl )
-            // InternalXenia.g:829:2: rule__Site__Group_0__1__Impl
+            // InternalXenia.g:1235:1: ( rule__SiteWithModal__Group__7__Impl )
+            // InternalXenia.g:1236:2: rule__SiteWithModal__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Site__Group_0__1__Impl();
+            rule__SiteWithModal__Group__7__Impl();
 
             state._fsp--;
 
@@ -2569,35 +3799,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_0__1"
+    // $ANTLR end "rule__SiteWithModal__Group__7"
 
 
-    // $ANTLR start "rule__Site__Group_0__1__Impl"
-    // InternalXenia.g:835:1: rule__Site__Group_0__1__Impl : ( ( rule__Site__NameAssignment_0_1 ) ) ;
-    public final void rule__Site__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group__7__Impl"
+    // InternalXenia.g:1242:1: rule__SiteWithModal__Group__7__Impl : ( ')' ) ;
+    public final void rule__SiteWithModal__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:839:1: ( ( ( rule__Site__NameAssignment_0_1 ) ) )
-            // InternalXenia.g:840:1: ( ( rule__Site__NameAssignment_0_1 ) )
+            // InternalXenia.g:1246:1: ( ( ')' ) )
+            // InternalXenia.g:1247:1: ( ')' )
             {
-            // InternalXenia.g:840:1: ( ( rule__Site__NameAssignment_0_1 ) )
-            // InternalXenia.g:841:2: ( rule__Site__NameAssignment_0_1 )
+            // InternalXenia.g:1247:1: ( ')' )
+            // InternalXenia.g:1248:2: ')'
             {
-             before(grammarAccess.getSiteAccess().getNameAssignment_0_1()); 
-            // InternalXenia.g:842:2: ( rule__Site__NameAssignment_0_1 )
-            // InternalXenia.g:842:3: rule__Site__NameAssignment_0_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Site__NameAssignment_0_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSiteAccess().getNameAssignment_0_1()); 
+             before(grammarAccess.getSiteWithModalAccess().getRightParenthesisKeyword_7()); 
+            match(input,27,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getRightParenthesisKeyword_7()); 
 
             }
 
@@ -2616,336 +3836,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_0__1__Impl"
+    // $ANTLR end "rule__SiteWithModal__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1__0"
-    // InternalXenia.g:851:1: rule__Site__Group_1__0 : rule__Site__Group_1__0__Impl rule__Site__Group_1__1 ;
-    public final void rule__Site__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:855:1: ( rule__Site__Group_1__0__Impl rule__Site__Group_1__1 )
-            // InternalXenia.g:856:2: rule__Site__Group_1__0__Impl rule__Site__Group_1__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__Site__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Site__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__0"
-
-
-    // $ANTLR start "rule__Site__Group_1__0__Impl"
-    // InternalXenia.g:863:1: rule__Site__Group_1__0__Impl : ( '@' ) ;
-    public final void rule__Site__Group_1__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group_6__0"
+    // InternalXenia.g:1258:1: rule__SiteWithModal__Group_6__0 : rule__SiteWithModal__Group_6__0__Impl rule__SiteWithModal__Group_6__1 ;
+    public final void rule__SiteWithModal__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:867:1: ( ( '@' ) )
-            // InternalXenia.g:868:1: ( '@' )
-            {
-            // InternalXenia.g:868:1: ( '@' )
-            // InternalXenia.g:869:2: '@'
-            {
-             before(grammarAccess.getSiteAccess().getCommercialAtKeyword_1_0()); 
-            match(input,22,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getCommercialAtKeyword_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__Site__Group_1__1"
-    // InternalXenia.g:878:1: rule__Site__Group_1__1 : rule__Site__Group_1__1__Impl rule__Site__Group_1__2 ;
-    public final void rule__Site__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:882:1: ( rule__Site__Group_1__1__Impl rule__Site__Group_1__2 )
-            // InternalXenia.g:883:2: rule__Site__Group_1__1__Impl rule__Site__Group_1__2
-            {
-            pushFollow(FOLLOW_15);
-            rule__Site__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Site__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__1"
-
-
-    // $ANTLR start "rule__Site__Group_1__1__Impl"
-    // InternalXenia.g:890:1: rule__Site__Group_1__1__Impl : ( ( rule__Site__NameAssignment_1_1 ) ) ;
-    public final void rule__Site__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:894:1: ( ( ( rule__Site__NameAssignment_1_1 ) ) )
-            // InternalXenia.g:895:1: ( ( rule__Site__NameAssignment_1_1 ) )
-            {
-            // InternalXenia.g:895:1: ( ( rule__Site__NameAssignment_1_1 ) )
-            // InternalXenia.g:896:2: ( rule__Site__NameAssignment_1_1 )
-            {
-             before(grammarAccess.getSiteAccess().getNameAssignment_1_1()); 
-            // InternalXenia.g:897:2: ( rule__Site__NameAssignment_1_1 )
-            // InternalXenia.g:897:3: rule__Site__NameAssignment_1_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__Site__NameAssignment_1_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSiteAccess().getNameAssignment_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__Site__Group_1__2"
-    // InternalXenia.g:905:1: rule__Site__Group_1__2 : rule__Site__Group_1__2__Impl rule__Site__Group_1__3 ;
-    public final void rule__Site__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:909:1: ( rule__Site__Group_1__2__Impl rule__Site__Group_1__3 )
-            // InternalXenia.g:910:2: rule__Site__Group_1__2__Impl rule__Site__Group_1__3
-            {
-            pushFollow(FOLLOW_16);
-            rule__Site__Group_1__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Site__Group_1__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__2"
-
-
-    // $ANTLR start "rule__Site__Group_1__2__Impl"
-    // InternalXenia.g:917:1: rule__Site__Group_1__2__Impl : ( 'with' ) ;
-    public final void rule__Site__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:921:1: ( ( 'with' ) )
-            // InternalXenia.g:922:1: ( 'with' )
-            {
-            // InternalXenia.g:922:1: ( 'with' )
-            // InternalXenia.g:923:2: 'with'
-            {
-             before(grammarAccess.getSiteAccess().getWithKeyword_1_2()); 
-            match(input,11,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getWithKeyword_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__Site__Group_1__3"
-    // InternalXenia.g:932:1: rule__Site__Group_1__3 : rule__Site__Group_1__3__Impl rule__Site__Group_1__4 ;
-    public final void rule__Site__Group_1__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:936:1: ( rule__Site__Group_1__3__Impl rule__Site__Group_1__4 )
-            // InternalXenia.g:937:2: rule__Site__Group_1__3__Impl rule__Site__Group_1__4
-            {
-            pushFollow(FOLLOW_17);
-            rule__Site__Group_1__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Site__Group_1__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__3"
-
-
-    // $ANTLR start "rule__Site__Group_1__3__Impl"
-    // InternalXenia.g:944:1: rule__Site__Group_1__3__Impl : ( 'modal' ) ;
-    public final void rule__Site__Group_1__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:948:1: ( ( 'modal' ) )
-            // InternalXenia.g:949:1: ( 'modal' )
-            {
-            // InternalXenia.g:949:1: ( 'modal' )
-            // InternalXenia.g:950:2: 'modal'
-            {
-             before(grammarAccess.getSiteAccess().getModalKeyword_1_3()); 
-            match(input,23,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getModalKeyword_1_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__Group_1__3__Impl"
-
-
-    // $ANTLR start "rule__Site__Group_1__4"
-    // InternalXenia.g:959:1: rule__Site__Group_1__4 : rule__Site__Group_1__4__Impl rule__Site__Group_1__5 ;
-    public final void rule__Site__Group_1__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:963:1: ( rule__Site__Group_1__4__Impl rule__Site__Group_1__5 )
-            // InternalXenia.g:964:2: rule__Site__Group_1__4__Impl rule__Site__Group_1__5
+            // InternalXenia.g:1262:1: ( rule__SiteWithModal__Group_6__0__Impl rule__SiteWithModal__Group_6__1 )
+            // InternalXenia.g:1263:2: rule__SiteWithModal__Group_6__0__Impl rule__SiteWithModal__Group_6__1
             {
             pushFollow(FOLLOW_10);
-            rule__Site__Group_1__4__Impl();
+            rule__SiteWithModal__Group_6__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1__5();
+            rule__SiteWithModal__Group_6__1();
 
             state._fsp--;
 
@@ -2964,25 +3874,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__4"
+    // $ANTLR end "rule__SiteWithModal__Group_6__0"
 
 
-    // $ANTLR start "rule__Site__Group_1__4__Impl"
-    // InternalXenia.g:971:1: rule__Site__Group_1__4__Impl : ( '(' ) ;
-    public final void rule__Site__Group_1__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group_6__0__Impl"
+    // InternalXenia.g:1270:1: rule__SiteWithModal__Group_6__0__Impl : ( ',' ) ;
+    public final void rule__SiteWithModal__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:975:1: ( ( '(' ) )
-            // InternalXenia.g:976:1: ( '(' )
+            // InternalXenia.g:1274:1: ( ( ',' ) )
+            // InternalXenia.g:1275:1: ( ',' )
             {
-            // InternalXenia.g:976:1: ( '(' )
-            // InternalXenia.g:977:2: '('
+            // InternalXenia.g:1275:1: ( ',' )
+            // InternalXenia.g:1276:2: ','
             {
-             before(grammarAccess.getSiteAccess().getLeftParenthesisKeyword_1_4()); 
-            match(input,24,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getLeftParenthesisKeyword_1_4()); 
+             before(grammarAccess.getSiteWithModalAccess().getCommaKeyword_6_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getCommaKeyword_6_0()); 
 
             }
 
@@ -3001,26 +3911,106 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__4__Impl"
+    // $ANTLR end "rule__SiteWithModal__Group_6__0__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1__5"
-    // InternalXenia.g:986:1: rule__Site__Group_1__5 : rule__Site__Group_1__5__Impl rule__Site__Group_1__6 ;
-    public final void rule__Site__Group_1__5() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__Group_6__1"
+    // InternalXenia.g:1285:1: rule__SiteWithModal__Group_6__1 : rule__SiteWithModal__Group_6__1__Impl ;
+    public final void rule__SiteWithModal__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:990:1: ( rule__Site__Group_1__5__Impl rule__Site__Group_1__6 )
-            // InternalXenia.g:991:2: rule__Site__Group_1__5__Impl rule__Site__Group_1__6
+            // InternalXenia.g:1289:1: ( rule__SiteWithModal__Group_6__1__Impl )
+            // InternalXenia.g:1290:2: rule__SiteWithModal__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_18);
-            rule__Site__Group_1__5__Impl();
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__Group_6__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group_6__1"
+
+
+    // $ANTLR start "rule__SiteWithModal__Group_6__1__Impl"
+    // InternalXenia.g:1296:1: rule__SiteWithModal__Group_6__1__Impl : ( ( rule__SiteWithModal__SitesAssignment_6_1 ) ) ;
+    public final void rule__SiteWithModal__Group_6__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1300:1: ( ( ( rule__SiteWithModal__SitesAssignment_6_1 ) ) )
+            // InternalXenia.g:1301:1: ( ( rule__SiteWithModal__SitesAssignment_6_1 ) )
+            {
+            // InternalXenia.g:1301:1: ( ( rule__SiteWithModal__SitesAssignment_6_1 ) )
+            // InternalXenia.g:1302:2: ( rule__SiteWithModal__SitesAssignment_6_1 )
+            {
+             before(grammarAccess.getSiteWithModalAccess().getSitesAssignment_6_1()); 
+            // InternalXenia.g:1303:2: ( rule__SiteWithModal__SitesAssignment_6_1 )
+            // InternalXenia.g:1303:3: rule__SiteWithModal__SitesAssignment_6_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__SiteWithModal__SitesAssignment_6_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSiteWithModalAccess().getSitesAssignment_6_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__Group_6__1__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__0"
+    // InternalXenia.g:1312:1: rule__MappedEntity__Group_0__0 : rule__MappedEntity__Group_0__0__Impl rule__MappedEntity__Group_0__1 ;
+    public final void rule__MappedEntity__Group_0__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1316:1: ( rule__MappedEntity__Group_0__0__Impl rule__MappedEntity__Group_0__1 )
+            // InternalXenia.g:1317:2: rule__MappedEntity__Group_0__0__Impl rule__MappedEntity__Group_0__1
+            {
+            pushFollow(FOLLOW_13);
+            rule__MappedEntity__Group_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1__6();
+            rule__MappedEntity__Group_0__1();
 
             state._fsp--;
 
@@ -3039,35 +4029,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__5"
+    // $ANTLR end "rule__MappedEntity__Group_0__0"
 
 
-    // $ANTLR start "rule__Site__Group_1__5__Impl"
-    // InternalXenia.g:998:1: rule__Site__Group_1__5__Impl : ( ( rule__Site__SitesAssignment_1_5 ) ) ;
-    public final void rule__Site__Group_1__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0__0__Impl"
+    // InternalXenia.g:1324:1: rule__MappedEntity__Group_0__0__Impl : ( 'info' ) ;
+    public final void rule__MappedEntity__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1002:1: ( ( ( rule__Site__SitesAssignment_1_5 ) ) )
-            // InternalXenia.g:1003:1: ( ( rule__Site__SitesAssignment_1_5 ) )
+            // InternalXenia.g:1328:1: ( ( 'info' ) )
+            // InternalXenia.g:1329:1: ( 'info' )
             {
-            // InternalXenia.g:1003:1: ( ( rule__Site__SitesAssignment_1_5 ) )
-            // InternalXenia.g:1004:2: ( rule__Site__SitesAssignment_1_5 )
+            // InternalXenia.g:1329:1: ( 'info' )
+            // InternalXenia.g:1330:2: 'info'
             {
-             before(grammarAccess.getSiteAccess().getSitesAssignment_1_5()); 
-            // InternalXenia.g:1005:2: ( rule__Site__SitesAssignment_1_5 )
-            // InternalXenia.g:1005:3: rule__Site__SitesAssignment_1_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Site__SitesAssignment_1_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSiteAccess().getSitesAssignment_1_5()); 
+             before(grammarAccess.getMappedEntityAccess().getInfoKeyword_0_0()); 
+            match(input,28,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getInfoKeyword_0_0()); 
 
             }
 
@@ -3086,26 +4066,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__5__Impl"
+    // $ANTLR end "rule__MappedEntity__Group_0__0__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1__6"
-    // InternalXenia.g:1013:1: rule__Site__Group_1__6 : rule__Site__Group_1__6__Impl rule__Site__Group_1__7 ;
-    public final void rule__Site__Group_1__6() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0__1"
+    // InternalXenia.g:1339:1: rule__MappedEntity__Group_0__1 : rule__MappedEntity__Group_0__1__Impl rule__MappedEntity__Group_0__2 ;
+    public final void rule__MappedEntity__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1017:1: ( rule__Site__Group_1__6__Impl rule__Site__Group_1__7 )
-            // InternalXenia.g:1018:2: rule__Site__Group_1__6__Impl rule__Site__Group_1__7
+            // InternalXenia.g:1343:1: ( rule__MappedEntity__Group_0__1__Impl rule__MappedEntity__Group_0__2 )
+            // InternalXenia.g:1344:2: rule__MappedEntity__Group_0__1__Impl rule__MappedEntity__Group_0__2
             {
-            pushFollow(FOLLOW_18);
-            rule__Site__Group_1__6__Impl();
+            pushFollow(FOLLOW_9);
+            rule__MappedEntity__Group_0__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1__7();
+            rule__MappedEntity__Group_0__2();
 
             state._fsp--;
 
@@ -3124,24 +4104,259 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__6"
+    // $ANTLR end "rule__MappedEntity__Group_0__1"
 
 
-    // $ANTLR start "rule__Site__Group_1__6__Impl"
-    // InternalXenia.g:1025:1: rule__Site__Group_1__6__Impl : ( ( rule__Site__Group_1_6__0 )* ) ;
-    public final void rule__Site__Group_1__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0__1__Impl"
+    // InternalXenia.g:1351:1: rule__MappedEntity__Group_0__1__Impl : ( ':' ) ;
+    public final void rule__MappedEntity__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1029:1: ( ( ( rule__Site__Group_1_6__0 )* ) )
-            // InternalXenia.g:1030:1: ( ( rule__Site__Group_1_6__0 )* )
+            // InternalXenia.g:1355:1: ( ( ':' ) )
+            // InternalXenia.g:1356:1: ( ':' )
             {
-            // InternalXenia.g:1030:1: ( ( rule__Site__Group_1_6__0 )* )
-            // InternalXenia.g:1031:2: ( rule__Site__Group_1_6__0 )*
+            // InternalXenia.g:1356:1: ( ':' )
+            // InternalXenia.g:1357:2: ':'
             {
-             before(grammarAccess.getSiteAccess().getGroup_1_6()); 
-            // InternalXenia.g:1032:2: ( rule__Site__Group_1_6__0 )*
+             before(grammarAccess.getMappedEntityAccess().getColonKeyword_0_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getColonKeyword_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__2"
+    // InternalXenia.g:1366:1: rule__MappedEntity__Group_0__2 : rule__MappedEntity__Group_0__2__Impl rule__MappedEntity__Group_0__3 ;
+    public final void rule__MappedEntity__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1370:1: ( rule__MappedEntity__Group_0__2__Impl rule__MappedEntity__Group_0__3 )
+            // InternalXenia.g:1371:2: rule__MappedEntity__Group_0__2__Impl rule__MappedEntity__Group_0__3
+            {
+            pushFollow(FOLLOW_10);
+            rule__MappedEntity__Group_0__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_0__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__2"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__2__Impl"
+    // InternalXenia.g:1378:1: rule__MappedEntity__Group_0__2__Impl : ( '[' ) ;
+    public final void rule__MappedEntity__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1382:1: ( ( '[' ) )
+            // InternalXenia.g:1383:1: ( '[' )
+            {
+            // InternalXenia.g:1383:1: ( '[' )
+            // InternalXenia.g:1384:2: '['
+            {
+             before(grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_0_2()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__3"
+    // InternalXenia.g:1393:1: rule__MappedEntity__Group_0__3 : rule__MappedEntity__Group_0__3__Impl rule__MappedEntity__Group_0__4 ;
+    public final void rule__MappedEntity__Group_0__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1397:1: ( rule__MappedEntity__Group_0__3__Impl rule__MappedEntity__Group_0__4 )
+            // InternalXenia.g:1398:2: rule__MappedEntity__Group_0__3__Impl rule__MappedEntity__Group_0__4
+            {
+            pushFollow(FOLLOW_11);
+            rule__MappedEntity__Group_0__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_0__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__3"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__3__Impl"
+    // InternalXenia.g:1405:1: rule__MappedEntity__Group_0__3__Impl : ( ( rule__MappedEntity__InfoPropsAssignment_0_3 ) ) ;
+    public final void rule__MappedEntity__Group_0__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1409:1: ( ( ( rule__MappedEntity__InfoPropsAssignment_0_3 ) ) )
+            // InternalXenia.g:1410:1: ( ( rule__MappedEntity__InfoPropsAssignment_0_3 ) )
+            {
+            // InternalXenia.g:1410:1: ( ( rule__MappedEntity__InfoPropsAssignment_0_3 ) )
+            // InternalXenia.g:1411:2: ( rule__MappedEntity__InfoPropsAssignment_0_3 )
+            {
+             before(grammarAccess.getMappedEntityAccess().getInfoPropsAssignment_0_3()); 
+            // InternalXenia.g:1412:2: ( rule__MappedEntity__InfoPropsAssignment_0_3 )
+            // InternalXenia.g:1412:3: rule__MappedEntity__InfoPropsAssignment_0_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__InfoPropsAssignment_0_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMappedEntityAccess().getInfoPropsAssignment_0_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__3__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__4"
+    // InternalXenia.g:1420:1: rule__MappedEntity__Group_0__4 : rule__MappedEntity__Group_0__4__Impl rule__MappedEntity__Group_0__5 ;
+    public final void rule__MappedEntity__Group_0__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1424:1: ( rule__MappedEntity__Group_0__4__Impl rule__MappedEntity__Group_0__5 )
+            // InternalXenia.g:1425:2: rule__MappedEntity__Group_0__4__Impl rule__MappedEntity__Group_0__5
+            {
+            pushFollow(FOLLOW_11);
+            rule__MappedEntity__Group_0__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_0__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_0__4"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_0__4__Impl"
+    // InternalXenia.g:1432:1: rule__MappedEntity__Group_0__4__Impl : ( ( rule__MappedEntity__Group_0_4__0 )* ) ;
+    public final void rule__MappedEntity__Group_0__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1436:1: ( ( ( rule__MappedEntity__Group_0_4__0 )* ) )
+            // InternalXenia.g:1437:1: ( ( rule__MappedEntity__Group_0_4__0 )* )
+            {
+            // InternalXenia.g:1437:1: ( ( rule__MappedEntity__Group_0_4__0 )* )
+            // InternalXenia.g:1438:2: ( rule__MappedEntity__Group_0_4__0 )*
+            {
+             before(grammarAccess.getMappedEntityAccess().getGroup_0_4()); 
+            // InternalXenia.g:1439:2: ( rule__MappedEntity__Group_0_4__0 )*
             loop9:
             do {
                 int alt9=2;
@@ -3154,10 +4369,10 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalXenia.g:1032:3: rule__Site__Group_1_6__0
+            	    // InternalXenia.g:1439:3: rule__MappedEntity__Group_0_4__0
             	    {
             	    pushFollow(FOLLOW_12);
-            	    rule__Site__Group_1_6__0();
+            	    rule__MappedEntity__Group_0_4__0();
 
             	    state._fsp--;
 
@@ -3170,7 +4385,7 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getSiteAccess().getGroup_1_6()); 
+             after(grammarAccess.getMappedEntityAccess().getGroup_0_4()); 
 
             }
 
@@ -3189,21 +4404,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__6__Impl"
+    // $ANTLR end "rule__MappedEntity__Group_0__4__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1__7"
-    // InternalXenia.g:1040:1: rule__Site__Group_1__7 : rule__Site__Group_1__7__Impl ;
-    public final void rule__Site__Group_1__7() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0__5"
+    // InternalXenia.g:1447:1: rule__MappedEntity__Group_0__5 : rule__MappedEntity__Group_0__5__Impl ;
+    public final void rule__MappedEntity__Group_0__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1044:1: ( rule__Site__Group_1__7__Impl )
-            // InternalXenia.g:1045:2: rule__Site__Group_1__7__Impl
+            // InternalXenia.g:1451:1: ( rule__MappedEntity__Group_0__5__Impl )
+            // InternalXenia.g:1452:2: rule__MappedEntity__Group_0__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1__7__Impl();
+            rule__MappedEntity__Group_0__5__Impl();
 
             state._fsp--;
 
@@ -3222,25 +4437,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__7"
+    // $ANTLR end "rule__MappedEntity__Group_0__5"
 
 
-    // $ANTLR start "rule__Site__Group_1__7__Impl"
-    // InternalXenia.g:1051:1: rule__Site__Group_1__7__Impl : ( ')' ) ;
-    public final void rule__Site__Group_1__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0__5__Impl"
+    // InternalXenia.g:1458:1: rule__MappedEntity__Group_0__5__Impl : ( ']' ) ;
+    public final void rule__MappedEntity__Group_0__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1055:1: ( ( ')' ) )
-            // InternalXenia.g:1056:1: ( ')' )
+            // InternalXenia.g:1462:1: ( ( ']' ) )
+            // InternalXenia.g:1463:1: ( ']' )
             {
-            // InternalXenia.g:1056:1: ( ')' )
-            // InternalXenia.g:1057:2: ')'
+            // InternalXenia.g:1463:1: ( ']' )
+            // InternalXenia.g:1464:2: ']'
             {
-             before(grammarAccess.getSiteAccess().getRightParenthesisKeyword_1_7()); 
-            match(input,25,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getRightParenthesisKeyword_1_7()); 
+             before(grammarAccess.getMappedEntityAccess().getRightSquareBracketKeyword_0_5()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getRightSquareBracketKeyword_0_5()); 
 
             }
 
@@ -3259,26 +4474,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1__7__Impl"
+    // $ANTLR end "rule__MappedEntity__Group_0__5__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1_6__0"
-    // InternalXenia.g:1067:1: rule__Site__Group_1_6__0 : rule__Site__Group_1_6__0__Impl rule__Site__Group_1_6__1 ;
-    public final void rule__Site__Group_1_6__0() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0_4__0"
+    // InternalXenia.g:1474:1: rule__MappedEntity__Group_0_4__0 : rule__MappedEntity__Group_0_4__0__Impl rule__MappedEntity__Group_0_4__1 ;
+    public final void rule__MappedEntity__Group_0_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1071:1: ( rule__Site__Group_1_6__0__Impl rule__Site__Group_1_6__1 )
-            // InternalXenia.g:1072:2: rule__Site__Group_1_6__0__Impl rule__Site__Group_1_6__1
+            // InternalXenia.g:1478:1: ( rule__MappedEntity__Group_0_4__0__Impl rule__MappedEntity__Group_0_4__1 )
+            // InternalXenia.g:1479:2: rule__MappedEntity__Group_0_4__0__Impl rule__MappedEntity__Group_0_4__1
             {
             pushFollow(FOLLOW_10);
-            rule__Site__Group_1_6__0__Impl();
+            rule__MappedEntity__Group_0_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1_6__1();
+            rule__MappedEntity__Group_0_4__1();
 
             state._fsp--;
 
@@ -3297,25 +4512,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1_6__0"
+    // $ANTLR end "rule__MappedEntity__Group_0_4__0"
 
 
-    // $ANTLR start "rule__Site__Group_1_6__0__Impl"
-    // InternalXenia.g:1079:1: rule__Site__Group_1_6__0__Impl : ( ',' ) ;
-    public final void rule__Site__Group_1_6__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0_4__0__Impl"
+    // InternalXenia.g:1486:1: rule__MappedEntity__Group_0_4__0__Impl : ( ',' ) ;
+    public final void rule__MappedEntity__Group_0_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1083:1: ( ( ',' ) )
-            // InternalXenia.g:1084:1: ( ',' )
+            // InternalXenia.g:1490:1: ( ( ',' ) )
+            // InternalXenia.g:1491:1: ( ',' )
             {
-            // InternalXenia.g:1084:1: ( ',' )
-            // InternalXenia.g:1085:2: ','
+            // InternalXenia.g:1491:1: ( ',' )
+            // InternalXenia.g:1492:2: ','
             {
-             before(grammarAccess.getSiteAccess().getCommaKeyword_1_6_0()); 
+             before(grammarAccess.getMappedEntityAccess().getCommaKeyword_0_4_0()); 
             match(input,20,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getCommaKeyword_1_6_0()); 
+             after(grammarAccess.getMappedEntityAccess().getCommaKeyword_0_4_0()); 
 
             }
 
@@ -3334,21 +4549,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1_6__0__Impl"
+    // $ANTLR end "rule__MappedEntity__Group_0_4__0__Impl"
 
 
-    // $ANTLR start "rule__Site__Group_1_6__1"
-    // InternalXenia.g:1094:1: rule__Site__Group_1_6__1 : rule__Site__Group_1_6__1__Impl ;
-    public final void rule__Site__Group_1_6__1() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0_4__1"
+    // InternalXenia.g:1501:1: rule__MappedEntity__Group_0_4__1 : rule__MappedEntity__Group_0_4__1__Impl ;
+    public final void rule__MappedEntity__Group_0_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1098:1: ( rule__Site__Group_1_6__1__Impl )
-            // InternalXenia.g:1099:2: rule__Site__Group_1_6__1__Impl
+            // InternalXenia.g:1505:1: ( rule__MappedEntity__Group_0_4__1__Impl )
+            // InternalXenia.g:1506:2: rule__MappedEntity__Group_0_4__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Site__Group_1_6__1__Impl();
+            rule__MappedEntity__Group_0_4__1__Impl();
 
             state._fsp--;
 
@@ -3367,35 +4582,35 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1_6__1"
+    // $ANTLR end "rule__MappedEntity__Group_0_4__1"
 
 
-    // $ANTLR start "rule__Site__Group_1_6__1__Impl"
-    // InternalXenia.g:1105:1: rule__Site__Group_1_6__1__Impl : ( ( rule__Site__SitesAssignment_1_6_1 ) ) ;
-    public final void rule__Site__Group_1_6__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__Group_0_4__1__Impl"
+    // InternalXenia.g:1512:1: rule__MappedEntity__Group_0_4__1__Impl : ( ( rule__MappedEntity__InfoPropsAssignment_0_4_1 ) ) ;
+    public final void rule__MappedEntity__Group_0_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1109:1: ( ( ( rule__Site__SitesAssignment_1_6_1 ) ) )
-            // InternalXenia.g:1110:1: ( ( rule__Site__SitesAssignment_1_6_1 ) )
+            // InternalXenia.g:1516:1: ( ( ( rule__MappedEntity__InfoPropsAssignment_0_4_1 ) ) )
+            // InternalXenia.g:1517:1: ( ( rule__MappedEntity__InfoPropsAssignment_0_4_1 ) )
             {
-            // InternalXenia.g:1110:1: ( ( rule__Site__SitesAssignment_1_6_1 ) )
-            // InternalXenia.g:1111:2: ( rule__Site__SitesAssignment_1_6_1 )
+            // InternalXenia.g:1517:1: ( ( rule__MappedEntity__InfoPropsAssignment_0_4_1 ) )
+            // InternalXenia.g:1518:2: ( rule__MappedEntity__InfoPropsAssignment_0_4_1 )
             {
-             before(grammarAccess.getSiteAccess().getSitesAssignment_1_6_1()); 
-            // InternalXenia.g:1112:2: ( rule__Site__SitesAssignment_1_6_1 )
-            // InternalXenia.g:1112:3: rule__Site__SitesAssignment_1_6_1
+             before(grammarAccess.getMappedEntityAccess().getInfoPropsAssignment_0_4_1()); 
+            // InternalXenia.g:1519:2: ( rule__MappedEntity__InfoPropsAssignment_0_4_1 )
+            // InternalXenia.g:1519:3: rule__MappedEntity__InfoPropsAssignment_0_4_1
             {
             pushFollow(FOLLOW_2);
-            rule__Site__SitesAssignment_1_6_1();
+            rule__MappedEntity__InfoPropsAssignment_0_4_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSiteAccess().getSitesAssignment_1_6_1()); 
+             after(grammarAccess.getMappedEntityAccess().getInfoPropsAssignment_0_4_1()); 
 
             }
 
@@ -3414,18 +4629,1555 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__Group_1_6__1__Impl"
+    // $ANTLR end "rule__MappedEntity__Group_0_4__1__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__0"
+    // InternalXenia.g:1528:1: rule__MappedEntity__Group_1__0 : rule__MappedEntity__Group_1__0__Impl rule__MappedEntity__Group_1__1 ;
+    public final void rule__MappedEntity__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1532:1: ( rule__MappedEntity__Group_1__0__Impl rule__MappedEntity__Group_1__1 )
+            // InternalXenia.g:1533:2: rule__MappedEntity__Group_1__0__Impl rule__MappedEntity__Group_1__1
+            {
+            pushFollow(FOLLOW_13);
+            rule__MappedEntity__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__0"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__0__Impl"
+    // InternalXenia.g:1540:1: rule__MappedEntity__Group_1__0__Impl : ( 'map' ) ;
+    public final void rule__MappedEntity__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1544:1: ( ( 'map' ) )
+            // InternalXenia.g:1545:1: ( 'map' )
+            {
+            // InternalXenia.g:1545:1: ( 'map' )
+            // InternalXenia.g:1546:2: 'map'
+            {
+             before(grammarAccess.getMappedEntityAccess().getMapKeyword_1_0()); 
+            match(input,29,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getMapKeyword_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__1"
+    // InternalXenia.g:1555:1: rule__MappedEntity__Group_1__1 : rule__MappedEntity__Group_1__1__Impl rule__MappedEntity__Group_1__2 ;
+    public final void rule__MappedEntity__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1559:1: ( rule__MappedEntity__Group_1__1__Impl rule__MappedEntity__Group_1__2 )
+            // InternalXenia.g:1560:2: rule__MappedEntity__Group_1__1__Impl rule__MappedEntity__Group_1__2
+            {
+            pushFollow(FOLLOW_9);
+            rule__MappedEntity__Group_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__1"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__1__Impl"
+    // InternalXenia.g:1567:1: rule__MappedEntity__Group_1__1__Impl : ( ':' ) ;
+    public final void rule__MappedEntity__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1571:1: ( ( ':' ) )
+            // InternalXenia.g:1572:1: ( ':' )
+            {
+            // InternalXenia.g:1572:1: ( ':' )
+            // InternalXenia.g:1573:2: ':'
+            {
+             before(grammarAccess.getMappedEntityAccess().getColonKeyword_1_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getColonKeyword_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__2"
+    // InternalXenia.g:1582:1: rule__MappedEntity__Group_1__2 : rule__MappedEntity__Group_1__2__Impl rule__MappedEntity__Group_1__3 ;
+    public final void rule__MappedEntity__Group_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1586:1: ( rule__MappedEntity__Group_1__2__Impl rule__MappedEntity__Group_1__3 )
+            // InternalXenia.g:1587:2: rule__MappedEntity__Group_1__2__Impl rule__MappedEntity__Group_1__3
+            {
+            pushFollow(FOLLOW_10);
+            rule__MappedEntity__Group_1__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__2"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__2__Impl"
+    // InternalXenia.g:1594:1: rule__MappedEntity__Group_1__2__Impl : ( '[' ) ;
+    public final void rule__MappedEntity__Group_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1598:1: ( ( '[' ) )
+            // InternalXenia.g:1599:1: ( '[' )
+            {
+            // InternalXenia.g:1599:1: ( '[' )
+            // InternalXenia.g:1600:2: '['
+            {
+             before(grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_1_2()); 
+            match(input,18,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__2__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__3"
+    // InternalXenia.g:1609:1: rule__MappedEntity__Group_1__3 : rule__MappedEntity__Group_1__3__Impl rule__MappedEntity__Group_1__4 ;
+    public final void rule__MappedEntity__Group_1__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1613:1: ( rule__MappedEntity__Group_1__3__Impl rule__MappedEntity__Group_1__4 )
+            // InternalXenia.g:1614:2: rule__MappedEntity__Group_1__3__Impl rule__MappedEntity__Group_1__4
+            {
+            pushFollow(FOLLOW_11);
+            rule__MappedEntity__Group_1__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__3"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__3__Impl"
+    // InternalXenia.g:1621:1: rule__MappedEntity__Group_1__3__Impl : ( ( rule__MappedEntity__LinkedPropsAssignment_1_3 ) ) ;
+    public final void rule__MappedEntity__Group_1__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1625:1: ( ( ( rule__MappedEntity__LinkedPropsAssignment_1_3 ) ) )
+            // InternalXenia.g:1626:1: ( ( rule__MappedEntity__LinkedPropsAssignment_1_3 ) )
+            {
+            // InternalXenia.g:1626:1: ( ( rule__MappedEntity__LinkedPropsAssignment_1_3 ) )
+            // InternalXenia.g:1627:2: ( rule__MappedEntity__LinkedPropsAssignment_1_3 )
+            {
+             before(grammarAccess.getMappedEntityAccess().getLinkedPropsAssignment_1_3()); 
+            // InternalXenia.g:1628:2: ( rule__MappedEntity__LinkedPropsAssignment_1_3 )
+            // InternalXenia.g:1628:3: rule__MappedEntity__LinkedPropsAssignment_1_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__LinkedPropsAssignment_1_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMappedEntityAccess().getLinkedPropsAssignment_1_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__3__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__4"
+    // InternalXenia.g:1636:1: rule__MappedEntity__Group_1__4 : rule__MappedEntity__Group_1__4__Impl rule__MappedEntity__Group_1__5 ;
+    public final void rule__MappedEntity__Group_1__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1640:1: ( rule__MappedEntity__Group_1__4__Impl rule__MappedEntity__Group_1__5 )
+            // InternalXenia.g:1641:2: rule__MappedEntity__Group_1__4__Impl rule__MappedEntity__Group_1__5
+            {
+            pushFollow(FOLLOW_11);
+            rule__MappedEntity__Group_1__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__4"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__4__Impl"
+    // InternalXenia.g:1648:1: rule__MappedEntity__Group_1__4__Impl : ( ( rule__MappedEntity__Group_1_4__0 )* ) ;
+    public final void rule__MappedEntity__Group_1__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1652:1: ( ( ( rule__MappedEntity__Group_1_4__0 )* ) )
+            // InternalXenia.g:1653:1: ( ( rule__MappedEntity__Group_1_4__0 )* )
+            {
+            // InternalXenia.g:1653:1: ( ( rule__MappedEntity__Group_1_4__0 )* )
+            // InternalXenia.g:1654:2: ( rule__MappedEntity__Group_1_4__0 )*
+            {
+             before(grammarAccess.getMappedEntityAccess().getGroup_1_4()); 
+            // InternalXenia.g:1655:2: ( rule__MappedEntity__Group_1_4__0 )*
+            loop10:
+            do {
+                int alt10=2;
+                int LA10_0 = input.LA(1);
+
+                if ( (LA10_0==20) ) {
+                    alt10=1;
+                }
+
+
+                switch (alt10) {
+            	case 1 :
+            	    // InternalXenia.g:1655:3: rule__MappedEntity__Group_1_4__0
+            	    {
+            	    pushFollow(FOLLOW_12);
+            	    rule__MappedEntity__Group_1_4__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop10;
+                }
+            } while (true);
+
+             after(grammarAccess.getMappedEntityAccess().getGroup_1_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__4__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__5"
+    // InternalXenia.g:1663:1: rule__MappedEntity__Group_1__5 : rule__MappedEntity__Group_1__5__Impl ;
+    public final void rule__MappedEntity__Group_1__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1667:1: ( rule__MappedEntity__Group_1__5__Impl )
+            // InternalXenia.g:1668:2: rule__MappedEntity__Group_1__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__5"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1__5__Impl"
+    // InternalXenia.g:1674:1: rule__MappedEntity__Group_1__5__Impl : ( ']' ) ;
+    public final void rule__MappedEntity__Group_1__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1678:1: ( ( ']' ) )
+            // InternalXenia.g:1679:1: ( ']' )
+            {
+            // InternalXenia.g:1679:1: ( ']' )
+            // InternalXenia.g:1680:2: ']'
+            {
+             before(grammarAccess.getMappedEntityAccess().getRightSquareBracketKeyword_1_5()); 
+            match(input,19,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getRightSquareBracketKeyword_1_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1__5__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1_4__0"
+    // InternalXenia.g:1690:1: rule__MappedEntity__Group_1_4__0 : rule__MappedEntity__Group_1_4__0__Impl rule__MappedEntity__Group_1_4__1 ;
+    public final void rule__MappedEntity__Group_1_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1694:1: ( rule__MappedEntity__Group_1_4__0__Impl rule__MappedEntity__Group_1_4__1 )
+            // InternalXenia.g:1695:2: rule__MappedEntity__Group_1_4__0__Impl rule__MappedEntity__Group_1_4__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__MappedEntity__Group_1_4__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1_4__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1_4__0"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1_4__0__Impl"
+    // InternalXenia.g:1702:1: rule__MappedEntity__Group_1_4__0__Impl : ( ',' ) ;
+    public final void rule__MappedEntity__Group_1_4__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1706:1: ( ( ',' ) )
+            // InternalXenia.g:1707:1: ( ',' )
+            {
+            // InternalXenia.g:1707:1: ( ',' )
+            // InternalXenia.g:1708:2: ','
+            {
+             before(grammarAccess.getMappedEntityAccess().getCommaKeyword_1_4_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getMappedEntityAccess().getCommaKeyword_1_4_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1_4__0__Impl"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1_4__1"
+    // InternalXenia.g:1717:1: rule__MappedEntity__Group_1_4__1 : rule__MappedEntity__Group_1_4__1__Impl ;
+    public final void rule__MappedEntity__Group_1_4__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1721:1: ( rule__MappedEntity__Group_1_4__1__Impl )
+            // InternalXenia.g:1722:2: rule__MappedEntity__Group_1_4__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__Group_1_4__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1_4__1"
+
+
+    // $ANTLR start "rule__MappedEntity__Group_1_4__1__Impl"
+    // InternalXenia.g:1728:1: rule__MappedEntity__Group_1_4__1__Impl : ( ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 ) ) ;
+    public final void rule__MappedEntity__Group_1_4__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1732:1: ( ( ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 ) ) )
+            // InternalXenia.g:1733:1: ( ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 ) )
+            {
+            // InternalXenia.g:1733:1: ( ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 ) )
+            // InternalXenia.g:1734:2: ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 )
+            {
+             before(grammarAccess.getMappedEntityAccess().getLinkedPropsAssignment_1_4_1()); 
+            // InternalXenia.g:1735:2: ( rule__MappedEntity__LinkedPropsAssignment_1_4_1 )
+            // InternalXenia.g:1735:3: rule__MappedEntity__LinkedPropsAssignment_1_4_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__MappedEntity__LinkedPropsAssignment_1_4_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMappedEntityAccess().getLinkedPropsAssignment_1_4_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__Group_1_4__1__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__0"
+    // InternalXenia.g:1744:1: rule__InfoProperty__Group__0 : rule__InfoProperty__Group__0__Impl rule__InfoProperty__Group__1 ;
+    public final void rule__InfoProperty__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1748:1: ( rule__InfoProperty__Group__0__Impl rule__InfoProperty__Group__1 )
+            // InternalXenia.g:1749:2: rule__InfoProperty__Group__0__Impl rule__InfoProperty__Group__1
+            {
+            pushFollow(FOLLOW_19);
+            rule__InfoProperty__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__0"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__0__Impl"
+    // InternalXenia.g:1756:1: rule__InfoProperty__Group__0__Impl : ( ( rule__InfoProperty__PageAssignment_0 ) ) ;
+    public final void rule__InfoProperty__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1760:1: ( ( ( rule__InfoProperty__PageAssignment_0 ) ) )
+            // InternalXenia.g:1761:1: ( ( rule__InfoProperty__PageAssignment_0 ) )
+            {
+            // InternalXenia.g:1761:1: ( ( rule__InfoProperty__PageAssignment_0 ) )
+            // InternalXenia.g:1762:2: ( rule__InfoProperty__PageAssignment_0 )
+            {
+             before(grammarAccess.getInfoPropertyAccess().getPageAssignment_0()); 
+            // InternalXenia.g:1763:2: ( rule__InfoProperty__PageAssignment_0 )
+            // InternalXenia.g:1763:3: rule__InfoProperty__PageAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__PageAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoPropertyAccess().getPageAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__0__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__1"
+    // InternalXenia.g:1771:1: rule__InfoProperty__Group__1 : rule__InfoProperty__Group__1__Impl rule__InfoProperty__Group__2 ;
+    public final void rule__InfoProperty__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1775:1: ( rule__InfoProperty__Group__1__Impl rule__InfoProperty__Group__2 )
+            // InternalXenia.g:1776:2: rule__InfoProperty__Group__1__Impl rule__InfoProperty__Group__2
+            {
+            pushFollow(FOLLOW_20);
+            rule__InfoProperty__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__1"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__1__Impl"
+    // InternalXenia.g:1783:1: rule__InfoProperty__Group__1__Impl : ( '->' ) ;
+    public final void rule__InfoProperty__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1787:1: ( ( '->' ) )
+            // InternalXenia.g:1788:1: ( '->' )
+            {
+            // InternalXenia.g:1788:1: ( '->' )
+            // InternalXenia.g:1789:2: '->'
+            {
+             before(grammarAccess.getInfoPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getInfoPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__1__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__2"
+    // InternalXenia.g:1798:1: rule__InfoProperty__Group__2 : rule__InfoProperty__Group__2__Impl rule__InfoProperty__Group__3 ;
+    public final void rule__InfoProperty__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1802:1: ( rule__InfoProperty__Group__2__Impl rule__InfoProperty__Group__3 )
+            // InternalXenia.g:1803:2: rule__InfoProperty__Group__2__Impl rule__InfoProperty__Group__3
+            {
+            pushFollow(FOLLOW_21);
+            rule__InfoProperty__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__2"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__2__Impl"
+    // InternalXenia.g:1810:1: rule__InfoProperty__Group__2__Impl : ( ( rule__InfoProperty__EntitiesAssignment_2 ) ) ;
+    public final void rule__InfoProperty__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1814:1: ( ( ( rule__InfoProperty__EntitiesAssignment_2 ) ) )
+            // InternalXenia.g:1815:1: ( ( rule__InfoProperty__EntitiesAssignment_2 ) )
+            {
+            // InternalXenia.g:1815:1: ( ( rule__InfoProperty__EntitiesAssignment_2 ) )
+            // InternalXenia.g:1816:2: ( rule__InfoProperty__EntitiesAssignment_2 )
+            {
+             before(grammarAccess.getInfoPropertyAccess().getEntitiesAssignment_2()); 
+            // InternalXenia.g:1817:2: ( rule__InfoProperty__EntitiesAssignment_2 )
+            // InternalXenia.g:1817:3: rule__InfoProperty__EntitiesAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__EntitiesAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoPropertyAccess().getEntitiesAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__2__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__3"
+    // InternalXenia.g:1825:1: rule__InfoProperty__Group__3 : rule__InfoProperty__Group__3__Impl ;
+    public final void rule__InfoProperty__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1829:1: ( rule__InfoProperty__Group__3__Impl )
+            // InternalXenia.g:1830:2: rule__InfoProperty__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__3"
+
+
+    // $ANTLR start "rule__InfoProperty__Group__3__Impl"
+    // InternalXenia.g:1836:1: rule__InfoProperty__Group__3__Impl : ( ( rule__InfoProperty__Group_3__0 )* ) ;
+    public final void rule__InfoProperty__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1840:1: ( ( ( rule__InfoProperty__Group_3__0 )* ) )
+            // InternalXenia.g:1841:1: ( ( rule__InfoProperty__Group_3__0 )* )
+            {
+            // InternalXenia.g:1841:1: ( ( rule__InfoProperty__Group_3__0 )* )
+            // InternalXenia.g:1842:2: ( rule__InfoProperty__Group_3__0 )*
+            {
+             before(grammarAccess.getInfoPropertyAccess().getGroup_3()); 
+            // InternalXenia.g:1843:2: ( rule__InfoProperty__Group_3__0 )*
+            loop11:
+            do {
+                int alt11=2;
+                int LA11_0 = input.LA(1);
+
+                if ( (LA11_0==20) ) {
+                    int LA11_2 = input.LA(2);
+
+                    if ( ((LA11_2>=12 && LA11_2<=14)) ) {
+                        alt11=1;
+                    }
+
+
+                }
+
+
+                switch (alt11) {
+            	case 1 :
+            	    // InternalXenia.g:1843:3: rule__InfoProperty__Group_3__0
+            	    {
+            	    pushFollow(FOLLOW_12);
+            	    rule__InfoProperty__Group_3__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop11;
+                }
+            } while (true);
+
+             after(grammarAccess.getInfoPropertyAccess().getGroup_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group__3__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group_3__0"
+    // InternalXenia.g:1852:1: rule__InfoProperty__Group_3__0 : rule__InfoProperty__Group_3__0__Impl rule__InfoProperty__Group_3__1 ;
+    public final void rule__InfoProperty__Group_3__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1856:1: ( rule__InfoProperty__Group_3__0__Impl rule__InfoProperty__Group_3__1 )
+            // InternalXenia.g:1857:2: rule__InfoProperty__Group_3__0__Impl rule__InfoProperty__Group_3__1
+            {
+            pushFollow(FOLLOW_20);
+            rule__InfoProperty__Group_3__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group_3__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group_3__0"
+
+
+    // $ANTLR start "rule__InfoProperty__Group_3__0__Impl"
+    // InternalXenia.g:1864:1: rule__InfoProperty__Group_3__0__Impl : ( ',' ) ;
+    public final void rule__InfoProperty__Group_3__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1868:1: ( ( ',' ) )
+            // InternalXenia.g:1869:1: ( ',' )
+            {
+            // InternalXenia.g:1869:1: ( ',' )
+            // InternalXenia.g:1870:2: ','
+            {
+             before(grammarAccess.getInfoPropertyAccess().getCommaKeyword_3_0()); 
+            match(input,20,FOLLOW_2); 
+             after(grammarAccess.getInfoPropertyAccess().getCommaKeyword_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group_3__0__Impl"
+
+
+    // $ANTLR start "rule__InfoProperty__Group_3__1"
+    // InternalXenia.g:1879:1: rule__InfoProperty__Group_3__1 : rule__InfoProperty__Group_3__1__Impl ;
+    public final void rule__InfoProperty__Group_3__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1883:1: ( rule__InfoProperty__Group_3__1__Impl )
+            // InternalXenia.g:1884:2: rule__InfoProperty__Group_3__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__Group_3__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group_3__1"
+
+
+    // $ANTLR start "rule__InfoProperty__Group_3__1__Impl"
+    // InternalXenia.g:1890:1: rule__InfoProperty__Group_3__1__Impl : ( ( rule__InfoProperty__EntitiesAssignment_3_1 ) ) ;
+    public final void rule__InfoProperty__Group_3__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1894:1: ( ( ( rule__InfoProperty__EntitiesAssignment_3_1 ) ) )
+            // InternalXenia.g:1895:1: ( ( rule__InfoProperty__EntitiesAssignment_3_1 ) )
+            {
+            // InternalXenia.g:1895:1: ( ( rule__InfoProperty__EntitiesAssignment_3_1 ) )
+            // InternalXenia.g:1896:2: ( rule__InfoProperty__EntitiesAssignment_3_1 )
+            {
+             before(grammarAccess.getInfoPropertyAccess().getEntitiesAssignment_3_1()); 
+            // InternalXenia.g:1897:2: ( rule__InfoProperty__EntitiesAssignment_3_1 )
+            // InternalXenia.g:1897:3: rule__InfoProperty__EntitiesAssignment_3_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoProperty__EntitiesAssignment_3_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoPropertyAccess().getEntitiesAssignment_3_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__Group_3__1__Impl"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__0"
+    // InternalXenia.g:1906:1: rule__InfoEntity__Group__0 : rule__InfoEntity__Group__0__Impl rule__InfoEntity__Group__1 ;
+    public final void rule__InfoEntity__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1910:1: ( rule__InfoEntity__Group__0__Impl rule__InfoEntity__Group__1 )
+            // InternalXenia.g:1911:2: rule__InfoEntity__Group__0__Impl rule__InfoEntity__Group__1
+            {
+            pushFollow(FOLLOW_13);
+            rule__InfoEntity__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__0"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__0__Impl"
+    // InternalXenia.g:1918:1: rule__InfoEntity__Group__0__Impl : ( ( rule__InfoEntity__EntriesAssignment_0 ) ) ;
+    public final void rule__InfoEntity__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1922:1: ( ( ( rule__InfoEntity__EntriesAssignment_0 ) ) )
+            // InternalXenia.g:1923:1: ( ( rule__InfoEntity__EntriesAssignment_0 ) )
+            {
+            // InternalXenia.g:1923:1: ( ( rule__InfoEntity__EntriesAssignment_0 ) )
+            // InternalXenia.g:1924:2: ( rule__InfoEntity__EntriesAssignment_0 )
+            {
+             before(grammarAccess.getInfoEntityAccess().getEntriesAssignment_0()); 
+            // InternalXenia.g:1925:2: ( rule__InfoEntity__EntriesAssignment_0 )
+            // InternalXenia.g:1925:3: rule__InfoEntity__EntriesAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__EntriesAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoEntityAccess().getEntriesAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__0__Impl"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__1"
+    // InternalXenia.g:1933:1: rule__InfoEntity__Group__1 : rule__InfoEntity__Group__1__Impl rule__InfoEntity__Group__2 ;
+    public final void rule__InfoEntity__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1937:1: ( rule__InfoEntity__Group__1__Impl rule__InfoEntity__Group__2 )
+            // InternalXenia.g:1938:2: rule__InfoEntity__Group__1__Impl rule__InfoEntity__Group__2
+            {
+            pushFollow(FOLLOW_14);
+            rule__InfoEntity__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__1"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__1__Impl"
+    // InternalXenia.g:1945:1: rule__InfoEntity__Group__1__Impl : ( ':' ) ;
+    public final void rule__InfoEntity__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1949:1: ( ( ':' ) )
+            // InternalXenia.g:1950:1: ( ':' )
+            {
+            // InternalXenia.g:1950:1: ( ':' )
+            // InternalXenia.g:1951:2: ':'
+            {
+             before(grammarAccess.getInfoEntityAccess().getColonKeyword_1()); 
+            match(input,22,FOLLOW_2); 
+             after(grammarAccess.getInfoEntityAccess().getColonKeyword_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__1__Impl"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__2"
+    // InternalXenia.g:1960:1: rule__InfoEntity__Group__2 : rule__InfoEntity__Group__2__Impl ;
+    public final void rule__InfoEntity__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1964:1: ( rule__InfoEntity__Group__2__Impl )
+            // InternalXenia.g:1965:2: rule__InfoEntity__Group__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__2"
+
+
+    // $ANTLR start "rule__InfoEntity__Group__2__Impl"
+    // InternalXenia.g:1971:1: rule__InfoEntity__Group__2__Impl : ( ( rule__InfoEntity__InfoValueAssignment_2 ) ) ;
+    public final void rule__InfoEntity__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1975:1: ( ( ( rule__InfoEntity__InfoValueAssignment_2 ) ) )
+            // InternalXenia.g:1976:1: ( ( rule__InfoEntity__InfoValueAssignment_2 ) )
+            {
+            // InternalXenia.g:1976:1: ( ( rule__InfoEntity__InfoValueAssignment_2 ) )
+            // InternalXenia.g:1977:2: ( rule__InfoEntity__InfoValueAssignment_2 )
+            {
+             before(grammarAccess.getInfoEntityAccess().getInfoValueAssignment_2()); 
+            // InternalXenia.g:1978:2: ( rule__InfoEntity__InfoValueAssignment_2 )
+            // InternalXenia.g:1978:3: rule__InfoEntity__InfoValueAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__InfoEntity__InfoValueAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getInfoEntityAccess().getInfoValueAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Site__Group__0"
+    // InternalXenia.g:1987:1: rule__Site__Group__0 : rule__Site__Group__0__Impl rule__Site__Group__1 ;
+    public final void rule__Site__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:1991:1: ( rule__Site__Group__0__Impl rule__Site__Group__1 )
+            // InternalXenia.g:1992:2: rule__Site__Group__0__Impl rule__Site__Group__1
+            {
+            pushFollow(FOLLOW_6);
+            rule__Site__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Site__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Site__Group__0"
+
+
+    // $ANTLR start "rule__Site__Group__0__Impl"
+    // InternalXenia.g:1999:1: rule__Site__Group__0__Impl : ( '@' ) ;
+    public final void rule__Site__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2003:1: ( ( '@' ) )
+            // InternalXenia.g:2004:1: ( '@' )
+            {
+            // InternalXenia.g:2004:1: ( '@' )
+            // InternalXenia.g:2005:2: '@'
+            {
+             before(grammarAccess.getSiteAccess().getCommercialAtKeyword_0()); 
+            match(input,24,FOLLOW_2); 
+             after(grammarAccess.getSiteAccess().getCommercialAtKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Site__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Site__Group__1"
+    // InternalXenia.g:2014:1: rule__Site__Group__1 : rule__Site__Group__1__Impl ;
+    public final void rule__Site__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2018:1: ( rule__Site__Group__1__Impl )
+            // InternalXenia.g:2019:2: rule__Site__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Site__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Site__Group__1"
+
+
+    // $ANTLR start "rule__Site__Group__1__Impl"
+    // InternalXenia.g:2025:1: rule__Site__Group__1__Impl : ( ( rule__Site__NameAssignment_1 ) ) ;
+    public final void rule__Site__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2029:1: ( ( ( rule__Site__NameAssignment_1 ) ) )
+            // InternalXenia.g:2030:1: ( ( rule__Site__NameAssignment_1 ) )
+            {
+            // InternalXenia.g:2030:1: ( ( rule__Site__NameAssignment_1 ) )
+            // InternalXenia.g:2031:2: ( rule__Site__NameAssignment_1 )
+            {
+             before(grammarAccess.getSiteAccess().getNameAssignment_1()); 
+            // InternalXenia.g:2032:2: ( rule__Site__NameAssignment_1 )
+            // InternalXenia.g:2032:3: rule__Site__NameAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Site__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSiteAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Site__Group__1__Impl"
 
 
     // $ANTLR start "rule__LinkedProperty__Group__0"
-    // InternalXenia.g:1121:1: rule__LinkedProperty__Group__0 : rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1 ;
+    // InternalXenia.g:2041:1: rule__LinkedProperty__Group__0 : rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1 ;
     public final void rule__LinkedProperty__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1125:1: ( rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1 )
-            // InternalXenia.g:1126:2: rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1
+            // InternalXenia.g:2045:1: ( rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1 )
+            // InternalXenia.g:2046:2: rule__LinkedProperty__Group__0__Impl rule__LinkedProperty__Group__1
             {
             pushFollow(FOLLOW_19);
             rule__LinkedProperty__Group__0__Impl();
@@ -3456,21 +6208,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group__0__Impl"
-    // InternalXenia.g:1133:1: rule__LinkedProperty__Group__0__Impl : ( ( rule__LinkedProperty__NameAssignment_0 ) ) ;
+    // InternalXenia.g:2053:1: rule__LinkedProperty__Group__0__Impl : ( ( rule__LinkedProperty__NameAssignment_0 ) ) ;
     public final void rule__LinkedProperty__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1137:1: ( ( ( rule__LinkedProperty__NameAssignment_0 ) ) )
-            // InternalXenia.g:1138:1: ( ( rule__LinkedProperty__NameAssignment_0 ) )
+            // InternalXenia.g:2057:1: ( ( ( rule__LinkedProperty__NameAssignment_0 ) ) )
+            // InternalXenia.g:2058:1: ( ( rule__LinkedProperty__NameAssignment_0 ) )
             {
-            // InternalXenia.g:1138:1: ( ( rule__LinkedProperty__NameAssignment_0 ) )
-            // InternalXenia.g:1139:2: ( rule__LinkedProperty__NameAssignment_0 )
+            // InternalXenia.g:2058:1: ( ( rule__LinkedProperty__NameAssignment_0 ) )
+            // InternalXenia.g:2059:2: ( rule__LinkedProperty__NameAssignment_0 )
             {
              before(grammarAccess.getLinkedPropertyAccess().getNameAssignment_0()); 
-            // InternalXenia.g:1140:2: ( rule__LinkedProperty__NameAssignment_0 )
-            // InternalXenia.g:1140:3: rule__LinkedProperty__NameAssignment_0
+            // InternalXenia.g:2060:2: ( rule__LinkedProperty__NameAssignment_0 )
+            // InternalXenia.g:2060:3: rule__LinkedProperty__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__LinkedProperty__NameAssignment_0();
@@ -3503,22 +6255,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group__1"
-    // InternalXenia.g:1148:1: rule__LinkedProperty__Group__1 : rule__LinkedProperty__Group__1__Impl rule__LinkedProperty__Group__2 ;
+    // InternalXenia.g:2068:1: rule__LinkedProperty__Group__1 : rule__LinkedProperty__Group__1__Impl ;
     public final void rule__LinkedProperty__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1152:1: ( rule__LinkedProperty__Group__1__Impl rule__LinkedProperty__Group__2 )
-            // InternalXenia.g:1153:2: rule__LinkedProperty__Group__1__Impl rule__LinkedProperty__Group__2
+            // InternalXenia.g:2072:1: ( rule__LinkedProperty__Group__1__Impl )
+            // InternalXenia.g:2073:2: rule__LinkedProperty__Group__1__Impl
             {
-            pushFollow(FOLLOW_6);
-            rule__LinkedProperty__Group__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__LinkedProperty__Group__2();
+            rule__LinkedProperty__Group__1__Impl();
 
             state._fsp--;
 
@@ -3541,21 +6288,49 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group__1__Impl"
-    // InternalXenia.g:1160:1: rule__LinkedProperty__Group__1__Impl : ( '->' ) ;
+    // InternalXenia.g:2079:1: rule__LinkedProperty__Group__1__Impl : ( ( rule__LinkedProperty__Group_1__0 )* ) ;
     public final void rule__LinkedProperty__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1164:1: ( ( '->' ) )
-            // InternalXenia.g:1165:1: ( '->' )
+            // InternalXenia.g:2083:1: ( ( ( rule__LinkedProperty__Group_1__0 )* ) )
+            // InternalXenia.g:2084:1: ( ( rule__LinkedProperty__Group_1__0 )* )
             {
-            // InternalXenia.g:1165:1: ( '->' )
-            // InternalXenia.g:1166:2: '->'
+            // InternalXenia.g:2084:1: ( ( rule__LinkedProperty__Group_1__0 )* )
+            // InternalXenia.g:2085:2: ( rule__LinkedProperty__Group_1__0 )*
             {
-             before(grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1()); 
-            match(input,26,FOLLOW_2); 
-             after(grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1()); 
+             before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); 
+            // InternalXenia.g:2086:2: ( rule__LinkedProperty__Group_1__0 )*
+            loop12:
+            do {
+                int alt12=2;
+                int LA12_0 = input.LA(1);
+
+                if ( (LA12_0==30) ) {
+                    alt12=1;
+                }
+
+
+                switch (alt12) {
+            	case 1 :
+            	    // InternalXenia.g:2086:3: rule__LinkedProperty__Group_1__0
+            	    {
+            	    pushFollow(FOLLOW_22);
+            	    rule__LinkedProperty__Group_1__0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop12;
+                }
+            } while (true);
+
+             after(grammarAccess.getLinkedPropertyAccess().getGroup_1()); 
 
             }
 
@@ -3577,18 +6352,23 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LinkedProperty__Group__1__Impl"
 
 
-    // $ANTLR start "rule__LinkedProperty__Group__2"
-    // InternalXenia.g:1175:1: rule__LinkedProperty__Group__2 : rule__LinkedProperty__Group__2__Impl ;
-    public final void rule__LinkedProperty__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__LinkedProperty__Group_1__0"
+    // InternalXenia.g:2095:1: rule__LinkedProperty__Group_1__0 : rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 ;
+    public final void rule__LinkedProperty__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1179:1: ( rule__LinkedProperty__Group__2__Impl )
-            // InternalXenia.g:1180:2: rule__LinkedProperty__Group__2__Impl
+            // InternalXenia.g:2099:1: ( rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 )
+            // InternalXenia.g:2100:2: rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1
             {
+            pushFollow(FOLLOW_10);
+            rule__LinkedProperty__Group_1__0__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__LinkedProperty__Group__2__Impl();
+            rule__LinkedProperty__Group_1__1();
 
             state._fsp--;
 
@@ -3607,35 +6387,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LinkedProperty__Group__2"
+    // $ANTLR end "rule__LinkedProperty__Group_1__0"
 
 
-    // $ANTLR start "rule__LinkedProperty__Group__2__Impl"
-    // InternalXenia.g:1186:1: rule__LinkedProperty__Group__2__Impl : ( ( rule__LinkedProperty__Inner_nameAssignment_2 ) ) ;
-    public final void rule__LinkedProperty__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__LinkedProperty__Group_1__0__Impl"
+    // InternalXenia.g:2107:1: rule__LinkedProperty__Group_1__0__Impl : ( '->' ) ;
+    public final void rule__LinkedProperty__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1190:1: ( ( ( rule__LinkedProperty__Inner_nameAssignment_2 ) ) )
-            // InternalXenia.g:1191:1: ( ( rule__LinkedProperty__Inner_nameAssignment_2 ) )
+            // InternalXenia.g:2111:1: ( ( '->' ) )
+            // InternalXenia.g:2112:1: ( '->' )
             {
-            // InternalXenia.g:1191:1: ( ( rule__LinkedProperty__Inner_nameAssignment_2 ) )
-            // InternalXenia.g:1192:2: ( rule__LinkedProperty__Inner_nameAssignment_2 )
+            // InternalXenia.g:2112:1: ( '->' )
+            // InternalXenia.g:2113:2: '->'
             {
-             before(grammarAccess.getLinkedPropertyAccess().getInner_nameAssignment_2()); 
-            // InternalXenia.g:1193:2: ( rule__LinkedProperty__Inner_nameAssignment_2 )
-            // InternalXenia.g:1193:3: rule__LinkedProperty__Inner_nameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__LinkedProperty__Inner_nameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getLinkedPropertyAccess().getInner_nameAssignment_2()); 
+             before(grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
+            match(input,30,FOLLOW_2); 
+             after(grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
 
             }
 
@@ -3654,29 +6424,150 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LinkedProperty__Group__2__Impl"
+    // $ANTLR end "rule__LinkedProperty__Group_1__0__Impl"
 
 
-    // $ANTLR start "rule__Model__EntitiesAssignment_0"
-    // InternalXenia.g:1202:1: rule__Model__EntitiesAssignment_0 : ( ruleEntity ) ;
-    public final void rule__Model__EntitiesAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__LinkedProperty__Group_1__1"
+    // InternalXenia.g:2122:1: rule__LinkedProperty__Group_1__1 : rule__LinkedProperty__Group_1__1__Impl ;
+    public final void rule__LinkedProperty__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1206:1: ( ( ruleEntity ) )
-            // InternalXenia.g:1207:2: ( ruleEntity )
+            // InternalXenia.g:2126:1: ( rule__LinkedProperty__Group_1__1__Impl )
+            // InternalXenia.g:2127:2: rule__LinkedProperty__Group_1__1__Impl
             {
-            // InternalXenia.g:1207:2: ( ruleEntity )
-            // InternalXenia.g:1208:3: ruleEntity
+            pushFollow(FOLLOW_2);
+            rule__LinkedProperty__Group_1__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__LinkedProperty__Group_1__1"
+
+
+    // $ANTLR start "rule__LinkedProperty__Group_1__1__Impl"
+    // InternalXenia.g:2133:1: rule__LinkedProperty__Group_1__1__Impl : ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) ;
+    public final void rule__LinkedProperty__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2137:1: ( ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) )
+            // InternalXenia.g:2138:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
             {
-             before(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_0_0()); 
+            // InternalXenia.g:2138:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
+            // InternalXenia.g:2139:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
+            {
+             before(grammarAccess.getLinkedPropertyAccess().getSiteAssignment_1_1()); 
+            // InternalXenia.g:2140:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
+            // InternalXenia.g:2140:3: rule__LinkedProperty__SiteAssignment_1_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__LinkedProperty__SiteAssignment_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLinkedPropertyAccess().getSiteAssignment_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__LinkedProperty__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__Model__HeadersAssignment_0"
+    // InternalXenia.g:2149:1: rule__Model__HeadersAssignment_0 : ( ruleHeader ) ;
+    public final void rule__Model__HeadersAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2153:1: ( ( ruleHeader ) )
+            // InternalXenia.g:2154:2: ( ruleHeader )
+            {
+            // InternalXenia.g:2154:2: ( ruleHeader )
+            // InternalXenia.g:2155:3: ruleHeader
+            {
+             before(grammarAccess.getModelAccess().getHeadersHeaderParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleHeader();
+
+            state._fsp--;
+
+             after(grammarAccess.getModelAccess().getHeadersHeaderParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Model__HeadersAssignment_0"
+
+
+    // $ANTLR start "rule__Model__EntitiesAssignment_1"
+    // InternalXenia.g:2164:1: rule__Model__EntitiesAssignment_1 : ( ruleEntity ) ;
+    public final void rule__Model__EntitiesAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2168:1: ( ( ruleEntity ) )
+            // InternalXenia.g:2169:2: ( ruleEntity )
+            {
+            // InternalXenia.g:2169:2: ( ruleEntity )
+            // InternalXenia.g:2170:3: ruleEntity
+            {
+             before(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleEntity();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_0_0()); 
+             after(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_1_0()); 
 
             }
 
@@ -3695,29 +6586,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Model__EntitiesAssignment_0"
+    // $ANTLR end "rule__Model__EntitiesAssignment_1"
 
 
-    // $ANTLR start "rule__Model__Mapped_entitiesAssignment_1"
-    // InternalXenia.g:1217:1: rule__Model__Mapped_entitiesAssignment_1 : ( ruleMappedEntity ) ;
-    public final void rule__Model__Mapped_entitiesAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Model__Mapped_entitiesAssignment_2"
+    // InternalXenia.g:2179:1: rule__Model__Mapped_entitiesAssignment_2 : ( ruleMappedEntity ) ;
+    public final void rule__Model__Mapped_entitiesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1221:1: ( ( ruleMappedEntity ) )
-            // InternalXenia.g:1222:2: ( ruleMappedEntity )
+            // InternalXenia.g:2183:1: ( ( ruleMappedEntity ) )
+            // InternalXenia.g:2184:2: ( ruleMappedEntity )
             {
-            // InternalXenia.g:1222:2: ( ruleMappedEntity )
-            // InternalXenia.g:1223:3: ruleMappedEntity
+            // InternalXenia.g:2184:2: ( ruleMappedEntity )
+            // InternalXenia.g:2185:3: ruleMappedEntity
             {
-             before(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_1_0()); 
+             before(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
             ruleMappedEntity();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_1_0()); 
+             after(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_2_0()); 
 
             }
 
@@ -3736,25 +6627,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Model__Mapped_entitiesAssignment_1"
+    // $ANTLR end "rule__Model__Mapped_entitiesAssignment_2"
 
 
-    // $ANTLR start "rule__Entity__AppNameAssignment_0_1"
-    // InternalXenia.g:1232:1: rule__Entity__AppNameAssignment_0_1 : ( RULE_ID ) ;
-    public final void rule__Entity__AppNameAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__Header__AppNameAssignment_1"
+    // InternalXenia.g:2194:1: rule__Header__AppNameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Header__AppNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1236:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1237:2: ( RULE_ID )
+            // InternalXenia.g:2198:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2199:2: ( RULE_ID )
             {
-            // InternalXenia.g:1237:2: ( RULE_ID )
-            // InternalXenia.g:1238:3: RULE_ID
+            // InternalXenia.g:2199:2: ( RULE_ID )
+            // InternalXenia.g:2200:3: RULE_ID
             {
-             before(grammarAccess.getEntityAccess().getAppNameIDTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getHeaderAccess().getAppNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getAppNameIDTerminalRuleCall_0_1_0()); 
+             after(grammarAccess.getHeaderAccess().getAppNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -3773,29 +6664,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__AppNameAssignment_0_1"
+    // $ANTLR end "rule__Header__AppNameAssignment_1"
 
 
-    // $ANTLR start "rule__Entity__SitesAssignment_0_5"
-    // InternalXenia.g:1247:1: rule__Entity__SitesAssignment_0_5 : ( ruleSite ) ;
-    public final void rule__Entity__SitesAssignment_0_5() throws RecognitionException {
+    // $ANTLR start "rule__Header__SitesAssignment_5"
+    // InternalXenia.g:2209:1: rule__Header__SitesAssignment_5 : ( ruleSuperSite ) ;
+    public final void rule__Header__SitesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1251:1: ( ( ruleSite ) )
-            // InternalXenia.g:1252:2: ( ruleSite )
+            // InternalXenia.g:2213:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2214:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:1252:2: ( ruleSite )
-            // InternalXenia.g:1253:3: ruleSite
+            // InternalXenia.g:2214:2: ( ruleSuperSite )
+            // InternalXenia.g:2215:3: ruleSuperSite
             {
-             before(grammarAccess.getEntityAccess().getSitesSiteParserRuleCall_0_5_0()); 
+             before(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
-            ruleSite();
+            ruleSuperSite();
 
             state._fsp--;
 
-             after(grammarAccess.getEntityAccess().getSitesSiteParserRuleCall_0_5_0()); 
+             after(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_5_0()); 
 
             }
 
@@ -3814,29 +6705,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__SitesAssignment_0_5"
+    // $ANTLR end "rule__Header__SitesAssignment_5"
 
 
-    // $ANTLR start "rule__Entity__SitesAssignment_0_6_1"
-    // InternalXenia.g:1262:1: rule__Entity__SitesAssignment_0_6_1 : ( ruleSite ) ;
-    public final void rule__Entity__SitesAssignment_0_6_1() throws RecognitionException {
+    // $ANTLR start "rule__Header__SitesAssignment_6_1"
+    // InternalXenia.g:2224:1: rule__Header__SitesAssignment_6_1 : ( ruleSuperSite ) ;
+    public final void rule__Header__SitesAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1266:1: ( ( ruleSite ) )
-            // InternalXenia.g:1267:2: ( ruleSite )
+            // InternalXenia.g:2228:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2229:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:1267:2: ( ruleSite )
-            // InternalXenia.g:1268:3: ruleSite
+            // InternalXenia.g:2229:2: ( ruleSuperSite )
+            // InternalXenia.g:2230:3: ruleSuperSite
             {
-             before(grammarAccess.getEntityAccess().getSitesSiteParserRuleCall_0_6_1_0()); 
+             before(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
-            ruleSite();
+            ruleSuperSite();
 
             state._fsp--;
 
-             after(grammarAccess.getEntityAccess().getSitesSiteParserRuleCall_0_6_1_0()); 
+             after(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
 
             }
 
@@ -3855,29 +6746,103 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__SitesAssignment_0_6_1"
+    // $ANTLR end "rule__Header__SitesAssignment_6_1"
 
 
-    // $ANTLR start "rule__Entity__PropAssignment_1_0"
-    // InternalXenia.g:1277:1: rule__Entity__PropAssignment_1_0 : ( ruleProperty ) ;
-    public final void rule__Entity__PropAssignment_1_0() throws RecognitionException {
+    // $ANTLR start "rule__Entity__TechAssignment_0_2"
+    // InternalXenia.g:2239:1: rule__Entity__TechAssignment_0_2 : ( RULE_STRING ) ;
+    public final void rule__Entity__TechAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1281:1: ( ( ruleProperty ) )
-            // InternalXenia.g:1282:2: ( ruleProperty )
+            // InternalXenia.g:2243:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2244:2: ( RULE_STRING )
             {
-            // InternalXenia.g:1282:2: ( ruleProperty )
-            // InternalXenia.g:1283:3: ruleProperty
+            // InternalXenia.g:2244:2: ( RULE_STRING )
+            // InternalXenia.g:2245:3: RULE_STRING
             {
-             before(grammarAccess.getEntityAccess().getPropPropertyParserRuleCall_1_0_0()); 
+             before(grammarAccess.getEntityAccess().getTechSTRINGTerminalRuleCall_0_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getTechSTRINGTerminalRuleCall_0_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__TechAssignment_0_2"
+
+
+    // $ANTLR start "rule__Entity__PathAssignment_1_2"
+    // InternalXenia.g:2254:1: rule__Entity__PathAssignment_1_2 : ( RULE_STRING ) ;
+    public final void rule__Entity__PathAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2258:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2259:2: ( RULE_STRING )
+            {
+            // InternalXenia.g:2259:2: ( RULE_STRING )
+            // InternalXenia.g:2260:3: RULE_STRING
+            {
+             before(grammarAccess.getEntityAccess().getPathSTRINGTerminalRuleCall_1_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getEntityAccess().getPathSTRINGTerminalRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Entity__PathAssignment_1_2"
+
+
+    // $ANTLR start "rule__Entity__PropAssignment_2_0"
+    // InternalXenia.g:2269:1: rule__Entity__PropAssignment_2_0 : ( ruleProperty ) ;
+    public final void rule__Entity__PropAssignment_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2273:1: ( ( ruleProperty ) )
+            // InternalXenia.g:2274:2: ( ruleProperty )
+            {
+            // InternalXenia.g:2274:2: ( ruleProperty )
+            // InternalXenia.g:2275:3: ruleProperty
+            {
+             before(grammarAccess.getEntityAccess().getPropPropertyParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
             ruleProperty();
 
             state._fsp--;
 
-             after(grammarAccess.getEntityAccess().getPropPropertyParserRuleCall_1_0_0()); 
+             after(grammarAccess.getEntityAccess().getPropPropertyParserRuleCall_2_0_0()); 
 
             }
 
@@ -3896,25 +6861,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__PropAssignment_1_0"
+    // $ANTLR end "rule__Entity__PropAssignment_2_0"
 
 
-    // $ANTLR start "rule__Entity__NameAssignment_1_2"
-    // InternalXenia.g:1292:1: rule__Entity__NameAssignment_1_2 : ( RULE_ID ) ;
-    public final void rule__Entity__NameAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__Entity__NameAssignment_2_2"
+    // InternalXenia.g:2284:1: rule__Entity__NameAssignment_2_2 : ( RULE_ID ) ;
+    public final void rule__Entity__NameAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1296:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1297:2: ( RULE_ID )
+            // InternalXenia.g:2288:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2289:2: ( RULE_ID )
             {
-            // InternalXenia.g:1297:2: ( RULE_ID )
-            // InternalXenia.g:1298:3: RULE_ID
+            // InternalXenia.g:2289:2: ( RULE_ID )
+            // InternalXenia.g:2290:3: RULE_ID
             {
-             before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_2_0()); 
+             before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_2_0()); 
+             after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_2_0()); 
 
             }
 
@@ -3933,29 +6898,66 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Entity__NameAssignment_1_2"
+    // $ANTLR end "rule__Entity__NameAssignment_2_2"
 
 
-    // $ANTLR start "rule__MappedEntity__PropAssignment_0"
-    // InternalXenia.g:1307:1: rule__MappedEntity__PropAssignment_0 : ( ruleMappedProperty ) ;
-    public final void rule__MappedEntity__PropAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__NameAssignment_1"
+    // InternalXenia.g:2299:1: rule__SiteWithModal__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__SiteWithModal__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1311:1: ( ( ruleMappedProperty ) )
-            // InternalXenia.g:1312:2: ( ruleMappedProperty )
+            // InternalXenia.g:2303:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2304:2: ( RULE_ID )
             {
-            // InternalXenia.g:1312:2: ( ruleMappedProperty )
-            // InternalXenia.g:1313:3: ruleMappedProperty
+            // InternalXenia.g:2304:2: ( RULE_ID )
+            // InternalXenia.g:2305:3: RULE_ID
             {
-             before(grammarAccess.getMappedEntityAccess().getPropMappedPropertyParserRuleCall_0_0()); 
+             before(grammarAccess.getSiteWithModalAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSiteWithModalAccess().getNameIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__NameAssignment_1"
+
+
+    // $ANTLR start "rule__SiteWithModal__SitesAssignment_5"
+    // InternalXenia.g:2314:1: rule__SiteWithModal__SitesAssignment_5 : ( ruleSuperSite ) ;
+    public final void rule__SiteWithModal__SitesAssignment_5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2318:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2319:2: ( ruleSuperSite )
+            {
+            // InternalXenia.g:2319:2: ( ruleSuperSite )
+            // InternalXenia.g:2320:3: ruleSuperSite
+            {
+             before(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
-            ruleMappedProperty();
+            ruleSuperSite();
 
             state._fsp--;
 
-             after(grammarAccess.getMappedEntityAccess().getPropMappedPropertyParserRuleCall_0_0()); 
+             after(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_5_0()); 
 
             }
 
@@ -3974,29 +6976,152 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__PropAssignment_0"
+    // $ANTLR end "rule__SiteWithModal__SitesAssignment_5"
 
 
-    // $ANTLR start "rule__MappedEntity__SitesAssignment_2"
-    // InternalXenia.g:1322:1: rule__MappedEntity__SitesAssignment_2 : ( ruleLinkedProperty ) ;
-    public final void rule__MappedEntity__SitesAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SiteWithModal__SitesAssignment_6_1"
+    // InternalXenia.g:2329:1: rule__SiteWithModal__SitesAssignment_6_1 : ( ruleSuperSite ) ;
+    public final void rule__SiteWithModal__SitesAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1326:1: ( ( ruleLinkedProperty ) )
-            // InternalXenia.g:1327:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2333:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2334:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:1327:2: ( ruleLinkedProperty )
-            // InternalXenia.g:1328:3: ruleLinkedProperty
+            // InternalXenia.g:2334:2: ( ruleSuperSite )
+            // InternalXenia.g:2335:3: ruleSuperSite
             {
-             before(grammarAccess.getMappedEntityAccess().getSitesLinkedPropertyParserRuleCall_2_0()); 
+             before(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSuperSite();
+
+            state._fsp--;
+
+             after(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SiteWithModal__SitesAssignment_6_1"
+
+
+    // $ANTLR start "rule__MappedEntity__InfoPropsAssignment_0_3"
+    // InternalXenia.g:2344:1: rule__MappedEntity__InfoPropsAssignment_0_3 : ( ruleInfoProperty ) ;
+    public final void rule__MappedEntity__InfoPropsAssignment_0_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2348:1: ( ( ruleInfoProperty ) )
+            // InternalXenia.g:2349:2: ( ruleInfoProperty )
+            {
+            // InternalXenia.g:2349:2: ( ruleInfoProperty )
+            // InternalXenia.g:2350:3: ruleInfoProperty
+            {
+             before(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInfoProperty();
+
+            state._fsp--;
+
+             after(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__InfoPropsAssignment_0_3"
+
+
+    // $ANTLR start "rule__MappedEntity__InfoPropsAssignment_0_4_1"
+    // InternalXenia.g:2359:1: rule__MappedEntity__InfoPropsAssignment_0_4_1 : ( ruleInfoProperty ) ;
+    public final void rule__MappedEntity__InfoPropsAssignment_0_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2363:1: ( ( ruleInfoProperty ) )
+            // InternalXenia.g:2364:2: ( ruleInfoProperty )
+            {
+            // InternalXenia.g:2364:2: ( ruleInfoProperty )
+            // InternalXenia.g:2365:3: ruleInfoProperty
+            {
+             before(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_4_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInfoProperty();
+
+            state._fsp--;
+
+             after(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_4_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__MappedEntity__InfoPropsAssignment_0_4_1"
+
+
+    // $ANTLR start "rule__MappedEntity__LinkedPropsAssignment_1_3"
+    // InternalXenia.g:2374:1: rule__MappedEntity__LinkedPropsAssignment_1_3 : ( ruleLinkedProperty ) ;
+    public final void rule__MappedEntity__LinkedPropsAssignment_1_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2378:1: ( ( ruleLinkedProperty ) )
+            // InternalXenia.g:2379:2: ( ruleLinkedProperty )
+            {
+            // InternalXenia.g:2379:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2380:3: ruleLinkedProperty
+            {
+             before(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
             ruleLinkedProperty();
 
             state._fsp--;
 
-             after(grammarAccess.getMappedEntityAccess().getSitesLinkedPropertyParserRuleCall_2_0()); 
+             after(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_3_0()); 
 
             }
 
@@ -4015,25 +7140,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MappedEntity__SitesAssignment_2"
+    // $ANTLR end "rule__MappedEntity__LinkedPropsAssignment_1_3"
 
 
-    // $ANTLR start "rule__Site__NameAssignment_0_1"
-    // InternalXenia.g:1337:1: rule__Site__NameAssignment_0_1 : ( RULE_ID ) ;
-    public final void rule__Site__NameAssignment_0_1() throws RecognitionException {
+    // $ANTLR start "rule__MappedEntity__LinkedPropsAssignment_1_4_1"
+    // InternalXenia.g:2389:1: rule__MappedEntity__LinkedPropsAssignment_1_4_1 : ( ruleLinkedProperty ) ;
+    public final void rule__MappedEntity__LinkedPropsAssignment_1_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1341:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1342:2: ( RULE_ID )
+            // InternalXenia.g:2393:1: ( ( ruleLinkedProperty ) )
+            // InternalXenia.g:2394:2: ( ruleLinkedProperty )
             {
-            // InternalXenia.g:1342:2: ( RULE_ID )
-            // InternalXenia.g:1343:3: RULE_ID
+            // InternalXenia.g:2394:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2395:3: ruleLinkedProperty
             {
-             before(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_0_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_0_1_0()); 
+             before(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleLinkedProperty();
+
+            state._fsp--;
+
+             after(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0()); 
 
             }
 
@@ -4052,66 +7181,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__NameAssignment_0_1"
+    // $ANTLR end "rule__MappedEntity__LinkedPropsAssignment_1_4_1"
 
 
-    // $ANTLR start "rule__Site__NameAssignment_1_1"
-    // InternalXenia.g:1352:1: rule__Site__NameAssignment_1_1 : ( RULE_ID ) ;
-    public final void rule__Site__NameAssignment_1_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalXenia.g:1356:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1357:2: ( RULE_ID )
-            {
-            // InternalXenia.g:1357:2: ( RULE_ID )
-            // InternalXenia.g:1358:3: RULE_ID
-            {
-             before(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_1_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_1_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Site__NameAssignment_1_1"
-
-
-    // $ANTLR start "rule__Site__SitesAssignment_1_5"
-    // InternalXenia.g:1367:1: rule__Site__SitesAssignment_1_5 : ( ruleSite ) ;
-    public final void rule__Site__SitesAssignment_1_5() throws RecognitionException {
+    // $ANTLR start "rule__InfoProperty__PageAssignment_0"
+    // InternalXenia.g:2404:1: rule__InfoProperty__PageAssignment_0 : ( ruleSite ) ;
+    public final void rule__InfoProperty__PageAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1371:1: ( ( ruleSite ) )
-            // InternalXenia.g:1372:2: ( ruleSite )
+            // InternalXenia.g:2408:1: ( ( ruleSite ) )
+            // InternalXenia.g:2409:2: ( ruleSite )
             {
-            // InternalXenia.g:1372:2: ( ruleSite )
-            // InternalXenia.g:1373:3: ruleSite
+            // InternalXenia.g:2409:2: ( ruleSite )
+            // InternalXenia.g:2410:3: ruleSite
             {
-             before(grammarAccess.getSiteAccess().getSitesSiteParserRuleCall_1_5_0()); 
+             before(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
             ruleSite();
 
             state._fsp--;
 
-             after(grammarAccess.getSiteAccess().getSitesSiteParserRuleCall_1_5_0()); 
+             after(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0()); 
 
             }
 
@@ -4130,29 +7222,29 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__SitesAssignment_1_5"
+    // $ANTLR end "rule__InfoProperty__PageAssignment_0"
 
 
-    // $ANTLR start "rule__Site__SitesAssignment_1_6_1"
-    // InternalXenia.g:1382:1: rule__Site__SitesAssignment_1_6_1 : ( ruleSite ) ;
-    public final void rule__Site__SitesAssignment_1_6_1() throws RecognitionException {
+    // $ANTLR start "rule__InfoProperty__EntitiesAssignment_2"
+    // InternalXenia.g:2419:1: rule__InfoProperty__EntitiesAssignment_2 : ( ruleInfoEntity ) ;
+    public final void rule__InfoProperty__EntitiesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1386:1: ( ( ruleSite ) )
-            // InternalXenia.g:1387:2: ( ruleSite )
+            // InternalXenia.g:2423:1: ( ( ruleInfoEntity ) )
+            // InternalXenia.g:2424:2: ( ruleInfoEntity )
             {
-            // InternalXenia.g:1387:2: ( ruleSite )
-            // InternalXenia.g:1388:3: ruleSite
+            // InternalXenia.g:2424:2: ( ruleInfoEntity )
+            // InternalXenia.g:2425:3: ruleInfoEntity
             {
-             before(grammarAccess.getSiteAccess().getSitesSiteParserRuleCall_1_6_1_0()); 
+             before(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleSite();
+            ruleInfoEntity();
 
             state._fsp--;
 
-             after(grammarAccess.getSiteAccess().getSitesSiteParserRuleCall_1_6_1_0()); 
+             after(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_2_0()); 
 
             }
 
@@ -4171,25 +7263,185 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Site__SitesAssignment_1_6_1"
+    // $ANTLR end "rule__InfoProperty__EntitiesAssignment_2"
+
+
+    // $ANTLR start "rule__InfoProperty__EntitiesAssignment_3_1"
+    // InternalXenia.g:2434:1: rule__InfoProperty__EntitiesAssignment_3_1 : ( ruleInfoEntity ) ;
+    public final void rule__InfoProperty__EntitiesAssignment_3_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2438:1: ( ( ruleInfoEntity ) )
+            // InternalXenia.g:2439:2: ( ruleInfoEntity )
+            {
+            // InternalXenia.g:2439:2: ( ruleInfoEntity )
+            // InternalXenia.g:2440:3: ruleInfoEntity
+            {
+             before(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_3_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInfoEntity();
+
+            state._fsp--;
+
+             after(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_3_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoProperty__EntitiesAssignment_3_1"
+
+
+    // $ANTLR start "rule__InfoEntity__EntriesAssignment_0"
+    // InternalXenia.g:2449:1: rule__InfoEntity__EntriesAssignment_0 : ( ruleInfoEntry ) ;
+    public final void rule__InfoEntity__EntriesAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2453:1: ( ( ruleInfoEntry ) )
+            // InternalXenia.g:2454:2: ( ruleInfoEntry )
+            {
+            // InternalXenia.g:2454:2: ( ruleInfoEntry )
+            // InternalXenia.g:2455:3: ruleInfoEntry
+            {
+             before(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleInfoEntry();
+
+            state._fsp--;
+
+             after(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryParserRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__EntriesAssignment_0"
+
+
+    // $ANTLR start "rule__InfoEntity__InfoValueAssignment_2"
+    // InternalXenia.g:2464:1: rule__InfoEntity__InfoValueAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__InfoEntity__InfoValueAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2468:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2469:2: ( RULE_STRING )
+            {
+            // InternalXenia.g:2469:2: ( RULE_STRING )
+            // InternalXenia.g:2470:3: RULE_STRING
+            {
+             before(grammarAccess.getInfoEntityAccess().getInfoValueSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getInfoEntityAccess().getInfoValueSTRINGTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__InfoEntity__InfoValueAssignment_2"
+
+
+    // $ANTLR start "rule__Site__NameAssignment_1"
+    // InternalXenia.g:2479:1: rule__Site__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Site__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalXenia.g:2483:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2484:2: ( RULE_ID )
+            {
+            // InternalXenia.g:2484:2: ( RULE_ID )
+            // InternalXenia.g:2485:3: RULE_ID
+            {
+             before(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Site__NameAssignment_1"
 
 
     // $ANTLR start "rule__LinkedProperty__NameAssignment_0"
-    // InternalXenia.g:1397:1: rule__LinkedProperty__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalXenia.g:2494:1: rule__LinkedProperty__NameAssignment_0 : ( ruleSite ) ;
     public final void rule__LinkedProperty__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1401:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1402:2: ( RULE_ID )
+            // InternalXenia.g:2498:1: ( ( ruleSite ) )
+            // InternalXenia.g:2499:2: ( ruleSite )
             {
-            // InternalXenia.g:1402:2: ( RULE_ID )
-            // InternalXenia.g:1403:3: RULE_ID
+            // InternalXenia.g:2499:2: ( ruleSite )
+            // InternalXenia.g:2500:3: ruleSite
             {
-             before(grammarAccess.getLinkedPropertyAccess().getNameIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getLinkedPropertyAccess().getNameIDTerminalRuleCall_0_0()); 
+             before(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSite();
+
+            state._fsp--;
+
+             after(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0()); 
 
             }
 
@@ -4211,22 +7463,26 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__LinkedProperty__NameAssignment_0"
 
 
-    // $ANTLR start "rule__LinkedProperty__Inner_nameAssignment_2"
-    // InternalXenia.g:1412:1: rule__LinkedProperty__Inner_nameAssignment_2 : ( RULE_ID ) ;
-    public final void rule__LinkedProperty__Inner_nameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__LinkedProperty__SiteAssignment_1_1"
+    // InternalXenia.g:2509:1: rule__LinkedProperty__SiteAssignment_1_1 : ( ruleSite ) ;
+    public final void rule__LinkedProperty__SiteAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:1416:1: ( ( RULE_ID ) )
-            // InternalXenia.g:1417:2: ( RULE_ID )
+            // InternalXenia.g:2513:1: ( ( ruleSite ) )
+            // InternalXenia.g:2514:2: ( ruleSite )
             {
-            // InternalXenia.g:1417:2: ( RULE_ID )
-            // InternalXenia.g:1418:3: RULE_ID
+            // InternalXenia.g:2514:2: ( ruleSite )
+            // InternalXenia.g:2515:3: ruleSite
             {
-             before(grammarAccess.getLinkedPropertyAccess().getInner_nameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getLinkedPropertyAccess().getInner_nameIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getLinkedPropertyAccess().getSiteSiteParserRuleCall_1_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSite();
+
+            state._fsp--;
+
+             after(grammarAccess.getLinkedPropertyAccess().getSiteSiteParserRuleCall_1_1_0()); 
 
             }
 
@@ -4245,7 +7501,7 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__LinkedProperty__Inner_nameAssignment_2"
+    // $ANTLR end "rule__LinkedProperty__SiteAssignment_1_1"
 
     // Delegated rules
 
@@ -4254,22 +7510,25 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000009802L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000030A00800L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000A00802L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000030000002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000180000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002100000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008100000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000007000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000040000002L});
 
 }

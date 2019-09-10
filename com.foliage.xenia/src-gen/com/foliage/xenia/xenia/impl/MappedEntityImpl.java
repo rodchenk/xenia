@@ -3,13 +3,13 @@
  */
 package com.foliage.xenia.xenia.impl;
 
+import com.foliage.xenia.xenia.InfoProperty;
 import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.XeniaPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -17,7 +17,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,8 +30,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.foliage.xenia.xenia.impl.MappedEntityImpl#getProp <em>Prop</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.MappedEntityImpl#getSites <em>Sites</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.MappedEntityImpl#getInfoProps <em>Info Props</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.MappedEntityImpl#getLinkedProps <em>Linked Props</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,34 +39,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class MappedEntityImpl extends MinimalEObjectImpl.Container implements MappedEntity
 {
   /**
-   * The default value of the '{@link #getProp() <em>Prop</em>}' attribute.
+   * The cached value of the '{@link #getInfoProps() <em>Info Props</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProp()
+   * @see #getInfoProps()
    * @generated
    * @ordered
    */
-  protected static final String PROP_EDEFAULT = null;
+  protected EList<InfoProperty> infoProps;
 
   /**
-   * The cached value of the '{@link #getProp() <em>Prop</em>}' attribute.
+   * The cached value of the '{@link #getLinkedProps() <em>Linked Props</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProp()
+   * @see #getLinkedProps()
    * @generated
    * @ordered
    */
-  protected String prop = PROP_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getSites() <em>Sites</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSites()
-   * @generated
-   * @ordered
-   */
-  protected EList<LinkedProperty> sites;
+  protected EList<LinkedProperty> linkedProps;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,38 +85,28 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
    * @generated
    */
   @Override
-  public String getProp()
+  public EList<InfoProperty> getInfoProps()
   {
-    return prop;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setProp(String newProp)
-  {
-    String oldProp = prop;
-    prop = newProp;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.MAPPED_ENTITY__PROP, oldProp, prop));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<LinkedProperty> getSites()
-  {
-    if (sites == null)
+    if (infoProps == null)
     {
-      sites = new EObjectContainmentEList<LinkedProperty>(LinkedProperty.class, this, XeniaPackage.MAPPED_ENTITY__SITES);
+      infoProps = new EObjectContainmentEList<InfoProperty>(InfoProperty.class, this, XeniaPackage.MAPPED_ENTITY__INFO_PROPS);
     }
-    return sites;
+    return infoProps;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EList<LinkedProperty> getLinkedProps()
+  {
+    if (linkedProps == null)
+    {
+      linkedProps = new EObjectContainmentEList<LinkedProperty>(LinkedProperty.class, this, XeniaPackage.MAPPED_ENTITY__LINKED_PROPS);
+    }
+    return linkedProps;
   }
 
   /**
@@ -140,8 +119,10 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
   {
     switch (featureID)
     {
-      case XeniaPackage.MAPPED_ENTITY__SITES:
-        return ((InternalEList<?>)getSites()).basicRemove(otherEnd, msgs);
+      case XeniaPackage.MAPPED_ENTITY__INFO_PROPS:
+        return ((InternalEList<?>)getInfoProps()).basicRemove(otherEnd, msgs);
+      case XeniaPackage.MAPPED_ENTITY__LINKED_PROPS:
+        return ((InternalEList<?>)getLinkedProps()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -156,10 +137,10 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
   {
     switch (featureID)
     {
-      case XeniaPackage.MAPPED_ENTITY__PROP:
-        return getProp();
-      case XeniaPackage.MAPPED_ENTITY__SITES:
-        return getSites();
+      case XeniaPackage.MAPPED_ENTITY__INFO_PROPS:
+        return getInfoProps();
+      case XeniaPackage.MAPPED_ENTITY__LINKED_PROPS:
+        return getLinkedProps();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,12 +156,13 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
   {
     switch (featureID)
     {
-      case XeniaPackage.MAPPED_ENTITY__PROP:
-        setProp((String)newValue);
+      case XeniaPackage.MAPPED_ENTITY__INFO_PROPS:
+        getInfoProps().clear();
+        getInfoProps().addAll((Collection<? extends InfoProperty>)newValue);
         return;
-      case XeniaPackage.MAPPED_ENTITY__SITES:
-        getSites().clear();
-        getSites().addAll((Collection<? extends LinkedProperty>)newValue);
+      case XeniaPackage.MAPPED_ENTITY__LINKED_PROPS:
+        getLinkedProps().clear();
+        getLinkedProps().addAll((Collection<? extends LinkedProperty>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -196,11 +178,11 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
   {
     switch (featureID)
     {
-      case XeniaPackage.MAPPED_ENTITY__PROP:
-        setProp(PROP_EDEFAULT);
+      case XeniaPackage.MAPPED_ENTITY__INFO_PROPS:
+        getInfoProps().clear();
         return;
-      case XeniaPackage.MAPPED_ENTITY__SITES:
-        getSites().clear();
+      case XeniaPackage.MAPPED_ENTITY__LINKED_PROPS:
+        getLinkedProps().clear();
         return;
     }
     super.eUnset(featureID);
@@ -216,29 +198,12 @@ public class MappedEntityImpl extends MinimalEObjectImpl.Container implements Ma
   {
     switch (featureID)
     {
-      case XeniaPackage.MAPPED_ENTITY__PROP:
-        return PROP_EDEFAULT == null ? prop != null : !PROP_EDEFAULT.equals(prop);
-      case XeniaPackage.MAPPED_ENTITY__SITES:
-        return sites != null && !sites.isEmpty();
+      case XeniaPackage.MAPPED_ENTITY__INFO_PROPS:
+        return infoProps != null && !infoProps.isEmpty();
+      case XeniaPackage.MAPPED_ENTITY__LINKED_PROPS:
+        return linkedProps != null && !linkedProps.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (prop: ");
-    result.append(prop);
-    result.append(')');
-    return result.toString();
   }
 
 } //MappedEntityImpl

@@ -33,6 +33,15 @@ public interface XeniaFactory extends EFactory
   Model createModel();
 
   /**
+   * Returns a new object of class '<em>Header</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Header</em>'.
+   * @generated
+   */
+  Header createHeader();
+
+  /**
    * Returns a new object of class '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -42,6 +51,24 @@ public interface XeniaFactory extends EFactory
   Entity createEntity();
 
   /**
+   * Returns a new object of class '<em>Super Site</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Super Site</em>'.
+   * @generated
+   */
+  SuperSite createSuperSite();
+
+  /**
+   * Returns a new object of class '<em>Site With Modal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Site With Modal</em>'.
+   * @generated
+   */
+  SiteWithModal createSiteWithModal();
+
+  /**
    * Returns a new object of class '<em>Mapped Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -49,6 +76,24 @@ public interface XeniaFactory extends EFactory
    * @generated
    */
   MappedEntity createMappedEntity();
+
+  /**
+   * Returns a new object of class '<em>Info Property</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Info Property</em>'.
+   * @generated
+   */
+  InfoProperty createInfoProperty();
+
+  /**
+   * Returns a new object of class '<em>Info Entity</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Info Entity</em>'.
+   * @generated
+   */
+  InfoEntity createInfoEntity();
 
   /**
    * Returns a new object of class '<em>Site</em>'.

@@ -66,8 +66,13 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
     switch (eClass.getClassifierID())
     {
       case XeniaPackage.MODEL: return createModel();
+      case XeniaPackage.HEADER: return createHeader();
       case XeniaPackage.ENTITY: return createEntity();
+      case XeniaPackage.SUPER_SITE: return createSuperSite();
+      case XeniaPackage.SITE_WITH_MODAL: return createSiteWithModal();
       case XeniaPackage.MAPPED_ENTITY: return createMappedEntity();
+      case XeniaPackage.INFO_PROPERTY: return createInfoProperty();
+      case XeniaPackage.INFO_ENTITY: return createInfoEntity();
       case XeniaPackage.SITE: return createSite();
       case XeniaPackage.LINKED_PROPERTY: return createLinkedProperty();
       default:
@@ -93,6 +98,18 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
    * @generated
    */
   @Override
+  public Header createHeader()
+  {
+    HeaderImpl header = new HeaderImpl();
+    return header;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Entity createEntity()
   {
     EntityImpl entity = new EntityImpl();
@@ -105,10 +122,58 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
    * @generated
    */
   @Override
+  public SuperSite createSuperSite()
+  {
+    SuperSiteImpl superSite = new SuperSiteImpl();
+    return superSite;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SiteWithModal createSiteWithModal()
+  {
+    SiteWithModalImpl siteWithModal = new SiteWithModalImpl();
+    return siteWithModal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public MappedEntity createMappedEntity()
   {
     MappedEntityImpl mappedEntity = new MappedEntityImpl();
     return mappedEntity;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InfoProperty createInfoProperty()
+  {
+    InfoPropertyImpl infoProperty = new InfoPropertyImpl();
+    return infoProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InfoEntity createInfoEntity()
+  {
+    InfoEntityImpl infoEntity = new InfoEntityImpl();
+    return infoEntity;
   }
 
   /**

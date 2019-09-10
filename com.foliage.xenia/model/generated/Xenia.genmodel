@@ -7,26 +7,42 @@
   <genPackages prefix="Xenia" basePackage="com.foliage.xenia" disposableProviderFactory="true"
       fileExtensions="nia" ecorePackage="Xenia.ecore#/">
     <genClasses ecoreClass="Xenia.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/headers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/entities"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/mapped_entities"/>
     </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//Header">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Header/appName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Header/sites"/>
+    </genClasses>
     <genClasses ecoreClass="Xenia.ecore#//Entity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/appName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Entity/sites"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/tech"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/path"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/prop"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/name"/>
     </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//SuperSite">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//SuperSite/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//SiteWithModal">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//SiteWithModal/sites"/>
+    </genClasses>
     <genClasses ecoreClass="Xenia.ecore#//MappedEntity">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//MappedEntity/prop"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//MappedEntity/sites"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//MappedEntity/infoProps"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//MappedEntity/linkedProps"/>
     </genClasses>
-    <genClasses ecoreClass="Xenia.ecore#//Site">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Site/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Site/sites"/>
+    <genClasses ecoreClass="Xenia.ecore#//InfoProperty">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//InfoProperty/page"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//InfoProperty/entities"/>
     </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//InfoEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//InfoEntity/entries"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//InfoEntity/infoValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//Site"/>
     <genClasses ecoreClass="Xenia.ecore#//LinkedProperty">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//LinkedProperty/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//LinkedProperty/inner_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//LinkedProperty/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//LinkedProperty/site"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link com.foliage.xenia.xenia.Model#getHeaders <em>Headers</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Model#getEntities <em>Entities</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Model#getMapped_entities <em>Mapped entities</em>}</li>
  * </ul>
@@ -26,6 +27,18 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Model extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Headers</b></em>' containment reference list.
+   * The list contents are of type {@link com.foliage.xenia.xenia.Header}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Headers</em>' containment reference list.
+   * @see com.foliage.xenia.xenia.XeniaPackage#getModel_Headers()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Header> getHeaders();
+
   /**
    * Returns the value of the '<em><b>Entities</b></em>' containment reference list.
    * The list contents are of type {@link com.foliage.xenia.xenia.Entity}.

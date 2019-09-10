@@ -23,9 +23,25 @@ class XeniaParsingTest {
 		val result = parseHelper.parse('''
 			app Main has pages[
 				@Home with modal(@Notification, @Login), 
-				@Contact, 
+				@Contact with modal(
+					@Message, 
+					@Logout with modal(
+						@Contact
+					)
+				), 
 				@Message
 			]
+			with: "React"
+			xml: "/home/user/foliage/map.xml"
+			map :[
+				@Home -> @Login,
+				@Login -> @Home -> @Contact
+			]
+			info :[
+				@Home -> mod: "today", freq: "daily",
+				@News -> mod: "monday"
+			]
+			
 		''')
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors

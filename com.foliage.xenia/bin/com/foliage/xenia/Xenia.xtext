@@ -3,56 +3,55 @@ grammar com.foliage.xenia.Xenia with org.eclipse.xtext.common.Terminals
 generate xenia "http://www.foliage.com/xenia/Xenia"
 
 Model:
+	headers+=Header
 	entities+=Entity*
 	mapped_entities+=MappedEntity*;
 
-Entity:
+Header:
 	'app' appName=ID 'has' 'pages' '['
-		sites+=Site (',' sites+=Site)*
-	']' |
-	prop=Property ':' name=ID 
+		sites+=SuperSite (',' sites+=SuperSite)*
+	']'
+;
+
+Entity:
+	'with' ':' tech=STRING |
+	'xml' ':' path=STRING |
+	prop=Property ':' name=ID
+;
+
+SuperSite:
+	Site | SiteWithModal
+;
+
+SiteWithModal:
+	'@' name=ID 'with' 'modal' '(' sites+=SuperSite (',' sites+=SuperSite)* ')'
 ;
 
 Property:
-	'with' | 'sitemap'
+	'test'
 ;
 
 MappedEntity:
-	prop=MappedProperty ':'
-		(sites+=LinkedProperty)*
+	'info' ':' '[' infoProps+=InfoProperty (',' infoProps+=InfoProperty)* ']'	|
+	'map'  ':' '[' linkedProps+=LinkedProperty (',' linkedProps+=LinkedProperty)* ']'
+;
+
+InfoProperty:
+	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*
+;
+
+InfoEntity:
+	entries+=InfoEntry ':' infoValue=STRING
+;
+
+InfoEntry:
+	'mod' | 'freq' | 'prio'
 ;
 
 Site:
-	'@' name=ID |
-	'@' name=ID 'with' 'modal' '(' sites+=Site (',' sites+=Site)* ')'
+	'@' name=ID
 ;
 
-MappedProperty:
-	'sites' | 'map'
-;
 LinkedProperty:
-	name=ID '->' inner_name=ID
+	name=Site ('->' site+=Site)*
 ;
-
-/*
-app: Test
-with: 'php/cake'
-sitemap: 'map.xml' => 'create/write'
-
-sites:
-	Home => modal: (Login, Logout), 
-	Contact, 
-	News => modal: (Create), 
-	User => modal: (Friends, Message, Activities)
-
-map: 
-	Home -> User, 
-	Home -> Contact, 
-	User -> News,
-	User.Friends -> News,
-	User.Messages -> Home
-
-info:
-	User => modified: '01.01.2019', frequenz: 'monthly', priority: 0.75
-	News => modified: '02.11.2018', frequenz: 'monthly', priority: 0.8
- */

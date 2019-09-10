@@ -80,10 +80,32 @@ public class XeniaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XeniaPackage.HEADER:
+      {
+        Header header = (Header)theEObject;
+        T result = caseHeader(header);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XeniaPackage.ENTITY:
       {
         Entity entity = (Entity)theEObject;
         T result = caseEntity(entity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XeniaPackage.SUPER_SITE:
+      {
+        SuperSite superSite = (SuperSite)theEObject;
+        T result = caseSuperSite(superSite);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XeniaPackage.SITE_WITH_MODAL:
+      {
+        SiteWithModal siteWithModal = (SiteWithModal)theEObject;
+        T result = caseSiteWithModal(siteWithModal);
+        if (result == null) result = caseSuperSite(siteWithModal);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -94,10 +116,25 @@ public class XeniaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XeniaPackage.INFO_PROPERTY:
+      {
+        InfoProperty infoProperty = (InfoProperty)theEObject;
+        T result = caseInfoProperty(infoProperty);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case XeniaPackage.INFO_ENTITY:
+      {
+        InfoEntity infoEntity = (InfoEntity)theEObject;
+        T result = caseInfoEntity(infoEntity);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case XeniaPackage.SITE:
       {
         Site site = (Site)theEObject;
         T result = caseSite(site);
+        if (result == null) result = caseSuperSite(site);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -129,6 +166,22 @@ public class XeniaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Header</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Header</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeader(Header object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -145,6 +198,38 @@ public class XeniaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Super Site</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Super Site</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSuperSite(SuperSite object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Site With Modal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Site With Modal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSiteWithModal(SiteWithModal object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Mapped Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -156,6 +241,38 @@ public class XeniaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMappedEntity(MappedEntity object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Info Property</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Info Property</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInfoProperty(InfoProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Info Entity</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Info Entity</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInfoEntity(InfoEntity object)
   {
     return null;
   }

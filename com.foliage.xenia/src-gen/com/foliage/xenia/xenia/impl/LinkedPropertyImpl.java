@@ -4,14 +4,24 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.LinkedProperty;
+import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.XeniaPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +32,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getInner_name <em>Inner name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getSite <em>Site</em>}</li>
  * </ul>
  *
  * @generated
@@ -30,44 +40,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements LinkedProperty
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected Site name;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getSite() <em>Site</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getSite()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getInner_name() <em>Inner name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInner_name()
-   * @generated
-   * @ordered
-   */
-  protected static final String INNER_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getInner_name() <em>Inner name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInner_name()
-   * @generated
-   * @ordered
-   */
-  protected String inner_name = INNER_NAME_EDEFAULT;
+  protected EList<Site> site;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,7 +86,7 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getName()
+  public Site getName()
   {
     return name;
   }
@@ -106,13 +96,16 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setName(String newName)
+  public NotificationChain basicSetName(Site newName, NotificationChain msgs)
   {
-    String oldName = name;
+    Site oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, oldName, name));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, oldName, newName);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -121,9 +114,20 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public String getInner_name()
+  public void setName(Site newName)
   {
-    return inner_name;
+    if (newName != name)
+    {
+      NotificationChain msgs = null;
+      if (name != null)
+        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__NAME, null, msgs);
+      if (newName != null)
+        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__NAME, null, msgs);
+      msgs = basicSetName(newName, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, newName, newName));
   }
 
   /**
@@ -132,12 +136,31 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setInner_name(String newInner_name)
+  public EList<Site> getSite()
   {
-    String oldInner_name = inner_name;
-    inner_name = newInner_name;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__INNER_NAME, oldInner_name, inner_name));
+    if (site == null)
+    {
+      site = new EObjectContainmentEList<Site>(Site.class, this, XeniaPackage.LINKED_PROPERTY__SITE);
+    }
+    return site;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case XeniaPackage.LINKED_PROPERTY__NAME:
+        return basicSetName(null, msgs);
+      case XeniaPackage.LINKED_PROPERTY__SITE:
+        return ((InternalEList<?>)getSite()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -152,8 +175,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
         return getName();
-      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
-        return getInner_name();
+      case XeniaPackage.LINKED_PROPERTY__SITE:
+        return getSite();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,16 +186,18 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
-        setName((String)newValue);
+        setName((Site)newValue);
         return;
-      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
-        setInner_name((String)newValue);
+      case XeniaPackage.LINKED_PROPERTY__SITE:
+        getSite().clear();
+        getSite().addAll((Collection<? extends Site>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,10 +214,10 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
-        setName(NAME_EDEFAULT);
+        setName((Site)null);
         return;
-      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
-        setInner_name(INNER_NAME_EDEFAULT);
+      case XeniaPackage.LINKED_PROPERTY__SITE:
+        getSite().clear();
         return;
     }
     super.eUnset(featureID);
@@ -209,30 +234,11 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case XeniaPackage.LINKED_PROPERTY__INNER_NAME:
-        return INNER_NAME_EDEFAULT == null ? inner_name != null : !INNER_NAME_EDEFAULT.equals(inner_name);
+        return name != null;
+      case XeniaPackage.LINKED_PROPERTY__SITE:
+        return site != null && !site.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", inner_name: ");
-    result.append(inner_name);
-    result.append(')');
-    return result.toString();
   }
 
 } //LinkedPropertyImpl

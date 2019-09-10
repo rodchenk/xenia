@@ -4,24 +4,14 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.Entity;
-import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.XeniaPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,8 +21,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getAppName <em>App Name</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getSites <em>Sites</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getTech <em>Tech</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getPath <em>Path</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getProp <em>Prop</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -42,34 +32,44 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
 {
   /**
-   * The default value of the '{@link #getAppName() <em>App Name</em>}' attribute.
+   * The default value of the '{@link #getTech() <em>Tech</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAppName()
+   * @see #getTech()
    * @generated
    * @ordered
    */
-  protected static final String APP_NAME_EDEFAULT = null;
+  protected static final String TECH_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAppName() <em>App Name</em>}' attribute.
+   * The cached value of the '{@link #getTech() <em>Tech</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAppName()
+   * @see #getTech()
    * @generated
    * @ordered
    */
-  protected String appName = APP_NAME_EDEFAULT;
+  protected String tech = TECH_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getSites() <em>Sites</em>}' containment reference list.
+   * The default value of the '{@link #getPath() <em>Path</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSites()
+   * @see #getPath()
    * @generated
    * @ordered
    */
-  protected EList<Site> sites;
+  protected static final String PATH_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getPath() <em>Path</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getPath()
+   * @generated
+   * @ordered
+   */
+  protected String path = PATH_EDEFAULT;
 
   /**
    * The default value of the '{@link #getProp() <em>Prop</em>}' attribute.
@@ -138,9 +138,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public String getAppName()
+  public String getTech()
   {
-    return appName;
+    return tech;
   }
 
   /**
@@ -149,12 +149,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public void setAppName(String newAppName)
+  public void setTech(String newTech)
   {
-    String oldAppName = appName;
-    appName = newAppName;
+    String oldTech = tech;
+    tech = newTech;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__APP_NAME, oldAppName, appName));
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__TECH, oldTech, tech));
   }
 
   /**
@@ -163,13 +163,23 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public EList<Site> getSites()
+  public String getPath()
   {
-    if (sites == null)
-    {
-      sites = new EObjectContainmentEList<Site>(Site.class, this, XeniaPackage.ENTITY__SITES);
-    }
-    return sites;
+    return path;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPath(String newPath)
+  {
+    String oldPath = path;
+    path = newPath;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__PATH, oldPath, path));
   }
 
   /**
@@ -228,30 +238,14 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case XeniaPackage.ENTITY__SITES:
-        return ((InternalEList<?>)getSites()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case XeniaPackage.ENTITY__APP_NAME:
-        return getAppName();
-      case XeniaPackage.ENTITY__SITES:
-        return getSites();
+      case XeniaPackage.ENTITY__TECH:
+        return getTech();
+      case XeniaPackage.ENTITY__PATH:
+        return getPath();
       case XeniaPackage.ENTITY__PROP:
         return getProp();
       case XeniaPackage.ENTITY__NAME:
@@ -265,18 +259,16 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case XeniaPackage.ENTITY__APP_NAME:
-        setAppName((String)newValue);
+      case XeniaPackage.ENTITY__TECH:
+        setTech((String)newValue);
         return;
-      case XeniaPackage.ENTITY__SITES:
-        getSites().clear();
-        getSites().addAll((Collection<? extends Site>)newValue);
+      case XeniaPackage.ENTITY__PATH:
+        setPath((String)newValue);
         return;
       case XeniaPackage.ENTITY__PROP:
         setProp((String)newValue);
@@ -298,11 +290,11 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
   {
     switch (featureID)
     {
-      case XeniaPackage.ENTITY__APP_NAME:
-        setAppName(APP_NAME_EDEFAULT);
+      case XeniaPackage.ENTITY__TECH:
+        setTech(TECH_EDEFAULT);
         return;
-      case XeniaPackage.ENTITY__SITES:
-        getSites().clear();
+      case XeniaPackage.ENTITY__PATH:
+        setPath(PATH_EDEFAULT);
         return;
       case XeniaPackage.ENTITY__PROP:
         setProp(PROP_EDEFAULT);
@@ -324,10 +316,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
   {
     switch (featureID)
     {
-      case XeniaPackage.ENTITY__APP_NAME:
-        return APP_NAME_EDEFAULT == null ? appName != null : !APP_NAME_EDEFAULT.equals(appName);
-      case XeniaPackage.ENTITY__SITES:
-        return sites != null && !sites.isEmpty();
+      case XeniaPackage.ENTITY__TECH:
+        return TECH_EDEFAULT == null ? tech != null : !TECH_EDEFAULT.equals(tech);
+      case XeniaPackage.ENTITY__PATH:
+        return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
       case XeniaPackage.ENTITY__PROP:
         return PROP_EDEFAULT == null ? prop != null : !PROP_EDEFAULT.equals(prop);
       case XeniaPackage.ENTITY__NAME:
@@ -347,8 +339,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (appName: ");
-    result.append(appName);
+    result.append(" (tech: ");
+    result.append(tech);
+    result.append(", path: ");
+    result.append(path);
     result.append(", prop: ");
     result.append(prop);
     result.append(", name: ");

@@ -81,14 +81,39 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
+      public Adapter caseHeader(Header object)
+      {
+        return createHeaderAdapter();
+      }
+      @Override
       public Adapter caseEntity(Entity object)
       {
         return createEntityAdapter();
       }
       @Override
+      public Adapter caseSuperSite(SuperSite object)
+      {
+        return createSuperSiteAdapter();
+      }
+      @Override
+      public Adapter caseSiteWithModal(SiteWithModal object)
+      {
+        return createSiteWithModalAdapter();
+      }
+      @Override
       public Adapter caseMappedEntity(MappedEntity object)
       {
         return createMappedEntityAdapter();
+      }
+      @Override
+      public Adapter caseInfoProperty(InfoProperty object)
+      {
+        return createInfoPropertyAdapter();
+      }
+      @Override
+      public Adapter caseInfoEntity(InfoEntity object)
+      {
+        return createInfoEntityAdapter();
       }
       @Override
       public Adapter caseSite(Site object)
@@ -138,6 +163,21 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.Header <em>Header</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.Header
+   * @generated
+   */
+  public Adapter createHeaderAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -153,6 +193,36 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.SuperSite <em>Super Site</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.SuperSite
+   * @generated
+   */
+  public Adapter createSuperSiteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.SiteWithModal <em>Site With Modal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.SiteWithModal
+   * @generated
+   */
+  public Adapter createSiteWithModalAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.MappedEntity <em>Mapped Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -163,6 +233,36 @@ public class XeniaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMappedEntityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.InfoProperty <em>Info Property</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.InfoProperty
+   * @generated
+   */
+  public Adapter createInfoPropertyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.foliage.xenia.xenia.InfoEntity <em>Info Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.foliage.xenia.xenia.InfoEntity
+   * @generated
+   */
+  public Adapter createInfoEntityAdapter()
   {
     return null;
   }

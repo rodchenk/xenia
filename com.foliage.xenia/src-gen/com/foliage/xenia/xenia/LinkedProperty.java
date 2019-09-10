@@ -3,6 +3,8 @@
  */
 package com.foliage.xenia.xenia;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.LinkedProperty#getInner_name <em>Inner name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.LinkedProperty#getSite <em>Site</em>}</li>
  * </ul>
  *
  * @see com.foliage.xenia.xenia.XeniaPackage#getLinkedProperty()
@@ -25,47 +27,37 @@ import org.eclipse.emf.ecore.EObject;
 public interface LinkedProperty extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
+   * @return the value of the '<em>Name</em>' containment reference.
+   * @see #setName(Site)
    * @see com.foliage.xenia.xenia.XeniaPackage#getLinkedProperty_Name()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  String getName();
+  Site getName();
 
   /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
+   * @param value the new value of the '<em>Name</em>' containment reference.
    * @see #getName()
    * @generated
    */
-  void setName(String value);
+  void setName(Site value);
 
   /**
-   * Returns the value of the '<em><b>Inner name</b></em>' attribute.
+   * Returns the value of the '<em><b>Site</b></em>' containment reference list.
+   * The list contents are of type {@link com.foliage.xenia.xenia.Site}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Inner name</em>' attribute.
-   * @see #setInner_name(String)
-   * @see com.foliage.xenia.xenia.XeniaPackage#getLinkedProperty_Inner_name()
-   * @model
+   * @return the value of the '<em>Site</em>' containment reference list.
+   * @see com.foliage.xenia.xenia.XeniaPackage#getLinkedProperty_Site()
+   * @model containment="true"
    * @generated
    */
-  String getInner_name();
-
-  /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.LinkedProperty#getInner_name <em>Inner name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Inner name</em>' attribute.
-   * @see #getInner_name()
-   * @generated
-   */
-  void setInner_name(String value);
+  EList<Site> getSite();
 
 } // LinkedProperty
