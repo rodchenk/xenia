@@ -942,7 +942,7 @@ ruleLinkedProperty returns [EObject current=null]
 					}
 				)
 			)
-		)*
+		)+
 	)
 ;
 

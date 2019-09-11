@@ -3,10 +3,18 @@
  */
 package com.foliage.xenia.generator;
 
+import com.foliage.xenia.xenia.Header;
+import com.google.common.collect.Iterables;
+import javax.inject.Inject;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -15,7 +23,45 @@ import org.eclipse.xtext.generator.IGeneratorContext;
  */
 @SuppressWarnings("all")
 public class XeniaGenerator extends AbstractGenerator {
+  @Inject
+  @Extension
+  private IQualifiedNameProvider _iQualifiedNameProvider;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    Iterable<Header> _filter = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
+    for (final Header e : _filter) {
+      fsa.generateFile(("test" + ".html"), this.compile(e));
+    }
+  }
+  
+  public CharSequence compile(final Header header) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<head>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<title>\"");
+    String _appName = header.getAppName();
+    _builder.append(_appName, "\t\t");
+    _builder.append("\"</title>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("</head>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<body>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<b>Hello, World!</b>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder;
   }
 }

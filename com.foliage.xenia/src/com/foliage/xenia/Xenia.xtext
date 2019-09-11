@@ -53,5 +53,5 @@ Site:
 ;
 
 LinkedProperty:
-	name=Site ('->' site+=Site)*
+	name=Site ('->' site+=Site)+
 ;

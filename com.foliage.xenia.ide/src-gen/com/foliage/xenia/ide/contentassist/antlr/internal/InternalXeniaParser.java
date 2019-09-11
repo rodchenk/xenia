@@ -6288,20 +6288,42 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group__1__Impl"
-    // InternalXenia.g:2079:1: rule__LinkedProperty__Group__1__Impl : ( ( rule__LinkedProperty__Group_1__0 )* ) ;
+    // InternalXenia.g:2079:1: rule__LinkedProperty__Group__1__Impl : ( ( ( rule__LinkedProperty__Group_1__0 ) ) ( ( rule__LinkedProperty__Group_1__0 )* ) ) ;
     public final void rule__LinkedProperty__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2083:1: ( ( ( rule__LinkedProperty__Group_1__0 )* ) )
-            // InternalXenia.g:2084:1: ( ( rule__LinkedProperty__Group_1__0 )* )
+            // InternalXenia.g:2083:1: ( ( ( ( rule__LinkedProperty__Group_1__0 ) ) ( ( rule__LinkedProperty__Group_1__0 )* ) ) )
+            // InternalXenia.g:2084:1: ( ( ( rule__LinkedProperty__Group_1__0 ) ) ( ( rule__LinkedProperty__Group_1__0 )* ) )
             {
-            // InternalXenia.g:2084:1: ( ( rule__LinkedProperty__Group_1__0 )* )
-            // InternalXenia.g:2085:2: ( rule__LinkedProperty__Group_1__0 )*
+            // InternalXenia.g:2084:1: ( ( ( rule__LinkedProperty__Group_1__0 ) ) ( ( rule__LinkedProperty__Group_1__0 )* ) )
+            // InternalXenia.g:2085:2: ( ( rule__LinkedProperty__Group_1__0 ) ) ( ( rule__LinkedProperty__Group_1__0 )* )
+            {
+            // InternalXenia.g:2085:2: ( ( rule__LinkedProperty__Group_1__0 ) )
+            // InternalXenia.g:2086:3: ( rule__LinkedProperty__Group_1__0 )
             {
              before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); 
-            // InternalXenia.g:2086:2: ( rule__LinkedProperty__Group_1__0 )*
+            // InternalXenia.g:2087:3: ( rule__LinkedProperty__Group_1__0 )
+            // InternalXenia.g:2087:4: rule__LinkedProperty__Group_1__0
+            {
+            pushFollow(FOLLOW_22);
+            rule__LinkedProperty__Group_1__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLinkedPropertyAccess().getGroup_1()); 
+
+            }
+
+            // InternalXenia.g:2090:2: ( ( rule__LinkedProperty__Group_1__0 )* )
+            // InternalXenia.g:2091:3: ( rule__LinkedProperty__Group_1__0 )*
+            {
+             before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); 
+            // InternalXenia.g:2092:3: ( rule__LinkedProperty__Group_1__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -6314,7 +6336,7 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalXenia.g:2086:3: rule__LinkedProperty__Group_1__0
+            	    // InternalXenia.g:2092:4: rule__LinkedProperty__Group_1__0
             	    {
             	    pushFollow(FOLLOW_22);
             	    rule__LinkedProperty__Group_1__0();
@@ -6337,6 +6359,9 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
             }
 
+
+            }
+
         }
         catch (RecognitionException re) {
             reportError(re);
@@ -6353,14 +6378,14 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group_1__0"
-    // InternalXenia.g:2095:1: rule__LinkedProperty__Group_1__0 : rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 ;
+    // InternalXenia.g:2102:1: rule__LinkedProperty__Group_1__0 : rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 ;
     public final void rule__LinkedProperty__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2099:1: ( rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 )
-            // InternalXenia.g:2100:2: rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1
+            // InternalXenia.g:2106:1: ( rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1 )
+            // InternalXenia.g:2107:2: rule__LinkedProperty__Group_1__0__Impl rule__LinkedProperty__Group_1__1
             {
             pushFollow(FOLLOW_10);
             rule__LinkedProperty__Group_1__0__Impl();
@@ -6391,17 +6416,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group_1__0__Impl"
-    // InternalXenia.g:2107:1: rule__LinkedProperty__Group_1__0__Impl : ( '->' ) ;
+    // InternalXenia.g:2114:1: rule__LinkedProperty__Group_1__0__Impl : ( '->' ) ;
     public final void rule__LinkedProperty__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2111:1: ( ( '->' ) )
-            // InternalXenia.g:2112:1: ( '->' )
+            // InternalXenia.g:2118:1: ( ( '->' ) )
+            // InternalXenia.g:2119:1: ( '->' )
             {
-            // InternalXenia.g:2112:1: ( '->' )
-            // InternalXenia.g:2113:2: '->'
+            // InternalXenia.g:2119:1: ( '->' )
+            // InternalXenia.g:2120:2: '->'
             {
              before(grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1_0()); 
             match(input,30,FOLLOW_2); 
@@ -6428,14 +6453,14 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group_1__1"
-    // InternalXenia.g:2122:1: rule__LinkedProperty__Group_1__1 : rule__LinkedProperty__Group_1__1__Impl ;
+    // InternalXenia.g:2129:1: rule__LinkedProperty__Group_1__1 : rule__LinkedProperty__Group_1__1__Impl ;
     public final void rule__LinkedProperty__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2126:1: ( rule__LinkedProperty__Group_1__1__Impl )
-            // InternalXenia.g:2127:2: rule__LinkedProperty__Group_1__1__Impl
+            // InternalXenia.g:2133:1: ( rule__LinkedProperty__Group_1__1__Impl )
+            // InternalXenia.g:2134:2: rule__LinkedProperty__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__LinkedProperty__Group_1__1__Impl();
@@ -6461,21 +6486,21 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__Group_1__1__Impl"
-    // InternalXenia.g:2133:1: rule__LinkedProperty__Group_1__1__Impl : ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) ;
+    // InternalXenia.g:2140:1: rule__LinkedProperty__Group_1__1__Impl : ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) ;
     public final void rule__LinkedProperty__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2137:1: ( ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) )
-            // InternalXenia.g:2138:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
+            // InternalXenia.g:2144:1: ( ( ( rule__LinkedProperty__SiteAssignment_1_1 ) ) )
+            // InternalXenia.g:2145:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
             {
-            // InternalXenia.g:2138:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
-            // InternalXenia.g:2139:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
+            // InternalXenia.g:2145:1: ( ( rule__LinkedProperty__SiteAssignment_1_1 ) )
+            // InternalXenia.g:2146:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
             {
              before(grammarAccess.getLinkedPropertyAccess().getSiteAssignment_1_1()); 
-            // InternalXenia.g:2140:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
-            // InternalXenia.g:2140:3: rule__LinkedProperty__SiteAssignment_1_1
+            // InternalXenia.g:2147:2: ( rule__LinkedProperty__SiteAssignment_1_1 )
+            // InternalXenia.g:2147:3: rule__LinkedProperty__SiteAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__LinkedProperty__SiteAssignment_1_1();
@@ -6508,17 +6533,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__HeadersAssignment_0"
-    // InternalXenia.g:2149:1: rule__Model__HeadersAssignment_0 : ( ruleHeader ) ;
+    // InternalXenia.g:2156:1: rule__Model__HeadersAssignment_0 : ( ruleHeader ) ;
     public final void rule__Model__HeadersAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2153:1: ( ( ruleHeader ) )
-            // InternalXenia.g:2154:2: ( ruleHeader )
+            // InternalXenia.g:2160:1: ( ( ruleHeader ) )
+            // InternalXenia.g:2161:2: ( ruleHeader )
             {
-            // InternalXenia.g:2154:2: ( ruleHeader )
-            // InternalXenia.g:2155:3: ruleHeader
+            // InternalXenia.g:2161:2: ( ruleHeader )
+            // InternalXenia.g:2162:3: ruleHeader
             {
              before(grammarAccess.getModelAccess().getHeadersHeaderParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6549,17 +6574,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__EntitiesAssignment_1"
-    // InternalXenia.g:2164:1: rule__Model__EntitiesAssignment_1 : ( ruleEntity ) ;
+    // InternalXenia.g:2171:1: rule__Model__EntitiesAssignment_1 : ( ruleEntity ) ;
     public final void rule__Model__EntitiesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2168:1: ( ( ruleEntity ) )
-            // InternalXenia.g:2169:2: ( ruleEntity )
+            // InternalXenia.g:2175:1: ( ( ruleEntity ) )
+            // InternalXenia.g:2176:2: ( ruleEntity )
             {
-            // InternalXenia.g:2169:2: ( ruleEntity )
-            // InternalXenia.g:2170:3: ruleEntity
+            // InternalXenia.g:2176:2: ( ruleEntity )
+            // InternalXenia.g:2177:3: ruleEntity
             {
              before(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6590,17 +6615,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Mapped_entitiesAssignment_2"
-    // InternalXenia.g:2179:1: rule__Model__Mapped_entitiesAssignment_2 : ( ruleMappedEntity ) ;
+    // InternalXenia.g:2186:1: rule__Model__Mapped_entitiesAssignment_2 : ( ruleMappedEntity ) ;
     public final void rule__Model__Mapped_entitiesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2183:1: ( ( ruleMappedEntity ) )
-            // InternalXenia.g:2184:2: ( ruleMappedEntity )
+            // InternalXenia.g:2190:1: ( ( ruleMappedEntity ) )
+            // InternalXenia.g:2191:2: ( ruleMappedEntity )
             {
-            // InternalXenia.g:2184:2: ( ruleMappedEntity )
-            // InternalXenia.g:2185:3: ruleMappedEntity
+            // InternalXenia.g:2191:2: ( ruleMappedEntity )
+            // InternalXenia.g:2192:3: ruleMappedEntity
             {
              before(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -6631,17 +6656,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__AppNameAssignment_1"
-    // InternalXenia.g:2194:1: rule__Header__AppNameAssignment_1 : ( RULE_ID ) ;
+    // InternalXenia.g:2201:1: rule__Header__AppNameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Header__AppNameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2198:1: ( ( RULE_ID ) )
-            // InternalXenia.g:2199:2: ( RULE_ID )
+            // InternalXenia.g:2205:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2206:2: ( RULE_ID )
             {
-            // InternalXenia.g:2199:2: ( RULE_ID )
-            // InternalXenia.g:2200:3: RULE_ID
+            // InternalXenia.g:2206:2: ( RULE_ID )
+            // InternalXenia.g:2207:3: RULE_ID
             {
              before(grammarAccess.getHeaderAccess().getAppNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6668,17 +6693,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__SitesAssignment_5"
-    // InternalXenia.g:2209:1: rule__Header__SitesAssignment_5 : ( ruleSuperSite ) ;
+    // InternalXenia.g:2216:1: rule__Header__SitesAssignment_5 : ( ruleSuperSite ) ;
     public final void rule__Header__SitesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2213:1: ( ( ruleSuperSite ) )
-            // InternalXenia.g:2214:2: ( ruleSuperSite )
+            // InternalXenia.g:2220:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2221:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:2214:2: ( ruleSuperSite )
-            // InternalXenia.g:2215:3: ruleSuperSite
+            // InternalXenia.g:2221:2: ( ruleSuperSite )
+            // InternalXenia.g:2222:3: ruleSuperSite
             {
              before(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -6709,17 +6734,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Header__SitesAssignment_6_1"
-    // InternalXenia.g:2224:1: rule__Header__SitesAssignment_6_1 : ( ruleSuperSite ) ;
+    // InternalXenia.g:2231:1: rule__Header__SitesAssignment_6_1 : ( ruleSuperSite ) ;
     public final void rule__Header__SitesAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2228:1: ( ( ruleSuperSite ) )
-            // InternalXenia.g:2229:2: ( ruleSuperSite )
+            // InternalXenia.g:2235:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2236:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:2229:2: ( ruleSuperSite )
-            // InternalXenia.g:2230:3: ruleSuperSite
+            // InternalXenia.g:2236:2: ( ruleSuperSite )
+            // InternalXenia.g:2237:3: ruleSuperSite
             {
              before(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -6750,17 +6775,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__TechAssignment_0_2"
-    // InternalXenia.g:2239:1: rule__Entity__TechAssignment_0_2 : ( RULE_STRING ) ;
+    // InternalXenia.g:2246:1: rule__Entity__TechAssignment_0_2 : ( RULE_STRING ) ;
     public final void rule__Entity__TechAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2243:1: ( ( RULE_STRING ) )
-            // InternalXenia.g:2244:2: ( RULE_STRING )
+            // InternalXenia.g:2250:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2251:2: ( RULE_STRING )
             {
-            // InternalXenia.g:2244:2: ( RULE_STRING )
-            // InternalXenia.g:2245:3: RULE_STRING
+            // InternalXenia.g:2251:2: ( RULE_STRING )
+            // InternalXenia.g:2252:3: RULE_STRING
             {
              before(grammarAccess.getEntityAccess().getTechSTRINGTerminalRuleCall_0_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6787,17 +6812,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__PathAssignment_1_2"
-    // InternalXenia.g:2254:1: rule__Entity__PathAssignment_1_2 : ( RULE_STRING ) ;
+    // InternalXenia.g:2261:1: rule__Entity__PathAssignment_1_2 : ( RULE_STRING ) ;
     public final void rule__Entity__PathAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2258:1: ( ( RULE_STRING ) )
-            // InternalXenia.g:2259:2: ( RULE_STRING )
+            // InternalXenia.g:2265:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2266:2: ( RULE_STRING )
             {
-            // InternalXenia.g:2259:2: ( RULE_STRING )
-            // InternalXenia.g:2260:3: RULE_STRING
+            // InternalXenia.g:2266:2: ( RULE_STRING )
+            // InternalXenia.g:2267:3: RULE_STRING
             {
              before(grammarAccess.getEntityAccess().getPathSTRINGTerminalRuleCall_1_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -6824,17 +6849,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__PropAssignment_2_0"
-    // InternalXenia.g:2269:1: rule__Entity__PropAssignment_2_0 : ( ruleProperty ) ;
+    // InternalXenia.g:2276:1: rule__Entity__PropAssignment_2_0 : ( ruleProperty ) ;
     public final void rule__Entity__PropAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2273:1: ( ( ruleProperty ) )
-            // InternalXenia.g:2274:2: ( ruleProperty )
+            // InternalXenia.g:2280:1: ( ( ruleProperty ) )
+            // InternalXenia.g:2281:2: ( ruleProperty )
             {
-            // InternalXenia.g:2274:2: ( ruleProperty )
-            // InternalXenia.g:2275:3: ruleProperty
+            // InternalXenia.g:2281:2: ( ruleProperty )
+            // InternalXenia.g:2282:3: ruleProperty
             {
              before(grammarAccess.getEntityAccess().getPropPropertyParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -6865,17 +6890,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Entity__NameAssignment_2_2"
-    // InternalXenia.g:2284:1: rule__Entity__NameAssignment_2_2 : ( RULE_ID ) ;
+    // InternalXenia.g:2291:1: rule__Entity__NameAssignment_2_2 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2288:1: ( ( RULE_ID ) )
-            // InternalXenia.g:2289:2: ( RULE_ID )
+            // InternalXenia.g:2295:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2296:2: ( RULE_ID )
             {
-            // InternalXenia.g:2289:2: ( RULE_ID )
-            // InternalXenia.g:2290:3: RULE_ID
+            // InternalXenia.g:2296:2: ( RULE_ID )
+            // InternalXenia.g:2297:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_2_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6902,17 +6927,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SiteWithModal__NameAssignment_1"
-    // InternalXenia.g:2299:1: rule__SiteWithModal__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalXenia.g:2306:1: rule__SiteWithModal__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SiteWithModal__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2303:1: ( ( RULE_ID ) )
-            // InternalXenia.g:2304:2: ( RULE_ID )
+            // InternalXenia.g:2310:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2311:2: ( RULE_ID )
             {
-            // InternalXenia.g:2304:2: ( RULE_ID )
-            // InternalXenia.g:2305:3: RULE_ID
+            // InternalXenia.g:2311:2: ( RULE_ID )
+            // InternalXenia.g:2312:3: RULE_ID
             {
              before(grammarAccess.getSiteWithModalAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -6939,17 +6964,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SiteWithModal__SitesAssignment_5"
-    // InternalXenia.g:2314:1: rule__SiteWithModal__SitesAssignment_5 : ( ruleSuperSite ) ;
+    // InternalXenia.g:2321:1: rule__SiteWithModal__SitesAssignment_5 : ( ruleSuperSite ) ;
     public final void rule__SiteWithModal__SitesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2318:1: ( ( ruleSuperSite ) )
-            // InternalXenia.g:2319:2: ( ruleSuperSite )
+            // InternalXenia.g:2325:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2326:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:2319:2: ( ruleSuperSite )
-            // InternalXenia.g:2320:3: ruleSuperSite
+            // InternalXenia.g:2326:2: ( ruleSuperSite )
+            // InternalXenia.g:2327:3: ruleSuperSite
             {
              before(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -6980,17 +7005,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SiteWithModal__SitesAssignment_6_1"
-    // InternalXenia.g:2329:1: rule__SiteWithModal__SitesAssignment_6_1 : ( ruleSuperSite ) ;
+    // InternalXenia.g:2336:1: rule__SiteWithModal__SitesAssignment_6_1 : ( ruleSuperSite ) ;
     public final void rule__SiteWithModal__SitesAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2333:1: ( ( ruleSuperSite ) )
-            // InternalXenia.g:2334:2: ( ruleSuperSite )
+            // InternalXenia.g:2340:1: ( ( ruleSuperSite ) )
+            // InternalXenia.g:2341:2: ( ruleSuperSite )
             {
-            // InternalXenia.g:2334:2: ( ruleSuperSite )
-            // InternalXenia.g:2335:3: ruleSuperSite
+            // InternalXenia.g:2341:2: ( ruleSuperSite )
+            // InternalXenia.g:2342:3: ruleSuperSite
             {
              before(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7021,17 +7046,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MappedEntity__InfoPropsAssignment_0_3"
-    // InternalXenia.g:2344:1: rule__MappedEntity__InfoPropsAssignment_0_3 : ( ruleInfoProperty ) ;
+    // InternalXenia.g:2351:1: rule__MappedEntity__InfoPropsAssignment_0_3 : ( ruleInfoProperty ) ;
     public final void rule__MappedEntity__InfoPropsAssignment_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2348:1: ( ( ruleInfoProperty ) )
-            // InternalXenia.g:2349:2: ( ruleInfoProperty )
+            // InternalXenia.g:2355:1: ( ( ruleInfoProperty ) )
+            // InternalXenia.g:2356:2: ( ruleInfoProperty )
             {
-            // InternalXenia.g:2349:2: ( ruleInfoProperty )
-            // InternalXenia.g:2350:3: ruleInfoProperty
+            // InternalXenia.g:2356:2: ( ruleInfoProperty )
+            // InternalXenia.g:2357:3: ruleInfoProperty
             {
              before(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7062,17 +7087,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MappedEntity__InfoPropsAssignment_0_4_1"
-    // InternalXenia.g:2359:1: rule__MappedEntity__InfoPropsAssignment_0_4_1 : ( ruleInfoProperty ) ;
+    // InternalXenia.g:2366:1: rule__MappedEntity__InfoPropsAssignment_0_4_1 : ( ruleInfoProperty ) ;
     public final void rule__MappedEntity__InfoPropsAssignment_0_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2363:1: ( ( ruleInfoProperty ) )
-            // InternalXenia.g:2364:2: ( ruleInfoProperty )
+            // InternalXenia.g:2370:1: ( ( ruleInfoProperty ) )
+            // InternalXenia.g:2371:2: ( ruleInfoProperty )
             {
-            // InternalXenia.g:2364:2: ( ruleInfoProperty )
-            // InternalXenia.g:2365:3: ruleInfoProperty
+            // InternalXenia.g:2371:2: ( ruleInfoProperty )
+            // InternalXenia.g:2372:3: ruleInfoProperty
             {
              before(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7103,17 +7128,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MappedEntity__LinkedPropsAssignment_1_3"
-    // InternalXenia.g:2374:1: rule__MappedEntity__LinkedPropsAssignment_1_3 : ( ruleLinkedProperty ) ;
+    // InternalXenia.g:2381:1: rule__MappedEntity__LinkedPropsAssignment_1_3 : ( ruleLinkedProperty ) ;
     public final void rule__MappedEntity__LinkedPropsAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2378:1: ( ( ruleLinkedProperty ) )
-            // InternalXenia.g:2379:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2385:1: ( ( ruleLinkedProperty ) )
+            // InternalXenia.g:2386:2: ( ruleLinkedProperty )
             {
-            // InternalXenia.g:2379:2: ( ruleLinkedProperty )
-            // InternalXenia.g:2380:3: ruleLinkedProperty
+            // InternalXenia.g:2386:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2387:3: ruleLinkedProperty
             {
              before(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -7144,17 +7169,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MappedEntity__LinkedPropsAssignment_1_4_1"
-    // InternalXenia.g:2389:1: rule__MappedEntity__LinkedPropsAssignment_1_4_1 : ( ruleLinkedProperty ) ;
+    // InternalXenia.g:2396:1: rule__MappedEntity__LinkedPropsAssignment_1_4_1 : ( ruleLinkedProperty ) ;
     public final void rule__MappedEntity__LinkedPropsAssignment_1_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2393:1: ( ( ruleLinkedProperty ) )
-            // InternalXenia.g:2394:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2400:1: ( ( ruleLinkedProperty ) )
+            // InternalXenia.g:2401:2: ( ruleLinkedProperty )
             {
-            // InternalXenia.g:2394:2: ( ruleLinkedProperty )
-            // InternalXenia.g:2395:3: ruleLinkedProperty
+            // InternalXenia.g:2401:2: ( ruleLinkedProperty )
+            // InternalXenia.g:2402:3: ruleLinkedProperty
             {
              before(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7185,17 +7210,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InfoProperty__PageAssignment_0"
-    // InternalXenia.g:2404:1: rule__InfoProperty__PageAssignment_0 : ( ruleSite ) ;
+    // InternalXenia.g:2411:1: rule__InfoProperty__PageAssignment_0 : ( ruleSite ) ;
     public final void rule__InfoProperty__PageAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2408:1: ( ( ruleSite ) )
-            // InternalXenia.g:2409:2: ( ruleSite )
+            // InternalXenia.g:2415:1: ( ( ruleSite ) )
+            // InternalXenia.g:2416:2: ( ruleSite )
             {
-            // InternalXenia.g:2409:2: ( ruleSite )
-            // InternalXenia.g:2410:3: ruleSite
+            // InternalXenia.g:2416:2: ( ruleSite )
+            // InternalXenia.g:2417:3: ruleSite
             {
              before(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7226,17 +7251,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InfoProperty__EntitiesAssignment_2"
-    // InternalXenia.g:2419:1: rule__InfoProperty__EntitiesAssignment_2 : ( ruleInfoEntity ) ;
+    // InternalXenia.g:2426:1: rule__InfoProperty__EntitiesAssignment_2 : ( ruleInfoEntity ) ;
     public final void rule__InfoProperty__EntitiesAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2423:1: ( ( ruleInfoEntity ) )
-            // InternalXenia.g:2424:2: ( ruleInfoEntity )
+            // InternalXenia.g:2430:1: ( ( ruleInfoEntity ) )
+            // InternalXenia.g:2431:2: ( ruleInfoEntity )
             {
-            // InternalXenia.g:2424:2: ( ruleInfoEntity )
-            // InternalXenia.g:2425:3: ruleInfoEntity
+            // InternalXenia.g:2431:2: ( ruleInfoEntity )
+            // InternalXenia.g:2432:3: ruleInfoEntity
             {
              before(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -7267,17 +7292,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InfoProperty__EntitiesAssignment_3_1"
-    // InternalXenia.g:2434:1: rule__InfoProperty__EntitiesAssignment_3_1 : ( ruleInfoEntity ) ;
+    // InternalXenia.g:2441:1: rule__InfoProperty__EntitiesAssignment_3_1 : ( ruleInfoEntity ) ;
     public final void rule__InfoProperty__EntitiesAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2438:1: ( ( ruleInfoEntity ) )
-            // InternalXenia.g:2439:2: ( ruleInfoEntity )
+            // InternalXenia.g:2445:1: ( ( ruleInfoEntity ) )
+            // InternalXenia.g:2446:2: ( ruleInfoEntity )
             {
-            // InternalXenia.g:2439:2: ( ruleInfoEntity )
-            // InternalXenia.g:2440:3: ruleInfoEntity
+            // InternalXenia.g:2446:2: ( ruleInfoEntity )
+            // InternalXenia.g:2447:3: ruleInfoEntity
             {
              before(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -7308,17 +7333,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InfoEntity__EntriesAssignment_0"
-    // InternalXenia.g:2449:1: rule__InfoEntity__EntriesAssignment_0 : ( ruleInfoEntry ) ;
+    // InternalXenia.g:2456:1: rule__InfoEntity__EntriesAssignment_0 : ( ruleInfoEntry ) ;
     public final void rule__InfoEntity__EntriesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2453:1: ( ( ruleInfoEntry ) )
-            // InternalXenia.g:2454:2: ( ruleInfoEntry )
+            // InternalXenia.g:2460:1: ( ( ruleInfoEntry ) )
+            // InternalXenia.g:2461:2: ( ruleInfoEntry )
             {
-            // InternalXenia.g:2454:2: ( ruleInfoEntry )
-            // InternalXenia.g:2455:3: ruleInfoEntry
+            // InternalXenia.g:2461:2: ( ruleInfoEntry )
+            // InternalXenia.g:2462:3: ruleInfoEntry
             {
              before(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7349,17 +7374,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__InfoEntity__InfoValueAssignment_2"
-    // InternalXenia.g:2464:1: rule__InfoEntity__InfoValueAssignment_2 : ( RULE_STRING ) ;
+    // InternalXenia.g:2471:1: rule__InfoEntity__InfoValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__InfoEntity__InfoValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2468:1: ( ( RULE_STRING ) )
-            // InternalXenia.g:2469:2: ( RULE_STRING )
+            // InternalXenia.g:2475:1: ( ( RULE_STRING ) )
+            // InternalXenia.g:2476:2: ( RULE_STRING )
             {
-            // InternalXenia.g:2469:2: ( RULE_STRING )
-            // InternalXenia.g:2470:3: RULE_STRING
+            // InternalXenia.g:2476:2: ( RULE_STRING )
+            // InternalXenia.g:2477:3: RULE_STRING
             {
              before(grammarAccess.getInfoEntityAccess().getInfoValueSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -7386,17 +7411,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Site__NameAssignment_1"
-    // InternalXenia.g:2479:1: rule__Site__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalXenia.g:2486:1: rule__Site__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Site__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2483:1: ( ( RULE_ID ) )
-            // InternalXenia.g:2484:2: ( RULE_ID )
+            // InternalXenia.g:2490:1: ( ( RULE_ID ) )
+            // InternalXenia.g:2491:2: ( RULE_ID )
             {
-            // InternalXenia.g:2484:2: ( RULE_ID )
-            // InternalXenia.g:2485:3: RULE_ID
+            // InternalXenia.g:2491:2: ( RULE_ID )
+            // InternalXenia.g:2492:3: RULE_ID
             {
              before(grammarAccess.getSiteAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -7423,17 +7448,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__NameAssignment_0"
-    // InternalXenia.g:2494:1: rule__LinkedProperty__NameAssignment_0 : ( ruleSite ) ;
+    // InternalXenia.g:2501:1: rule__LinkedProperty__NameAssignment_0 : ( ruleSite ) ;
     public final void rule__LinkedProperty__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2498:1: ( ( ruleSite ) )
-            // InternalXenia.g:2499:2: ( ruleSite )
+            // InternalXenia.g:2505:1: ( ( ruleSite ) )
+            // InternalXenia.g:2506:2: ( ruleSite )
             {
-            // InternalXenia.g:2499:2: ( ruleSite )
-            // InternalXenia.g:2500:3: ruleSite
+            // InternalXenia.g:2506:2: ( ruleSite )
+            // InternalXenia.g:2507:3: ruleSite
             {
              before(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -7464,17 +7489,17 @@ public class InternalXeniaParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LinkedProperty__SiteAssignment_1_1"
-    // InternalXenia.g:2509:1: rule__LinkedProperty__SiteAssignment_1_1 : ( ruleSite ) ;
+    // InternalXenia.g:2516:1: rule__LinkedProperty__SiteAssignment_1_1 : ( ruleSite ) ;
     public final void rule__LinkedProperty__SiteAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalXenia.g:2513:1: ( ( ruleSite ) )
-            // InternalXenia.g:2514:2: ( ruleSite )
+            // InternalXenia.g:2520:1: ( ( ruleSite ) )
+            // InternalXenia.g:2521:2: ( ruleSite )
             {
-            // InternalXenia.g:2514:2: ( ruleSite )
-            // InternalXenia.g:2515:3: ruleSite
+            // InternalXenia.g:2521:2: ( ruleSite )
+            // InternalXenia.g:2522:3: ruleSite
             {
              before(grammarAccess.getLinkedPropertyAccess().getSiteSiteParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);

@@ -529,10 +529,10 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSiteSiteParserRuleCall_1_1_0 = (RuleCall)cSiteAssignment_1_1.eContents().get(0);
 		
 		//LinkedProperty:
-		//	name=Site ('->' site+=Site)*;
+		//	name=Site ('->' site+=Site)+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Site ('->' site+=Site)*
+		//name=Site ('->' site+=Site)+
 		public Group getGroup() { return cGroup; }
 		
 		//name=Site
@@ -541,7 +541,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		//Site
 		public RuleCall getNameSiteParserRuleCall_0_0() { return cNameSiteParserRuleCall_0_0; }
 		
-		//('->' site+=Site)*
+		//('->' site+=Site)+
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//'->'
@@ -735,7 +735,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LinkedProperty:
-	//	name=Site ('->' site+=Site)*;
+	//	name=Site ('->' site+=Site)+;
 	public LinkedPropertyElements getLinkedPropertyAccess() {
 		return pLinkedProperty;
 	}

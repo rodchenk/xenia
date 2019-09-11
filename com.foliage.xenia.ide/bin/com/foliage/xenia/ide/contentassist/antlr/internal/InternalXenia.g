@@ -2082,9 +2082,16 @@ rule__LinkedProperty__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
-	(rule__LinkedProperty__Group_1__0)*
-	{ after(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
+	(
+		{ before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
+		(rule__LinkedProperty__Group_1__0)
+		{ after(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
+	)
+	(
+		{ before(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
+		(rule__LinkedProperty__Group_1__0)*
+		{ after(grammarAccess.getLinkedPropertyAccess().getGroup_1()); }
+	)
 )
 ;
 finally {

@@ -125,7 +125,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkedProperty returns LinkedProperty
 	 *
 	 * Constraint:
-	 *     (name=Site site+=Site*)
+	 *     (name=Site site+=Site+)
 	 */
 	protected void sequence_LinkedProperty(ISerializationContext context, LinkedProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

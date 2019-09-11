@@ -2204,7 +2204,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinkedProperty"
-    // InternalXenia.g:894:1: ruleLinkedProperty returns [EObject current=null] : ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )* ) ;
+    // InternalXenia.g:894:1: ruleLinkedProperty returns [EObject current=null] : ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+ ) ;
     public final EObject ruleLinkedProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2218,11 +2218,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:900:2: ( ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )* ) )
-            // InternalXenia.g:901:2: ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )* )
+            // InternalXenia.g:900:2: ( ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+ ) )
+            // InternalXenia.g:901:2: ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+ )
             {
-            // InternalXenia.g:901:2: ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )* )
-            // InternalXenia.g:902:3: ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )*
+            // InternalXenia.g:901:2: ( ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+ )
+            // InternalXenia.g:902:3: ( (lv_name_0_0= ruleSite ) ) (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+
             {
             // InternalXenia.g:902:3: ( (lv_name_0_0= ruleSite ) )
             // InternalXenia.g:903:4: (lv_name_0_0= ruleSite )
@@ -2233,7 +2233,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_17);
             lv_name_0_0=ruleSite();
 
             state._fsp--;
@@ -2255,7 +2255,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:921:3: (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )*
+            // InternalXenia.g:921:3: (otherlv_1= '->' ( (lv_site_2_0= ruleSite ) ) )+
+            int cnt12=0;
             loop12:
             do {
                 int alt12=2;
@@ -2310,8 +2311,12 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    if ( cnt12 >= 1 ) break loop12;
+                        EarlyExitException eee =
+                            new EarlyExitException(12, input);
+                        throw eee;
                 }
+                cnt12++;
             } while (true);
 
 
