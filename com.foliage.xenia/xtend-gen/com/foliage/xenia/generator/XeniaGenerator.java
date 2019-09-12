@@ -31,7 +31,10 @@ public class XeniaGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     Iterable<Header> _filter = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
     for (final Header e : _filter) {
-      fsa.generateFile(("test" + ".html"), this.compile(e));
+      {
+        fsa.generateFile(("test" + ".html"), this.compile(e));
+        this._iQualifiedNameProvider.getFullyQualifiedName(e).toString("/");
+      }
     }
   }
   
@@ -48,6 +51,9 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append(_appName, "\t\t");
     _builder.append("\"</title>");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("<link rel=\"stylesheet\" type=\"text/css\" href=\"F:/coding/java-workspace/xenia/com.foliage.xenia.resources/default.xenia.css\"></link>");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("</head>");
     _builder.newLine();
@@ -56,6 +62,18 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<b>Hello, World!</b>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<div style=\"text-align:center; margin-top:30px\">");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<button class=\"xenia-btn-sm\">");
+    String _appName_1 = header.getAppName();
+    _builder.append(_appName_1, "\t\t");
+    _builder.append(" :)</button>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("</body>");

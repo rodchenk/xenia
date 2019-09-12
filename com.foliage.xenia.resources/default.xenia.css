@@ -1,0 +1,18 @@
+body{
+	background-color: #eee;
+	margin: 0;
+	padding: 0;
+}
+.xenia-btn-sm{
+	padding: 8px 16px;
+	border-radius: 4px;
+	border: 0;
+	background-color: #f16f55;
+	color: white;
+	transition: 250ms;
+	box-shadow: 0 0 22px #f9a898
+}
+.xenia-btn-sm:hover{
+	background-color: #dc6952;
+	cursor: pointer;
+}

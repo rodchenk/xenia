@@ -26,6 +26,7 @@ class XeniaGenerator extends AbstractGenerator {
 //				.join(', '))
 		for(e: resource.allContents.toIterable.filter(Header)){
 			fsa.generateFile('test' + '.html', e.compile);
+			e.fullyQualifiedName.toString('/');
 		}
 	}
 	
@@ -33,9 +34,13 @@ class XeniaGenerator extends AbstractGenerator {
 		<html>
 			<head>
 				<title>"«header.appName»"</title>
+				<link rel="stylesheet" type="text/css" href="F:/coding/java-workspace/xenia/com.foliage.xenia.resources/default.xenia.css"></link>
 			</head>
 			<body>
 				<b>Hello, World!</b>
+				<div style="text-align:center; margin-top:30px">
+				<button class="xenia-btn-sm">«header.appName» :)</button>
+				</div>
 			</body>
 		</html>
 	'''
