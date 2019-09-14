@@ -16,13 +16,13 @@ app Main has pages[
 	@Message
 ]
   with: "React"
-	xml: "/home/user/foliage/map.xml"
-	map :[
-	  @Home -> @Login,
-		@Login -> @Home -> @Contact
-	]
-	info :[
-	  @Home -> mod: "today", freq: "daily",
-		@News -> mod: "monday"
-	]
+  xml: "/home/user/foliage/map.xml"
+  map :[
+  	@Home -> @Login,
+	@Login -> @Home -> @Contact
+  ]
+  info :[
+	@Home -> mod: "today", freq: "daily",
+	@News -> mod: "monday"
+  ]
 ```
