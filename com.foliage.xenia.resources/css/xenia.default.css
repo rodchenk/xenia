@@ -23,10 +23,11 @@ img.xenia-logo{
 	margin: 12px;
 }
 main.xenia-main{
-	padding: 20px;
+	padding: 5px 20px;
 }
 main>div.xenia-content{
 	padding: 25px;
+	margin: 10px 0;
 	background-color:  #fff;
 	-webkit-box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
     					0 3px 1px -2px rgba(0,0,0,0.12), 
@@ -34,4 +35,8 @@ main>div.xenia-content{
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.09), 
     			0 3px 1px -2px rgba(0, 0, 0, 0.07), 
     			0 1px 5px 0 rgba(0, 0, 0, 0);
+}
+.btn>i{
+	color: inherit;
+	opacity: .6;
 }

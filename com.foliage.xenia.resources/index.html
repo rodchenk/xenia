@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
+	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="./css/ionic.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/xenia.default.css">
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/materialize.min.js"></script>
+	<script type="text/javascript" src="./js/xenia.default.js"></script>
+</head>
+<body class="xenia-body">
+	<header class="xenia-header">
+		<nav>
+			<div class="nav-wrapper">
+				<ul>
+					<li>
+						<i class="icon ion-ios-menu sidenav-trigger" data-target='slide-out' style="color: #363333; margin-left: 10px; cursor: pointer"></i>
+					</li>
+				</ul>
+				
+				<img src="./img/logo_avacado.png" class="xenia-logo">
+				<ul class="right hide-on-med-and-down">
+					<li><a href="sass.html"><i class="icon ion-ios-heart-empty"></i></a></li>
+					<li><a href="mobile.html"><i class="icon ion-md-attach"></i></a></li>
+					<li><a href="collapsible.html"><i class="icon ion-ios-crop"></i></a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+	<main class="xenia-main">
+		<div class="xenia-content">
+			<a class="waves-effect waves-red btn brown lighten-5" style="color: rgb(28,28,28)">Home<i class="icon ion-ios-bonfire right"></i></a>
+			<a class="waves-effect waves-red btn brown lighten-5" style="color: rgb(28,28,28)">News<i class="icon ion-ios-school right"></i></a>
+		</div>
+
+		<div class="xenia-content">
+			Here we go again
+		</div>
+
+		<a class="btn-floating btn-large blue-grey darken-3 pulse xenia-link-dropdown" href='#' data-target='slide-out'>
+			<i class="icon ion-ios-stats"></i>
+		</a>
+
+		<!-- Element Showed -->
+		<ul id="slide-out" class="sidenav">
+			<li>
+				<div class="user-view">
+					<div class="background">
+						<img src="./img/bg.jpg" style="width: 100%">
+					</div>
+					<a href="#user"><img class="circle" src="./img/ava.jpg"></a>
+					<a href="#name"><span class="white-text name">Mischa Test</span></a>
+					<a href="#email"><span class="white-text email">xenia@foliage.com</span></a>
+				</div>
+			</li>
+			<li><a class="subheader">Main links</a></li>
+			<li><a href="#!"><i class="icon ion-ios-cloud"></i>First Link With Icon</a></li>
+			<li><a href="#!"><i class="icon ion-ios-bookmark"></i>Second Link</a></li>
+			<li><div class="divider"></div></li>
+			<li><a class="subheader">Modals</a></li>
+			<li><a class="waves-effect modal-trigger" href="#modal1"><i class="icon ion-ios-heart"></i>Contact</a></li>
+		</ul>  
+	</main>
+	<div class="xenia-modal">
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<h4>Modal Header</h4>
+				<p>A bunch of text</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-close waves-effect waves-teal btn-flat">Close</a>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
