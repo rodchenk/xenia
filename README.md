@@ -26,3 +26,4 @@ app Main has pages[
 	@News -> mod: "monday"
   ]
 ```
+![map](https://user-images.githubusercontent.com/30366483/64978145-243a6e00-d8b5-11e9-8b54-b388fc7bd664.PNG)
