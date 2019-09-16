@@ -2,7 +2,7 @@ body.xenia-body{
 	background-color: #eee
 }
 .xenia-link-dropdown{
-	position: absolute;
+	position: fixed;
 	bottom: 25px;
 	right: 25px;
 }
@@ -23,7 +23,7 @@ img.xenia-logo{
 	margin: 12px;
 }
 main.xenia-main{
-	padding: 5px 20px;
+	/*padding: 5px 20px;*/
 }
 main>div.xenia-content{
 	padding: 25px;
@@ -39,4 +39,80 @@ main>div.xenia-content{
 .btn>i{
 	color: inherit;
 	opacity: .6;
+}
+.carousel div.xenia-slider{
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+.carousel ul.indicators>li.indicator-item{
+	height: 12px;
+	width: 12px;
+}
+.carousel ul.indicators>li.indicator-item.active{
+	background-color: #f44336;
+}
+i.icon.sidenav-trigger{
+	color: #363333; 
+	margin-left: 10px; 
+	cursor: pointer
+}
+span.badge{
+	padding: 3px 6px;
+	border-radius: 4px;
+	margin-left: 0;
+	float: none;
+}
+.breadcrumbs{
+	padding: 10px 20px
+}
+.breadcrumbs>span>a{
+	padding: 0 5px
+}
+.breadcrumbs>span>i{
+	opacity: .75
+}
+.breadcrumbs a.dropdown-trigger{
+	text-transform: none;
+    line-height: inherit;
+    height: auto;
+    vertical-align: baseline;
+}
+.chart { height: 159px; width: 332px; margin: 5px; margin: 5px auto; border-radius: 3px; }
+.node { color: #9CB5ED; border: 1px solid #f44336; border-radius: 3px; }
+.node p { 
+    line-height: 20px;
+    height: 20px;
+    padding: 3px;
+    margin: 0;
+    padding: 0px 8px;
+    color: #f44336;
+}
+svg>path{
+	stroke: #f44336
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.modal-content h4>i.icon{
+	font-size: 80%;
+    margin-right: 15px;
+    vertical-align: top;
+    color: #ee6e73
 }

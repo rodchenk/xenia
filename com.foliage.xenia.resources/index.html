@@ -2,13 +2,23 @@
 <html>
 <head>
 	<title>Generat</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
 	<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="./css/ionic.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/xenia.default.css">
 	<script type="text/javascript" src="./js/jquery.js"></script>
 	<script type="text/javascript" src="./js/materialize.min.js"></script>
+
+	<link rel="stylesheet" href="./css/treant.css">
+
+	<script src="./js/raphael.js"></script>
+	<script src="./js/treant.js"></script>
+
 	<script type="text/javascript" src="./js/xenia.default.js"></script>
+
 </head>
 <body class="xenia-body">
 	<header class="xenia-header">
@@ -16,48 +26,73 @@
 			<div class="nav-wrapper">
 				<ul>
 					<li>
-						<i class="icon ion-ios-menu sidenav-trigger" data-target='slide-out' style="color: #363333; margin-left: 10px; cursor: pointer"></i>
+						<i class="icon ion-ios-menu sidenav-trigger" data-target='slide-out'></i>
 					</li>
 				</ul>
 				
 				<img src="./img/logo_avacado.png" class="xenia-logo">
+			
 				<ul class="right hide-on-med-and-down">
-					<li><a href="sass.html"><i class="icon ion-ios-heart-empty"></i></a></li>
-					<li><a href="mobile.html"><i class="icon ion-md-attach"></i></a></li>
-					<li><a href="collapsible.html"><i class="icon ion-ios-crop"></i></a></li>
+					<li><a href="#"><i class="icon ion-ios-heart-empty"></i></a></li>
+					<li><a href="#"><i class="icon ion-md-attach"></i></a></li>
+					<li><a href="#"><i class="icon ion-ios-crop"></i></a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 	<main class="xenia-main">
+		<div class="breadcrumbs">
+			<span>
+				<i class="icon ion-ios-arrow-forward red-text"></i>
+				<a href="#" class="red-text">Home</a>
+			</span>
+			<span>
+				<i class="icon ion-ios-arrow-forward red-text"></i>
+				<!-- Dropdown Trigger -->
+				<a href="#" class="red-text">News</a>
+				
+			</span>
+			<span data-what="dropdown-next-page">
+				<i class="icon red-text">/</i>
+				<a class='dropdown-trigger btn-flat red-text' href='#' data-target='pages-list' style="opacity: .7">Select page</a>
+				<ul id='pages-list' class='dropdown-content'>
+					<li><a href="#!" class="red-text">News</a></li>
+					<li><a href="#!" class="red-text">Message</a></li>
+				</ul>
+			</span>
+		</div>
 
-		<!-- <div class="xenia-content">
-			Here we go again
-		</div> -->
-
-		<div class="row">
-			<div class="col s12" style="margin: 10px 0">
-				<a class="waves-effect waves-red btn brown lighten-5" style="color: rgb(28,28,28)">Home<i class="icon ion-ios-bonfire right"></i></a>
-				<a class="waves-effect waves-red btn brown lighten-5" style="color: rgb(28,28,28)">News<i class="icon ion-ios-school right"></i></a>
-			</div>
-			<div class="col s12 m6">
+		<div class="row cards-tutorial">
+			<div class="col s6 m4">
 				<div class="card">
 					<div class="card-image">
 						<img src="./img/sample.jpg">
-						<span class="card-title">Card Title</span>
-						<a class="btn-floating halfway-fab waves-effect waves-light blue darken-1 btn-large"><i class="icon ion-ios-body"></i></a>
+						<span class="card-title">Select next page</span>
+						<a class="btn-floating halfway-fab waves-effect waves-light blue darken-1 btn-large"><i class="icon ion-ios-checkmark"></i></a>
 					</div>
 					<div class="card-content" style="padding-top: 40px">
 						<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col s12 m6">
+			<div class="col s6 m4">
 				<div class="card">
 					<div class="card-image">
-						<img src="./img/sample.jpg">
-						<span class="card-title">Card Title</span>
-						<a class="btn-floating halfway-fab waves-effect waves-light blue darken-1 btn-large"><i class="icon ion-ios-color-wand"></i></a>
+						<img src="./img/sample_2.jpg">
+						<span class="card-title">Explore page links</span>
+						<a class="btn-floating halfway-fab waves-effect waves-light blue darken-1 btn-large"><i class="icon ion-ios-link"></i></a>
+					</div>
+					<div class="card-content" style="padding-top: 40px">
+						<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s6 m4">
+				<div class="card">
+					<div class="card-image">
+						<img src="./img/sample_3.jpg">
+						<span class="card-title">Simply add the content</span>
+						<a class="btn-floating halfway-fab waves-effect waves-light blue darken-1 btn-large"><i class="icon ion-ios-text"></i></a>
 					</div>
 					<div class="card-content" style="padding-top: 40px">
 						<p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -65,13 +100,38 @@
 				</div>
 			</div>
 		</div>
-         
 
-		<a class="btn-floating btn-large blue-grey darken-3 pulse xenia-link-dropdown" href='#' data-target='slide-out'>
-			<i class="icon ion-ios-stats"></i>
-		</a>
+		 
+        <!-- Action button -->
+		<div class="fixed-action-btn">
+			<a class="btn-floating btn-large red pulse">
+				<i class="icon ion-ios-stats"></i>
+			</a>
+			<ul>
+				<li>
+					<a class="btn-floating green">
+						<i class="icon ion-md-book"></i>
+					</a>
+				</li>
+				<li>
+					<a class="btn-floating blue darken-1  modal-trigger" href="#modal1">
+						<i class="icon ion-ios-git-branch"></i>
+					</a>
+				</li>
+				<li>
+					<a class="btn-floating grey darken-4" href="https://github.com/rodchenk/xenia">
+						<i class="icon ion-logo-github"></i>
+					</a>
+				</li>
+				<li>
+					<a class="btn-floating orange darken-1" href="./pages/tutorial.html">
+						<i class="icon ion-md-laptop"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
 
-		<!-- Element Showed -->
+		<!-- Side nav -->
 		<ul id="slide-out" class="sidenav">
 			<li>
 				<div class="user-view">
@@ -91,16 +151,20 @@
 			<li><a class="waves-effect modal-trigger" href="#modal1"><i class="icon ion-ios-heart"></i>Contact</a></li>
 		</ul>  
 	</main>
+
+	<!-- Example modal -->
 	<div class="xenia-modal">
-		<div id="modal1" class="modal">
+		<div id="modal1" class="modal" >
 			<div class="modal-content">
-				<h4>Modal Header</h4>
-				<p>A bunch of text</p>
+				<h4><i class="icon ion-ios-git-branch"></i>Sitemap visualizer</h4>
+				<a href="#!" class="modal-close waves-effect waves-red btn-flat" style="position: fixed;right: 0; top: 0">
+					<i class="icon ion-md-close"></i>
+				</a>
 			</div>
-			<div class="modal-footer">
-				<a href="#!" class="modal-close waves-effect waves-teal btn-flat">Close</a>
-			</div>
+			<div class="chart" id="stats" style="min-height: 400px; width: 100%;overflow-y: scroll;"></div>
+			<script type="text/javascript" src="./js/xenia.map.js"></script>
 		</div>
 	</div>
+
 </body>
 </html>
