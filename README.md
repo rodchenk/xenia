@@ -15,7 +15,8 @@ app Main has pages[
 	), 
 	@Message
 ]
-  with: "React"
+  with: "React",
+  mode: DEV, // or PROD
   xml: "/home/user/foliage/map.xml"
   map :[
   	@Home -> @Login,
