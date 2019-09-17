@@ -169,22 +169,13 @@ public interface XeniaPackage extends EPackage
   int ENTITY__PATH = 1;
 
   /**
-   * The feature id for the '<em><b>Prop</b></em>' attribute.
+   * The feature id for the '<em><b>Mode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY__PROP = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NAME = 3;
+  int ENTITY__MODE = 2;
 
   /**
    * The number of structural features of the '<em>Entity</em>' class.
@@ -193,7 +184,7 @@ public interface XeniaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = 4;
+  int ENTITY_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link com.foliage.xenia.xenia.impl.SuperSiteImpl <em>Super Site</em>}' class.
@@ -545,26 +536,15 @@ public interface XeniaPackage extends EPackage
   EAttribute getEntity_Path();
 
   /**
-   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}'.
+   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getMode <em>Mode</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prop</em>'.
-   * @see com.foliage.xenia.xenia.Entity#getProp()
+   * @return the meta object for the attribute '<em>Mode</em>'.
+   * @see com.foliage.xenia.xenia.Entity#getMode()
    * @see #getEntity()
    * @generated
    */
-  EAttribute getEntity_Prop();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see com.foliage.xenia.xenia.Entity#getName()
-   * @see #getEntity()
-   * @generated
-   */
-  EAttribute getEntity_Name();
+  EAttribute getEntity_Mode();
 
   /**
    * Returns the meta object for class '{@link com.foliage.xenia.xenia.SuperSite <em>Super Site</em>}'.
@@ -856,20 +836,12 @@ public interface XeniaPackage extends EPackage
     EAttribute ENTITY__PATH = eINSTANCE.getEntity_Path();
 
     /**
-     * The meta object literal for the '<em><b>Prop</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ENTITY__PROP = eINSTANCE.getEntity_Prop();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ENTITY__NAME = eINSTANCE.getEntity_Name();
+    EAttribute ENTITY__MODE = eINSTANCE.getEntity_Mode();
 
     /**
      * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.SuperSiteImpl <em>Super Site</em>}' class.

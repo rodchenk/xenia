@@ -21,25 +21,20 @@ class XeniaParsingTest {
 	@Test
 	def void loadModel() {
 		val result = parseHelper.parse('''
-			app Main has pages[
-				@Home with modal(@Notification, @Login), 
-				@Contact with modal(
-					@Message, 
-					@Logout with modal(
-						@Contact
-					)
-				), 
-				@Message
+			app foliage has pages [
+				@Home,
+				@News with modal (@Login),
+				@Contact
 			]
-			with: "React"
-			xml: "/home/user/foliage/map.xml"
-			map :[
-				@Home -> @Login,
-				@Login -> @Home -> @Contact
+			with: "Cake"
+			mode: DEV
+			map: [
+				@Home -> (@News, @Contact),
+				@News -> (@Contact)
 			]
-			info :[
-				@Home -> mod: "today", freq: "daily",
-				@News -> mod: "monday"
+			info: [
+				@Home -> mod: "today", freq: "weekly",
+				@News -> prio: "0.9", mod: "01.09.2019"
 			]
 			
 		''')

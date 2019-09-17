@@ -18,8 +18,7 @@
     <genClasses ecoreClass="Xenia.ecore#//Entity">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/tech"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/path"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/prop"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//Entity/mode"/>
     </genClasses>
     <genClasses ecoreClass="Xenia.ecore#//SuperSite">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Xenia.ecore#//SuperSite/name"/>

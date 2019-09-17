@@ -14,9 +14,13 @@ Header:
 ;
 
 Entity:
-	'with' ':' tech=STRING |
-	'xml' ':' path=STRING |
-	prop=Property ':' name=ID
+	'with' 	':' tech=STRING |
+	'xml' 	':' path=STRING |
+	'mode' 	':' mode=Mode
+;
+
+Mode:
+	'DEV' | 'PROD'
 ;
 
 SuperSite:
@@ -25,10 +29,6 @@ SuperSite:
 
 SiteWithModal:
 	'@' name=ID 'with' 'modal' '(' sites+=SuperSite (',' sites+=SuperSite)* ')'
-;
-
-Property:
-	'test'
 ;
 
 MappedEntity:
@@ -53,5 +53,5 @@ Site:
 ;
 
 LinkedProperty:
-	name=Site ('->' site+=Site)+
+	name=Site '->' '(' (site+=Site) (',' site+=Site)* ')'
 ;

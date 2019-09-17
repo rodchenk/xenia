@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.Entity#getTech <em>Tech</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.Entity#getPath <em>Path</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.Entity#getMode <em>Mode</em>}</li>
  * </ul>
  *
  * @see com.foliage.xenia.xenia.XeniaPackage#getEntity()
@@ -71,47 +70,25 @@ public interface Entity extends EObject
   void setPath(String value);
 
   /**
-   * Returns the value of the '<em><b>Prop</b></em>' attribute.
+   * Returns the value of the '<em><b>Mode</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Prop</em>' attribute.
-   * @see #setProp(String)
-   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Prop()
+   * @return the value of the '<em>Mode</em>' attribute.
+   * @see #setMode(String)
+   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Mode()
    * @model
    * @generated
    */
-  String getProp();
+  String getMode();
 
   /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getProp <em>Prop</em>}' attribute.
+   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getMode <em>Mode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Prop</em>' attribute.
-   * @see #getProp()
+   * @param value the new value of the '<em>Mode</em>' attribute.
+   * @see #getMode()
    * @generated
    */
-  void setProp(String value);
-
-  /**
-   * Returns the value of the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' attribute.
-   * @see #setName(String)
-   * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Name()
-   * @model
-   * @generated
-   */
-  String getName();
-
-  /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getName <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' attribute.
-   * @see #getName()
-   * @generated
-   */
-  void setName(String value);
+  void setMode(String value);
 
 } // Entity

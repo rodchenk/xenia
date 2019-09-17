@@ -280,20 +280,9 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EAttribute getEntity_Prop()
+  public EAttribute getEntity_Mode()
   {
     return (EAttribute)entityEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getEntity_Name()
-  {
-    return (EAttribute)entityEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -526,8 +515,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     entityEClass = createEClass(ENTITY);
     createEAttribute(entityEClass, ENTITY__TECH);
     createEAttribute(entityEClass, ENTITY__PATH);
-    createEAttribute(entityEClass, ENTITY__PROP);
-    createEAttribute(entityEClass, ENTITY__NAME);
+    createEAttribute(entityEClass, ENTITY__MODE);
 
     superSiteEClass = createEClass(SUPER_SITE);
     createEAttribute(superSiteEClass, SUPER_SITE__NAME);
@@ -599,8 +587,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntity_Tech(), ecorePackage.getEString(), "tech", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntity_Path(), ecorePackage.getEString(), "path", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEntity_Prop(), ecorePackage.getEString(), "prop", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntity_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(superSiteEClass, SuperSite.class, "SuperSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSuperSite_Name(), ecorePackage.getEString(), "name", null, 0, 1, SuperSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

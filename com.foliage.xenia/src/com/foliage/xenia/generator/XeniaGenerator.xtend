@@ -13,6 +13,8 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import java.io.File
 import java.io.FileInputStream
+import com.foliage.xenia.xenia.Entity
+import javax.print.DocFlavor.STRING
 
 /**
  * Generates code from your model files on save.
@@ -23,8 +25,18 @@ class XeniaGenerator extends AbstractGenerator {
 	
 	@Inject extension IQualifiedNameProvider
 	
+	String mode;
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		var path = 'F:/coding/java-workspace/xenia/com.foliage.xenia.resources';
+		
+		this.mode = 'DEV';
+		
+		for(i: resource.allContents.toIterable.filter(Entity)){
+			if(i.mode !== null && i.mode !== '') 
+				this.mode = i.mode;
+		}
+		
 		
 	 	fsa.generateFile('./css/materialize.min.css', 	new FileInputStream(new File(path + '/css/materialize.min.css')));
 	 	fsa.generateFile('./css/ionic.min.css', 		new FileInputStream(new File(path + '/css/ionic.min.css')));
@@ -38,7 +50,7 @@ class XeniaGenerator extends AbstractGenerator {
 	 	
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
-				fsa.generateFile(page.name + '.html', page.compile);
+				fsa.generateFile(page.name + '.html', page.compile(true));
 			}
 		}
 		
@@ -61,7 +73,7 @@ class XeniaGenerator extends AbstractGenerator {
 		
 	}
 		
-	def CharSequence compile(SuperSite page) '''
+	def CharSequence compile(SuperSite page, boolean v) '''
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -70,7 +82,6 @@ class XeniaGenerator extends AbstractGenerator {
 		    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		    <meta name="viewport" content="width=device-width">
 			<link rel="stylesheet" type="text/css" href="./css/materialize.min.css">
-			<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 			<link rel="stylesheet" type="text/css" href="./css/ionic.min.css">
 			<link rel="stylesheet" type="text/css" href="./css/xenia.default.css">
 			<script type="text/javascript" src="./js/jquery.js"></script>
@@ -165,9 +176,8 @@ class XeniaGenerator extends AbstractGenerator {
 					</div>
 				</div>
 		
-				 
-		        <!-- Action button -->
-				<div class="fixed-action-btn">
+				 «IF this.mode.equals('DEV')»
+				 <div class="fixed-action-btn">
 					<a class="btn-floating btn-large red pulse">
 						<i class="icon ion-ios-stats"></i>
 					</a>
@@ -194,7 +204,7 @@ class XeniaGenerator extends AbstractGenerator {
 						</li>
 					</ul>
 				</div>
-		
+				
 				<!-- Side nav -->
 				<ul id="slide-out" class="sidenav">
 					<li>
@@ -214,6 +224,7 @@ class XeniaGenerator extends AbstractGenerator {
 					<li><a class="subheader">Modals</a></li>
 					<li><a class="waves-effect modal-trigger" href="#modal1"><i class="icon ion-ios-heart"></i>Contact</a></li>
 				</ul>  
+				«ENDIF»
 			</main>
 		
 			<!-- Example modal -->

@@ -23,8 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getTech <em>Tech</em>}</li>
  *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getPath <em>Path</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getProp <em>Prop</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.EntityImpl#getMode <em>Mode</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,44 +71,24 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
   protected String path = PATH_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getProp() <em>Prop</em>}' attribute.
+   * The default value of the '{@link #getMode() <em>Mode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProp()
+   * @see #getMode()
    * @generated
    * @ordered
    */
-  protected static final String PROP_EDEFAULT = null;
+  protected static final String MODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getProp() <em>Prop</em>}' attribute.
+   * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getProp()
+   * @see #getMode()
    * @generated
    * @ordered
    */
-  protected String prop = PROP_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected String mode = MODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -188,9 +167,9 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public String getProp()
+  public String getMode()
   {
-    return prop;
+    return mode;
   }
 
   /**
@@ -199,37 +178,12 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public void setProp(String newProp)
+  public void setMode(String newMode)
   {
-    String oldProp = prop;
-    prop = newProp;
+    String oldMode = mode;
+    mode = newMode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__PROP, oldProp, prop));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__MODE, oldMode, mode));
   }
 
   /**
@@ -246,10 +200,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
         return getTech();
       case XeniaPackage.ENTITY__PATH:
         return getPath();
-      case XeniaPackage.ENTITY__PROP:
-        return getProp();
-      case XeniaPackage.ENTITY__NAME:
-        return getName();
+      case XeniaPackage.ENTITY__MODE:
+        return getMode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -270,11 +222,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
       case XeniaPackage.ENTITY__PATH:
         setPath((String)newValue);
         return;
-      case XeniaPackage.ENTITY__PROP:
-        setProp((String)newValue);
-        return;
-      case XeniaPackage.ENTITY__NAME:
-        setName((String)newValue);
+      case XeniaPackage.ENTITY__MODE:
+        setMode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -296,11 +245,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
       case XeniaPackage.ENTITY__PATH:
         setPath(PATH_EDEFAULT);
         return;
-      case XeniaPackage.ENTITY__PROP:
-        setProp(PROP_EDEFAULT);
-        return;
-      case XeniaPackage.ENTITY__NAME:
-        setName(NAME_EDEFAULT);
+      case XeniaPackage.ENTITY__MODE:
+        setMode(MODE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -320,10 +266,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
         return TECH_EDEFAULT == null ? tech != null : !TECH_EDEFAULT.equals(tech);
       case XeniaPackage.ENTITY__PATH:
         return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
-      case XeniaPackage.ENTITY__PROP:
-        return PROP_EDEFAULT == null ? prop != null : !PROP_EDEFAULT.equals(prop);
-      case XeniaPackage.ENTITY__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case XeniaPackage.ENTITY__MODE:
+        return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
     }
     return super.eIsSet(featureID);
   }
@@ -343,10 +287,8 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
     result.append(tech);
     result.append(", path: ");
     result.append(path);
-    result.append(", prop: ");
-    result.append(prop);
-    result.append(", name: ");
-    result.append(name);
+    result.append(", mode: ");
+    result.append(mode);
     result.append(')');
     return result.toString();
   }

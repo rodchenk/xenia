@@ -77,7 +77,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Entity returns Entity
 	 *
 	 * Constraint:
-	 *     (tech=STRING | path=STRING | (prop=Property name=ID))
+	 *     (tech=STRING | path=STRING | mode=Mode)
 	 */
 	protected void sequence_Entity(ISerializationContext context, Entity semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -125,7 +125,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkedProperty returns LinkedProperty
 	 *
 	 * Constraint:
-	 *     (name=Site site+=Site+)
+	 *     (name=Site site+=Site site+=Site*)
 	 */
 	protected void sequence_LinkedProperty(ISerializationContext context, LinkedProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
