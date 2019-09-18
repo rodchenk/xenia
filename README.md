@@ -19,8 +19,8 @@ app Main has pages[
   mode: DEV, // or PROD
   xml: "/home/user/foliage/map.xml"
   map :[
-  	@Home -> @Login,
-	@Login -> @Home -> @Contact
+  	@Home -> (@Login),
+	@Login -> (@Home, @Contact)
   ]
   info :[
 	@Home -> mod: "today", freq: "daily",
