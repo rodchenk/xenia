@@ -947,11 +947,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                 if ( (LA6_1==RULE_ID) ) {
                     int LA6_2 = input.LA(3);
 
-                    if ( (LA6_2==17) ) {
-                        alt6=2;
-                    }
-                    else if ( (LA6_2==EOF||(LA6_2>=15 && LA6_2<=16)||LA6_2==26) ) {
+                    if ( (LA6_2==EOF||(LA6_2>=15 && LA6_2<=16)||LA6_2==26) ) {
                         alt6=1;
+                    }
+                    else if ( (LA6_2==17) ) {
+                        alt6=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -2221,30 +2221,27 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinkedProperty"
-    // InternalXenia.g:888:1: ruleLinkedProperty returns [EObject current=null] : ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_site_3_0= ruleSite ) ) (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )* otherlv_6= ')' ) ;
+    // InternalXenia.g:888:1: ruleLinkedProperty returns [EObject current=null] : ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) ;
     public final EObject ruleLinkedProperty() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
-        Token otherlv_6=null;
         EObject lv_name_0_0 = null;
 
-        EObject lv_site_3_0 = null;
-
-        EObject lv_site_5_0 = null;
+        EObject lv_page_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalXenia.g:894:2: ( ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_site_3_0= ruleSite ) ) (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )* otherlv_6= ')' ) )
-            // InternalXenia.g:895:2: ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_site_3_0= ruleSite ) ) (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )* otherlv_6= ')' )
+            // InternalXenia.g:894:2: ( ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) )
+            // InternalXenia.g:895:2: ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
             {
-            // InternalXenia.g:895:2: ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_site_3_0= ruleSite ) ) (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )* otherlv_6= ')' )
-            // InternalXenia.g:896:3: ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_site_3_0= ruleSite ) ) (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )* otherlv_6= ')'
+            // InternalXenia.g:895:2: ( ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
+            // InternalXenia.g:896:3: ( (lv_name_0_0= ruleSite ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')'
             {
             // InternalXenia.g:896:3: ( (lv_name_0_0= ruleSite ) )
             // InternalXenia.g:897:4: (lv_name_0_0= ruleSite )
@@ -2285,17 +2282,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getLinkedPropertyAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalXenia.g:923:3: ( (lv_site_3_0= ruleSite ) )
-            // InternalXenia.g:924:4: (lv_site_3_0= ruleSite )
+            // InternalXenia.g:923:3: ( (lv_page_3_0= ruleRedirectPage ) )
+            // InternalXenia.g:924:4: (lv_page_3_0= ruleRedirectPage )
             {
-            // InternalXenia.g:924:4: (lv_site_3_0= ruleSite )
-            // InternalXenia.g:925:5: lv_site_3_0= ruleSite
+            // InternalXenia.g:924:4: (lv_page_3_0= ruleRedirectPage )
+            // InternalXenia.g:925:5: lv_page_3_0= ruleRedirectPage
             {
 
-            					newCompositeNode(grammarAccess.getLinkedPropertyAccess().getSiteSiteParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getLinkedPropertyAccess().getPageRedirectPageParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_17);
-            lv_site_3_0=ruleSite();
+            pushFollow(FOLLOW_21);
+            lv_page_3_0=ruleRedirectPage();
 
             state._fsp--;
 
@@ -2303,11 +2300,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
             					if (current==null) {
             						current = createModelElementForParent(grammarAccess.getLinkedPropertyRule());
             					}
-            					add(
+            					set(
             						current,
-            						"site",
-            						lv_site_3_0,
-            						"com.foliage.xenia.Xenia.Site");
+            						"page",
+            						lv_page_3_0,
+            						"com.foliage.xenia.Xenia.RedirectPage");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2316,68 +2313,9 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:942:3: (otherlv_4= ',' ( (lv_site_5_0= ruleSite ) ) )*
-            loop13:
-            do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+            otherlv_4=(Token)match(input,26,FOLLOW_2); 
 
-                if ( (LA13_0==15) ) {
-                    alt13=1;
-                }
-
-
-                switch (alt13) {
-            	case 1 :
-            	    // InternalXenia.g:943:4: otherlv_4= ',' ( (lv_site_5_0= ruleSite ) )
-            	    {
-            	    otherlv_4=(Token)match(input,15,FOLLOW_9); 
-
-            	    				newLeafNode(otherlv_4, grammarAccess.getLinkedPropertyAccess().getCommaKeyword_4_0());
-            	    			
-            	    // InternalXenia.g:947:4: ( (lv_site_5_0= ruleSite ) )
-            	    // InternalXenia.g:948:5: (lv_site_5_0= ruleSite )
-            	    {
-            	    // InternalXenia.g:948:5: (lv_site_5_0= ruleSite )
-            	    // InternalXenia.g:949:6: lv_site_5_0= ruleSite
-            	    {
-
-            	    						newCompositeNode(grammarAccess.getLinkedPropertyAccess().getSiteSiteParserRuleCall_4_1_0());
-            	    					
-            	    pushFollow(FOLLOW_17);
-            	    lv_site_5_0=ruleSite();
-
-            	    state._fsp--;
-
-
-            	    						if (current==null) {
-            	    							current = createModelElementForParent(grammarAccess.getLinkedPropertyRule());
-            	    						}
-            	    						add(
-            	    							current,
-            	    							"site",
-            	    							lv_site_5_0,
-            	    							"com.foliage.xenia.Xenia.Site");
-            	    						afterParserOrEnumRuleCall();
-            	    					
-
-            	    }
-
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop13;
-                }
-            } while (true);
-
-            otherlv_6=(Token)match(input,26,FOLLOW_2); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getLinkedPropertyAccess().getRightParenthesisKeyword_5());
+            			newLeafNode(otherlv_4, grammarAccess.getLinkedPropertyAccess().getRightParenthesisKeyword_4());
             		
 
             }
@@ -2399,6 +2337,175 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         return current;
     }
     // $ANTLR end "ruleLinkedProperty"
+
+
+    // $ANTLR start "entryRuleRedirectPage"
+    // InternalXenia.g:950:1: entryRuleRedirectPage returns [EObject current=null] : iv_ruleRedirectPage= ruleRedirectPage EOF ;
+    public final EObject entryRuleRedirectPage() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleRedirectPage = null;
+
+
+        try {
+            // InternalXenia.g:950:53: (iv_ruleRedirectPage= ruleRedirectPage EOF )
+            // InternalXenia.g:951:2: iv_ruleRedirectPage= ruleRedirectPage EOF
+            {
+             newCompositeNode(grammarAccess.getRedirectPageRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleRedirectPage=ruleRedirectPage();
+
+            state._fsp--;
+
+             current =iv_ruleRedirectPage; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleRedirectPage"
+
+
+    // $ANTLR start "ruleRedirectPage"
+    // InternalXenia.g:957:1: ruleRedirectPage returns [EObject current=null] : ( ( (lv_site_0_0= ruleSite ) ) (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )* ) ;
+    public final EObject ruleRedirectPage() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        EObject lv_site_0_0 = null;
+
+        EObject lv_site_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalXenia.g:963:2: ( ( ( (lv_site_0_0= ruleSite ) ) (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )* ) )
+            // InternalXenia.g:964:2: ( ( (lv_site_0_0= ruleSite ) ) (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )* )
+            {
+            // InternalXenia.g:964:2: ( ( (lv_site_0_0= ruleSite ) ) (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )* )
+            // InternalXenia.g:965:3: ( (lv_site_0_0= ruleSite ) ) (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )*
+            {
+            // InternalXenia.g:965:3: ( (lv_site_0_0= ruleSite ) )
+            // InternalXenia.g:966:4: (lv_site_0_0= ruleSite )
+            {
+            // InternalXenia.g:966:4: (lv_site_0_0= ruleSite )
+            // InternalXenia.g:967:5: lv_site_0_0= ruleSite
+            {
+
+            					newCompositeNode(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_0_0());
+            				
+            pushFollow(FOLLOW_20);
+            lv_site_0_0=ruleSite();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getRedirectPageRule());
+            					}
+            					add(
+            						current,
+            						"site",
+            						lv_site_0_0,
+            						"com.foliage.xenia.Xenia.Site");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalXenia.g:984:3: (otherlv_1= ',' ( (lv_site_2_0= ruleSite ) ) )*
+            loop13:
+            do {
+                int alt13=2;
+                int LA13_0 = input.LA(1);
+
+                if ( (LA13_0==15) ) {
+                    alt13=1;
+                }
+
+
+                switch (alt13) {
+            	case 1 :
+            	    // InternalXenia.g:985:4: otherlv_1= ',' ( (lv_site_2_0= ruleSite ) )
+            	    {
+            	    otherlv_1=(Token)match(input,15,FOLLOW_9); 
+
+            	    				newLeafNode(otherlv_1, grammarAccess.getRedirectPageAccess().getCommaKeyword_1_0());
+            	    			
+            	    // InternalXenia.g:989:4: ( (lv_site_2_0= ruleSite ) )
+            	    // InternalXenia.g:990:5: (lv_site_2_0= ruleSite )
+            	    {
+            	    // InternalXenia.g:990:5: (lv_site_2_0= ruleSite )
+            	    // InternalXenia.g:991:6: lv_site_2_0= ruleSite
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_1_1_0());
+            	    					
+            	    pushFollow(FOLLOW_20);
+            	    lv_site_2_0=ruleSite();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getRedirectPageRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"site",
+            	    							lv_site_2_0,
+            	    							"com.foliage.xenia.Xenia.Site");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop13;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleRedirectPage"
 
     // Delegated rules
 
@@ -2425,5 +2532,6 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000020000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000001C0000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
 
 }

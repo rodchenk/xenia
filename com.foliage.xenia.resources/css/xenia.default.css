@@ -116,3 +116,25 @@ svg>path{
     vertical-align: top;
     color: #ee6e73
 }
+.sidenav>li>a{
+	text-transform: capitalize;
+}
+.sidenav-footer{
+	position: absolute;
+	bottom: 70px;
+	width: 100%;
+	padding: 20px 0;
+    background-color: #eef8fe;
+    border-top: 1px #dee8ee solid;
+}
+.sidenav-footer>div{
+	text-align: center;
+}
+.sidenav-footer>div a{
+	padding: 1px 12px;
+	transition: 250ms;
+	display: inline-block;
+}
+.sidenav-footer>div a:hover{
+	transform: scale(1.3);
+}

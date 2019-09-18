@@ -26,7 +26,7 @@ class XeniaParsingTest {
 				@News with modal (@Login),
 				@Contact
 			]
-			with: "Cake"
+			//with: "Cake"
 			mode: DEV
 			map: [
 				@Home -> (@News, @Contact),

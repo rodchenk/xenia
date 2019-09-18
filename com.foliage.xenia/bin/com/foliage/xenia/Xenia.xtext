@@ -53,5 +53,8 @@ Site:
 ;
 
 LinkedProperty:
-	name=Site '->' '(' (site+=Site) (',' site+=Site)* ')'
+	name=Site '->' '('  page=RedirectPage ')'
+;
+RedirectPage:
+	(site+=Site) (',' site+=Site)* 
 ;

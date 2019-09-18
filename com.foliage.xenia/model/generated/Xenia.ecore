@@ -45,6 +45,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Site" eSuperTypes="#//SuperSite"/>
   <eClassifiers xsi:type="ecore:EClass" name="LinkedProperty">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Site" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" eType="#//RedirectPage"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RedirectPage">
     <eStructuralFeatures xsi:type="ecore:EReference" name="site" upperBound="-1" eType="#//Site"
         containment="true"/>
   </eClassifiers>

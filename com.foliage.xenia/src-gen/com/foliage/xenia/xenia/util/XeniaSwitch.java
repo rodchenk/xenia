@@ -145,6 +145,13 @@ public class XeniaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case XeniaPackage.REDIRECT_PAGE:
+      {
+        RedirectPage redirectPage = (RedirectPage)theEObject;
+        T result = caseRedirectPage(redirectPage);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -305,6 +312,22 @@ public class XeniaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseLinkedProperty(LinkedProperty object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Redirect Page</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Redirect Page</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRedirectPage(RedirectPage object)
   {
     return null;
   }

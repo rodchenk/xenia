@@ -4,24 +4,18 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.LinkedProperty;
+import com.foliage.xenia.xenia.RedirectPage;
 import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.XeniaPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getName <em>Name</em>}</li>
- *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getSite <em>Site</em>}</li>
+ *   <li>{@link com.foliage.xenia.xenia.impl.LinkedPropertyImpl#getPage <em>Page</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,14 +44,14 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
   protected Site name;
 
   /**
-   * The cached value of the '{@link #getSite() <em>Site</em>}' containment reference list.
+   * The cached value of the '{@link #getPage() <em>Page</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSite()
+   * @see #getPage()
    * @generated
    * @ordered
    */
-  protected EList<Site> site;
+  protected RedirectPage page;
 
   /**
    * <!-- begin-user-doc -->
@@ -136,13 +130,48 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public EList<Site> getSite()
+  public RedirectPage getPage()
   {
-    if (site == null)
+    return page;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPage(RedirectPage newPage, NotificationChain msgs)
+  {
+    RedirectPage oldPage = page;
+    page = newPage;
+    if (eNotificationRequired())
     {
-      site = new EObjectContainmentEList<Site>(Site.class, this, XeniaPackage.LINKED_PROPERTY__SITE);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__PAGE, oldPage, newPage);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return site;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setPage(RedirectPage newPage)
+  {
+    if (newPage != page)
+    {
+      NotificationChain msgs = null;
+      if (page != null)
+        msgs = ((InternalEObject)page).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__PAGE, null, msgs);
+      if (newPage != null)
+        msgs = ((InternalEObject)newPage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__PAGE, null, msgs);
+      msgs = basicSetPage(newPage, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__PAGE, newPage, newPage));
   }
 
   /**
@@ -157,8 +186,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
         return basicSetName(null, msgs);
-      case XeniaPackage.LINKED_PROPERTY__SITE:
-        return ((InternalEList<?>)getSite()).basicRemove(otherEnd, msgs);
+      case XeniaPackage.LINKED_PROPERTY__PAGE:
+        return basicSetPage(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -175,8 +204,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
         return getName();
-      case XeniaPackage.LINKED_PROPERTY__SITE:
-        return getSite();
+      case XeniaPackage.LINKED_PROPERTY__PAGE:
+        return getPage();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -186,7 +215,6 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -195,9 +223,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
       case XeniaPackage.LINKED_PROPERTY__NAME:
         setName((Site)newValue);
         return;
-      case XeniaPackage.LINKED_PROPERTY__SITE:
-        getSite().clear();
-        getSite().addAll((Collection<? extends Site>)newValue);
+      case XeniaPackage.LINKED_PROPERTY__PAGE:
+        setPage((RedirectPage)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -216,8 +243,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
       case XeniaPackage.LINKED_PROPERTY__NAME:
         setName((Site)null);
         return;
-      case XeniaPackage.LINKED_PROPERTY__SITE:
-        getSite().clear();
+      case XeniaPackage.LINKED_PROPERTY__PAGE:
+        setPage((RedirectPage)null);
         return;
     }
     super.eUnset(featureID);
@@ -235,8 +262,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
         return name != null;
-      case XeniaPackage.LINKED_PROPERTY__SITE:
-        return site != null && !site.isEmpty();
+      case XeniaPackage.LINKED_PROPERTY__PAGE:
+        return page != null;
     }
     return super.eIsSet(featureID);
   }

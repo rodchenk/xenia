@@ -410,13 +410,13 @@ public interface XeniaPackage extends EPackage
   int LINKED_PROPERTY__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Site</b></em>' containment reference list.
+   * The feature id for the '<em><b>Page</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LINKED_PROPERTY__SITE = 1;
+  int LINKED_PROPERTY__PAGE = 1;
 
   /**
    * The number of structural features of the '<em>Linked Property</em>' class.
@@ -426,6 +426,34 @@ public interface XeniaPackage extends EPackage
    * @ordered
    */
   int LINKED_PROPERTY_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link com.foliage.xenia.xenia.impl.RedirectPageImpl <em>Redirect Page</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.foliage.xenia.xenia.impl.RedirectPageImpl
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getRedirectPage()
+   * @generated
+   */
+  int REDIRECT_PAGE = 10;
+
+  /**
+   * The feature id for the '<em><b>Site</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REDIRECT_PAGE__SITE = 0;
+
+  /**
+   * The number of structural features of the '<em>Redirect Page</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REDIRECT_PAGE_FEATURE_COUNT = 1;
 
 
   /**
@@ -716,15 +744,36 @@ public interface XeniaPackage extends EPackage
   EReference getLinkedProperty_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.LinkedProperty#getSite <em>Site</em>}'.
+   * Returns the meta object for the containment reference '{@link com.foliage.xenia.xenia.LinkedProperty#getPage <em>Page</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Site</em>'.
-   * @see com.foliage.xenia.xenia.LinkedProperty#getSite()
+   * @return the meta object for the containment reference '<em>Page</em>'.
+   * @see com.foliage.xenia.xenia.LinkedProperty#getPage()
    * @see #getLinkedProperty()
    * @generated
    */
-  EReference getLinkedProperty_Site();
+  EReference getLinkedProperty_Page();
+
+  /**
+   * Returns the meta object for class '{@link com.foliage.xenia.xenia.RedirectPage <em>Redirect Page</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Redirect Page</em>'.
+   * @see com.foliage.xenia.xenia.RedirectPage
+   * @generated
+   */
+  EClass getRedirectPage();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.RedirectPage#getSite <em>Site</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Site</em>'.
+   * @see com.foliage.xenia.xenia.RedirectPage#getSite()
+   * @see #getRedirectPage()
+   * @generated
+   */
+  EReference getRedirectPage_Site();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -986,12 +1035,30 @@ public interface XeniaPackage extends EPackage
     EReference LINKED_PROPERTY__NAME = eINSTANCE.getLinkedProperty_Name();
 
     /**
+     * The meta object literal for the '<em><b>Page</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LINKED_PROPERTY__PAGE = eINSTANCE.getLinkedProperty_Page();
+
+    /**
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.impl.RedirectPageImpl <em>Redirect Page</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.foliage.xenia.xenia.impl.RedirectPageImpl
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getRedirectPage()
+     * @generated
+     */
+    EClass REDIRECT_PAGE = eINSTANCE.getRedirectPage();
+
+    /**
      * The meta object literal for the '<em><b>Site</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference LINKED_PROPERTY__SITE = eINSTANCE.getLinkedProperty_Site();
+    EReference REDIRECT_PAGE__SITE = eINSTANCE.getRedirectPage_Site();
 
   }
 

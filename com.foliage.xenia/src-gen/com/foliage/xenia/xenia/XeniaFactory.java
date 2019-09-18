@@ -114,6 +114,15 @@ public interface XeniaFactory extends EFactory
   LinkedProperty createLinkedProperty();
 
   /**
+   * Returns a new object of class '<em>Redirect Page</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Redirect Page</em>'.
+   * @generated
+   */
+  RedirectPage createRedirectPage();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -75,6 +75,7 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
       case XeniaPackage.INFO_ENTITY: return createInfoEntity();
       case XeniaPackage.SITE: return createSite();
       case XeniaPackage.LINKED_PROPERTY: return createLinkedProperty();
+      case XeniaPackage.REDIRECT_PAGE: return createRedirectPage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -198,6 +199,18 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
   {
     LinkedPropertyImpl linkedProperty = new LinkedPropertyImpl();
     return linkedProperty;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public RedirectPage createRedirectPage()
+  {
+    RedirectPageImpl redirectPage = new RedirectPageImpl();
+    return redirectPage;
   }
 
   /**

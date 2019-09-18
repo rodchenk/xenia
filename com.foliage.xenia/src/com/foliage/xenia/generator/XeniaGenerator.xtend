@@ -14,7 +14,10 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 import java.io.File
 import java.io.FileInputStream
 import com.foliage.xenia.xenia.Entity
-import javax.print.DocFlavor.STRING
+import java.util.List
+import com.foliage.xenia.xenia.LinkedProperty
+import java.util.Map
+import com.foliage.xenia.xenia.Site
 
 /**
  * Generates code from your model files on save.
@@ -26,9 +29,28 @@ class XeniaGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider
 	
 	String mode;
+	var List<String> list = newArrayList;
+	var List<String> icons = newArrayList;
+	var icon_counter = 0;
+	var Map<String, List<Site>> page_map = newHashMap;
+	
+	def String getIcon(){
+		if(icon_counter >= this.icons.size()) this.icon_counter = 0;
+		return this.icons.get(icon_counter++);
+	}
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		var path = 'F:/coding/java-workspace/xenia/com.foliage.xenia.resources';
+		icons.add('paper-plane');
+		icons.add('appstore');
+		icons.add('bicycle');
+		icons.add('camera');
+		icons.add('cart');
+		icons.add('color-wand');
+		icons.add('gift');
+		icons.add('key');
+		icons.add('mail');
+		icons.add('mic');
 		
 		this.mode = 'DEV';
 		
@@ -48,10 +70,54 @@ class XeniaGenerator extends AbstractGenerator {
 		fsa.generateFile('./js/treant.js', 				new FileInputStream(new File(path + '/js/treant.js')));
 		fsa.generateFile('./js/xenia.default.js', 		new FileInputStream(new File(path + '/js/xenia.default.js')));
 	 	
+	 	var name_switch = true;
+	 	
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
-				fsa.generateFile(page.name + '.html', page.compile(true));
+				if(name_switch){
+					// rename first page in list to index.html to mark it as a main page
+					name_switch = false;
+					list.add('index');
+				}else{
+					list.add(page.name);
+				}
 			}
+		}
+		
+		for( redirect: resource.allContents.toIterable.filter(LinkedProperty)){
+			println(redirect.name);
+			page_map.put(redirect.name.name, redirect.page.site);
+		}
+		
+		name_switch = true;
+		
+		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
+			for(page: e.sites){
+				if(name_switch){
+					// rename first page in list to index.html to mark it as a main page
+					fsa.generateFile('index.html', page.compile());
+					name_switch = false;
+				}else{
+					fsa.generateFile(page.name + '.html', page.compile());
+				}
+			}
+		}
+		
+		if(this.mode.equals('DEV')){
+			fsa.generateFile('./tutorial.html', 		new FileInputStream(new File(path + './pages/tutorial.html')));
+			fsa.generateFile('./.htaccess', '''
+				DirectoryIndex tutorial.html
+				RewriteEngine On
+				RewriteCond %{REQUEST_FILENAME} !-f
+				RewriteRule ^([^.]+)$ $1.html [NC,L]
+			''');
+		}else{
+			fsa.generateFile('./.htaccess', '''
+				DirectoryIndex index.html
+				RewriteEngine On
+				RewriteCond %{REQUEST_FILENAME} !-f
+				RewriteRule ^([^.]+)$ $1.html [NC,L]
+			''');
 		}
 		
 		fsa.generateFile('./js/xenia.map.js', 			new FileInputStream(new File(path + '/js/xenia.map.js')));
@@ -73,7 +139,7 @@ class XeniaGenerator extends AbstractGenerator {
 		
 	}
 		
-	def CharSequence compile(SuperSite page, boolean v) '''
+	def CharSequence compile(SuperSite page) '''
 		<!DOCTYPE html>
 		<html>
 		<head>
@@ -119,22 +185,25 @@ class XeniaGenerator extends AbstractGenerator {
 				<div class="breadcrumbs">
 					<span>
 						<i class="icon ion-ios-arrow-forward red-text"></i>
-						<a href="#" class="red-text">Home</a>
+						<a href="#" class="red-text">«page.name»</a>
 					</span>
-					<span>
-						<i class="icon ion-ios-arrow-forward red-text"></i>
-						<!-- Dropdown Trigger -->
-						<a href="#" class="red-text">News</a>
-						
-					</span>
-					<span data-what="dropdown-next-page">
-						<i class="icon red-text">/</i>
-						<a class='dropdown-trigger btn-flat red-text' href='#' data-target='pages-list' style="opacity: .7">Select page</a>
-						<ul id='pages-list' class='dropdown-content'>
-							<li><a href="#!" class="red-text">News</a></li>
-							<li><a href="#!" class="red-text">Message</a></li>
-						</ul>
-					</span>
+«««					<span>
+«««						<i class="icon ion-ios-arrow-forward red-text"></i>
+«««						<!-- Dropdown Trigger -->
+«««						<a href="#" class="red-text">News</a>
+«««						
+«««					</span>
+					«IF page_map.containsKey(page.name.toString)»
+						<span data-what="dropdown-next-page">
+							<i class="icon red-text">/</i>
+							<a class='dropdown-trigger btn-flat red-text' href='#' data-target='pages-list' style="opacity: .7">Select page</a>
+							<ul id='pages-list' class='dropdown-content'>
+									«FOR p: page_map.get(page.name)»
+										<li><a href="«p.name»" class="red-text">«p.name»</a></li>
+									«ENDFOR»
+							</ul>
+						</span>
+					«ENDIF»
 				</div>
 		
 				<div class="row cards-tutorial">
@@ -204,7 +273,7 @@ class XeniaGenerator extends AbstractGenerator {
 						</li>
 					</ul>
 				</div>
-				
+				«ENDIF»
 				<!-- Side nav -->
 				<ul id="slide-out" class="sidenav">
 					<li>
@@ -218,13 +287,20 @@ class XeniaGenerator extends AbstractGenerator {
 						</div>
 					</li>
 					<li><a class="subheader">Main links</a></li>
-					<li><a href="#!"><i class="icon ion-ios-cloud"></i>First Link With Icon</a></li>
-					<li><a href="#!"><i class="icon ion-ios-bookmark"></i>Second Link</a></li>
+					«FOR site: list»
+						<li><a href="«site»"><i class="icon ion-md-«this.getIcon()»"></i>«site»</a></li>
+					«ENDFOR»
 					<li><div class="divider"></div></li>
-					<li><a class="subheader">Modals</a></li>
-					<li><a class="waves-effect modal-trigger" href="#modal1"><i class="icon ion-ios-heart"></i>Contact</a></li>
+					<li class="sidenav-footer">
+						<h6 align="center">Generated with <span class="badge white-text teal">xenia</span></h6>
+						<div>
+							<small style="display: block"><span class="grey-text">Contact</span>: rodchenk@th-brandenburg.de</small>
+							<a href="https://github.com/rodchenk" class="black-text"><i class="icon ion-logo-github"></i></a>
+							<a href="#" class="blue-text"><i class="icon ion-logo-twitter"></i></a>
+							<a href="https://rodchenk.github.io/" class="red-text"><i class="icon ion-logo-google"></i></a>
+						</div>
+					</li>
 				</ul>  
-				«ENDIF»
 			</main>
 		
 			<!-- Example modal -->

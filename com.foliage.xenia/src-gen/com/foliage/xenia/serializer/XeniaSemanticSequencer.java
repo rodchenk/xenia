@@ -11,6 +11,7 @@ import com.foliage.xenia.xenia.InfoProperty;
 import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
+import com.foliage.xenia.xenia.RedirectPage;
 import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.SiteWithModal;
 import com.foliage.xenia.xenia.XeniaPackage;
@@ -60,6 +61,9 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				return; 
 			case XeniaPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case XeniaPackage.REDIRECT_PAGE:
+				sequence_RedirectPage(context, (RedirectPage) semanticObject); 
 				return; 
 			case XeniaPackage.SITE:
 				sequence_Site(context, (Site) semanticObject); 
@@ -125,10 +129,19 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkedProperty returns LinkedProperty
 	 *
 	 * Constraint:
-	 *     (name=Site site+=Site site+=Site*)
+	 *     (name=Site page=RedirectPage)
 	 */
 	protected void sequence_LinkedProperty(ISerializationContext context, LinkedProperty semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__NAME));
+			if (transientValues.isValueTransient(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__PAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__PAGE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkedPropertyAccess().getPageRedirectPageParserRuleCall_3_0(), semanticObject.getPage());
+		feeder.finish();
 	}
 	
 	
@@ -152,6 +165,18 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     (headers+=Header entities+=Entity* mapped_entities+=MappedEntity*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     RedirectPage returns RedirectPage
+	 *
+	 * Constraint:
+	 *     (site+=Site site+=Site*)
+	 */
+	protected void sequence_RedirectPage(ISerializationContext context, RedirectPage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

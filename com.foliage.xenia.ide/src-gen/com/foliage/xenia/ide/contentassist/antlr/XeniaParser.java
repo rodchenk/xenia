@@ -53,7 +53,8 @@ public class XeniaParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInfoEntityAccess().getGroup(), "rule__InfoEntity__Group__0");
 			builder.put(grammarAccess.getSiteAccess().getGroup(), "rule__Site__Group__0");
 			builder.put(grammarAccess.getLinkedPropertyAccess().getGroup(), "rule__LinkedProperty__Group__0");
-			builder.put(grammarAccess.getLinkedPropertyAccess().getGroup_4(), "rule__LinkedProperty__Group_4__0");
+			builder.put(grammarAccess.getRedirectPageAccess().getGroup(), "rule__RedirectPage__Group__0");
+			builder.put(grammarAccess.getRedirectPageAccess().getGroup_1(), "rule__RedirectPage__Group_1__0");
 			builder.put(grammarAccess.getModelAccess().getHeadersAssignment_0(), "rule__Model__HeadersAssignment_0");
 			builder.put(grammarAccess.getModelAccess().getEntitiesAssignment_1(), "rule__Model__EntitiesAssignment_1");
 			builder.put(grammarAccess.getModelAccess().getMapped_entitiesAssignment_2(), "rule__Model__Mapped_entitiesAssignment_2");
@@ -77,8 +78,9 @@ public class XeniaParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getInfoEntityAccess().getInfoValueAssignment_2(), "rule__InfoEntity__InfoValueAssignment_2");
 			builder.put(grammarAccess.getSiteAccess().getNameAssignment_1(), "rule__Site__NameAssignment_1");
 			builder.put(grammarAccess.getLinkedPropertyAccess().getNameAssignment_0(), "rule__LinkedProperty__NameAssignment_0");
-			builder.put(grammarAccess.getLinkedPropertyAccess().getSiteAssignment_3(), "rule__LinkedProperty__SiteAssignment_3");
-			builder.put(grammarAccess.getLinkedPropertyAccess().getSiteAssignment_4_1(), "rule__LinkedProperty__SiteAssignment_4_1");
+			builder.put(grammarAccess.getLinkedPropertyAccess().getPageAssignment_3(), "rule__LinkedProperty__PageAssignment_3");
+			builder.put(grammarAccess.getRedirectPageAccess().getSiteAssignment_0(), "rule__RedirectPage__SiteAssignment_0");
+			builder.put(grammarAccess.getRedirectPageAccess().getSiteAssignment_1_1(), "rule__RedirectPage__SiteAssignment_1_1");
 		}
 	}
 	

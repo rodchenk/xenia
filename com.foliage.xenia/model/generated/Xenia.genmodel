@@ -41,7 +41,10 @@
     <genClasses ecoreClass="Xenia.ecore#//Site"/>
     <genClasses ecoreClass="Xenia.ecore#//LinkedProperty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//LinkedProperty/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//LinkedProperty/site"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//LinkedProperty/page"/>
+    </genClasses>
+    <genClasses ecoreClass="Xenia.ecore#//RedirectPage">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//RedirectPage/site"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

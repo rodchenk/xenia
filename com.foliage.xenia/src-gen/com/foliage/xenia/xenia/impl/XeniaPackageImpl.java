@@ -10,6 +10,7 @@ import com.foliage.xenia.xenia.InfoProperty;
 import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.MappedEntity;
 import com.foliage.xenia.xenia.Model;
+import com.foliage.xenia.xenia.RedirectPage;
 import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.SiteWithModal;
 import com.foliage.xenia.xenia.SuperSite;
@@ -100,6 +101,13 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   private EClass linkedPropertyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass redirectPageEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -467,9 +475,31 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
-  public EReference getLinkedProperty_Site()
+  public EReference getLinkedProperty_Page()
   {
     return (EReference)linkedPropertyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getRedirectPage()
+  {
+    return redirectPageEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRedirectPage_Site()
+  {
+    return (EReference)redirectPageEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -539,7 +569,10 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
 
     linkedPropertyEClass = createEClass(LINKED_PROPERTY);
     createEReference(linkedPropertyEClass, LINKED_PROPERTY__NAME);
-    createEReference(linkedPropertyEClass, LINKED_PROPERTY__SITE);
+    createEReference(linkedPropertyEClass, LINKED_PROPERTY__PAGE);
+
+    redirectPageEClass = createEClass(REDIRECT_PAGE);
+    createEReference(redirectPageEClass, REDIRECT_PAGE__SITE);
   }
 
   /**
@@ -611,7 +644,10 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
 
     initEClass(linkedPropertyEClass, LinkedProperty.class, "LinkedProperty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLinkedProperty_Name(), this.getSite(), null, "name", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getLinkedProperty_Site(), this.getSite(), null, "site", null, 0, -1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLinkedProperty_Page(), this.getRedirectPage(), null, "page", null, 0, 1, LinkedProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(redirectPageEClass, RedirectPage.class, "RedirectPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRedirectPage_Site(), this.getSite(), null, "site", null, 0, -1, RedirectPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

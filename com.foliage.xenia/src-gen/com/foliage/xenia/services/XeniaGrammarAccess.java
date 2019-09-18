@@ -530,19 +530,15 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameSiteParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSiteAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSiteSiteParserRuleCall_3_0 = (RuleCall)cSiteAssignment_3.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cSiteAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cSiteSiteParserRuleCall_4_1_0 = (RuleCall)cSiteAssignment_4_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cPageAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPageRedirectPageParserRuleCall_3_0 = (RuleCall)cPageAssignment_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//LinkedProperty:
-		//	name=Site '->' '(' site+=Site (',' site+=Site)* ')';
+		//	name=Site '->' '(' page=RedirectPage ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Site '->' '(' site+=Site (',' site+=Site)* ')'
+		//name=Site '->' '(' page=RedirectPage ')'
 		public Group getGroup() { return cGroup; }
 		
 		//name=Site
@@ -557,26 +553,49 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//site+=Site
-		public Assignment getSiteAssignment_3() { return cSiteAssignment_3; }
+		//page=RedirectPage
+		public Assignment getPageAssignment_3() { return cPageAssignment_3; }
 		
-		//Site
-		public RuleCall getSiteSiteParserRuleCall_3_0() { return cSiteSiteParserRuleCall_3_0; }
-		
-		//(',' site+=Site)*
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//','
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
-		
-		//site+=Site
-		public Assignment getSiteAssignment_4_1() { return cSiteAssignment_4_1; }
-		
-		//Site
-		public RuleCall getSiteSiteParserRuleCall_4_1_0() { return cSiteSiteParserRuleCall_4_1_0; }
+		//RedirectPage
+		public RuleCall getPageRedirectPageParserRuleCall_3_0() { return cPageRedirectPageParserRuleCall_3_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
+	}
+	public class RedirectPageElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.RedirectPage");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cSiteAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSiteSiteParserRuleCall_0_0 = (RuleCall)cSiteAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cSiteAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cSiteSiteParserRuleCall_1_1_0 = (RuleCall)cSiteAssignment_1_1.eContents().get(0);
+		
+		//RedirectPage:
+		//	site+=Site (',' site+=Site)*;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//site+=Site (',' site+=Site)*
+		public Group getGroup() { return cGroup; }
+		
+		//site+=Site
+		public Assignment getSiteAssignment_0() { return cSiteAssignment_0; }
+		
+		//Site
+		public RuleCall getSiteSiteParserRuleCall_0_0() { return cSiteSiteParserRuleCall_0_0; }
+		
+		//(',' site+=Site)*
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//','
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		
+		//site+=Site
+		public Assignment getSiteAssignment_1_1() { return cSiteAssignment_1_1; }
+		
+		//Site
+		public RuleCall getSiteSiteParserRuleCall_1_1_0() { return cSiteSiteParserRuleCall_1_1_0; }
 	}
 	
 	
@@ -592,6 +611,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	private final InfoEntryElements pInfoEntry;
 	private final SiteElements pSite;
 	private final LinkedPropertyElements pLinkedProperty;
+	private final RedirectPageElements pRedirectPage;
 	
 	private final Grammar grammar;
 	
@@ -614,6 +634,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pInfoEntry = new InfoEntryElements();
 		this.pSite = new SiteElements();
 		this.pLinkedProperty = new LinkedPropertyElements();
+		this.pRedirectPage = new RedirectPageElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -761,13 +782,23 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LinkedProperty:
-	//	name=Site '->' '(' site+=Site (',' site+=Site)* ')';
+	//	name=Site '->' '(' page=RedirectPage ')';
 	public LinkedPropertyElements getLinkedPropertyAccess() {
 		return pLinkedProperty;
 	}
 	
 	public ParserRule getLinkedPropertyRule() {
 		return getLinkedPropertyAccess().getRule();
+	}
+	
+	//RedirectPage:
+	//	site+=Site (',' site+=Site)*;
+	public RedirectPageElements getRedirectPageAccess() {
+		return pRedirectPage;
+	}
+	
+	public ParserRule getRedirectPageRule() {
+		return getRedirectPageAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -42,7 +42,7 @@ public class XeniaParsingTest {
       _builder.newLine();
       _builder.append("]");
       _builder.newLine();
-      _builder.append("with: \"Cake\"");
+      _builder.append("//with: \"Cake\"");
       _builder.newLine();
       _builder.append("mode: DEV");
       _builder.newLine();

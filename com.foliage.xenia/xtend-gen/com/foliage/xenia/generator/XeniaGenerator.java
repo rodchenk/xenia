@@ -5,10 +5,14 @@ package com.foliage.xenia.generator;
 
 import com.foliage.xenia.xenia.Entity;
 import com.foliage.xenia.xenia.Header;
+import com.foliage.xenia.xenia.LinkedProperty;
+import com.foliage.xenia.xenia.Site;
 import com.foliage.xenia.xenia.SuperSite;
 import com.google.common.collect.Iterables;
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.List;
+import java.util.Map;
 import javax.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -18,8 +22,10 @@ import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
@@ -35,10 +41,38 @@ public class XeniaGenerator extends AbstractGenerator {
   
   private String mode;
   
+  private List<String> list = CollectionLiterals.<String>newArrayList();
+  
+  private List<String> icons = CollectionLiterals.<String>newArrayList();
+  
+  private int icon_counter = 0;
+  
+  private Map<String, List<Site>> page_map = CollectionLiterals.<String, List<Site>>newHashMap();
+  
+  public String getIcon() {
+    int _size = this.icons.size();
+    boolean _greaterEqualsThan = (this.icon_counter >= _size);
+    if (_greaterEqualsThan) {
+      this.icon_counter = 0;
+    }
+    int _plusPlus = this.icon_counter++;
+    return this.icons.get(_plusPlus);
+  }
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
       String path = "F:/coding/java-workspace/xenia/com.foliage.xenia.resources";
+      this.icons.add("paper-plane");
+      this.icons.add("appstore");
+      this.icons.add("bicycle");
+      this.icons.add("camera");
+      this.icons.add("cart");
+      this.icons.add("color-wand");
+      this.icons.add("gift");
+      this.icons.add("key");
+      this.icons.add("mail");
+      this.icons.add("mic");
       this.mode = "DEV";
       Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entity.class);
       for (final Entity i : _filter) {
@@ -73,60 +107,113 @@ public class XeniaGenerator extends AbstractGenerator {
       File _file_8 = new File((path + "/js/xenia.default.js"));
       FileInputStream _fileInputStream_8 = new FileInputStream(_file_8);
       fsa.generateFile("./js/xenia.default.js", _fileInputStream_8);
+      boolean name_switch = true;
       Iterable<Header> _filter_1 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
       for (final Header e : _filter_1) {
         EList<SuperSite> _sites = e.getSites();
         for (final SuperSite page : _sites) {
-          String _name = page.getName();
-          String _plus = (_name + ".html");
-          fsa.generateFile(_plus, this.compile(page, true));
+          if (name_switch) {
+            name_switch = false;
+            this.list.add("index");
+          } else {
+            this.list.add(page.getName());
+          }
         }
       }
-      File _file_9 = new File((path + "/js/xenia.map.js"));
-      FileInputStream _fileInputStream_9 = new FileInputStream(_file_9);
-      fsa.generateFile("./js/xenia.map.js", _fileInputStream_9);
-      File _file_10 = new File((path + "/img/logo_avacado.png"));
+      Iterable<LinkedProperty> _filter_2 = Iterables.<LinkedProperty>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), LinkedProperty.class);
+      for (final LinkedProperty redirect : _filter_2) {
+        {
+          InputOutput.<Site>println(redirect.getName());
+          this.page_map.put(redirect.getName().getName(), redirect.getPage().getSite());
+        }
+      }
+      name_switch = true;
+      Iterable<Header> _filter_3 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
+      for (final Header e_1 : _filter_3) {
+        EList<SuperSite> _sites_1 = e_1.getSites();
+        for (final SuperSite page_1 : _sites_1) {
+          if (name_switch) {
+            fsa.generateFile("index.html", this.compile(page_1));
+            name_switch = false;
+          } else {
+            String _name = page_1.getName();
+            String _plus = (_name + ".html");
+            fsa.generateFile(_plus, this.compile(page_1));
+          }
+        }
+      }
+      boolean _equals = this.mode.equals("DEV");
+      if (_equals) {
+        File _file_9 = new File((path + "./pages/tutorial.html"));
+        FileInputStream _fileInputStream_9 = new FileInputStream(_file_9);
+        fsa.generateFile("./tutorial.html", _fileInputStream_9);
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("DirectoryIndex tutorial.html");
+        _builder.newLine();
+        _builder.append("RewriteEngine On");
+        _builder.newLine();
+        _builder.append("RewriteCond %{REQUEST_FILENAME} !-f");
+        _builder.newLine();
+        _builder.append("RewriteRule ^([^.]+)$ $1.html [NC,L]");
+        _builder.newLine();
+        fsa.generateFile("./.htaccess", _builder);
+      } else {
+        StringConcatenation _builder_1 = new StringConcatenation();
+        _builder_1.append("DirectoryIndex index.html");
+        _builder_1.newLine();
+        _builder_1.append("RewriteEngine On");
+        _builder_1.newLine();
+        _builder_1.append("RewriteCond %{REQUEST_FILENAME} !-f");
+        _builder_1.newLine();
+        _builder_1.append("RewriteRule ^([^.]+)$ $1.html [NC,L]");
+        _builder_1.newLine();
+        fsa.generateFile("./.htaccess", _builder_1);
+      }
+      File _file_10 = new File((path + "/js/xenia.map.js"));
       FileInputStream _fileInputStream_10 = new FileInputStream(_file_10);
-      fsa.generateFile("./img/logo_avacado.png", _fileInputStream_10);
-      File _file_11 = new File((path + "/img/bg.jpg"));
+      fsa.generateFile("./js/xenia.map.js", _fileInputStream_10);
+      File _file_11 = new File((path + "/img/logo_avacado.png"));
       FileInputStream _fileInputStream_11 = new FileInputStream(_file_11);
-      fsa.generateFile("./img/bg.jpg", _fileInputStream_11);
-      File _file_12 = new File((path + "/img/ava.jpg"));
+      fsa.generateFile("./img/logo_avacado.png", _fileInputStream_11);
+      File _file_12 = new File((path + "/img/bg.jpg"));
       FileInputStream _fileInputStream_12 = new FileInputStream(_file_12);
-      fsa.generateFile("./img/ava.jpg", _fileInputStream_12);
-      File _file_13 = new File((path + "/img/sample.jpg"));
+      fsa.generateFile("./img/bg.jpg", _fileInputStream_12);
+      File _file_13 = new File((path + "/img/ava.jpg"));
       FileInputStream _fileInputStream_13 = new FileInputStream(_file_13);
-      fsa.generateFile("./img/sample.jpg", _fileInputStream_13);
-      File _file_14 = new File((path + "/img/sample_2.jpg"));
+      fsa.generateFile("./img/ava.jpg", _fileInputStream_13);
+      File _file_14 = new File((path + "/img/sample.jpg"));
       FileInputStream _fileInputStream_14 = new FileInputStream(_file_14);
-      fsa.generateFile("./img/sample_2.jpg", _fileInputStream_14);
-      File _file_15 = new File((path + "/img/sample_3.jpg"));
+      fsa.generateFile("./img/sample.jpg", _fileInputStream_14);
+      File _file_15 = new File((path + "/img/sample_2.jpg"));
       FileInputStream _fileInputStream_15 = new FileInputStream(_file_15);
-      fsa.generateFile("./img/sample_3.jpg", _fileInputStream_15);
-      File _file_16 = new File((path + "/img/1.png"));
+      fsa.generateFile("./img/sample_2.jpg", _fileInputStream_15);
+      File _file_16 = new File((path + "/img/sample_3.jpg"));
       FileInputStream _fileInputStream_16 = new FileInputStream(_file_16);
-      fsa.generateFile("./img/1.png", _fileInputStream_16);
-      File _file_17 = new File((path + "/img/2.png"));
+      fsa.generateFile("./img/sample_3.jpg", _fileInputStream_16);
+      File _file_17 = new File((path + "/img/1.png"));
       FileInputStream _fileInputStream_17 = new FileInputStream(_file_17);
-      fsa.generateFile("./img/2.png", _fileInputStream_17);
-      File _file_18 = new File((path + "/img/3.png"));
+      fsa.generateFile("./img/1.png", _fileInputStream_17);
+      File _file_18 = new File((path + "/img/2.png"));
       FileInputStream _fileInputStream_18 = new FileInputStream(_file_18);
-      fsa.generateFile("./img/3.png", _fileInputStream_18);
-      File _file_19 = new File((path + "/img/4.png"));
+      fsa.generateFile("./img/2.png", _fileInputStream_18);
+      File _file_19 = new File((path + "/img/3.png"));
       FileInputStream _fileInputStream_19 = new FileInputStream(_file_19);
-      fsa.generateFile("./img/4.png", _fileInputStream_19);
-      File _file_20 = new File((path + "/favicon.ico"));
+      fsa.generateFile("./img/3.png", _fileInputStream_19);
+      File _file_20 = new File((path + "/img/4.png"));
       FileInputStream _fileInputStream_20 = new FileInputStream(_file_20);
-      fsa.generateFile("./favicon.ico", _fileInputStream_20);
-      File _file_21 = new File((path + "/fonts/ionicons.woff2"));
+      fsa.generateFile("./img/4.png", _fileInputStream_20);
+      File _file_21 = new File((path + "/favicon.ico"));
       FileInputStream _fileInputStream_21 = new FileInputStream(_file_21);
-      fsa.generateFile("./fonts/ionicons.woff2", _fileInputStream_21);
+      fsa.generateFile("./favicon.ico", _fileInputStream_21);
+      File _file_22 = new File((path + "/fonts/ionicons.woff2"));
+      FileInputStream _fileInputStream_22 = new FileInputStream(_file_22);
+      fsa.generateFile("./fonts/ionicons.woff2", _fileInputStream_22);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
   }
   
-  public CharSequence compile(final SuperSite page, final boolean v) {
+  public CharSequence compile(final SuperSite page) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<!DOCTYPE html>");
     _builder.newLine();
@@ -252,52 +339,49 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append("<i class=\"icon ion-ios-arrow-forward red-text\"></i>");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("<a href=\"#\" class=\"red-text\">Home</a>");
-    _builder.newLine();
+    _builder.append("<a href=\"#\" class=\"red-text\">");
+    String _name_1 = page.getName();
+    _builder.append(_name_1, "\t\t\t\t");
+    _builder.append("</a>");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
     _builder.append("</span>");
     _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<span>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<i class=\"icon ion-ios-arrow-forward red-text\"></i>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<!-- Dropdown Trigger -->");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<a href=\"#\" class=\"red-text\">News</a>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("</span>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<span data-what=\"dropdown-next-page\">");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<i class=\"icon red-text\">/</i>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<a class=\'dropdown-trigger btn-flat red-text\' href=\'#\' data-target=\'pages-list\' style=\"opacity: .7\">Select page</a>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<ul id=\'pages-list\' class=\'dropdown-content\'>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("<li><a href=\"#!\" class=\"red-text\">News</a></li>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("<li><a href=\"#!\" class=\"red-text\">Message</a></li>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("</ul>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("</span>");
-    _builder.newLine();
+    {
+      boolean _containsKey = this.page_map.containsKey(page.getName().toString());
+      if (_containsKey) {
+        _builder.append("<span data-what=\"dropdown-next-page\">");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<i class=\"icon red-text\">/</i>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<a class=\'dropdown-trigger btn-flat red-text\' href=\'#\' data-target=\'pages-list\' style=\"opacity: .7\">Select page</a>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<ul id=\'pages-list\' class=\'dropdown-content\'>");
+        _builder.newLine();
+        {
+          List<Site> _get = this.page_map.get(page.getName());
+          for(final Site p : _get) {
+            _builder.append("\t\t\t");
+            _builder.append("<li><a href=\"");
+            String _name_2 = p.getName();
+            _builder.append(_name_2, "\t\t\t");
+            _builder.append("\" class=\"red-text\">");
+            String _name_3 = p.getName();
+            _builder.append(_name_3, "\t\t\t");
+            _builder.append("</a></li>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("\t");
+        _builder.append("</ul>");
+        _builder.newLine();
+        _builder.append("</span>");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t\t");
     _builder.append("</div>");
     _builder.newLine();
@@ -500,63 +584,94 @@ public class XeniaGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("</div>");
         _builder.newLine();
-        _builder.newLine();
-        _builder.append("<!-- Side nav -->");
-        _builder.newLine();
-        _builder.append("<ul id=\"slide-out\" class=\"sidenav\">");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li>");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("<div class=\"user-view\">");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("<div class=\"background\">");
-        _builder.newLine();
-        _builder.append("\t\t\t\t");
-        _builder.append("<img src=\"./img/bg.jpg\" style=\"width: 100%\">");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("</div>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("<a href=\"#user\"><img class=\"circle\" src=\"./img/ava.jpg\"></a>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("<a href=\"#name\"><span class=\"white-text name\">Mischa Test</span></a>");
-        _builder.newLine();
-        _builder.append("\t\t\t");
-        _builder.append("<a href=\"#email\"><span class=\"white-text email\">xenia@foliage.com</span></a>");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("</div>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("</li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><a class=\"subheader\">Main links</a></li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><a href=\"#!\"><i class=\"icon ion-ios-cloud\"></i>First Link With Icon</a></li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><a href=\"#!\"><i class=\"icon ion-ios-bookmark\"></i>Second Link</a></li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><div class=\"divider\"></div></li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><a class=\"subheader\">Modals</a></li>");
-        _builder.newLine();
-        _builder.append("\t");
-        _builder.append("<li><a class=\"waves-effect modal-trigger\" href=\"#modal1\"><i class=\"icon ion-ios-heart\"></i>Contact</a></li>");
-        _builder.newLine();
-        _builder.append("</ul>  ");
-        _builder.newLine();
       }
     }
+    _builder.append("\t\t");
+    _builder.append("<!-- Side nav -->");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("<ul id=\"slide-out\" class=\"sidenav\">");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<li>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("<div class=\"user-view\">");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<div class=\"background\">");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t\t");
+    _builder.append("<img src=\"./img/bg.jpg\" style=\"width: 100%\">");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"#user\"><img class=\"circle\" src=\"./img/ava.jpg\"></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"#name\"><span class=\"white-text name\">Mischa Test</span></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"#email\"><span class=\"white-text email\">xenia@foliage.com</span></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</li>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<li><a class=\"subheader\">Main links</a></li>");
+    _builder.newLine();
+    {
+      for(final String site : this.list) {
+        _builder.append("\t\t\t");
+        _builder.append("<li><a href=\"");
+        _builder.append(site, "\t\t\t");
+        _builder.append("\"><i class=\"icon ion-md-");
+        String _icon = this.getIcon();
+        _builder.append(_icon, "\t\t\t");
+        _builder.append("\"></i>");
+        _builder.append(site, "\t\t\t");
+        _builder.append("</a></li>");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t\t\t");
+    _builder.append("<li><div class=\"divider\"></div></li>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("<li class=\"sidenav-footer\">");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("<h6 align=\"center\">Generated with <span class=\"badge white-text teal\">xenia</span></h6>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("<div>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<small style=\"display: block\"><span class=\"grey-text\">Contact</span>: rodchenk@th-brandenburg.de</small>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"https://github.com/rodchenk\" class=\"black-text\"><i class=\"icon ion-logo-github\"></i></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"#\" class=\"blue-text\"><i class=\"icon ion-logo-twitter\"></i></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t\t");
+    _builder.append("<a href=\"https://rodchenk.github.io/\" class=\"red-text\"><i class=\"icon ion-logo-google\"></i></a>");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("</li>");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("</ul>  ");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("</main>");
     _builder.newLine();
