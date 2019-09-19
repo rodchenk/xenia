@@ -33,6 +33,7 @@ class XeniaGenerator extends AbstractGenerator {
 	var List<String> icons = newArrayList;
 	var icon_counter = 0;
 	var Map<String, List<Site>> page_map = newHashMap;
+	var String root;
 	
 	def String getIcon(){
 		if(icon_counter >= this.icons.size()) this.icon_counter = 0;
@@ -74,13 +75,11 @@ class XeniaGenerator extends AbstractGenerator {
 	 	
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
-				if(name_switch){
-					// rename first page in list to index.html to mark it as a main page
+				if(name_switch){//edit here, deleted list.add('index');
 					name_switch = false;
-					list.add('index');
-				}else{
-					list.add(page.name);
+					root = page.name;
 				}
+				list.add(page.name);
 			}
 		}
 		
@@ -113,14 +112,41 @@ class XeniaGenerator extends AbstractGenerator {
 			''');
 		}else{
 			fsa.generateFile('./.htaccess', '''
-				DirectoryIndex index.html
+				DirectoryIndex «this.root».html
 				RewriteEngine On
 				RewriteCond %{REQUEST_FILENAME} !-f
 				RewriteRule ^([^.]+)$ $1.html [NC,L]
 			''');
 		}
 		
-		fsa.generateFile('./js/xenia.map.js', 			new FileInputStream(new File(path + '/js/xenia.map.js')));
+		fsa.generateFile('./js/xenia.map.js', '''
+		var config = {
+			container: "#stats",
+			hideRootNode: true
+		};
+		
+		var root = {};
+		
+		«FOR js_page : list»
+			var «js_page» = {
+				parent: 
+					«IF js_page.equals(this.root)»root«ENDIF»
+					,
+				stackChildren: true,
+				text: { name: "«js_page»"}
+			}
+		«ENDFOR»
+		
+		var xenia_chart = [
+			config, 
+			root,
+			«FOR l:list SEPARATOR ','»
+				«l»
+			«ENDFOR»
+		];
+		''');
+		
+		//fsa.generateFile('./js/xenia.map.js', 			new FileInputStream(new File(path + '/js/xenia.map.js')));
 		fsa.generateFile('./img/logo_avacado.png', 		new FileInputStream(new File(path + '/img/logo_avacado.png')));
 		fsa.generateFile('./img/bg.jpg', 				new FileInputStream(new File(path + '/img/bg.jpg')));
 		fsa.generateFile('./img/ava.jpg', 				new FileInputStream(new File(path + '/img/ava.jpg')));
@@ -205,7 +231,6 @@ class XeniaGenerator extends AbstractGenerator {
 						</span>
 					«ENDIF»
 				</div>
-		
 				<div class="row cards-tutorial">
 					<div class="col s6 m4">
 						<div class="card">
@@ -244,7 +269,6 @@ class XeniaGenerator extends AbstractGenerator {
 						</div>
 					</div>
 				</div>
-		
 				 «IF this.mode.equals('DEV')»
 				 <div class="fixed-action-btn">
 					<a class="btn-floating btn-large red pulse">
@@ -302,7 +326,7 @@ class XeniaGenerator extends AbstractGenerator {
 					</li>
 				</ul>  
 			</main>
-		
+			 «IF this.mode.equals('DEV')»
 			<!-- Example modal -->
 			<div class="xenia-modal">
 				<div id="modal1" class="modal" >
@@ -316,6 +340,7 @@ class XeniaGenerator extends AbstractGenerator {
 					<script type="text/javascript" src="./js/xenia.map.js"></script>
 				</div>
 			</div>
+			«ENDIF»
 		
 		</body>
 		</html>

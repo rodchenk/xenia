@@ -49,6 +49,8 @@ public class XeniaGenerator extends AbstractGenerator {
   
   private Map<String, List<Site>> page_map = CollectionLiterals.<String, List<Site>>newHashMap();
   
+  private String root;
+  
   public String getIcon() {
     int _size = this.icons.size();
     boolean _greaterEqualsThan = (this.icon_counter >= _size);
@@ -112,10 +114,11 @@ public class XeniaGenerator extends AbstractGenerator {
       for (final Header e : _filter_1) {
         EList<SuperSite> _sites = e.getSites();
         for (final SuperSite page : _sites) {
-          if (name_switch) {
-            name_switch = false;
-            this.list.add("index");
-          } else {
+          {
+            if (name_switch) {
+              name_switch = false;
+              this.root = page.getName();
+            }
             this.list.add(page.getName());
           }
         }
@@ -159,8 +162,10 @@ public class XeniaGenerator extends AbstractGenerator {
         fsa.generateFile("./.htaccess", _builder);
       } else {
         StringConcatenation _builder_1 = new StringConcatenation();
-        _builder_1.append("DirectoryIndex index.html");
-        _builder_1.newLine();
+        _builder_1.append("DirectoryIndex ");
+        _builder_1.append(this.root);
+        _builder_1.append(".html");
+        _builder_1.newLineIfNotEmpty();
         _builder_1.append("RewriteEngine On");
         _builder_1.newLine();
         _builder_1.append("RewriteCond %{REQUEST_FILENAME} !-f");
@@ -169,45 +174,114 @@ public class XeniaGenerator extends AbstractGenerator {
         _builder_1.newLine();
         fsa.generateFile("./.htaccess", _builder_1);
       }
-      File _file_10 = new File((path + "/js/xenia.map.js"));
+      StringConcatenation _builder_2 = new StringConcatenation();
+      _builder_2.append("var config = {");
+      _builder_2.newLine();
+      _builder_2.append("\t");
+      _builder_2.append("container: \"#stats\",");
+      _builder_2.newLine();
+      _builder_2.append("\t");
+      _builder_2.append("hideRootNode: true");
+      _builder_2.newLine();
+      _builder_2.append("};");
+      _builder_2.newLine();
+      _builder_2.newLine();
+      _builder_2.append("var root = {};");
+      _builder_2.newLine();
+      _builder_2.newLine();
+      {
+        for(final String js_page : this.list) {
+          _builder_2.append("var ");
+          _builder_2.append(js_page);
+          _builder_2.append(" = {");
+          _builder_2.newLineIfNotEmpty();
+          _builder_2.append("\t");
+          _builder_2.append("parent: ");
+          _builder_2.newLine();
+          _builder_2.append("\t\t");
+          {
+            boolean _equals_1 = js_page.equals(this.root);
+            if (_equals_1) {
+              _builder_2.append("root");
+            }
+          }
+          _builder_2.newLineIfNotEmpty();
+          _builder_2.append("\t\t");
+          _builder_2.append(",");
+          _builder_2.newLine();
+          _builder_2.append("\t");
+          _builder_2.append("stackChildren: true,");
+          _builder_2.newLine();
+          _builder_2.append("\t");
+          _builder_2.append("text: { name: \"");
+          _builder_2.append(js_page, "\t");
+          _builder_2.append("\"}");
+          _builder_2.newLineIfNotEmpty();
+          _builder_2.append("}");
+          _builder_2.newLine();
+        }
+      }
+      _builder_2.newLine();
+      _builder_2.append("var xenia_chart = [");
+      _builder_2.newLine();
+      _builder_2.append("\t");
+      _builder_2.append("config, ");
+      _builder_2.newLine();
+      _builder_2.append("\t");
+      _builder_2.append("root,");
+      _builder_2.newLine();
+      {
+        boolean _hasElements = false;
+        for(final String l : this.list) {
+          if (!_hasElements) {
+            _hasElements = true;
+          } else {
+            _builder_2.appendImmediate(",", "\t");
+          }
+          _builder_2.append("\t");
+          _builder_2.append(l, "\t");
+          _builder_2.newLineIfNotEmpty();
+        }
+      }
+      _builder_2.append("];");
+      _builder_2.newLine();
+      fsa.generateFile("./js/xenia.map.js", _builder_2);
+      File _file_10 = new File((path + "/img/logo_avacado.png"));
       FileInputStream _fileInputStream_10 = new FileInputStream(_file_10);
-      fsa.generateFile("./js/xenia.map.js", _fileInputStream_10);
-      File _file_11 = new File((path + "/img/logo_avacado.png"));
+      fsa.generateFile("./img/logo_avacado.png", _fileInputStream_10);
+      File _file_11 = new File((path + "/img/bg.jpg"));
       FileInputStream _fileInputStream_11 = new FileInputStream(_file_11);
-      fsa.generateFile("./img/logo_avacado.png", _fileInputStream_11);
-      File _file_12 = new File((path + "/img/bg.jpg"));
+      fsa.generateFile("./img/bg.jpg", _fileInputStream_11);
+      File _file_12 = new File((path + "/img/ava.jpg"));
       FileInputStream _fileInputStream_12 = new FileInputStream(_file_12);
-      fsa.generateFile("./img/bg.jpg", _fileInputStream_12);
-      File _file_13 = new File((path + "/img/ava.jpg"));
+      fsa.generateFile("./img/ava.jpg", _fileInputStream_12);
+      File _file_13 = new File((path + "/img/sample.jpg"));
       FileInputStream _fileInputStream_13 = new FileInputStream(_file_13);
-      fsa.generateFile("./img/ava.jpg", _fileInputStream_13);
-      File _file_14 = new File((path + "/img/sample.jpg"));
+      fsa.generateFile("./img/sample.jpg", _fileInputStream_13);
+      File _file_14 = new File((path + "/img/sample_2.jpg"));
       FileInputStream _fileInputStream_14 = new FileInputStream(_file_14);
-      fsa.generateFile("./img/sample.jpg", _fileInputStream_14);
-      File _file_15 = new File((path + "/img/sample_2.jpg"));
+      fsa.generateFile("./img/sample_2.jpg", _fileInputStream_14);
+      File _file_15 = new File((path + "/img/sample_3.jpg"));
       FileInputStream _fileInputStream_15 = new FileInputStream(_file_15);
-      fsa.generateFile("./img/sample_2.jpg", _fileInputStream_15);
-      File _file_16 = new File((path + "/img/sample_3.jpg"));
+      fsa.generateFile("./img/sample_3.jpg", _fileInputStream_15);
+      File _file_16 = new File((path + "/img/1.png"));
       FileInputStream _fileInputStream_16 = new FileInputStream(_file_16);
-      fsa.generateFile("./img/sample_3.jpg", _fileInputStream_16);
-      File _file_17 = new File((path + "/img/1.png"));
+      fsa.generateFile("./img/1.png", _fileInputStream_16);
+      File _file_17 = new File((path + "/img/2.png"));
       FileInputStream _fileInputStream_17 = new FileInputStream(_file_17);
-      fsa.generateFile("./img/1.png", _fileInputStream_17);
-      File _file_18 = new File((path + "/img/2.png"));
+      fsa.generateFile("./img/2.png", _fileInputStream_17);
+      File _file_18 = new File((path + "/img/3.png"));
       FileInputStream _fileInputStream_18 = new FileInputStream(_file_18);
-      fsa.generateFile("./img/2.png", _fileInputStream_18);
-      File _file_19 = new File((path + "/img/3.png"));
+      fsa.generateFile("./img/3.png", _fileInputStream_18);
+      File _file_19 = new File((path + "/img/4.png"));
       FileInputStream _fileInputStream_19 = new FileInputStream(_file_19);
-      fsa.generateFile("./img/3.png", _fileInputStream_19);
-      File _file_20 = new File((path + "/img/4.png"));
+      fsa.generateFile("./img/4.png", _fileInputStream_19);
+      File _file_20 = new File((path + "/favicon.ico"));
       FileInputStream _fileInputStream_20 = new FileInputStream(_file_20);
-      fsa.generateFile("./img/4.png", _fileInputStream_20);
-      File _file_21 = new File((path + "/favicon.ico"));
+      fsa.generateFile("./favicon.ico", _fileInputStream_20);
+      File _file_21 = new File((path + "/fonts/ionicons.woff2"));
       FileInputStream _fileInputStream_21 = new FileInputStream(_file_21);
-      fsa.generateFile("./favicon.ico", _fileInputStream_21);
-      File _file_22 = new File((path + "/fonts/ionicons.woff2"));
-      FileInputStream _fileInputStream_22 = new FileInputStream(_file_22);
-      fsa.generateFile("./fonts/ionicons.woff2", _fileInputStream_22);
+      fsa.generateFile("./fonts/ionicons.woff2", _fileInputStream_21);
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -385,7 +459,6 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append("\t\t");
     _builder.append("</div>");
     _builder.newLine();
-    _builder.newLine();
     _builder.append("\t\t");
     _builder.append("<div class=\"row cards-tutorial\">");
     _builder.newLine();
@@ -499,7 +572,6 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("</div>");
-    _builder.newLine();
     _builder.newLine();
     {
       boolean _equals = this.mode.equals("DEV");
@@ -675,46 +747,47 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.append("</main>");
     _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<!-- Example modal -->");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<div class=\"xenia-modal\">");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("<div id=\"modal1\" class=\"modal\" >");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<div class=\"modal-content\">");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<h4><i class=\"icon ion-ios-git-branch\"></i>Sitemap visualizer</h4>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("<a href=\"#!\" class=\"modal-close waves-effect waves-red btn-flat\" style=\"position: fixed;right: 0; top: 0\">");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("<i class=\"icon ion-md-close\"></i>");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("</a>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("</div>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<div class=\"chart\" id=\"stats\" style=\"min-height: 400px; width: 100%;overflow-y: scroll;\"></div>");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("<script type=\"text/javascript\" src=\"./js/xenia.map.js\"></script>");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("</div>");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("</div>");
-    _builder.newLine();
+    {
+      boolean _equals_1 = this.mode.equals("DEV");
+      if (_equals_1) {
+        _builder.append("<!-- Example modal -->");
+        _builder.newLine();
+        _builder.append("<div class=\"xenia-modal\">");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("<div id=\"modal1\" class=\"modal\" >");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("<div class=\"modal-content\">");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.append("<h4><i class=\"icon ion-ios-git-branch\"></i>Sitemap visualizer</h4>");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.append("<a href=\"#!\" class=\"modal-close waves-effect waves-red btn-flat\" style=\"position: fixed;right: 0; top: 0\">");
+        _builder.newLine();
+        _builder.append("\t\t\t\t");
+        _builder.append("<i class=\"icon ion-md-close\"></i>");
+        _builder.newLine();
+        _builder.append("\t\t\t");
+        _builder.append("</a>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("</div>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("<div class=\"chart\" id=\"stats\" style=\"min-height: 400px; width: 100%;overflow-y: scroll;\"></div>");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("<script type=\"text/javascript\" src=\"./js/xenia.map.js\"></script>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("</div>");
+        _builder.newLine();
+        _builder.append("</div>");
+        _builder.newLine();
+      }
+    }
     _builder.newLine();
     _builder.append("</body>");
     _builder.newLine();
