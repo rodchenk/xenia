@@ -34,7 +34,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements LinkedProperty
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getName()
@@ -82,6 +82,16 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
   @Override
   public Site getName()
   {
+    if (name != null && name.eIsProxy())
+    {
+      InternalEObject oldName = (InternalEObject)name;
+      name = (Site)eResolveProxy(oldName);
+      if (name != oldName)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, XeniaPackage.LINKED_PROPERTY__NAME, oldName, name));
+      }
+    }
     return name;
   }
 
@@ -90,16 +100,9 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(Site newName, NotificationChain msgs)
+  public Site basicGetName()
   {
-    Site oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, oldName, newName);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return name;
   }
 
   /**
@@ -110,18 +113,10 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
   @Override
   public void setName(Site newName)
   {
-    if (newName != name)
-    {
-      NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.LINKED_PROPERTY__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, newName, newName));
+    Site oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.LINKED_PROPERTY__NAME, oldName, name));
   }
 
   /**
@@ -184,8 +179,6 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case XeniaPackage.LINKED_PROPERTY__NAME:
-        return basicSetName(null, msgs);
       case XeniaPackage.LINKED_PROPERTY__PAGE:
         return basicSetPage(null, msgs);
     }
@@ -203,7 +196,8 @@ public class LinkedPropertyImpl extends MinimalEObjectImpl.Container implements 
     switch (featureID)
     {
       case XeniaPackage.LINKED_PROPERTY__NAME:
-        return getName();
+        if (resolve) return getName();
+        return basicGetName();
       case XeniaPackage.LINKED_PROPERTY__PAGE:
         return getPage();
     }

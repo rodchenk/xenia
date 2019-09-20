@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements InfoProperty
 {
   /**
-   * The cached value of the '{@link #getPage() <em>Page</em>}' containment reference.
+   * The cached value of the '{@link #getPage() <em>Page</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getPage()
@@ -89,6 +89,16 @@ public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements In
   @Override
   public Site getPage()
   {
+    if (page != null && page.eIsProxy())
+    {
+      InternalEObject oldPage = (InternalEObject)page;
+      page = (Site)eResolveProxy(oldPage);
+      if (page != oldPage)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, XeniaPackage.INFO_PROPERTY__PAGE, oldPage, page));
+      }
+    }
     return page;
   }
 
@@ -97,16 +107,9 @@ public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetPage(Site newPage, NotificationChain msgs)
+  public Site basicGetPage()
   {
-    Site oldPage = page;
-    page = newPage;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, XeniaPackage.INFO_PROPERTY__PAGE, oldPage, newPage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return page;
   }
 
   /**
@@ -117,18 +120,10 @@ public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements In
   @Override
   public void setPage(Site newPage)
   {
-    if (newPage != page)
-    {
-      NotificationChain msgs = null;
-      if (page != null)
-        msgs = ((InternalEObject)page).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.INFO_PROPERTY__PAGE, null, msgs);
-      if (newPage != null)
-        msgs = ((InternalEObject)newPage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - XeniaPackage.INFO_PROPERTY__PAGE, null, msgs);
-      msgs = basicSetPage(newPage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.INFO_PROPERTY__PAGE, newPage, newPage));
+    Site oldPage = page;
+    page = newPage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.INFO_PROPERTY__PAGE, oldPage, page));
   }
 
   /**
@@ -156,8 +151,6 @@ public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case XeniaPackage.INFO_PROPERTY__PAGE:
-        return basicSetPage(null, msgs);
       case XeniaPackage.INFO_PROPERTY__ENTITIES:
         return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
     }
@@ -175,7 +168,8 @@ public class InfoPropertyImpl extends MinimalEObjectImpl.Container implements In
     switch (featureID)
     {
       case XeniaPackage.INFO_PROPERTY__PAGE:
-        return getPage();
+        if (resolve) return getPage();
+        return basicGetPage();
       case XeniaPackage.INFO_PROPERTY__ENTITIES:
         return getEntities();
     }

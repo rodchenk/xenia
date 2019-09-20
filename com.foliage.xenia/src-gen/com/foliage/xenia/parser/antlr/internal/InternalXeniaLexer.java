@@ -516,10 +516,10 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1012:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalXenia.g:1012:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalXenia.g:988:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalXenia.g:988:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalXenia.g:1012:11: ( '^' )?
+            // InternalXenia.g:988:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -528,7 +528,7 @@ public class InternalXeniaLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalXenia.g:1012:11: '^'
+                    // InternalXenia.g:988:11: '^'
                     {
                     match('^'); 
 
@@ -546,7 +546,7 @@ public class InternalXeniaLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalXenia.g:1012:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalXenia.g:988:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -595,10 +595,10 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1014:10: ( ( '0' .. '9' )+ )
-            // InternalXenia.g:1014:12: ( '0' .. '9' )+
+            // InternalXenia.g:990:10: ( ( '0' .. '9' )+ )
+            // InternalXenia.g:990:12: ( '0' .. '9' )+
             {
-            // InternalXenia.g:1014:12: ( '0' .. '9' )+
+            // InternalXenia.g:990:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -612,7 +612,7 @@ public class InternalXeniaLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalXenia.g:1014:13: '0' .. '9'
+            	    // InternalXenia.g:990:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -644,10 +644,10 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1016:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalXenia.g:1016:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalXenia.g:992:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalXenia.g:992:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalXenia.g:1016:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalXenia.g:992:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -665,10 +665,10 @@ public class InternalXeniaLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalXenia.g:1016:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalXenia.g:992:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalXenia.g:1016:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalXenia.g:992:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -684,7 +684,7 @@ public class InternalXeniaLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalXenia.g:1016:21: '\\\\' .
+                    	    // InternalXenia.g:992:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -692,7 +692,7 @@ public class InternalXeniaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalXenia.g:1016:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalXenia.g:992:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -717,10 +717,10 @@ public class InternalXeniaLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:1016:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalXenia.g:992:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalXenia.g:1016:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalXenia.g:992:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -736,7 +736,7 @@ public class InternalXeniaLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalXenia.g:1016:54: '\\\\' .
+                    	    // InternalXenia.g:992:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -744,7 +744,7 @@ public class InternalXeniaLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalXenia.g:1016:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalXenia.g:992:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -787,12 +787,12 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1018:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalXenia.g:1018:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalXenia.g:994:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalXenia.g:994:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalXenia.g:1018:24: ( options {greedy=false; } : . )*
+            // InternalXenia.g:994:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -817,7 +817,7 @@ public class InternalXeniaLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalXenia.g:1018:52: .
+            	    // InternalXenia.g:994:52: .
             	    {
             	    matchAny(); 
 
@@ -847,12 +847,12 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1020:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalXenia.g:1020:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalXenia.g:996:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalXenia.g:996:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalXenia.g:1020:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalXenia.g:996:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -865,7 +865,7 @@ public class InternalXeniaLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalXenia.g:1020:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalXenia.g:996:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -885,7 +885,7 @@ public class InternalXeniaLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalXenia.g:1020:40: ( ( '\\r' )? '\\n' )?
+            // InternalXenia.g:996:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -894,9 +894,9 @@ public class InternalXeniaLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalXenia.g:1020:41: ( '\\r' )? '\\n'
+                    // InternalXenia.g:996:41: ( '\\r' )? '\\n'
                     {
-                    // InternalXenia.g:1020:41: ( '\\r' )?
+                    // InternalXenia.g:996:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -905,7 +905,7 @@ public class InternalXeniaLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalXenia.g:1020:41: '\\r'
+                            // InternalXenia.g:996:41: '\\r'
                             {
                             match('\r'); 
 
@@ -937,10 +937,10 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1022:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalXenia.g:1022:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalXenia.g:998:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalXenia.g:998:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalXenia.g:1022:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalXenia.g:998:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -994,8 +994,8 @@ public class InternalXeniaLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalXenia.g:1024:16: ( . )
-            // InternalXenia.g:1024:18: .
+            // InternalXenia.g:1000:16: ( . )
+            // InternalXenia.g:1000:18: .
             {
             matchAny(); 
 

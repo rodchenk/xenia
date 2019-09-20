@@ -9,17 +9,13 @@ import com.foliage.xenia.xenia.XeniaPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -37,7 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class RedirectPageImpl extends MinimalEObjectImpl.Container implements RedirectPage
 {
   /**
-   * The cached value of the '{@link #getSite() <em>Site</em>}' containment reference list.
+   * The cached value of the '{@link #getSite() <em>Site</em>}' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSite()
@@ -77,25 +73,9 @@ public class RedirectPageImpl extends MinimalEObjectImpl.Container implements Re
   {
     if (site == null)
     {
-      site = new EObjectContainmentEList<Site>(Site.class, this, XeniaPackage.REDIRECT_PAGE__SITE);
+      site = new EObjectResolvingEList<Site>(Site.class, this, XeniaPackage.REDIRECT_PAGE__SITE);
     }
     return site;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case XeniaPackage.REDIRECT_PAGE__SITE:
-        return ((InternalEList<?>)getSite()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**

@@ -29,12 +29,12 @@ class XeniaParsingTest {
 			//with: "Cake"
 			mode: DEV
 			map: [
-				@Home -> (@News, @Contact),
-				@News -> (@Contact)
+				Home -> (News, Contact),
+				News -> (Contact)
 			]
 			info: [
-				@Home -> mod: "today", freq: "weekly",
-				@News -> prio: "0.9", mod: "01.09.2019"
+				Home -> mod: "today", freq: "weekly",
+				News -> prio: "0.9", mod: "01.09.2019"
 			]
 			
 		''')

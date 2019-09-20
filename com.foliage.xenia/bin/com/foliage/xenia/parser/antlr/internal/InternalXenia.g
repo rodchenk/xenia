@@ -673,19 +673,13 @@ ruleInfoProperty returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0());
-				}
-				lv_page_0_0=ruleSite
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getInfoPropertyRule());
+						$current = createModelElement(grammarAccess.getInfoPropertyRule());
 					}
-					set(
-						$current,
-						"page",
-						lv_page_0_0,
-						"com.foliage.xenia.Xenia.Site");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getInfoPropertyAccess().getPageSiteCrossReference_0_0());
 				}
 			)
 		)
@@ -896,19 +890,13 @@ ruleLinkedProperty returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0());
-				}
-				lv_name_0_0=ruleSite
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getLinkedPropertyRule());
+						$current = createModelElement(grammarAccess.getLinkedPropertyRule());
 					}
-					set(
-						$current,
-						"name",
-						lv_name_0_0,
-						"com.foliage.xenia.Xenia.Site");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getLinkedPropertyAccess().getNameSiteCrossReference_0_0());
 				}
 			)
 		)
@@ -965,19 +953,13 @@ ruleRedirectPage returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_0_0());
-				}
-				lv_site_0_0=ruleSite
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRedirectPageRule());
+						$current = createModelElement(grammarAccess.getRedirectPageRule());
 					}
-					add(
-						$current,
-						"site",
-						lv_site_0_0,
-						"com.foliage.xenia.Xenia.Site");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_0_0());
 				}
 			)
 		)
@@ -989,19 +971,13 @@ ruleRedirectPage returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_1_1_0());
-					}
-					lv_site_2_0=ruleSite
-					{
 						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getRedirectPageRule());
+							$current = createModelElement(grammarAccess.getRedirectPageRule());
 						}
-						add(
-							$current,
-							"site",
-							lv_site_2_0,
-							"com.foliage.xenia.Xenia.Site");
-						afterParserOrEnumRuleCall();
+					}
+					otherlv_2=RULE_ID
+					{
+						newLeafNode(otherlv_2, grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_1_1_0());
 					}
 				)
 			)

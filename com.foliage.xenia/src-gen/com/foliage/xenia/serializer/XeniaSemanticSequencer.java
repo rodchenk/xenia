@@ -117,7 +117,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     InfoProperty returns InfoProperty
 	 *
 	 * Constraint:
-	 *     (page=Site entities+=InfoEntity entities+=InfoEntity*)
+	 *     (page=[Site|ID] entities+=InfoEntity entities+=InfoEntity*)
 	 */
 	protected void sequence_InfoProperty(ISerializationContext context, InfoProperty semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -129,7 +129,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     LinkedProperty returns LinkedProperty
 	 *
 	 * Constraint:
-	 *     (name=Site page=RedirectPage)
+	 *     (name=[Site|ID] page=RedirectPage)
 	 */
 	protected void sequence_LinkedProperty(ISerializationContext context, LinkedProperty semanticObject) {
 		if (errorAcceptor != null) {
@@ -139,7 +139,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, XeniaPackage.Literals.LINKED_PROPERTY__PAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkedPropertyAccess().getNameSiteIDTerminalRuleCall_0_0_1(), semanticObject.eGet(XeniaPackage.Literals.LINKED_PROPERTY__NAME, false));
 		feeder.accept(grammarAccess.getLinkedPropertyAccess().getPageRedirectPageParserRuleCall_3_0(), semanticObject.getPage());
 		feeder.finish();
 	}
@@ -174,7 +174,7 @@ public class XeniaSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     RedirectPage returns RedirectPage
 	 *
 	 * Constraint:
-	 *     (site+=Site site+=Site*)
+	 *     (site+=[Site|ID] site+=[Site|ID]*)
 	 */
 	protected void sequence_RedirectPage(ISerializationContext context, RedirectPage semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

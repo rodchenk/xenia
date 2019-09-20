@@ -8,6 +8,7 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -403,7 +404,8 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cPageAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cPageSiteParserRuleCall_0_0 = (RuleCall)cPageAssignment_0.eContents().get(0);
+		private final CrossReference cPageSiteCrossReference_0_0 = (CrossReference)cPageAssignment_0.eContents().get(0);
+		private final RuleCall cPageSiteIDTerminalRuleCall_0_0_1 = (RuleCall)cPageSiteCrossReference_0_0.eContents().get(1);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cEntitiesAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cEntitiesInfoEntityParserRuleCall_2_0 = (RuleCall)cEntitiesAssignment_2.eContents().get(0);
@@ -413,17 +415,20 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEntitiesInfoEntityParserRuleCall_3_1_0 = (RuleCall)cEntitiesAssignment_3_1.eContents().get(0);
 		
 		//InfoProperty:
-		//	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
+		//	page=[Site] '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*
+		//page=[Site] '->' entities+=InfoEntity (',' entities+=InfoEntity)*
 		public Group getGroup() { return cGroup; }
 		
-		//page=Site
+		//page=[Site]
 		public Assignment getPageAssignment_0() { return cPageAssignment_0; }
 		
-		//Site
-		public RuleCall getPageSiteParserRuleCall_0_0() { return cPageSiteParserRuleCall_0_0; }
+		//[Site]
+		public CrossReference getPageSiteCrossReference_0_0() { return cPageSiteCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getPageSiteIDTerminalRuleCall_0_0_1() { return cPageSiteIDTerminalRuleCall_0_0_1; }
 		
 		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
@@ -527,7 +532,8 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.LinkedProperty");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cNameSiteParserRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final CrossReference cNameSiteCrossReference_0_0 = (CrossReference)cNameAssignment_0.eContents().get(0);
+		private final RuleCall cNameSiteIDTerminalRuleCall_0_0_1 = (RuleCall)cNameSiteCrossReference_0_0.eContents().get(1);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cPageAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -535,17 +541,20 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//LinkedProperty:
-		//	name=Site '->' '(' page=RedirectPage ')';
+		//	name=[Site] '->' '(' page=RedirectPage ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//name=Site '->' '(' page=RedirectPage ')'
+		//name=[Site] '->' '(' page=RedirectPage ')'
 		public Group getGroup() { return cGroup; }
 		
-		//name=Site
+		//name=[Site]
 		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
-		//Site
-		public RuleCall getNameSiteParserRuleCall_0_0() { return cNameSiteParserRuleCall_0_0; }
+		//[Site]
+		public CrossReference getNameSiteCrossReference_0_0() { return cNameSiteCrossReference_0_0; }
+		
+		//ID
+		public RuleCall getNameSiteIDTerminalRuleCall_0_0_1() { return cNameSiteIDTerminalRuleCall_0_0_1; }
 		
 		//'->'
 		public Keyword getHyphenMinusGreaterThanSignKeyword_1() { return cHyphenMinusGreaterThanSignKeyword_1; }
@@ -566,36 +575,44 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.RedirectPage");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cSiteAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cSiteSiteParserRuleCall_0_0 = (RuleCall)cSiteAssignment_0.eContents().get(0);
+		private final CrossReference cSiteSiteCrossReference_0_0 = (CrossReference)cSiteAssignment_0.eContents().get(0);
+		private final RuleCall cSiteSiteIDTerminalRuleCall_0_0_1 = (RuleCall)cSiteSiteCrossReference_0_0.eContents().get(1);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cSiteAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cSiteSiteParserRuleCall_1_1_0 = (RuleCall)cSiteAssignment_1_1.eContents().get(0);
+		private final CrossReference cSiteSiteCrossReference_1_1_0 = (CrossReference)cSiteAssignment_1_1.eContents().get(0);
+		private final RuleCall cSiteSiteIDTerminalRuleCall_1_1_0_1 = (RuleCall)cSiteSiteCrossReference_1_1_0.eContents().get(1);
 		
 		//RedirectPage:
-		//	site+=Site (',' site+=Site)*;
+		//	site+=[Site] (',' site+=[Site])*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//site+=Site (',' site+=Site)*
+		//site+=[Site] (',' site+=[Site])*
 		public Group getGroup() { return cGroup; }
 		
-		//site+=Site
+		//site+=[Site]
 		public Assignment getSiteAssignment_0() { return cSiteAssignment_0; }
 		
-		//Site
-		public RuleCall getSiteSiteParserRuleCall_0_0() { return cSiteSiteParserRuleCall_0_0; }
+		//[Site]
+		public CrossReference getSiteSiteCrossReference_0_0() { return cSiteSiteCrossReference_0_0; }
 		
-		//(',' site+=Site)*
+		//ID
+		public RuleCall getSiteSiteIDTerminalRuleCall_0_0_1() { return cSiteSiteIDTerminalRuleCall_0_0_1; }
+		
+		//(',' site+=[Site])*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//','
 		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
 		
-		//site+=Site
+		//site+=[Site]
 		public Assignment getSiteAssignment_1_1() { return cSiteAssignment_1_1; }
 		
-		//Site
-		public RuleCall getSiteSiteParserRuleCall_1_1_0() { return cSiteSiteParserRuleCall_1_1_0; }
+		//[Site]
+		public CrossReference getSiteSiteCrossReference_1_1_0() { return cSiteSiteCrossReference_1_1_0; }
+		
+		//ID
+		public RuleCall getSiteSiteIDTerminalRuleCall_1_1_0_1() { return cSiteSiteIDTerminalRuleCall_1_1_0_1; }
 	}
 	
 	
@@ -742,7 +759,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//InfoProperty:
-	//	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
+	//	page=[Site] '->' entities+=InfoEntity (',' entities+=InfoEntity)*;
 	public InfoPropertyElements getInfoPropertyAccess() {
 		return pInfoProperty;
 	}
@@ -782,7 +799,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LinkedProperty:
-	//	name=Site '->' '(' page=RedirectPage ')';
+	//	name=[Site] '->' '(' page=RedirectPage ')';
 	public LinkedPropertyElements getLinkedPropertyAccess() {
 		return pLinkedProperty;
 	}
@@ -792,7 +809,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RedirectPage:
-	//	site+=Site (',' site+=Site)*;
+	//	site+=[Site] (',' site+=[Site])*;
 	public RedirectPageElements getRedirectPageAccess() {
 		return pRedirectPage;
 	}

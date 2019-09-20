@@ -4,7 +4,7 @@ generate xenia "http://www.foliage.com/xenia/Xenia"
 
 Model:
 	headers+=Header
-	entities+=Entity*
+	entities+=Entity* 
 	mapped_entities+=MappedEntity*;
 
 Header:
@@ -37,7 +37,7 @@ MappedEntity:
 ;
 
 InfoProperty:
-	page=Site '->' entities+=InfoEntity (',' entities+=InfoEntity)*
+	page=[Site] '->' entities+=InfoEntity (',' entities+=InfoEntity)*
 ;
 
 InfoEntity:
@@ -53,8 +53,8 @@ Site:
 ;
 
 LinkedProperty:
-	name=Site '->' '('  page=RedirectPage ')'
+	name=[Site] '->' '('  page=RedirectPage ')'
 ;
 RedirectPage:
-	(site+=Site) (',' site+=Site)* 
+	(site+=[Site]) (',' site+=[Site])* 
 ;

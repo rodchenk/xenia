@@ -26,13 +26,13 @@ import org.eclipse.emf.ecore.EObject;
 public interface RedirectPage extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Site</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Site</b></em>' reference list.
    * The list contents are of type {@link com.foliage.xenia.xenia.Site}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Site</em>' containment reference list.
+   * @return the value of the '<em>Site</em>' reference list.
    * @see com.foliage.xenia.xenia.XeniaPackage#getRedirectPage_Site()
-   * @model containment="true"
+   * @model
    * @generated
    */
   EList<Site> getSite();

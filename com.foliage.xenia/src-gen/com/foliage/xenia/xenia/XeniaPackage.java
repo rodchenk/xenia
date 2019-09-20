@@ -299,7 +299,7 @@ public interface XeniaPackage extends EPackage
   int INFO_PROPERTY = 6;
 
   /**
-   * The feature id for the '<em><b>Page</b></em>' containment reference.
+   * The feature id for the '<em><b>Page</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -401,7 +401,7 @@ public interface XeniaPackage extends EPackage
   int LINKED_PROPERTY = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -438,7 +438,7 @@ public interface XeniaPackage extends EPackage
   int REDIRECT_PAGE = 10;
 
   /**
-   * The feature id for the '<em><b>Site</b></em>' containment reference list.
+   * The feature id for the '<em><b>Site</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -659,10 +659,10 @@ public interface XeniaPackage extends EPackage
   EClass getInfoProperty();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.foliage.xenia.xenia.InfoProperty#getPage <em>Page</em>}'.
+   * Returns the meta object for the reference '{@link com.foliage.xenia.xenia.InfoProperty#getPage <em>Page</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Page</em>'.
+   * @return the meta object for the reference '<em>Page</em>'.
    * @see com.foliage.xenia.xenia.InfoProperty#getPage()
    * @see #getInfoProperty()
    * @generated
@@ -733,10 +733,10 @@ public interface XeniaPackage extends EPackage
   EClass getLinkedProperty();
 
   /**
-   * Returns the meta object for the containment reference '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @return the meta object for the reference '<em>Name</em>'.
    * @see com.foliage.xenia.xenia.LinkedProperty#getName()
    * @see #getLinkedProperty()
    * @generated
@@ -765,10 +765,10 @@ public interface XeniaPackage extends EPackage
   EClass getRedirectPage();
 
   /**
-   * Returns the meta object for the containment reference list '{@link com.foliage.xenia.xenia.RedirectPage#getSite <em>Site</em>}'.
+   * Returns the meta object for the reference list '{@link com.foliage.xenia.xenia.RedirectPage#getSite <em>Site</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Site</em>'.
+   * @return the meta object for the reference list '<em>Site</em>'.
    * @see com.foliage.xenia.xenia.RedirectPage#getSite()
    * @see #getRedirectPage()
    * @generated
@@ -965,7 +965,7 @@ public interface XeniaPackage extends EPackage
     EClass INFO_PROPERTY = eINSTANCE.getInfoProperty();
 
     /**
-     * The meta object literal for the '<em><b>Page</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Page</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1027,7 +1027,7 @@ public interface XeniaPackage extends EPackage
     EClass LINKED_PROPERTY = eINSTANCE.getLinkedProperty();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -1053,7 +1053,7 @@ public interface XeniaPackage extends EPackage
     EClass REDIRECT_PAGE = eINSTANCE.getRedirectPage();
 
     /**
-     * The meta object literal for the '<em><b>Site</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Site</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

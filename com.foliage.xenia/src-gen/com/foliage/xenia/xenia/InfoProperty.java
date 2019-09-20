@@ -27,22 +27,22 @@ import org.eclipse.emf.ecore.EObject;
 public interface InfoProperty extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Page</b></em>' containment reference.
+   * Returns the value of the '<em><b>Page</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Page</em>' containment reference.
+   * @return the value of the '<em>Page</em>' reference.
    * @see #setPage(Site)
    * @see com.foliage.xenia.xenia.XeniaPackage#getInfoProperty_Page()
-   * @model containment="true"
+   * @model
    * @generated
    */
   Site getPage();
 
   /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.InfoProperty#getPage <em>Page</em>}' containment reference.
+   * Sets the value of the '{@link com.foliage.xenia.xenia.InfoProperty#getPage <em>Page</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Page</em>' containment reference.
+   * @param value the new value of the '<em>Page</em>' reference.
    * @see #getPage()
    * @generated
    */

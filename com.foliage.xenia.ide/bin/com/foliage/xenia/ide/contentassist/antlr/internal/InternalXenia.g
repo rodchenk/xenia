@@ -2573,9 +2573,13 @@ rule__InfoProperty__PageAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0()); }
-		ruleSite
-		{ after(grammarAccess.getInfoPropertyAccess().getPageSiteParserRuleCall_0_0()); }
+		{ before(grammarAccess.getInfoPropertyAccess().getPageSiteCrossReference_0_0()); }
+		(
+			{ before(grammarAccess.getInfoPropertyAccess().getPageSiteIDTerminalRuleCall_0_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getInfoPropertyAccess().getPageSiteIDTerminalRuleCall_0_0_1()); }
+		)
+		{ after(grammarAccess.getInfoPropertyAccess().getPageSiteCrossReference_0_0()); }
 	)
 ;
 finally {
@@ -2663,9 +2667,13 @@ rule__LinkedProperty__NameAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0()); }
-		ruleSite
-		{ after(grammarAccess.getLinkedPropertyAccess().getNameSiteParserRuleCall_0_0()); }
+		{ before(grammarAccess.getLinkedPropertyAccess().getNameSiteCrossReference_0_0()); }
+		(
+			{ before(grammarAccess.getLinkedPropertyAccess().getNameSiteIDTerminalRuleCall_0_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getLinkedPropertyAccess().getNameSiteIDTerminalRuleCall_0_0_1()); }
+		)
+		{ after(grammarAccess.getLinkedPropertyAccess().getNameSiteCrossReference_0_0()); }
 	)
 ;
 finally {
@@ -2693,9 +2701,13 @@ rule__RedirectPage__SiteAssignment_0
 	}
 :
 	(
-		{ before(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_0_0()); }
-		ruleSite
-		{ after(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_0_0()); }
+		{ before(grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_0_0()); }
+		(
+			{ before(grammarAccess.getRedirectPageAccess().getSiteSiteIDTerminalRuleCall_0_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getRedirectPageAccess().getSiteSiteIDTerminalRuleCall_0_0_1()); }
+		)
+		{ after(grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_0_0()); }
 	)
 ;
 finally {
@@ -2708,9 +2720,13 @@ rule__RedirectPage__SiteAssignment_1_1
 	}
 :
 	(
-		{ before(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_1_1_0()); }
-		ruleSite
-		{ after(grammarAccess.getRedirectPageAccess().getSiteSiteParserRuleCall_1_1_0()); }
+		{ before(grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_1_1_0()); }
+		(
+			{ before(grammarAccess.getRedirectPageAccess().getSiteSiteIDTerminalRuleCall_1_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getRedirectPageAccess().getSiteSiteIDTerminalRuleCall_1_1_0_1()); }
+		)
+		{ after(grammarAccess.getRedirectPageAccess().getSiteSiteCrossReference_1_1_0()); }
 	)
 ;
 finally {

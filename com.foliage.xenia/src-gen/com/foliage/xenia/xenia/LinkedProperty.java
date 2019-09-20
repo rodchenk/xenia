@@ -25,22 +25,22 @@ import org.eclipse.emf.ecore.EObject;
 public interface LinkedProperty extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
+   * @return the value of the '<em>Name</em>' reference.
    * @see #setName(Site)
    * @see com.foliage.xenia.xenia.XeniaPackage#getLinkedProperty_Name()
-   * @model containment="true"
+   * @model
    * @generated
    */
   Site getName();
 
   /**
-   * Sets the value of the '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link com.foliage.xenia.xenia.LinkedProperty#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
+   * @param value the new value of the '<em>Name</em>' reference.
    * @see #getName()
    * @generated
    */
