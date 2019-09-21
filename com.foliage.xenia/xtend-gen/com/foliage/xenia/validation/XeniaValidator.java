@@ -4,6 +4,11 @@
 package com.foliage.xenia.validation;
 
 import com.foliage.xenia.validation.AbstractXeniaValidator;
+import com.foliage.xenia.xenia.Header;
+import com.foliage.xenia.xenia.SuperSite;
+import com.foliage.xenia.xenia.XeniaPackage;
+import java.util.List;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +17,38 @@ import com.foliage.xenia.validation.AbstractXeniaValidator;
  */
 @SuppressWarnings("all")
 public class XeniaValidator extends AbstractXeniaValidator {
+  public static final String INVALID_NAME = "invalidName";
+  
+  @Check
+  public void checkAppNameStartsWithCapital(final Header head) {
+    boolean _isUpperCase = Character.isUpperCase(head.getAppName().charAt(0));
+    boolean _not = (!_isUpperCase);
+    if (_not) {
+      this.warning("Name should start with a capital", 
+        XeniaPackage.Literals.HEADER__APP_NAME, 
+        XeniaValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void checkSiteNameIsUnique(final Header head) {
+    List<SuperSite> pages = head.getSites();
+    for (final SuperSite page : pages) {
+      {
+        int i = 0;
+        for (final SuperSite page_ : pages) {
+          {
+            boolean _equals = page.getName().equals(page_.getName());
+            if (_equals) {
+              i++;
+            }
+            if ((i > 1)) {
+              this.error("Page names have to be unique", XeniaPackage.Literals.HEADER__SITES);
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
 }
