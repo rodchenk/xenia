@@ -27,4 +27,8 @@ app Main has pages[
 	News -> mod: "monday"
   ]
 ```
-![map](https://user-images.githubusercontent.com/30366483/64978145-243a6e00-d8b5-11e9-8b54-b388fc7bd664.PNG)
+Der AppName wird innerhalb von Logo angezeigt
+```typescript
+app foliage has pages [@Home, @News]
+```
+![image](https://user-images.githubusercontent.com/30366483/65375895-5889a200-dc9a-11e9-89f1-4f194d310626.png)
