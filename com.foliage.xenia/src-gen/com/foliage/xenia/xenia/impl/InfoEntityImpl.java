@@ -4,6 +4,7 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.InfoEntity;
+import com.foliage.xenia.xenia.InfoEntry;
 import com.foliage.xenia.xenia.XeniaPackage;
 
 import java.util.Collection;
@@ -43,7 +44,7 @@ public class InfoEntityImpl extends MinimalEObjectImpl.Container implements Info
    * @generated
    * @ordered
    */
-  protected EList<String> entries;
+  protected EList<InfoEntry> entries;
 
   /**
    * The default value of the '{@link #getInfoValue() <em>Info Value</em>}' attribute.
@@ -92,11 +93,11 @@ public class InfoEntityImpl extends MinimalEObjectImpl.Container implements Info
    * @generated
    */
   @Override
-  public EList<String> getEntries()
+  public EList<InfoEntry> getEntries()
   {
     if (entries == null)
     {
-      entries = new EDataTypeEList<String>(String.class, this, XeniaPackage.INFO_ENTITY__ENTRIES);
+      entries = new EDataTypeEList<InfoEntry>(InfoEntry.class, this, XeniaPackage.INFO_ENTITY__ENTRIES);
     }
     return entries;
   }
@@ -157,7 +158,7 @@ public class InfoEntityImpl extends MinimalEObjectImpl.Container implements Info
     {
       case XeniaPackage.INFO_ENTITY__ENTRIES:
         getEntries().clear();
-        getEntries().addAll((Collection<? extends String>)newValue);
+        getEntries().addAll((Collection<? extends InfoEntry>)newValue);
         return;
       case XeniaPackage.INFO_ENTITY__INFO_VALUE:
         setInfoValue((String)newValue);

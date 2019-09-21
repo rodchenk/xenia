@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -323,7 +324,7 @@ ruleEntity returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getEntityAccess().getModeModeParserRuleCall_2_2_0());
+						newCompositeNode(grammarAccess.getEntityAccess().getModeModeEnumRuleCall_2_2_0());
 					}
 					lv_mode_8_0=ruleMode
 					{
@@ -340,36 +341,6 @@ ruleEntity returns [EObject current=null]
 				)
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleMode
-entryRuleMode returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getModeRule()); }
-	iv_ruleMode=ruleMode
-	{ $current=$iv_ruleMode.current.getText(); }
-	EOF;
-
-// Rule Mode
-ruleMode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='DEV'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getModeAccess().getDEVKeyword_0());
-		}
-		    |
-		kw='PROD'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getModeAccess().getPRODKeyword_1());
-		}
 	)
 ;
 
@@ -753,7 +724,7 @@ ruleInfoEntity returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryParserRuleCall_0_0());
+					newCompositeNode(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryEnumRuleCall_0_0());
 				}
 				lv_entries_0_0=ruleInfoEntry
 				{
@@ -791,42 +762,6 @@ ruleInfoEntity returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleInfoEntry
-entryRuleInfoEntry returns [String current=null]:
-	{ newCompositeNode(grammarAccess.getInfoEntryRule()); }
-	iv_ruleInfoEntry=ruleInfoEntry
-	{ $current=$iv_ruleInfoEntry.current.getText(); }
-	EOF;
-
-// Rule InfoEntry
-ruleInfoEntry returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		kw='mod'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getModKeyword_0());
-		}
-		    |
-		kw='freq'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getFreqKeyword_1());
-		}
-		    |
-		kw='prio'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getPrioKeyword_2());
-		}
 	)
 ;
 
@@ -982,6 +917,68 @@ ruleRedirectPage returns [EObject current=null]
 				)
 			)
 		)*
+	)
+;
+
+// Rule Mode
+ruleMode returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='development'
+			{
+				$current = grammarAccess.getModeAccess().getDEVEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getModeAccess().getDEVEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='production'
+			{
+				$current = grammarAccess.getModeAccess().getPRODEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getModeAccess().getPRODEnumLiteralDeclaration_1());
+			}
+		)
+	)
+;
+
+// Rule InfoEntry
+ruleInfoEntry returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='mod'
+			{
+				$current = grammarAccess.getInfoEntryAccess().getMODEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getInfoEntryAccess().getMODEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='freq'
+			{
+				$current = grammarAccess.getInfoEntryAccess().getFREQEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getInfoEntryAccess().getFREQEnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='prio'
+			{
+				$current = grammarAccess.getInfoEntryAccess().getPRIOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getInfoEntryAccess().getPRIOEnumLiteralDeclaration_2());
+			}
+		)
 	)
 ;
 

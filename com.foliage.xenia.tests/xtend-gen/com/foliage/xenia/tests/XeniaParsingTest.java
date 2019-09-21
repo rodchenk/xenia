@@ -44,7 +44,7 @@ public class XeniaParsingTest {
       _builder.newLine();
       _builder.append("//with: \"Cake\"");
       _builder.newLine();
-      _builder.append("mode: DEV");
+      _builder.append("mode: development");
       _builder.newLine();
       _builder.append("map: [");
       _builder.newLine();

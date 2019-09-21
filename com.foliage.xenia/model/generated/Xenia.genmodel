@@ -6,6 +6,15 @@
     copyrightFields="false" runtimeVersion="2.17">
   <genPackages prefix="Xenia" basePackage="com.foliage.xenia" disposableProviderFactory="true"
       fileExtensions="nia" ecorePackage="Xenia.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Xenia.ecore#//Mode">
+      <genEnumLiterals ecoreEnumLiteral="Xenia.ecore#//Mode/DEV"/>
+      <genEnumLiterals ecoreEnumLiteral="Xenia.ecore#//Mode/PROD"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Xenia.ecore#//InfoEntry">
+      <genEnumLiterals ecoreEnumLiteral="Xenia.ecore#//InfoEntry/MOD"/>
+      <genEnumLiterals ecoreEnumLiteral="Xenia.ecore#//InfoEntry/FREQ"/>
+      <genEnumLiterals ecoreEnumLiteral="Xenia.ecore#//InfoEntry/PRIO"/>
+    </genEnums>
     <genClasses ecoreClass="Xenia.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/headers"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Xenia.ecore#//Model/entities"/>

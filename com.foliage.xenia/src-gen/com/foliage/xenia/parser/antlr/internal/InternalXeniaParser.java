@@ -5,6 +5,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalXeniaParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'app'", "'has'", "'pages'", "'['", "','", "']'", "'with'", "':'", "'xml'", "'mode'", "'DEV'", "'PROD'", "'@'", "'modal'", "'('", "')'", "'info'", "'map'", "'->'", "'mod'", "'freq'", "'prio'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'app'", "'has'", "'pages'", "'['", "','", "']'", "'with'", "':'", "'xml'", "'mode'", "'@'", "'modal'", "'('", "')'", "'info'", "'map'", "'->'", "'development'", "'production'", "'mod'", "'freq'", "'prio'"
     };
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
@@ -94,7 +95,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleModel"
-    // InternalXenia.g:64:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
+    // InternalXenia.g:65:1: entryRuleModel returns [EObject current=null] : iv_ruleModel= ruleModel EOF ;
     public final EObject entryRuleModel() throws RecognitionException {
         EObject current = null;
 
@@ -102,8 +103,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:64:46: (iv_ruleModel= ruleModel EOF )
-            // InternalXenia.g:65:2: iv_ruleModel= ruleModel EOF
+            // InternalXenia.g:65:46: (iv_ruleModel= ruleModel EOF )
+            // InternalXenia.g:66:2: iv_ruleModel= ruleModel EOF
             {
              newCompositeNode(grammarAccess.getModelRule()); 
             pushFollow(FOLLOW_1);
@@ -130,7 +131,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalXenia.g:71:1: ruleModel returns [EObject current=null] : ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* ) ;
+    // InternalXenia.g:72:1: ruleModel returns [EObject current=null] : ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* ) ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
@@ -145,17 +146,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:77:2: ( ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* ) )
-            // InternalXenia.g:78:2: ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* )
+            // InternalXenia.g:78:2: ( ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* ) )
+            // InternalXenia.g:79:2: ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* )
             {
-            // InternalXenia.g:78:2: ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* )
-            // InternalXenia.g:79:3: ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )*
+            // InternalXenia.g:79:2: ( ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )* )
+            // InternalXenia.g:80:3: ( (lv_headers_0_0= ruleHeader ) ) ( (lv_entities_1_0= ruleEntity ) )* ( (lv_mapped_entities_2_0= ruleMappedEntity ) )*
             {
-            // InternalXenia.g:79:3: ( (lv_headers_0_0= ruleHeader ) )
-            // InternalXenia.g:80:4: (lv_headers_0_0= ruleHeader )
+            // InternalXenia.g:80:3: ( (lv_headers_0_0= ruleHeader ) )
+            // InternalXenia.g:81:4: (lv_headers_0_0= ruleHeader )
             {
-            // InternalXenia.g:80:4: (lv_headers_0_0= ruleHeader )
-            // InternalXenia.g:81:5: lv_headers_0_0= ruleHeader
+            // InternalXenia.g:81:4: (lv_headers_0_0= ruleHeader )
+            // InternalXenia.g:82:5: lv_headers_0_0= ruleHeader
             {
 
             					newCompositeNode(grammarAccess.getModelAccess().getHeadersHeaderParserRuleCall_0_0());
@@ -182,7 +183,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:98:3: ( (lv_entities_1_0= ruleEntity ) )*
+            // InternalXenia.g:99:3: ( (lv_entities_1_0= ruleEntity ) )*
             loop1:
             do {
                 int alt1=2;
@@ -195,10 +196,10 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalXenia.g:99:4: (lv_entities_1_0= ruleEntity )
+            	    // InternalXenia.g:100:4: (lv_entities_1_0= ruleEntity )
             	    {
-            	    // InternalXenia.g:99:4: (lv_entities_1_0= ruleEntity )
-            	    // InternalXenia.g:100:5: lv_entities_1_0= ruleEntity
+            	    // InternalXenia.g:100:4: (lv_entities_1_0= ruleEntity )
+            	    // InternalXenia.g:101:5: lv_entities_1_0= ruleEntity
             	    {
 
             	    					newCompositeNode(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_1_0());
@@ -231,23 +232,23 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalXenia.g:117:3: ( (lv_mapped_entities_2_0= ruleMappedEntity ) )*
+            // InternalXenia.g:118:3: ( (lv_mapped_entities_2_0= ruleMappedEntity ) )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( ((LA2_0>=27 && LA2_0<=28)) ) {
+                if ( ((LA2_0>=25 && LA2_0<=26)) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // InternalXenia.g:118:4: (lv_mapped_entities_2_0= ruleMappedEntity )
+            	    // InternalXenia.g:119:4: (lv_mapped_entities_2_0= ruleMappedEntity )
             	    {
-            	    // InternalXenia.g:118:4: (lv_mapped_entities_2_0= ruleMappedEntity )
-            	    // InternalXenia.g:119:5: lv_mapped_entities_2_0= ruleMappedEntity
+            	    // InternalXenia.g:119:4: (lv_mapped_entities_2_0= ruleMappedEntity )
+            	    // InternalXenia.g:120:5: lv_mapped_entities_2_0= ruleMappedEntity
             	    {
 
             	    					newCompositeNode(grammarAccess.getModelAccess().getMapped_entitiesMappedEntityParserRuleCall_2_0());
@@ -303,7 +304,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHeader"
-    // InternalXenia.g:140:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
+    // InternalXenia.g:141:1: entryRuleHeader returns [EObject current=null] : iv_ruleHeader= ruleHeader EOF ;
     public final EObject entryRuleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -311,8 +312,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:140:47: (iv_ruleHeader= ruleHeader EOF )
-            // InternalXenia.g:141:2: iv_ruleHeader= ruleHeader EOF
+            // InternalXenia.g:141:47: (iv_ruleHeader= ruleHeader EOF )
+            // InternalXenia.g:142:2: iv_ruleHeader= ruleHeader EOF
             {
              newCompositeNode(grammarAccess.getHeaderRule()); 
             pushFollow(FOLLOW_1);
@@ -339,7 +340,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHeader"
-    // InternalXenia.g:147:1: ruleHeader returns [EObject current=null] : (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' ) ;
+    // InternalXenia.g:148:1: ruleHeader returns [EObject current=null] : (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' ) ;
     public final EObject ruleHeader() throws RecognitionException {
         EObject current = null;
 
@@ -359,21 +360,21 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:153:2: ( (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' ) )
-            // InternalXenia.g:154:2: (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' )
+            // InternalXenia.g:154:2: ( (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' ) )
+            // InternalXenia.g:155:2: (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' )
             {
-            // InternalXenia.g:154:2: (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' )
-            // InternalXenia.g:155:3: otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']'
+            // InternalXenia.g:155:2: (otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']' )
+            // InternalXenia.g:156:3: otherlv_0= 'app' ( (lv_appName_1_0= RULE_ID ) ) otherlv_2= 'has' otherlv_3= 'pages' otherlv_4= '[' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ']'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getHeaderAccess().getAppKeyword_0());
             		
-            // InternalXenia.g:159:3: ( (lv_appName_1_0= RULE_ID ) )
-            // InternalXenia.g:160:4: (lv_appName_1_0= RULE_ID )
+            // InternalXenia.g:160:3: ( (lv_appName_1_0= RULE_ID ) )
+            // InternalXenia.g:161:4: (lv_appName_1_0= RULE_ID )
             {
-            // InternalXenia.g:160:4: (lv_appName_1_0= RULE_ID )
-            // InternalXenia.g:161:5: lv_appName_1_0= RULE_ID
+            // InternalXenia.g:161:4: (lv_appName_1_0= RULE_ID )
+            // InternalXenia.g:162:5: lv_appName_1_0= RULE_ID
             {
             lv_appName_1_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -407,11 +408,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getHeaderAccess().getLeftSquareBracketKeyword_4());
             		
-            // InternalXenia.g:189:3: ( (lv_sites_5_0= ruleSuperSite ) )
-            // InternalXenia.g:190:4: (lv_sites_5_0= ruleSuperSite )
+            // InternalXenia.g:190:3: ( (lv_sites_5_0= ruleSuperSite ) )
+            // InternalXenia.g:191:4: (lv_sites_5_0= ruleSuperSite )
             {
-            // InternalXenia.g:190:4: (lv_sites_5_0= ruleSuperSite )
-            // InternalXenia.g:191:5: lv_sites_5_0= ruleSuperSite
+            // InternalXenia.g:191:4: (lv_sites_5_0= ruleSuperSite )
+            // InternalXenia.g:192:5: lv_sites_5_0= ruleSuperSite
             {
 
             					newCompositeNode(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_5_0());
@@ -438,7 +439,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:208:3: (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )*
+            // InternalXenia.g:209:3: (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )*
             loop3:
             do {
                 int alt3=2;
@@ -451,17 +452,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalXenia.g:209:4: otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) )
+            	    // InternalXenia.g:210:4: otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) )
             	    {
             	    otherlv_6=(Token)match(input,15,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getHeaderAccess().getCommaKeyword_6_0());
             	    			
-            	    // InternalXenia.g:213:4: ( (lv_sites_7_0= ruleSuperSite ) )
-            	    // InternalXenia.g:214:5: (lv_sites_7_0= ruleSuperSite )
+            	    // InternalXenia.g:214:4: ( (lv_sites_7_0= ruleSuperSite ) )
+            	    // InternalXenia.g:215:5: (lv_sites_7_0= ruleSuperSite )
             	    {
-            	    // InternalXenia.g:214:5: (lv_sites_7_0= ruleSuperSite )
-            	    // InternalXenia.g:215:6: lv_sites_7_0= ruleSuperSite
+            	    // InternalXenia.g:215:5: (lv_sites_7_0= ruleSuperSite )
+            	    // InternalXenia.g:216:6: lv_sites_7_0= ruleSuperSite
             	    {
 
             	    						newCompositeNode(grammarAccess.getHeaderAccess().getSitesSuperSiteParserRuleCall_6_1_0());
@@ -524,7 +525,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntity"
-    // InternalXenia.g:241:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // InternalXenia.g:242:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -532,8 +533,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:241:47: (iv_ruleEntity= ruleEntity EOF )
-            // InternalXenia.g:242:2: iv_ruleEntity= ruleEntity EOF
+            // InternalXenia.g:242:47: (iv_ruleEntity= ruleEntity EOF )
+            // InternalXenia.g:243:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -560,7 +561,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntity"
-    // InternalXenia.g:248:1: ruleEntity returns [EObject current=null] : ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) ) ;
+    // InternalXenia.g:249:1: ruleEntity returns [EObject current=null] : ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -572,17 +573,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         Token lv_path_5_0=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
-        AntlrDatatypeRuleToken lv_mode_8_0 = null;
+        Enumerator lv_mode_8_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalXenia.g:254:2: ( ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) ) )
-            // InternalXenia.g:255:2: ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) )
+            // InternalXenia.g:255:2: ( ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) ) )
+            // InternalXenia.g:256:2: ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) )
             {
-            // InternalXenia.g:255:2: ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) )
+            // InternalXenia.g:256:2: ( (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) ) | (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) ) | (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) ) )
             int alt4=3;
             switch ( input.LA(1) ) {
             case 17:
@@ -609,10 +610,10 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             switch (alt4) {
                 case 1 :
-                    // InternalXenia.g:256:3: (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) )
+                    // InternalXenia.g:257:3: (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) )
                     {
-                    // InternalXenia.g:256:3: (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) )
-                    // InternalXenia.g:257:4: otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) )
+                    // InternalXenia.g:257:3: (otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) ) )
+                    // InternalXenia.g:258:4: otherlv_0= 'with' otherlv_1= ':' ( (lv_tech_2_0= RULE_STRING ) )
                     {
                     otherlv_0=(Token)match(input,17,FOLLOW_11); 
 
@@ -622,11 +623,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getEntityAccess().getColonKeyword_0_1());
                     			
-                    // InternalXenia.g:265:4: ( (lv_tech_2_0= RULE_STRING ) )
-                    // InternalXenia.g:266:5: (lv_tech_2_0= RULE_STRING )
+                    // InternalXenia.g:266:4: ( (lv_tech_2_0= RULE_STRING ) )
+                    // InternalXenia.g:267:5: (lv_tech_2_0= RULE_STRING )
                     {
-                    // InternalXenia.g:266:5: (lv_tech_2_0= RULE_STRING )
-                    // InternalXenia.g:267:6: lv_tech_2_0= RULE_STRING
+                    // InternalXenia.g:267:5: (lv_tech_2_0= RULE_STRING )
+                    // InternalXenia.g:268:6: lv_tech_2_0= RULE_STRING
                     {
                     lv_tech_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -655,10 +656,10 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:285:3: (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) )
+                    // InternalXenia.g:286:3: (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) )
                     {
-                    // InternalXenia.g:285:3: (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) )
-                    // InternalXenia.g:286:4: otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) )
+                    // InternalXenia.g:286:3: (otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) ) )
+                    // InternalXenia.g:287:4: otherlv_3= 'xml' otherlv_4= ':' ( (lv_path_5_0= RULE_STRING ) )
                     {
                     otherlv_3=(Token)match(input,19,FOLLOW_11); 
 
@@ -668,11 +669,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getColonKeyword_1_1());
                     			
-                    // InternalXenia.g:294:4: ( (lv_path_5_0= RULE_STRING ) )
-                    // InternalXenia.g:295:5: (lv_path_5_0= RULE_STRING )
+                    // InternalXenia.g:295:4: ( (lv_path_5_0= RULE_STRING ) )
+                    // InternalXenia.g:296:5: (lv_path_5_0= RULE_STRING )
                     {
-                    // InternalXenia.g:295:5: (lv_path_5_0= RULE_STRING )
-                    // InternalXenia.g:296:6: lv_path_5_0= RULE_STRING
+                    // InternalXenia.g:296:5: (lv_path_5_0= RULE_STRING )
+                    // InternalXenia.g:297:6: lv_path_5_0= RULE_STRING
                     {
                     lv_path_5_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -701,10 +702,10 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalXenia.g:314:3: (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) )
+                    // InternalXenia.g:315:3: (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) )
                     {
-                    // InternalXenia.g:314:3: (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) )
-                    // InternalXenia.g:315:4: otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) )
+                    // InternalXenia.g:315:3: (otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) ) )
+                    // InternalXenia.g:316:4: otherlv_6= 'mode' otherlv_7= ':' ( (lv_mode_8_0= ruleMode ) )
                     {
                     otherlv_6=(Token)match(input,20,FOLLOW_11); 
 
@@ -714,14 +715,14 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_7, grammarAccess.getEntityAccess().getColonKeyword_2_1());
                     			
-                    // InternalXenia.g:323:4: ( (lv_mode_8_0= ruleMode ) )
-                    // InternalXenia.g:324:5: (lv_mode_8_0= ruleMode )
+                    // InternalXenia.g:324:4: ( (lv_mode_8_0= ruleMode ) )
+                    // InternalXenia.g:325:5: (lv_mode_8_0= ruleMode )
                     {
-                    // InternalXenia.g:324:5: (lv_mode_8_0= ruleMode )
-                    // InternalXenia.g:325:6: lv_mode_8_0= ruleMode
+                    // InternalXenia.g:325:5: (lv_mode_8_0= ruleMode )
+                    // InternalXenia.g:326:6: lv_mode_8_0= ruleMode
                     {
 
-                    						newCompositeNode(grammarAccess.getEntityAccess().getModeModeParserRuleCall_2_2_0());
+                    						newCompositeNode(grammarAccess.getEntityAccess().getModeModeEnumRuleCall_2_2_0());
                     					
                     pushFollow(FOLLOW_2);
                     lv_mode_8_0=ruleMode();
@@ -773,119 +774,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleEntity"
 
 
-    // $ANTLR start "entryRuleMode"
-    // InternalXenia.g:347:1: entryRuleMode returns [String current=null] : iv_ruleMode= ruleMode EOF ;
-    public final String entryRuleMode() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleMode = null;
-
-
-        try {
-            // InternalXenia.g:347:44: (iv_ruleMode= ruleMode EOF )
-            // InternalXenia.g:348:2: iv_ruleMode= ruleMode EOF
-            {
-             newCompositeNode(grammarAccess.getModeRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleMode=ruleMode();
-
-            state._fsp--;
-
-             current =iv_ruleMode.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleMode"
-
-
-    // $ANTLR start "ruleMode"
-    // InternalXenia.g:354:1: ruleMode returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'DEV' | kw= 'PROD' ) ;
-    public final AntlrDatatypeRuleToken ruleMode() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalXenia.g:360:2: ( (kw= 'DEV' | kw= 'PROD' ) )
-            // InternalXenia.g:361:2: (kw= 'DEV' | kw= 'PROD' )
-            {
-            // InternalXenia.g:361:2: (kw= 'DEV' | kw= 'PROD' )
-            int alt5=2;
-            int LA5_0 = input.LA(1);
-
-            if ( (LA5_0==21) ) {
-                alt5=1;
-            }
-            else if ( (LA5_0==22) ) {
-                alt5=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
-
-                throw nvae;
-            }
-            switch (alt5) {
-                case 1 :
-                    // InternalXenia.g:362:3: kw= 'DEV'
-                    {
-                    kw=(Token)match(input,21,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getModeAccess().getDEVKeyword_0());
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalXenia.g:368:3: kw= 'PROD'
-                    {
-                    kw=(Token)match(input,22,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getModeAccess().getPRODKeyword_1());
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleMode"
-
-
     // $ANTLR start "entryRuleSuperSite"
-    // InternalXenia.g:377:1: entryRuleSuperSite returns [EObject current=null] : iv_ruleSuperSite= ruleSuperSite EOF ;
+    // InternalXenia.g:348:1: entryRuleSuperSite returns [EObject current=null] : iv_ruleSuperSite= ruleSuperSite EOF ;
     public final EObject entryRuleSuperSite() throws RecognitionException {
         EObject current = null;
 
@@ -893,8 +783,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:377:50: (iv_ruleSuperSite= ruleSuperSite EOF )
-            // InternalXenia.g:378:2: iv_ruleSuperSite= ruleSuperSite EOF
+            // InternalXenia.g:348:50: (iv_ruleSuperSite= ruleSuperSite EOF )
+            // InternalXenia.g:349:2: iv_ruleSuperSite= ruleSuperSite EOF
             {
              newCompositeNode(grammarAccess.getSuperSiteRule()); 
             pushFollow(FOLLOW_1);
@@ -921,7 +811,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSuperSite"
-    // InternalXenia.g:384:1: ruleSuperSite returns [EObject current=null] : (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal ) ;
+    // InternalXenia.g:355:1: ruleSuperSite returns [EObject current=null] : (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal ) ;
     public final EObject ruleSuperSite() throws RecognitionException {
         EObject current = null;
 
@@ -934,48 +824,48 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:390:2: ( (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal ) )
-            // InternalXenia.g:391:2: (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal )
+            // InternalXenia.g:361:2: ( (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal ) )
+            // InternalXenia.g:362:2: (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal )
             {
-            // InternalXenia.g:391:2: (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal )
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // InternalXenia.g:362:2: (this_Site_0= ruleSite | this_SiteWithModal_1= ruleSiteWithModal )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA6_0==23) ) {
-                int LA6_1 = input.LA(2);
+            if ( (LA5_0==21) ) {
+                int LA5_1 = input.LA(2);
 
-                if ( (LA6_1==RULE_ID) ) {
-                    int LA6_2 = input.LA(3);
+                if ( (LA5_1==RULE_ID) ) {
+                    int LA5_2 = input.LA(3);
 
-                    if ( (LA6_2==EOF||(LA6_2>=15 && LA6_2<=16)||LA6_2==26) ) {
-                        alt6=1;
+                    if ( (LA5_2==EOF||(LA5_2>=15 && LA5_2<=16)||LA5_2==24) ) {
+                        alt5=1;
                     }
-                    else if ( (LA6_2==17) ) {
-                        alt6=2;
+                    else if ( (LA5_2==17) ) {
+                        alt5=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 6, 2, input);
+                            new NoViableAltException("", 5, 2, input);
 
                         throw nvae;
                     }
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 6, 1, input);
+                        new NoViableAltException("", 5, 1, input);
 
                     throw nvae;
                 }
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalXenia.g:392:3: this_Site_0= ruleSite
+                    // InternalXenia.g:363:3: this_Site_0= ruleSite
                     {
 
                     			newCompositeNode(grammarAccess.getSuperSiteAccess().getSiteParserRuleCall_0());
@@ -993,7 +883,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:401:3: this_SiteWithModal_1= ruleSiteWithModal
+                    // InternalXenia.g:372:3: this_SiteWithModal_1= ruleSiteWithModal
                     {
 
                     			newCompositeNode(grammarAccess.getSuperSiteAccess().getSiteWithModalParserRuleCall_1());
@@ -1033,7 +923,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSiteWithModal"
-    // InternalXenia.g:413:1: entryRuleSiteWithModal returns [EObject current=null] : iv_ruleSiteWithModal= ruleSiteWithModal EOF ;
+    // InternalXenia.g:384:1: entryRuleSiteWithModal returns [EObject current=null] : iv_ruleSiteWithModal= ruleSiteWithModal EOF ;
     public final EObject entryRuleSiteWithModal() throws RecognitionException {
         EObject current = null;
 
@@ -1041,8 +931,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:413:54: (iv_ruleSiteWithModal= ruleSiteWithModal EOF )
-            // InternalXenia.g:414:2: iv_ruleSiteWithModal= ruleSiteWithModal EOF
+            // InternalXenia.g:384:54: (iv_ruleSiteWithModal= ruleSiteWithModal EOF )
+            // InternalXenia.g:385:2: iv_ruleSiteWithModal= ruleSiteWithModal EOF
             {
              newCompositeNode(grammarAccess.getSiteWithModalRule()); 
             pushFollow(FOLLOW_1);
@@ -1069,7 +959,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSiteWithModal"
-    // InternalXenia.g:420:1: ruleSiteWithModal returns [EObject current=null] : (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' ) ;
+    // InternalXenia.g:391:1: ruleSiteWithModal returns [EObject current=null] : (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' ) ;
     public final EObject ruleSiteWithModal() throws RecognitionException {
         EObject current = null;
 
@@ -1089,21 +979,21 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:426:2: ( (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' ) )
-            // InternalXenia.g:427:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' )
+            // InternalXenia.g:397:2: ( (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' ) )
+            // InternalXenia.g:398:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' )
             {
-            // InternalXenia.g:427:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' )
-            // InternalXenia.g:428:3: otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')'
+            // InternalXenia.g:398:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')' )
+            // InternalXenia.g:399:3: otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'with' otherlv_3= 'modal' otherlv_4= '(' ( (lv_sites_5_0= ruleSuperSite ) ) (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )* otherlv_8= ')'
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_5); 
+            otherlv_0=(Token)match(input,21,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSiteWithModalAccess().getCommercialAtKeyword_0());
             		
-            // InternalXenia.g:432:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalXenia.g:433:4: (lv_name_1_0= RULE_ID )
+            // InternalXenia.g:403:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalXenia.g:404:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalXenia.g:433:4: (lv_name_1_0= RULE_ID )
-            // InternalXenia.g:434:5: lv_name_1_0= RULE_ID
+            // InternalXenia.g:404:4: (lv_name_1_0= RULE_ID )
+            // InternalXenia.g:405:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
@@ -1129,19 +1019,19 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getSiteWithModalAccess().getWithKeyword_2());
             		
-            otherlv_3=(Token)match(input,24,FOLLOW_16); 
+            otherlv_3=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSiteWithModalAccess().getModalKeyword_3());
             		
-            otherlv_4=(Token)match(input,25,FOLLOW_9); 
+            otherlv_4=(Token)match(input,23,FOLLOW_9); 
 
             			newLeafNode(otherlv_4, grammarAccess.getSiteWithModalAccess().getLeftParenthesisKeyword_4());
             		
-            // InternalXenia.g:462:3: ( (lv_sites_5_0= ruleSuperSite ) )
-            // InternalXenia.g:463:4: (lv_sites_5_0= ruleSuperSite )
+            // InternalXenia.g:433:3: ( (lv_sites_5_0= ruleSuperSite ) )
+            // InternalXenia.g:434:4: (lv_sites_5_0= ruleSuperSite )
             {
-            // InternalXenia.g:463:4: (lv_sites_5_0= ruleSuperSite )
-            // InternalXenia.g:464:5: lv_sites_5_0= ruleSuperSite
+            // InternalXenia.g:434:4: (lv_sites_5_0= ruleSuperSite )
+            // InternalXenia.g:435:5: lv_sites_5_0= ruleSuperSite
             {
 
             					newCompositeNode(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_5_0());
@@ -1168,30 +1058,30 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:481:3: (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )*
-            loop7:
+            // InternalXenia.g:452:3: (otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) ) )*
+            loop6:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt6=2;
+                int LA6_0 = input.LA(1);
 
-                if ( (LA7_0==15) ) {
-                    alt7=1;
+                if ( (LA6_0==15) ) {
+                    alt6=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt6) {
             	case 1 :
-            	    // InternalXenia.g:482:4: otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) )
+            	    // InternalXenia.g:453:4: otherlv_6= ',' ( (lv_sites_7_0= ruleSuperSite ) )
             	    {
             	    otherlv_6=(Token)match(input,15,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getSiteWithModalAccess().getCommaKeyword_6_0());
             	    			
-            	    // InternalXenia.g:486:4: ( (lv_sites_7_0= ruleSuperSite ) )
-            	    // InternalXenia.g:487:5: (lv_sites_7_0= ruleSuperSite )
+            	    // InternalXenia.g:457:4: ( (lv_sites_7_0= ruleSuperSite ) )
+            	    // InternalXenia.g:458:5: (lv_sites_7_0= ruleSuperSite )
             	    {
-            	    // InternalXenia.g:487:5: (lv_sites_7_0= ruleSuperSite )
-            	    // InternalXenia.g:488:6: lv_sites_7_0= ruleSuperSite
+            	    // InternalXenia.g:458:5: (lv_sites_7_0= ruleSuperSite )
+            	    // InternalXenia.g:459:6: lv_sites_7_0= ruleSuperSite
             	    {
 
             	    						newCompositeNode(grammarAccess.getSiteWithModalAccess().getSitesSuperSiteParserRuleCall_6_1_0());
@@ -1223,11 +1113,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop6;
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,26,FOLLOW_2); 
+            otherlv_8=(Token)match(input,24,FOLLOW_2); 
 
             			newLeafNode(otherlv_8, grammarAccess.getSiteWithModalAccess().getRightParenthesisKeyword_7());
             		
@@ -1254,7 +1144,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMappedEntity"
-    // InternalXenia.g:514:1: entryRuleMappedEntity returns [EObject current=null] : iv_ruleMappedEntity= ruleMappedEntity EOF ;
+    // InternalXenia.g:485:1: entryRuleMappedEntity returns [EObject current=null] : iv_ruleMappedEntity= ruleMappedEntity EOF ;
     public final EObject entryRuleMappedEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1262,8 +1152,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:514:53: (iv_ruleMappedEntity= ruleMappedEntity EOF )
-            // InternalXenia.g:515:2: iv_ruleMappedEntity= ruleMappedEntity EOF
+            // InternalXenia.g:485:53: (iv_ruleMappedEntity= ruleMappedEntity EOF )
+            // InternalXenia.g:486:2: iv_ruleMappedEntity= ruleMappedEntity EOF
             {
              newCompositeNode(grammarAccess.getMappedEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -1290,7 +1180,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMappedEntity"
-    // InternalXenia.g:521:1: ruleMappedEntity returns [EObject current=null] : ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) ) ;
+    // InternalXenia.g:492:1: ruleMappedEntity returns [EObject current=null] : ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) ) ;
     public final EObject ruleMappedEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1317,33 +1207,33 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:527:2: ( ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) ) )
-            // InternalXenia.g:528:2: ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) )
+            // InternalXenia.g:498:2: ( ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) ) )
+            // InternalXenia.g:499:2: ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) )
             {
-            // InternalXenia.g:528:2: ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalXenia.g:499:2: ( (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' ) | (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' ) )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( (LA10_0==27) ) {
-                alt10=1;
+            if ( (LA9_0==25) ) {
+                alt9=1;
             }
-            else if ( (LA10_0==28) ) {
-                alt10=2;
+            else if ( (LA9_0==26) ) {
+                alt9=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt9) {
                 case 1 :
-                    // InternalXenia.g:529:3: (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' )
+                    // InternalXenia.g:500:3: (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' )
                     {
-                    // InternalXenia.g:529:3: (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' )
-                    // InternalXenia.g:530:4: otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']'
+                    // InternalXenia.g:500:3: (otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']' )
+                    // InternalXenia.g:501:4: otherlv_0= 'info' otherlv_1= ':' otherlv_2= '[' ( (lv_infoProps_3_0= ruleInfoProperty ) ) (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )* otherlv_6= ']'
                     {
-                    otherlv_0=(Token)match(input,27,FOLLOW_11); 
+                    otherlv_0=(Token)match(input,25,FOLLOW_11); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getMappedEntityAccess().getInfoKeyword_0_0());
                     			
@@ -1355,11 +1245,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_2, grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_0_2());
                     			
-                    // InternalXenia.g:542:4: ( (lv_infoProps_3_0= ruleInfoProperty ) )
-                    // InternalXenia.g:543:5: (lv_infoProps_3_0= ruleInfoProperty )
+                    // InternalXenia.g:513:4: ( (lv_infoProps_3_0= ruleInfoProperty ) )
+                    // InternalXenia.g:514:5: (lv_infoProps_3_0= ruleInfoProperty )
                     {
-                    // InternalXenia.g:543:5: (lv_infoProps_3_0= ruleInfoProperty )
-                    // InternalXenia.g:544:6: lv_infoProps_3_0= ruleInfoProperty
+                    // InternalXenia.g:514:5: (lv_infoProps_3_0= ruleInfoProperty )
+                    // InternalXenia.g:515:6: lv_infoProps_3_0= ruleInfoProperty
                     {
 
                     						newCompositeNode(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_3_0());
@@ -1386,30 +1276,30 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalXenia.g:561:4: (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )*
-                    loop8:
+                    // InternalXenia.g:532:4: (otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) ) )*
+                    loop7:
                     do {
-                        int alt8=2;
-                        int LA8_0 = input.LA(1);
+                        int alt7=2;
+                        int LA7_0 = input.LA(1);
 
-                        if ( (LA8_0==15) ) {
-                            alt8=1;
+                        if ( (LA7_0==15) ) {
+                            alt7=1;
                         }
 
 
-                        switch (alt8) {
+                        switch (alt7) {
                     	case 1 :
-                    	    // InternalXenia.g:562:5: otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) )
+                    	    // InternalXenia.g:533:5: otherlv_4= ',' ( (lv_infoProps_5_0= ruleInfoProperty ) )
                     	    {
                     	    otherlv_4=(Token)match(input,15,FOLLOW_5); 
 
                     	    					newLeafNode(otherlv_4, grammarAccess.getMappedEntityAccess().getCommaKeyword_0_4_0());
                     	    				
-                    	    // InternalXenia.g:566:5: ( (lv_infoProps_5_0= ruleInfoProperty ) )
-                    	    // InternalXenia.g:567:6: (lv_infoProps_5_0= ruleInfoProperty )
+                    	    // InternalXenia.g:537:5: ( (lv_infoProps_5_0= ruleInfoProperty ) )
+                    	    // InternalXenia.g:538:6: (lv_infoProps_5_0= ruleInfoProperty )
                     	    {
-                    	    // InternalXenia.g:567:6: (lv_infoProps_5_0= ruleInfoProperty )
-                    	    // InternalXenia.g:568:7: lv_infoProps_5_0= ruleInfoProperty
+                    	    // InternalXenia.g:538:6: (lv_infoProps_5_0= ruleInfoProperty )
+                    	    // InternalXenia.g:539:7: lv_infoProps_5_0= ruleInfoProperty
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getMappedEntityAccess().getInfoPropsInfoPropertyParserRuleCall_0_4_1_0());
@@ -1441,7 +1331,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop8;
+                    	    break loop7;
                         }
                     } while (true);
 
@@ -1456,12 +1346,12 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalXenia.g:592:3: (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' )
+                    // InternalXenia.g:563:3: (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' )
                     {
-                    // InternalXenia.g:592:3: (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' )
-                    // InternalXenia.g:593:4: otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']'
+                    // InternalXenia.g:563:3: (otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']' )
+                    // InternalXenia.g:564:4: otherlv_7= 'map' otherlv_8= ':' otherlv_9= '[' ( (lv_linkedProps_10_0= ruleLinkedProperty ) ) (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )* otherlv_13= ']'
                     {
-                    otherlv_7=(Token)match(input,28,FOLLOW_11); 
+                    otherlv_7=(Token)match(input,26,FOLLOW_11); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getMappedEntityAccess().getMapKeyword_1_0());
                     			
@@ -1473,11 +1363,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_9, grammarAccess.getMappedEntityAccess().getLeftSquareBracketKeyword_1_2());
                     			
-                    // InternalXenia.g:605:4: ( (lv_linkedProps_10_0= ruleLinkedProperty ) )
-                    // InternalXenia.g:606:5: (lv_linkedProps_10_0= ruleLinkedProperty )
+                    // InternalXenia.g:576:4: ( (lv_linkedProps_10_0= ruleLinkedProperty ) )
+                    // InternalXenia.g:577:5: (lv_linkedProps_10_0= ruleLinkedProperty )
                     {
-                    // InternalXenia.g:606:5: (lv_linkedProps_10_0= ruleLinkedProperty )
-                    // InternalXenia.g:607:6: lv_linkedProps_10_0= ruleLinkedProperty
+                    // InternalXenia.g:577:5: (lv_linkedProps_10_0= ruleLinkedProperty )
+                    // InternalXenia.g:578:6: lv_linkedProps_10_0= ruleLinkedProperty
                     {
 
                     						newCompositeNode(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_3_0());
@@ -1504,30 +1394,30 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalXenia.g:624:4: (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )*
-                    loop9:
+                    // InternalXenia.g:595:4: (otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) ) )*
+                    loop8:
                     do {
-                        int alt9=2;
-                        int LA9_0 = input.LA(1);
+                        int alt8=2;
+                        int LA8_0 = input.LA(1);
 
-                        if ( (LA9_0==15) ) {
-                            alt9=1;
+                        if ( (LA8_0==15) ) {
+                            alt8=1;
                         }
 
 
-                        switch (alt9) {
+                        switch (alt8) {
                     	case 1 :
-                    	    // InternalXenia.g:625:5: otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) )
+                    	    // InternalXenia.g:596:5: otherlv_11= ',' ( (lv_linkedProps_12_0= ruleLinkedProperty ) )
                     	    {
                     	    otherlv_11=(Token)match(input,15,FOLLOW_5); 
 
                     	    					newLeafNode(otherlv_11, grammarAccess.getMappedEntityAccess().getCommaKeyword_1_4_0());
                     	    				
-                    	    // InternalXenia.g:629:5: ( (lv_linkedProps_12_0= ruleLinkedProperty ) )
-                    	    // InternalXenia.g:630:6: (lv_linkedProps_12_0= ruleLinkedProperty )
+                    	    // InternalXenia.g:600:5: ( (lv_linkedProps_12_0= ruleLinkedProperty ) )
+                    	    // InternalXenia.g:601:6: (lv_linkedProps_12_0= ruleLinkedProperty )
                     	    {
-                    	    // InternalXenia.g:630:6: (lv_linkedProps_12_0= ruleLinkedProperty )
-                    	    // InternalXenia.g:631:7: lv_linkedProps_12_0= ruleLinkedProperty
+                    	    // InternalXenia.g:601:6: (lv_linkedProps_12_0= ruleLinkedProperty )
+                    	    // InternalXenia.g:602:7: lv_linkedProps_12_0= ruleLinkedProperty
                     	    {
 
                     	    							newCompositeNode(grammarAccess.getMappedEntityAccess().getLinkedPropsLinkedPropertyParserRuleCall_1_4_1_0());
@@ -1559,7 +1449,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
                     	    break;
 
                     	default :
-                    	    break loop9;
+                    	    break loop8;
                         }
                     } while (true);
 
@@ -1596,7 +1486,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInfoProperty"
-    // InternalXenia.g:658:1: entryRuleInfoProperty returns [EObject current=null] : iv_ruleInfoProperty= ruleInfoProperty EOF ;
+    // InternalXenia.g:629:1: entryRuleInfoProperty returns [EObject current=null] : iv_ruleInfoProperty= ruleInfoProperty EOF ;
     public final EObject entryRuleInfoProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1604,8 +1494,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:658:53: (iv_ruleInfoProperty= ruleInfoProperty EOF )
-            // InternalXenia.g:659:2: iv_ruleInfoProperty= ruleInfoProperty EOF
+            // InternalXenia.g:629:53: (iv_ruleInfoProperty= ruleInfoProperty EOF )
+            // InternalXenia.g:630:2: iv_ruleInfoProperty= ruleInfoProperty EOF
             {
              newCompositeNode(grammarAccess.getInfoPropertyRule()); 
             pushFollow(FOLLOW_1);
@@ -1632,7 +1522,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInfoProperty"
-    // InternalXenia.g:665:1: ruleInfoProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* ) ;
+    // InternalXenia.g:636:1: ruleInfoProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* ) ;
     public final EObject ruleInfoProperty() throws RecognitionException {
         EObject current = null;
 
@@ -1648,17 +1538,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:671:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* ) )
-            // InternalXenia.g:672:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* )
+            // InternalXenia.g:642:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* ) )
+            // InternalXenia.g:643:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* )
             {
-            // InternalXenia.g:672:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* )
-            // InternalXenia.g:673:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )*
+            // InternalXenia.g:643:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )* )
+            // InternalXenia.g:644:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' ( (lv_entities_2_0= ruleInfoEntity ) ) (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )*
             {
-            // InternalXenia.g:673:3: ( (otherlv_0= RULE_ID ) )
-            // InternalXenia.g:674:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:644:3: ( (otherlv_0= RULE_ID ) )
+            // InternalXenia.g:645:4: (otherlv_0= RULE_ID )
             {
-            // InternalXenia.g:674:4: (otherlv_0= RULE_ID )
-            // InternalXenia.g:675:5: otherlv_0= RULE_ID
+            // InternalXenia.g:645:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:646:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -1675,15 +1565,15 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_19); 
+            otherlv_1=(Token)match(input,27,FOLLOW_19); 
 
             			newLeafNode(otherlv_1, grammarAccess.getInfoPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1());
             		
-            // InternalXenia.g:690:3: ( (lv_entities_2_0= ruleInfoEntity ) )
-            // InternalXenia.g:691:4: (lv_entities_2_0= ruleInfoEntity )
+            // InternalXenia.g:661:3: ( (lv_entities_2_0= ruleInfoEntity ) )
+            // InternalXenia.g:662:4: (lv_entities_2_0= ruleInfoEntity )
             {
-            // InternalXenia.g:691:4: (lv_entities_2_0= ruleInfoEntity )
-            // InternalXenia.g:692:5: lv_entities_2_0= ruleInfoEntity
+            // InternalXenia.g:662:4: (lv_entities_2_0= ruleInfoEntity )
+            // InternalXenia.g:663:5: lv_entities_2_0= ruleInfoEntity
             {
 
             					newCompositeNode(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_2_0());
@@ -1710,36 +1600,36 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:709:3: (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )*
-            loop11:
+            // InternalXenia.g:680:3: (otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) ) )*
+            loop10:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA11_0==15) ) {
-                    int LA11_1 = input.LA(2);
+                if ( (LA10_0==15) ) {
+                    int LA10_1 = input.LA(2);
 
-                    if ( ((LA11_1>=30 && LA11_1<=32)) ) {
-                        alt11=1;
+                    if ( ((LA10_1>=30 && LA10_1<=32)) ) {
+                        alt10=1;
                     }
 
 
                 }
 
 
-                switch (alt11) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalXenia.g:710:4: otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) )
+            	    // InternalXenia.g:681:4: otherlv_3= ',' ( (lv_entities_4_0= ruleInfoEntity ) )
             	    {
             	    otherlv_3=(Token)match(input,15,FOLLOW_19); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getInfoPropertyAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalXenia.g:714:4: ( (lv_entities_4_0= ruleInfoEntity ) )
-            	    // InternalXenia.g:715:5: (lv_entities_4_0= ruleInfoEntity )
+            	    // InternalXenia.g:685:4: ( (lv_entities_4_0= ruleInfoEntity ) )
+            	    // InternalXenia.g:686:5: (lv_entities_4_0= ruleInfoEntity )
             	    {
-            	    // InternalXenia.g:715:5: (lv_entities_4_0= ruleInfoEntity )
-            	    // InternalXenia.g:716:6: lv_entities_4_0= ruleInfoEntity
+            	    // InternalXenia.g:686:5: (lv_entities_4_0= ruleInfoEntity )
+            	    // InternalXenia.g:687:6: lv_entities_4_0= ruleInfoEntity
             	    {
 
             	    						newCompositeNode(grammarAccess.getInfoPropertyAccess().getEntitiesInfoEntityParserRuleCall_3_1_0());
@@ -1771,7 +1661,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop10;
                 }
             } while (true);
 
@@ -1798,7 +1688,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInfoEntity"
-    // InternalXenia.g:738:1: entryRuleInfoEntity returns [EObject current=null] : iv_ruleInfoEntity= ruleInfoEntity EOF ;
+    // InternalXenia.g:709:1: entryRuleInfoEntity returns [EObject current=null] : iv_ruleInfoEntity= ruleInfoEntity EOF ;
     public final EObject entryRuleInfoEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1806,8 +1696,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:738:51: (iv_ruleInfoEntity= ruleInfoEntity EOF )
-            // InternalXenia.g:739:2: iv_ruleInfoEntity= ruleInfoEntity EOF
+            // InternalXenia.g:709:51: (iv_ruleInfoEntity= ruleInfoEntity EOF )
+            // InternalXenia.g:710:2: iv_ruleInfoEntity= ruleInfoEntity EOF
             {
              newCompositeNode(grammarAccess.getInfoEntityRule()); 
             pushFollow(FOLLOW_1);
@@ -1834,33 +1724,33 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInfoEntity"
-    // InternalXenia.g:745:1: ruleInfoEntity returns [EObject current=null] : ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) ) ;
+    // InternalXenia.g:716:1: ruleInfoEntity returns [EObject current=null] : ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) ) ;
     public final EObject ruleInfoEntity() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_1=null;
         Token lv_infoValue_2_0=null;
-        AntlrDatatypeRuleToken lv_entries_0_0 = null;
+        Enumerator lv_entries_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalXenia.g:751:2: ( ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) ) )
-            // InternalXenia.g:752:2: ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) )
+            // InternalXenia.g:722:2: ( ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) ) )
+            // InternalXenia.g:723:2: ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) )
             {
-            // InternalXenia.g:752:2: ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) )
-            // InternalXenia.g:753:3: ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) )
+            // InternalXenia.g:723:2: ( ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) ) )
+            // InternalXenia.g:724:3: ( (lv_entries_0_0= ruleInfoEntry ) ) otherlv_1= ':' ( (lv_infoValue_2_0= RULE_STRING ) )
             {
-            // InternalXenia.g:753:3: ( (lv_entries_0_0= ruleInfoEntry ) )
-            // InternalXenia.g:754:4: (lv_entries_0_0= ruleInfoEntry )
+            // InternalXenia.g:724:3: ( (lv_entries_0_0= ruleInfoEntry ) )
+            // InternalXenia.g:725:4: (lv_entries_0_0= ruleInfoEntry )
             {
-            // InternalXenia.g:754:4: (lv_entries_0_0= ruleInfoEntry )
-            // InternalXenia.g:755:5: lv_entries_0_0= ruleInfoEntry
+            // InternalXenia.g:725:4: (lv_entries_0_0= ruleInfoEntry )
+            // InternalXenia.g:726:5: lv_entries_0_0= ruleInfoEntry
             {
 
-            					newCompositeNode(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryParserRuleCall_0_0());
+            					newCompositeNode(grammarAccess.getInfoEntityAccess().getEntriesInfoEntryEnumRuleCall_0_0());
             				
             pushFollow(FOLLOW_11);
             lv_entries_0_0=ruleInfoEntry();
@@ -1888,11 +1778,11 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getInfoEntityAccess().getColonKeyword_1());
             		
-            // InternalXenia.g:776:3: ( (lv_infoValue_2_0= RULE_STRING ) )
-            // InternalXenia.g:777:4: (lv_infoValue_2_0= RULE_STRING )
+            // InternalXenia.g:747:3: ( (lv_infoValue_2_0= RULE_STRING ) )
+            // InternalXenia.g:748:4: (lv_infoValue_2_0= RULE_STRING )
             {
-            // InternalXenia.g:777:4: (lv_infoValue_2_0= RULE_STRING )
-            // InternalXenia.g:778:5: lv_infoValue_2_0= RULE_STRING
+            // InternalXenia.g:748:4: (lv_infoValue_2_0= RULE_STRING )
+            // InternalXenia.g:749:5: lv_infoValue_2_0= RULE_STRING
             {
             lv_infoValue_2_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1936,139 +1826,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleInfoEntity"
 
 
-    // $ANTLR start "entryRuleInfoEntry"
-    // InternalXenia.g:798:1: entryRuleInfoEntry returns [String current=null] : iv_ruleInfoEntry= ruleInfoEntry EOF ;
-    public final String entryRuleInfoEntry() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleInfoEntry = null;
-
-
-        try {
-            // InternalXenia.g:798:49: (iv_ruleInfoEntry= ruleInfoEntry EOF )
-            // InternalXenia.g:799:2: iv_ruleInfoEntry= ruleInfoEntry EOF
-            {
-             newCompositeNode(grammarAccess.getInfoEntryRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleInfoEntry=ruleInfoEntry();
-
-            state._fsp--;
-
-             current =iv_ruleInfoEntry.getText(); 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleInfoEntry"
-
-
-    // $ANTLR start "ruleInfoEntry"
-    // InternalXenia.g:805:1: ruleInfoEntry returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'mod' | kw= 'freq' | kw= 'prio' ) ;
-    public final AntlrDatatypeRuleToken ruleInfoEntry() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalXenia.g:811:2: ( (kw= 'mod' | kw= 'freq' | kw= 'prio' ) )
-            // InternalXenia.g:812:2: (kw= 'mod' | kw= 'freq' | kw= 'prio' )
-            {
-            // InternalXenia.g:812:2: (kw= 'mod' | kw= 'freq' | kw= 'prio' )
-            int alt12=3;
-            switch ( input.LA(1) ) {
-            case 30:
-                {
-                alt12=1;
-                }
-                break;
-            case 31:
-                {
-                alt12=2;
-                }
-                break;
-            case 32:
-                {
-                alt12=3;
-                }
-                break;
-            default:
-                NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
-
-                throw nvae;
-            }
-
-            switch (alt12) {
-                case 1 :
-                    // InternalXenia.g:813:3: kw= 'mod'
-                    {
-                    kw=(Token)match(input,30,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getModKeyword_0());
-                    		
-
-                    }
-                    break;
-                case 2 :
-                    // InternalXenia.g:819:3: kw= 'freq'
-                    {
-                    kw=(Token)match(input,31,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getFreqKeyword_1());
-                    		
-
-                    }
-                    break;
-                case 3 :
-                    // InternalXenia.g:825:3: kw= 'prio'
-                    {
-                    kw=(Token)match(input,32,FOLLOW_2); 
-
-                    			current.merge(kw);
-                    			newLeafNode(kw, grammarAccess.getInfoEntryAccess().getPrioKeyword_2());
-                    		
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleInfoEntry"
-
-
     // $ANTLR start "entryRuleSite"
-    // InternalXenia.g:834:1: entryRuleSite returns [EObject current=null] : iv_ruleSite= ruleSite EOF ;
+    // InternalXenia.g:769:1: entryRuleSite returns [EObject current=null] : iv_ruleSite= ruleSite EOF ;
     public final EObject entryRuleSite() throws RecognitionException {
         EObject current = null;
 
@@ -2076,8 +1835,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:834:45: (iv_ruleSite= ruleSite EOF )
-            // InternalXenia.g:835:2: iv_ruleSite= ruleSite EOF
+            // InternalXenia.g:769:45: (iv_ruleSite= ruleSite EOF )
+            // InternalXenia.g:770:2: iv_ruleSite= ruleSite EOF
             {
              newCompositeNode(grammarAccess.getSiteRule()); 
             pushFollow(FOLLOW_1);
@@ -2104,7 +1863,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSite"
-    // InternalXenia.g:841:1: ruleSite returns [EObject current=null] : (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalXenia.g:776:1: ruleSite returns [EObject current=null] : (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleSite() throws RecognitionException {
         EObject current = null;
 
@@ -2115,21 +1874,21 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:847:2: ( (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalXenia.g:848:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalXenia.g:782:2: ( (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalXenia.g:783:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalXenia.g:848:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalXenia.g:849:3: otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) )
+            // InternalXenia.g:783:2: (otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalXenia.g:784:3: otherlv_0= '@' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_5); 
+            otherlv_0=(Token)match(input,21,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSiteAccess().getCommercialAtKeyword_0());
             		
-            // InternalXenia.g:853:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalXenia.g:854:4: (lv_name_1_0= RULE_ID )
+            // InternalXenia.g:788:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalXenia.g:789:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalXenia.g:854:4: (lv_name_1_0= RULE_ID )
-            // InternalXenia.g:855:5: lv_name_1_0= RULE_ID
+            // InternalXenia.g:789:4: (lv_name_1_0= RULE_ID )
+            // InternalXenia.g:790:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -2174,7 +1933,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLinkedProperty"
-    // InternalXenia.g:875:1: entryRuleLinkedProperty returns [EObject current=null] : iv_ruleLinkedProperty= ruleLinkedProperty EOF ;
+    // InternalXenia.g:810:1: entryRuleLinkedProperty returns [EObject current=null] : iv_ruleLinkedProperty= ruleLinkedProperty EOF ;
     public final EObject entryRuleLinkedProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2182,8 +1941,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:875:55: (iv_ruleLinkedProperty= ruleLinkedProperty EOF )
-            // InternalXenia.g:876:2: iv_ruleLinkedProperty= ruleLinkedProperty EOF
+            // InternalXenia.g:810:55: (iv_ruleLinkedProperty= ruleLinkedProperty EOF )
+            // InternalXenia.g:811:2: iv_ruleLinkedProperty= ruleLinkedProperty EOF
             {
              newCompositeNode(grammarAccess.getLinkedPropertyRule()); 
             pushFollow(FOLLOW_1);
@@ -2210,7 +1969,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLinkedProperty"
-    // InternalXenia.g:882:1: ruleLinkedProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) ;
+    // InternalXenia.g:817:1: ruleLinkedProperty returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) ;
     public final EObject ruleLinkedProperty() throws RecognitionException {
         EObject current = null;
 
@@ -2225,17 +1984,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:888:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) )
-            // InternalXenia.g:889:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
+            // InternalXenia.g:823:2: ( ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' ) )
+            // InternalXenia.g:824:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
             {
-            // InternalXenia.g:889:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
-            // InternalXenia.g:890:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')'
+            // InternalXenia.g:824:2: ( ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')' )
+            // InternalXenia.g:825:3: ( (otherlv_0= RULE_ID ) ) otherlv_1= '->' otherlv_2= '(' ( (lv_page_3_0= ruleRedirectPage ) ) otherlv_4= ')'
             {
-            // InternalXenia.g:890:3: ( (otherlv_0= RULE_ID ) )
-            // InternalXenia.g:891:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:825:3: ( (otherlv_0= RULE_ID ) )
+            // InternalXenia.g:826:4: (otherlv_0= RULE_ID )
             {
-            // InternalXenia.g:891:4: (otherlv_0= RULE_ID )
-            // InternalXenia.g:892:5: otherlv_0= RULE_ID
+            // InternalXenia.g:826:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:827:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -2252,19 +2011,19 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_16); 
+            otherlv_1=(Token)match(input,27,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getLinkedPropertyAccess().getHyphenMinusGreaterThanSignKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_5); 
+            otherlv_2=(Token)match(input,23,FOLLOW_5); 
 
             			newLeafNode(otherlv_2, grammarAccess.getLinkedPropertyAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalXenia.g:911:3: ( (lv_page_3_0= ruleRedirectPage ) )
-            // InternalXenia.g:912:4: (lv_page_3_0= ruleRedirectPage )
+            // InternalXenia.g:846:3: ( (lv_page_3_0= ruleRedirectPage ) )
+            // InternalXenia.g:847:4: (lv_page_3_0= ruleRedirectPage )
             {
-            // InternalXenia.g:912:4: (lv_page_3_0= ruleRedirectPage )
-            // InternalXenia.g:913:5: lv_page_3_0= ruleRedirectPage
+            // InternalXenia.g:847:4: (lv_page_3_0= ruleRedirectPage )
+            // InternalXenia.g:848:5: lv_page_3_0= ruleRedirectPage
             {
 
             					newCompositeNode(grammarAccess.getLinkedPropertyAccess().getPageRedirectPageParserRuleCall_3_0());
@@ -2291,7 +2050,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,26,FOLLOW_2); 
+            otherlv_4=(Token)match(input,24,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getLinkedPropertyAccess().getRightParenthesisKeyword_4());
             		
@@ -2318,7 +2077,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRedirectPage"
-    // InternalXenia.g:938:1: entryRuleRedirectPage returns [EObject current=null] : iv_ruleRedirectPage= ruleRedirectPage EOF ;
+    // InternalXenia.g:873:1: entryRuleRedirectPage returns [EObject current=null] : iv_ruleRedirectPage= ruleRedirectPage EOF ;
     public final EObject entryRuleRedirectPage() throws RecognitionException {
         EObject current = null;
 
@@ -2326,8 +2085,8 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalXenia.g:938:53: (iv_ruleRedirectPage= ruleRedirectPage EOF )
-            // InternalXenia.g:939:2: iv_ruleRedirectPage= ruleRedirectPage EOF
+            // InternalXenia.g:873:53: (iv_ruleRedirectPage= ruleRedirectPage EOF )
+            // InternalXenia.g:874:2: iv_ruleRedirectPage= ruleRedirectPage EOF
             {
              newCompositeNode(grammarAccess.getRedirectPageRule()); 
             pushFollow(FOLLOW_1);
@@ -2354,7 +2113,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRedirectPage"
-    // InternalXenia.g:945:1: ruleRedirectPage returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* ) ;
+    // InternalXenia.g:880:1: ruleRedirectPage returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* ) ;
     public final EObject ruleRedirectPage() throws RecognitionException {
         EObject current = null;
 
@@ -2366,17 +2125,17 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalXenia.g:951:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* ) )
-            // InternalXenia.g:952:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* )
+            // InternalXenia.g:886:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* ) )
+            // InternalXenia.g:887:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* )
             {
-            // InternalXenia.g:952:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* )
-            // InternalXenia.g:953:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )*
+            // InternalXenia.g:887:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )* )
+            // InternalXenia.g:888:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )*
             {
-            // InternalXenia.g:953:3: ( (otherlv_0= RULE_ID ) )
-            // InternalXenia.g:954:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:888:3: ( (otherlv_0= RULE_ID ) )
+            // InternalXenia.g:889:4: (otherlv_0= RULE_ID )
             {
-            // InternalXenia.g:954:4: (otherlv_0= RULE_ID )
-            // InternalXenia.g:955:5: otherlv_0= RULE_ID
+            // InternalXenia.g:889:4: (otherlv_0= RULE_ID )
+            // InternalXenia.g:890:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -2393,30 +2152,30 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalXenia.g:966:3: (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )*
-            loop13:
+            // InternalXenia.g:901:3: (otherlv_1= ',' ( (otherlv_2= RULE_ID ) ) )*
+            loop11:
             do {
-                int alt13=2;
-                int LA13_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA13_0==15) ) {
-                    alt13=1;
+                if ( (LA11_0==15) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt13) {
+                switch (alt11) {
             	case 1 :
-            	    // InternalXenia.g:967:4: otherlv_1= ',' ( (otherlv_2= RULE_ID ) )
+            	    // InternalXenia.g:902:4: otherlv_1= ',' ( (otherlv_2= RULE_ID ) )
             	    {
             	    otherlv_1=(Token)match(input,15,FOLLOW_5); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getRedirectPageAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalXenia.g:971:4: ( (otherlv_2= RULE_ID ) )
-            	    // InternalXenia.g:972:5: (otherlv_2= RULE_ID )
+            	    // InternalXenia.g:906:4: ( (otherlv_2= RULE_ID ) )
+            	    // InternalXenia.g:907:5: (otherlv_2= RULE_ID )
             	    {
-            	    // InternalXenia.g:972:5: (otherlv_2= RULE_ID )
-            	    // InternalXenia.g:973:6: otherlv_2= RULE_ID
+            	    // InternalXenia.g:907:5: (otherlv_2= RULE_ID )
+            	    // InternalXenia.g:908:6: otherlv_2= RULE_ID
             	    {
 
             	    						if (current==null) {
@@ -2438,7 +2197,7 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop13;
+            	    break loop11;
                 }
             } while (true);
 
@@ -2463,6 +2222,209 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleRedirectPage"
 
+
+    // $ANTLR start "ruleMode"
+    // InternalXenia.g:924:1: ruleMode returns [Enumerator current=null] : ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'production' ) ) ;
+    public final Enumerator ruleMode() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalXenia.g:930:2: ( ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'production' ) ) )
+            // InternalXenia.g:931:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'production' ) )
+            {
+            // InternalXenia.g:931:2: ( (enumLiteral_0= 'development' ) | (enumLiteral_1= 'production' ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
+
+            if ( (LA12_0==28) ) {
+                alt12=1;
+            }
+            else if ( (LA12_0==29) ) {
+                alt12=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 12, 0, input);
+
+                throw nvae;
+            }
+            switch (alt12) {
+                case 1 :
+                    // InternalXenia.g:932:3: (enumLiteral_0= 'development' )
+                    {
+                    // InternalXenia.g:932:3: (enumLiteral_0= 'development' )
+                    // InternalXenia.g:933:4: enumLiteral_0= 'development'
+                    {
+                    enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
+
+                    				current = grammarAccess.getModeAccess().getDEVEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getModeAccess().getDEVEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalXenia.g:940:3: (enumLiteral_1= 'production' )
+                    {
+                    // InternalXenia.g:940:3: (enumLiteral_1= 'production' )
+                    // InternalXenia.g:941:4: enumLiteral_1= 'production'
+                    {
+                    enumLiteral_1=(Token)match(input,29,FOLLOW_2); 
+
+                    				current = grammarAccess.getModeAccess().getPRODEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getModeAccess().getPRODEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMode"
+
+
+    // $ANTLR start "ruleInfoEntry"
+    // InternalXenia.g:951:1: ruleInfoEntry returns [Enumerator current=null] : ( (enumLiteral_0= 'mod' ) | (enumLiteral_1= 'freq' ) | (enumLiteral_2= 'prio' ) ) ;
+    public final Enumerator ruleInfoEntry() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalXenia.g:957:2: ( ( (enumLiteral_0= 'mod' ) | (enumLiteral_1= 'freq' ) | (enumLiteral_2= 'prio' ) ) )
+            // InternalXenia.g:958:2: ( (enumLiteral_0= 'mod' ) | (enumLiteral_1= 'freq' ) | (enumLiteral_2= 'prio' ) )
+            {
+            // InternalXenia.g:958:2: ( (enumLiteral_0= 'mod' ) | (enumLiteral_1= 'freq' ) | (enumLiteral_2= 'prio' ) )
+            int alt13=3;
+            switch ( input.LA(1) ) {
+            case 30:
+                {
+                alt13=1;
+                }
+                break;
+            case 31:
+                {
+                alt13=2;
+                }
+                break;
+            case 32:
+                {
+                alt13=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt13) {
+                case 1 :
+                    // InternalXenia.g:959:3: (enumLiteral_0= 'mod' )
+                    {
+                    // InternalXenia.g:959:3: (enumLiteral_0= 'mod' )
+                    // InternalXenia.g:960:4: enumLiteral_0= 'mod'
+                    {
+                    enumLiteral_0=(Token)match(input,30,FOLLOW_2); 
+
+                    				current = grammarAccess.getInfoEntryAccess().getMODEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getInfoEntryAccess().getMODEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalXenia.g:967:3: (enumLiteral_1= 'freq' )
+                    {
+                    // InternalXenia.g:967:3: (enumLiteral_1= 'freq' )
+                    // InternalXenia.g:968:4: enumLiteral_1= 'freq'
+                    {
+                    enumLiteral_1=(Token)match(input,31,FOLLOW_2); 
+
+                    				current = grammarAccess.getInfoEntryAccess().getFREQEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getInfoEntryAccess().getFREQEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalXenia.g:975:3: (enumLiteral_2= 'prio' )
+                    {
+                    // InternalXenia.g:975:3: (enumLiteral_2= 'prio' )
+                    // InternalXenia.g:976:4: enumLiteral_2= 'prio'
+                    {
+                    enumLiteral_2=(Token)match(input,32,FOLLOW_2); 
+
+                    				current = grammarAccess.getInfoEntryAccess().getPRIOEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getInfoEntryAccess().getPRIOEnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleInfoEntry"
+
     // Delegated rules
 
 
@@ -2470,24 +2432,24 @@ public class InternalXeniaParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000181A0002L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000018000002L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x00000000061A0002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000006000002L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000018000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000030000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000004008000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001008000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000008000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000001C0000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000001000000L});
 
 }

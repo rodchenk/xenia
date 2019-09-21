@@ -4,6 +4,7 @@
 package com.foliage.xenia.xenia.impl;
 
 import com.foliage.xenia.xenia.Entity;
+import com.foliage.xenia.xenia.Mode;
 import com.foliage.xenia.xenia.XeniaPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -78,7 +79,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    * @ordered
    */
-  protected static final String MODE_EDEFAULT = null;
+  protected static final Mode MODE_EDEFAULT = Mode.DEV;
 
   /**
    * The cached value of the '{@link #getMode() <em>Mode</em>}' attribute.
@@ -88,7 +89,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    * @ordered
    */
-  protected String mode = MODE_EDEFAULT;
+  protected Mode mode = MODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,7 +168,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public String getMode()
+  public Mode getMode()
   {
     return mode;
   }
@@ -178,10 +179,10 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
    * @generated
    */
   @Override
-  public void setMode(String newMode)
+  public void setMode(Mode newMode)
   {
-    String oldMode = mode;
-    mode = newMode;
+    Mode oldMode = mode;
+    mode = newMode == null ? MODE_EDEFAULT : newMode;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, XeniaPackage.ENTITY__MODE, oldMode, mode));
   }
@@ -223,7 +224,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
         setPath((String)newValue);
         return;
       case XeniaPackage.ENTITY__MODE:
-        setMode((String)newValue);
+        setMode((Mode)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -267,7 +268,7 @@ public class EntityImpl extends MinimalEObjectImpl.Container implements Entity
       case XeniaPackage.ENTITY__PATH:
         return PATH_EDEFAULT == null ? path != null : !PATH_EDEFAULT.equals(path);
       case XeniaPackage.ENTITY__MODE:
-        return MODE_EDEFAULT == null ? mode != null : !MODE_EDEFAULT.equals(mode);
+        return mode != MODE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

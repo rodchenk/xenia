@@ -17,7 +17,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tech" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="mode" eType="#//Mode"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Mode">
+    <eLiterals name="DEV" literal="development"/>
+    <eLiterals name="PROD" value="1" literal="production"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SuperSite">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -39,8 +43,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="InfoEntity">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="entries" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        upperBound="-1" eType="#//InfoEntry"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="infoValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InfoEntry">
+    <eLiterals name="MOD" literal="mod"/>
+    <eLiterals name="FREQ" value="1" literal="freq"/>
+    <eLiterals name="PRIO" value="2" literal="prio"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Site" eSuperTypes="#//SuperSite"/>
   <eClassifiers xsi:type="ecore:EClass" name="LinkedProperty">

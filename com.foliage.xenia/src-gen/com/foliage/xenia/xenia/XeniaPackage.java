@@ -5,6 +5,7 @@ package com.foliage.xenia.xenia;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -455,6 +456,26 @@ public interface XeniaPackage extends EPackage
    */
   int REDIRECT_PAGE_FEATURE_COUNT = 1;
 
+  /**
+   * The meta object id for the '{@link com.foliage.xenia.xenia.Mode <em>Mode</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.foliage.xenia.xenia.Mode
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getMode()
+   * @generated
+   */
+  int MODE = 11;
+
+  /**
+   * The meta object id for the '{@link com.foliage.xenia.xenia.InfoEntry <em>Info Entry</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.foliage.xenia.xenia.InfoEntry
+   * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getInfoEntry()
+   * @generated
+   */
+  int INFO_ENTRY = 12;
+
 
   /**
    * Returns the meta object for class '{@link com.foliage.xenia.xenia.Model <em>Model</em>}'.
@@ -776,6 +797,26 @@ public interface XeniaPackage extends EPackage
   EReference getRedirectPage_Site();
 
   /**
+   * Returns the meta object for enum '{@link com.foliage.xenia.xenia.Mode <em>Mode</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Mode</em>'.
+   * @see com.foliage.xenia.xenia.Mode
+   * @generated
+   */
+  EEnum getMode();
+
+  /**
+   * Returns the meta object for enum '{@link com.foliage.xenia.xenia.InfoEntry <em>Info Entry</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Info Entry</em>'.
+   * @see com.foliage.xenia.xenia.InfoEntry
+   * @generated
+   */
+  EEnum getInfoEntry();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1059,6 +1100,26 @@ public interface XeniaPackage extends EPackage
      * @generated
      */
     EReference REDIRECT_PAGE__SITE = eINSTANCE.getRedirectPage_Site();
+
+    /**
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.Mode <em>Mode</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.foliage.xenia.xenia.Mode
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getMode()
+     * @generated
+     */
+    EEnum MODE = eINSTANCE.getMode();
+
+    /**
+     * The meta object literal for the '{@link com.foliage.xenia.xenia.InfoEntry <em>Info Entry</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.foliage.xenia.xenia.InfoEntry
+     * @see com.foliage.xenia.xenia.impl.XeniaPackageImpl#getInfoEntry()
+     * @generated
+     */
+    EEnum INFO_ENTRY = eINSTANCE.getInfoEntry();
 
   }
 

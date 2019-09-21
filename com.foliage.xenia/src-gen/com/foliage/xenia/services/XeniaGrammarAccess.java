@@ -9,6 +9,8 @@ import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -17,6 +19,7 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.TerminalRule;
 import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
+import org.eclipse.xtext.service.AbstractElementFinder.AbstractEnumRuleElementFinder;
 import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
 import org.eclipse.xtext.service.GrammarProvider;
 
@@ -142,7 +145,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cModeKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Keyword cColonKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Assignment cModeAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
-		private final RuleCall cModeModeParserRuleCall_2_2_0 = (RuleCall)cModeAssignment_2_2.eContents().get(0);
+		private final RuleCall cModeModeEnumRuleCall_2_2_0 = (RuleCall)cModeAssignment_2_2.eContents().get(0);
 		
 		//Entity:
 		//	'with' ':' tech=STRING |
@@ -196,26 +199,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getModeAssignment_2_2() { return cModeAssignment_2_2; }
 		
 		//Mode
-		public RuleCall getModeModeParserRuleCall_2_2_0() { return cModeModeParserRuleCall_2_2_0; }
-	}
-	public class ModeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Mode");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cDEVKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cPRODKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		
-		//Mode:
-		//	'DEV' | 'PROD';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'DEV' | 'PROD'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'DEV'
-		public Keyword getDEVKeyword_0() { return cDEVKeyword_0; }
-		
-		//'PROD'
-		public Keyword getPRODKeyword_1() { return cPRODKeyword_1; }
+		public RuleCall getModeModeEnumRuleCall_2_2_0() { return cModeModeEnumRuleCall_2_2_0; }
 	}
 	public class SuperSiteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.SuperSite");
@@ -455,7 +439,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoEntity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cEntriesAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cEntriesInfoEntryParserRuleCall_0_0 = (RuleCall)cEntriesAssignment_0.eContents().get(0);
+		private final RuleCall cEntriesInfoEntryEnumRuleCall_0_0 = (RuleCall)cEntriesAssignment_0.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cInfoValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cInfoValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cInfoValueAssignment_2.eContents().get(0);
@@ -471,7 +455,7 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		public Assignment getEntriesAssignment_0() { return cEntriesAssignment_0; }
 		
 		//InfoEntry
-		public RuleCall getEntriesInfoEntryParserRuleCall_0_0() { return cEntriesInfoEntryParserRuleCall_0_0; }
+		public RuleCall getEntriesInfoEntryEnumRuleCall_0_0() { return cEntriesInfoEntryEnumRuleCall_0_0; }
 		
 		//':'
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
@@ -481,29 +465,6 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//STRING
 		public RuleCall getInfoValueSTRINGTerminalRuleCall_2_0() { return cInfoValueSTRINGTerminalRuleCall_2_0; }
-	}
-	public class InfoEntryElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoEntry");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Keyword cModKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cFreqKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cPrioKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
-		
-		//InfoEntry:
-		//	'mod' | 'freq' | 'prio';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'mod' | 'freq' | 'prio'
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//'mod'
-		public Keyword getModKeyword_0() { return cModKeyword_0; }
-		
-		//'freq'
-		public Keyword getFreqKeyword_1() { return cFreqKeyword_1; }
-		
-		//'prio'
-		public Keyword getPrioKeyword_2() { return cPrioKeyword_2; }
 	}
 	public class SiteElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Site");
@@ -615,17 +576,79 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getSiteSiteIDTerminalRuleCall_1_1_0_1() { return cSiteSiteIDTerminalRuleCall_1_1_0_1; }
 	}
 	
+	public class ModeElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.Mode");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cDEVEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cDEVDevelopmentKeyword_0_0 = (Keyword)cDEVEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cPRODEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cPRODProductionKeyword_1_0 = (Keyword)cPRODEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum Mode:
+		//	DEV='development' | PROD='production';
+		public EnumRule getRule() { return rule; }
+		
+		//DEV='development' | PROD='production'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//DEV='development'
+		public EnumLiteralDeclaration getDEVEnumLiteralDeclaration_0() { return cDEVEnumLiteralDeclaration_0; }
+		
+		//'development'
+		public Keyword getDEVDevelopmentKeyword_0_0() { return cDEVDevelopmentKeyword_0_0; }
+		
+		//PROD='production'
+		public EnumLiteralDeclaration getPRODEnumLiteralDeclaration_1() { return cPRODEnumLiteralDeclaration_1; }
+		
+		//'production'
+		public Keyword getPRODProductionKeyword_1_0() { return cPRODProductionKeyword_1_0; }
+	}
+	public class InfoEntryElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "com.foliage.xenia.Xenia.InfoEntry");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMODEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMODModKeyword_0_0 = (Keyword)cMODEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cFREQEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cFREQFreqKeyword_1_0 = (Keyword)cFREQEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cPRIOEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cPRIOPrioKeyword_2_0 = (Keyword)cPRIOEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum InfoEntry:
+		//	MOD='mod' | FREQ='freq' | PRIO='prio';
+		public EnumRule getRule() { return rule; }
+		
+		//MOD='mod' | FREQ='freq' | PRIO='prio'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//MOD='mod'
+		public EnumLiteralDeclaration getMODEnumLiteralDeclaration_0() { return cMODEnumLiteralDeclaration_0; }
+		
+		//'mod'
+		public Keyword getMODModKeyword_0_0() { return cMODModKeyword_0_0; }
+		
+		//FREQ='freq'
+		public EnumLiteralDeclaration getFREQEnumLiteralDeclaration_1() { return cFREQEnumLiteralDeclaration_1; }
+		
+		//'freq'
+		public Keyword getFREQFreqKeyword_1_0() { return cFREQFreqKeyword_1_0; }
+		
+		//PRIO='prio'
+		public EnumLiteralDeclaration getPRIOEnumLiteralDeclaration_2() { return cPRIOEnumLiteralDeclaration_2; }
+		
+		//'prio'
+		public Keyword getPRIOPrioKeyword_2_0() { return cPRIOPrioKeyword_2_0; }
+	}
 	
 	private final ModelElements pModel;
 	private final HeaderElements pHeader;
 	private final EntityElements pEntity;
-	private final ModeElements pMode;
+	private final ModeElements eMode;
 	private final SuperSiteElements pSuperSite;
 	private final SiteWithModalElements pSiteWithModal;
 	private final MappedEntityElements pMappedEntity;
 	private final InfoPropertyElements pInfoProperty;
 	private final InfoEntityElements pInfoEntity;
-	private final InfoEntryElements pInfoEntry;
+	private final InfoEntryElements eInfoEntry;
 	private final SiteElements pSite;
 	private final LinkedPropertyElements pLinkedProperty;
 	private final RedirectPageElements pRedirectPage;
@@ -642,13 +665,13 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		this.pModel = new ModelElements();
 		this.pHeader = new HeaderElements();
 		this.pEntity = new EntityElements();
-		this.pMode = new ModeElements();
+		this.eMode = new ModeElements();
 		this.pSuperSite = new SuperSiteElements();
 		this.pSiteWithModal = new SiteWithModalElements();
 		this.pMappedEntity = new MappedEntityElements();
 		this.pInfoProperty = new InfoPropertyElements();
 		this.pInfoEntity = new InfoEntityElements();
-		this.pInfoEntry = new InfoEntryElements();
+		this.eInfoEntry = new InfoEntryElements();
 		this.pSite = new SiteElements();
 		this.pLinkedProperty = new LinkedPropertyElements();
 		this.pRedirectPage = new RedirectPageElements();
@@ -717,13 +740,13 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getEntityAccess().getRule();
 	}
 	
-	//Mode:
-	//	'DEV' | 'PROD';
+	//enum Mode:
+	//	DEV='development' | PROD='production';
 	public ModeElements getModeAccess() {
-		return pMode;
+		return eMode;
 	}
 	
-	public ParserRule getModeRule() {
+	public EnumRule getModeRule() {
 		return getModeAccess().getRule();
 	}
 	
@@ -778,13 +801,13 @@ public class XeniaGrammarAccess extends AbstractGrammarElementFinder {
 		return getInfoEntityAccess().getRule();
 	}
 	
-	//InfoEntry:
-	//	'mod' | 'freq' | 'prio';
+	//enum InfoEntry:
+	//	MOD='mod' | FREQ='freq' | PRIO='prio';
 	public InfoEntryElements getInfoEntryAccess() {
-		return pInfoEntry;
+		return eInfoEntry;
 	}
 	
-	public ParserRule getInfoEntryRule() {
+	public EnumRule getInfoEntryRule() {
 		return getInfoEntryAccess().getRule();
 	}
 	

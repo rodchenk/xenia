@@ -19,8 +19,8 @@ Entity:
 	'mode' 	':' mode=Mode
 ;
 
-Mode:
-	'DEV' | 'PROD'
+enum Mode:
+	DEV='development' | PROD='production'
 ;
 
 SuperSite:
@@ -44,8 +44,8 @@ InfoEntity:
 	entries+=InfoEntry ':' infoValue=STRING
 ;
 
-InfoEntry:
-	'mod' | 'freq' | 'prio'
+enum InfoEntry:
+	MOD='mod' | FREQ='freq' | PRIO='prio'
 ;
 
 Site:

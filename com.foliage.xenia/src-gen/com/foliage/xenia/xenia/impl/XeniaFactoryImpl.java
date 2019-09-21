@@ -6,6 +6,7 @@ package com.foliage.xenia.xenia.impl;
 import com.foliage.xenia.xenia.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -78,6 +79,44 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
       case XeniaPackage.REDIRECT_PAGE: return createRedirectPage();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case XeniaPackage.MODE:
+        return createModeFromString(eDataType, initialValue);
+      case XeniaPackage.INFO_ENTRY:
+        return createInfoEntryFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case XeniaPackage.MODE:
+        return convertModeToString(eDataType, instanceValue);
+      case XeniaPackage.INFO_ENTRY:
+        return convertInfoEntryToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -211,6 +250,50 @@ public class XeniaFactoryImpl extends EFactoryImpl implements XeniaFactory
   {
     RedirectPageImpl redirectPage = new RedirectPageImpl();
     return redirectPage;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Mode createModeFromString(EDataType eDataType, String initialValue)
+  {
+    Mode result = Mode.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertModeToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InfoEntry createInfoEntryFromString(EDataType eDataType, String initialValue)
+  {
+    InfoEntry result = InfoEntry.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertInfoEntryToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -28,15 +28,17 @@ public interface InfoEntity extends EObject
 {
   /**
    * Returns the value of the '<em><b>Entries</b></em>' attribute list.
-   * The list contents are of type {@link java.lang.String}.
+   * The list contents are of type {@link com.foliage.xenia.xenia.InfoEntry}.
+   * The literals are from the enumeration {@link com.foliage.xenia.xenia.InfoEntry}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Entries</em>' attribute list.
+   * @see com.foliage.xenia.xenia.InfoEntry
    * @see com.foliage.xenia.xenia.XeniaPackage#getInfoEntity_Entries()
    * @model unique="false"
    * @generated
    */
-  EList<String> getEntries();
+  EList<InfoEntry> getEntries();
 
   /**
    * Returns the value of the '<em><b>Info Value</b></em>' attribute.

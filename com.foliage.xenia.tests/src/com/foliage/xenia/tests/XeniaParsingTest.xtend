@@ -27,7 +27,7 @@ class XeniaParsingTest {
 				@Contact
 			]
 			//with: "Cake"
-			mode: DEV
+			mode: development
 			map: [
 				Home -> (News, Contact),
 				News -> (Contact)

@@ -4,11 +4,10 @@
 '->'=32
 ':'=23
 '@'=26
-'DEV'=11
-'PROD'=12
 '['=19
 ']'=20
 'app'=16
+'development'=11
 'freq'=14
 'has'=17
 'info'=30
@@ -18,6 +17,7 @@
 'mode'=25
 'pages'=18
 'prio'=15
+'production'=12
 'with'=22
 'xml'=24
 RULE_ANY_OTHER=10

@@ -41,7 +41,7 @@ public class XeniaGenerator extends AbstractGenerator {
   
   private String mode;
   
-  private List<String> list = CollectionLiterals.<String>newArrayList();
+  private List<String> list;
   
   private List<String> icons = CollectionLiterals.<String>newArrayList();
   
@@ -50,6 +50,8 @@ public class XeniaGenerator extends AbstractGenerator {
   private Map<String, List<Site>> page_map = CollectionLiterals.<String, List<Site>>newHashMap();
   
   private String root;
+  
+  private String appName = "";
   
   public String getIcon() {
     int _size = this.icons.size();
@@ -64,6 +66,7 @@ public class XeniaGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     try {
+      this.list = CollectionLiterals.<String>newArrayList();
       String path = "F:/coding/java-workspace/xenia/com.foliage.xenia.resources";
       this.icons.add("paper-plane");
       this.icons.add("appstore");
@@ -78,8 +81,11 @@ public class XeniaGenerator extends AbstractGenerator {
       this.mode = "DEV";
       Iterable<Entity> _filter = Iterables.<Entity>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Entity.class);
       for (final Entity i : _filter) {
-        if (((i.getMode() != null) && (i.getMode() != ""))) {
-          this.mode = i.getMode();
+        {
+          if (((i.getMode() != null) && (!i.getMode().getName().equals("")))) {
+            this.mode = i.getMode().getName();
+          }
+          System.out.println(this.mode);
         }
       }
       File _file = new File((path + "/css/materialize.min.css"));
@@ -110,16 +116,25 @@ public class XeniaGenerator extends AbstractGenerator {
       FileInputStream _fileInputStream_8 = new FileInputStream(_file_8);
       fsa.generateFile("./js/xenia.default.js", _fileInputStream_8);
       boolean name_switch = true;
-      Iterable<Header> _filter_1 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
-      for (final Header e : _filter_1) {
-        EList<SuperSite> _sites = e.getSites();
-        for (final SuperSite page : _sites) {
+      boolean _isEmpty = this.list.isEmpty();
+      if (_isEmpty) {
+        Iterable<Header> _filter_1 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
+        for (final Header e : _filter_1) {
           {
-            if (name_switch) {
-              name_switch = false;
-              this.root = page.getName();
+            this.appName = e.getAppName();
+            EList<SuperSite> _sites = e.getSites();
+            for (final SuperSite page : _sites) {
+              {
+                if (name_switch) {
+                  name_switch = false;
+                  this.root = page.getName();
+                }
+                this.list.add(page.getName());
+                String _name = page.getName();
+                String _plus = ("added " + _name);
+                System.out.println(_plus);
+              }
             }
-            this.list.add(page.getName());
           }
         }
       }
@@ -130,19 +145,13 @@ public class XeniaGenerator extends AbstractGenerator {
           this.page_map.put(redirect.getName().getName(), redirect.getPage().getSite());
         }
       }
-      name_switch = true;
       Iterable<Header> _filter_3 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
       for (final Header e_1 : _filter_3) {
-        EList<SuperSite> _sites_1 = e_1.getSites();
-        for (final SuperSite page_1 : _sites_1) {
-          if (name_switch) {
-            fsa.generateFile("index.html", this.compile(page_1));
-            name_switch = false;
-          } else {
-            String _name = page_1.getName();
-            String _plus = (_name + ".html");
-            fsa.generateFile(_plus, this.compile(page_1));
-          }
+        EList<SuperSite> _sites = e_1.getSites();
+        for (final SuperSite page : _sites) {
+          String _name = page.getName();
+          String _plus = (_name + ".html");
+          fsa.generateFile(_plus, this.compile(page));
         }
       }
       boolean _equals = this.mode.equals("DEV");
@@ -246,9 +255,9 @@ public class XeniaGenerator extends AbstractGenerator {
       _builder_2.append("];");
       _builder_2.newLine();
       fsa.generateFile("./js/xenia.map.js", _builder_2);
-      File _file_10 = new File((path + "/img/logo_avacado.png"));
+      File _file_10 = new File((path + "/img/logo.png"));
       FileInputStream _fileInputStream_10 = new FileInputStream(_file_10);
-      fsa.generateFile("./img/logo_avacado.png", _fileInputStream_10);
+      fsa.generateFile("./img/logo.png", _fileInputStream_10);
       File _file_11 = new File((path + "/img/bg.jpg"));
       FileInputStream _fileInputStream_11 = new FileInputStream(_file_11);
       fsa.generateFile("./img/bg.jpg", _fileInputStream_11);
@@ -372,10 +381,13 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append("\t\t\t\t");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("<img src=\"./img/logo_avacado.png\" class=\"xenia-logo\">");
+    _builder.append("<img src=\"./img/logo.png\" class=\"xenia-logo\">");
     _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("<span class=\"xenia-logo-title\">");
+    _builder.append(this.appName, "\t\t\t\t");
+    _builder.append("</span>");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t");
     _builder.append("<ul class=\"right hide-on-med-and-down\">");
     _builder.newLine();
@@ -700,15 +712,29 @@ public class XeniaGenerator extends AbstractGenerator {
     {
       for(final String site : this.list) {
         _builder.append("\t\t\t");
-        _builder.append("<li><a href=\"");
-        _builder.append(site, "\t\t\t");
+        _builder.append("<li ");
+        {
+          boolean _equals_1 = site.equals(page.getName());
+          if (_equals_1) {
+            _builder.append("class=\"active-sidenav-tab\"");
+          }
+        }
+        _builder.append(">");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
+        _builder.append("\t");
+        _builder.append("<a href=\"");
+        _builder.append(site, "\t\t\t\t");
         _builder.append("\"><i class=\"icon ion-md-");
         String _icon = this.getIcon();
-        _builder.append(_icon, "\t\t\t");
+        _builder.append(_icon, "\t\t\t\t");
         _builder.append("\"></i>");
-        _builder.append(site, "\t\t\t");
-        _builder.append("</a></li>");
+        _builder.append(site, "\t\t\t\t");
+        _builder.append("</a>");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t");
+        _builder.append("</li>");
+        _builder.newLine();
       }
     }
     _builder.append("\t\t\t");
@@ -748,8 +774,8 @@ public class XeniaGenerator extends AbstractGenerator {
     _builder.append("</main>");
     _builder.newLine();
     {
-      boolean _equals_1 = this.mode.equals("DEV");
-      if (_equals_1) {
+      boolean _equals_2 = this.mode.equals("DEV");
+      if (_equals_2) {
         _builder.append("<!-- Example modal -->");
         _builder.newLine();
         _builder.append("<div class=\"xenia-modal\">");

@@ -6,9 +6,11 @@ package com.foliage.xenia.xenia.impl;
 import com.foliage.xenia.xenia.Entity;
 import com.foliage.xenia.xenia.Header;
 import com.foliage.xenia.xenia.InfoEntity;
+import com.foliage.xenia.xenia.InfoEntry;
 import com.foliage.xenia.xenia.InfoProperty;
 import com.foliage.xenia.xenia.LinkedProperty;
 import com.foliage.xenia.xenia.MappedEntity;
+import com.foliage.xenia.xenia.Mode;
 import com.foliage.xenia.xenia.Model;
 import com.foliage.xenia.xenia.RedirectPage;
 import com.foliage.xenia.xenia.Site;
@@ -19,6 +21,7 @@ import com.foliage.xenia.xenia.XeniaPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -108,6 +111,20 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   private EClass redirectPageEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum modeEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum infoEntryEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -508,6 +525,28 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
    * @generated
    */
   @Override
+  public EEnum getMode()
+  {
+    return modeEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getInfoEntry()
+  {
+    return infoEntryEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public XeniaFactory getXeniaFactory()
   {
     return (XeniaFactory)getEFactoryInstance();
@@ -573,6 +612,10 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
 
     redirectPageEClass = createEClass(REDIRECT_PAGE);
     createEReference(redirectPageEClass, REDIRECT_PAGE__SITE);
+
+    // Create enums
+    modeEEnum = createEEnum(MODE);
+    infoEntryEEnum = createEEnum(INFO_ENTRY);
   }
 
   /**
@@ -620,7 +663,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntity_Tech(), ecorePackage.getEString(), "tech", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEntity_Path(), ecorePackage.getEString(), "path", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEntity_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEntity_Mode(), this.getMode(), "mode", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(superSiteEClass, SuperSite.class, "SuperSite", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSuperSite_Name(), ecorePackage.getEString(), "name", null, 0, 1, SuperSite.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -637,7 +680,7 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
     initEReference(getInfoProperty_Entities(), this.getInfoEntity(), null, "entities", null, 0, -1, InfoProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(infoEntityEClass, InfoEntity.class, "InfoEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInfoEntity_Entries(), ecorePackage.getEString(), "entries", null, 0, -1, InfoEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInfoEntity_Entries(), this.getInfoEntry(), "entries", null, 0, -1, InfoEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInfoEntity_InfoValue(), ecorePackage.getEString(), "infoValue", null, 0, 1, InfoEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -648,6 +691,16 @@ public class XeniaPackageImpl extends EPackageImpl implements XeniaPackage
 
     initEClass(redirectPageEClass, RedirectPage.class, "RedirectPage", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRedirectPage_Site(), this.getSite(), null, "site", null, 0, -1, RedirectPage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(modeEEnum, Mode.class, "Mode");
+    addEEnumLiteral(modeEEnum, Mode.DEV);
+    addEEnumLiteral(modeEEnum, Mode.PROD);
+
+    initEEnum(infoEntryEEnum, InfoEntry.class, "InfoEntry");
+    addEEnumLiteral(infoEntryEEnum, InfoEntry.MOD);
+    addEEnumLiteral(infoEntryEEnum, InfoEntry.FREQ);
+    addEEnumLiteral(infoEntryEEnum, InfoEntry.PRIO);
 
     // Create resource
     createResource(eNS_URI);

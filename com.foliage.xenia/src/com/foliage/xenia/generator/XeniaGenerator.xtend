@@ -29,11 +29,12 @@ class XeniaGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider
 	
 	String mode;
-	var List<String> list = newArrayList;
+	var List<String> list;
 	var List<String> icons = newArrayList;
 	var icon_counter = 0;
 	var Map<String, List<Site>> page_map = newHashMap;
 	var String root;
+	var String appName = '';
 	
 	def String getIcon(){
 		if(icon_counter >= this.icons.size()) this.icon_counter = 0;
@@ -41,6 +42,7 @@ class XeniaGenerator extends AbstractGenerator {
 	}
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+		this.list = newArrayList;
 		var path = 'F:/coding/java-workspace/xenia/com.foliage.xenia.resources';
 		icons.add('paper-plane');
 		icons.add('appstore');
@@ -56,8 +58,9 @@ class XeniaGenerator extends AbstractGenerator {
 		this.mode = 'DEV';
 		
 		for(i: resource.allContents.toIterable.filter(Entity)){
-			if(i.mode !== null && i.mode !== '') 
-				this.mode = i.mode;
+			if(i.mode !== null && !i.mode.getName.equals('')) 
+				this.mode = i.mode.getName;
+				System.out.println(this.mode);
 		}
 		
 		
@@ -73,13 +76,17 @@ class XeniaGenerator extends AbstractGenerator {
 	 	
 	 	var name_switch = true;
 	 	
-		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
-			for(page: e.sites){
-				if(name_switch){//edit here, deleted list.add('index');
-					name_switch = false;
-					root = page.name;
+	 	if(this.list.isEmpty){
+			for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
+				this.appName = e.appName;
+				for(page: e.sites){
+					if(name_switch){//edit here, deleted list.add('index');
+						name_switch = false;
+						root = page.name;
+					}
+					list.add(page.name);
+					System.out.println('added ' + page.name);
 				}
-				list.add(page.name);
 			}
 		}
 		
@@ -88,17 +95,17 @@ class XeniaGenerator extends AbstractGenerator {
 			page_map.put(redirect.name.name, redirect.page.site);
 		}
 		
-		name_switch = true;
+		//name_switch = true;
 		
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
-				if(name_switch){
-					// rename first page in list to index.html to mark it as a main page
-					fsa.generateFile('index.html', page.compile());
-					name_switch = false;
-				}else{
+//				if(name_switch){
+//					// rename first page in list to index.html to mark it as a main page
+//					fsa.generateFile('index.html', page.compile());
+//					name_switch = false;
+//				}else{
 					fsa.generateFile(page.name + '.html', page.compile());
-				}
+				//}
 			}
 		}
 		
@@ -147,7 +154,7 @@ class XeniaGenerator extends AbstractGenerator {
 		''');
 		
 		//fsa.generateFile('./js/xenia.map.js', 			new FileInputStream(new File(path + '/js/xenia.map.js')));
-		fsa.generateFile('./img/logo_avacado.png', 		new FileInputStream(new File(path + '/img/logo_avacado.png')));
+		fsa.generateFile('./img/logo.png', 				new FileInputStream(new File(path + '/img/logo.png')));
 		fsa.generateFile('./img/bg.jpg', 				new FileInputStream(new File(path + '/img/bg.jpg')));
 		fsa.generateFile('./img/ava.jpg', 				new FileInputStream(new File(path + '/img/ava.jpg')));
 		
@@ -197,8 +204,8 @@ class XeniaGenerator extends AbstractGenerator {
 							</li>
 						</ul>
 						
-						<img src="./img/logo_avacado.png" class="xenia-logo">
-					
+						<img src="./img/logo.png" class="xenia-logo">
+						<span class="xenia-logo-title">«this.appName»</span>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="#"><i class="icon ion-ios-heart-empty"></i></a></li>
 							<li><a href="#"><i class="icon ion-md-attach"></i></a></li>
@@ -312,7 +319,9 @@ class XeniaGenerator extends AbstractGenerator {
 					</li>
 					<li><a class="subheader">Main links</a></li>
 					«FOR site: list»
-						<li><a href="«site»"><i class="icon ion-md-«this.getIcon()»"></i>«site»</a></li>
+						<li «IF site.equals(page.name)»class="active-sidenav-tab"«ENDIF»>
+							<a href="«site»"><i class="icon ion-md-«this.getIcon()»"></i>«site»</a>
+						</li>
 					«ENDFOR»
 					<li><div class="divider"></div></li>
 					<li class="sidenav-footer">

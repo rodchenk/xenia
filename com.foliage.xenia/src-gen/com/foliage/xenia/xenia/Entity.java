@@ -71,24 +71,27 @@ public interface Entity extends EObject
 
   /**
    * Returns the value of the '<em><b>Mode</b></em>' attribute.
+   * The literals are from the enumeration {@link com.foliage.xenia.xenia.Mode}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Mode</em>' attribute.
-   * @see #setMode(String)
+   * @see com.foliage.xenia.xenia.Mode
+   * @see #setMode(Mode)
    * @see com.foliage.xenia.xenia.XeniaPackage#getEntity_Mode()
    * @model
    * @generated
    */
-  String getMode();
+  Mode getMode();
 
   /**
    * Sets the value of the '{@link com.foliage.xenia.xenia.Entity#getMode <em>Mode</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Mode</em>' attribute.
+   * @see com.foliage.xenia.xenia.Mode
    * @see #getMode()
    * @generated
    */
-  void setMode(String value);
+  void setMode(Mode value);
 
 } // Entity

@@ -32,9 +32,9 @@ public class XeniaParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, XeniaGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getEntityAccess().getAlternatives(), "rule__Entity__Alternatives");
-			builder.put(grammarAccess.getModeAccess().getAlternatives(), "rule__Mode__Alternatives");
 			builder.put(grammarAccess.getSuperSiteAccess().getAlternatives(), "rule__SuperSite__Alternatives");
 			builder.put(grammarAccess.getMappedEntityAccess().getAlternatives(), "rule__MappedEntity__Alternatives");
+			builder.put(grammarAccess.getModeAccess().getAlternatives(), "rule__Mode__Alternatives");
 			builder.put(grammarAccess.getInfoEntryAccess().getAlternatives(), "rule__InfoEntry__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getHeaderAccess().getGroup(), "rule__Header__Group__0");
