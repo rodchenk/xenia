@@ -29,6 +29,7 @@ app Main has pages[
 ```
 Der AppName wird innerhalb von Logo angezeigt
 ```typescript
-app foliage has pages [@Home, @News]
+app foliage has pages [@Home, @News, @Contact]
+map: Contact -> (Home, News)
 ```
 ![image](https://user-images.githubusercontent.com/30366483/65375895-5889a200-dc9a-11e9-89f1-4f194d310626.png)
