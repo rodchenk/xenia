@@ -6,7 +6,7 @@ DSL language to generate static Web sites
 
 ```typescript
 app Main has pages[
-  @Home with modal(@Notification, @Login), 
+	@Home with modal(@Notification, @Login), 
 	@Contact with modal(
 		@Message, 
 		@Logout with modal(
