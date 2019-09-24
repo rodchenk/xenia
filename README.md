@@ -15,7 +15,7 @@ app Main has pages[
 	), 
 	@Message
 ]
-with: "React",
+with: "native"
 mode: DEV, // or PROD
 xml: "/home/user/foliage/map.xml"
 map :[
