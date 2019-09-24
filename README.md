@@ -7,25 +7,25 @@ DSL language to generate static Web sites
 ```typescript
 app Main has pages[
   @Home with modal(@Notification, @Login), 
-  @Contact with modal(
-	  @Message, 
+	@Contact with modal(
+		@Message, 
 		@Logout with modal(
-		  @Contact
+			@Contact
 		)
 	), 
 	@Message
 ]
-  with: "React",
-  mode: DEV, // or PROD
-  xml: "/home/user/foliage/map.xml"
-  map :[
-  	Home -> (Login),
+with: "React",
+mode: DEV, // or PROD
+xml: "/home/user/foliage/map.xml"
+map :[
+	Home -> (Login),
 	Login -> (Home, Contact)
-  ]
-  info :[
+]
+info :[
 	Home -> mod: "today", freq: "daily",
 	News -> mod: "monday"
-  ]
+]
 ```
 Der AppName wird innerhalb von Logo angezeigt
 ```typescript
