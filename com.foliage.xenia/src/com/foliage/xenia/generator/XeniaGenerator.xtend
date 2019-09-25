@@ -99,20 +99,162 @@ class XeniaGenerator extends AbstractGenerator {
 		
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
-//				if(name_switch){
-//					// rename first page in list to index.html to mark it as a main page
-//					fsa.generateFile('index.html', page.compile());
-//					name_switch = false;
-//				}else{
-					fsa.generateFile(page.name + '.html', page.compile());
-				//}
+				fsa.generateFile(page.name + '.html', page.compile());
 			}
 		}
 		
 		if(this.mode.equals('DEV')){
-			fsa.generateFile('./tutorial.html', 		new FileInputStream(new File(path + './pages/tutorial.html')));
+			//fsa.generateFile('./Tutorial.html', 		new FileInputStream(new File(path + './pages/tutorial.html')));
+			fsa.generateFile('./doc/Tutorial.html', '''
+				<!DOCTYPE html>
+				<html>
+				<head>
+					<title>Get started - «this.appName»</title>
+					<link rel="stylesheet" type="text/css" href="../css/materialize.min.css">
+					<link rel="stylesheet" type="text/css" href="../css/ionic.min.css">
+					<link rel="stylesheet" type="text/css" href="../css/xenia.default.css">
+					<script type="text/javascript" src="../js/jquery.js"></script>
+					<script type="text/javascript" src="../js/materialize.min.js"></script>
+					<script type="text/javascript" src="../js/xenia.default.js"></script>
+				</head>
+				<body class="xenia-body">
+					<header class="xenia-header">
+						<nav>
+							<div class="nav-wrapper">
+								<ul>
+									<li>
+										<i class="icon ion-ios-menu sidenav-trigger" data-target='slide-out'></i>
+									</li>
+								</ul>
+								
+								<img src="../img/logo.png" class="xenia-logo">
+								<span class="xenia-logo-title dev">«this.appName»</span>
+								<ul class="right hide-on-med-and-down">
+									<li><a href="#"><i class="icon ion-ios-heart-empty"></i></a></li>
+									<li><a href="#"><i class="icon ion-md-attach"></i></a></li>
+									<li><a href="#"><i class="icon ion-ios-crop"></i></a></li>
+								</ul>
+							</div>
+						</nav>
+					</header>
+					<main class="xenia-main">
+				
+						<!-- Start Slider -->
+						<div class="carousel carousel-slider center dark-text">
+							<div class="carousel-item dark-text xenia-slider blue lighten-4" href="#one!">
+								<div class="row">
+									<div class="col s12 m9">
+										<img src="../img/1.png" style="width: 100%">
+									</div>
+									<div class="col s12 m3" style="padding: 0px 20px">
+										<h2 class="blue-text right-align">Webseite in 2 Minuten erstellen</h2>
+										<p class="blue-text right-align">Mit <span class="badge blue white-text">xenia</span> lassen sich die Webseiten schnell und einfach entwickeln. Sie definieren die Anzahl der Seiten und ihr Zusammenhang und voilá</p>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item dark-text xenia-slider red lighten-4" href="#two!">
+								<div class="row">
+									<div class="col s12 m4">
+										<h2 class="pink-text left-align">Die Seitmap visualisieren</h2>
+										<p class="pink-text left-align"><span class="badge red white-text">xenia</span> erlaubt es, die Zusammenhange zwischen Seiten deutlich darzustellen</p>
+									</div>
+									<div class="col s12 m8">
+										<img src="../img/2.png" style="width: 100%">
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item dark-text xenia-slider blue lighten-4" href="#three!">
+								
+								<div class="row">
+									<div class="col s12 m8">
+										<img src="../img/3.png" style="width: 100%">
+									</div>
+									<div class="col s12 m4">
+										<h2 class="blue-text right-align">Ohne Vorkenntnisse</h2>
+										<p class="blue-text right-align">Mit <span class="blue white-text badge">xenia</span> braucht man keine Vorkenntnisse, um eine gut strukturierte Webseite aufzubauen. Alles ist intuitiv</p>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item white-text xenia-slider green lighten-4" href="#four!">
+								<div class="row">
+									<div class="col s12 m6">
+										<img src="../img/4.png" style="width: 100%">
+									</div>
+									<div class="col s12 m6">
+										<h2 class="green-text">Jetzt gratis ausprobieren!</h2>
+										<a class="btn waves-effect green white-text darken-text-2 hoverable" href="../«this.root»" style="border-radius: 25px; padding: 0px 25px">
+											Los geht's
+											<i class="icon right ion-md-paper-plane"></i>
+										</a>
+									</div>
+								</div>
+				
+							</div>
+						</div>
+				         
+				        <!-- Action button -->
+						<div class="fixed-action-btn">
+							<a class="btn-floating btn-large red pulse">
+								<i class="icon ion-ios-stats"></i>
+							</a>
+							<ul>
+								<li>
+									<a class="btn-floating green">
+										<i class="icon ion-md-book"></i>
+									</a>
+								</li>
+								<li>
+									<a class="btn-floating blue darken-1">
+										<i class="icon ion-ios-git-branch"></i>
+									</a>
+								</li>
+								<li>
+									<a class="btn-floating grey darken-4" href="https://github.com/rodchenk/xenia">
+										<i class="icon ion-logo-github"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+				
+						<!-- Side nav -->
+						<ul id="slide-out" class="sidenav">
+							<li>
+								<div class="user-view">
+									<div class="background">
+										<img src="../img/bg.jpg" style="width: 100%">
+									</div>
+									<a href="#user"><img class="circle" src="../img/ava.jpg"></a>
+									<a href="#name"><span class="white-text name">Mischa Test</span></a>
+									<a href="#email"><span class="white-text email">xenia@foliage.com</span></a>
+								</div>
+							</li>
+							<li><a class="subheader">Main links</a></li>
+							<li><a href="#!"><i class="icon ion-ios-cloud"></i>First Link With Icon</a></li>
+							<li><a href="#!"><i class="icon ion-ios-bookmark"></i>Second Link</a></li>
+							<li><div class="divider"></div></li>
+							<li><a class="subheader">Modals</a></li>
+							<li><a class="waves-effect modal-trigger" href="#modal1"><i class="icon ion-ios-heart"></i>Contact</a></li>
+						</ul>  
+					</main>
+				
+					<!-- Example modal -->
+					<div class="xenia-modal">
+						<div id="modal1" class="modal">
+							<div class="modal-content">
+								<h4>Modal Header</h4>
+								<p>A bunch of text</p>
+							</div>
+							<div class="modal-footer">
+								<a href="#!" class="modal-close waves-effect waves-teal btn-flat">Close</a>
+							</div>
+						</div>
+					</div>
+				</body>
+				</html>
+				'''
+			);
 			fsa.generateFile('./.htaccess', '''
-				DirectoryIndex tutorial.html
+				DirectoryIndex ./doc/tutorial.html
 				RewriteEngine On
 				RewriteCond %{REQUEST_FILENAME} !-f
 				RewriteRule ^([^.]+)$ $1.html [NC,L]
@@ -136,9 +278,7 @@ class XeniaGenerator extends AbstractGenerator {
 		
 		«FOR js_page : list»
 			var «js_page» = {
-				parent: 
-					«IF js_page.equals(this.root)»root«ENDIF»
-					,
+				parent: «IF js_page.equals(this.root)»root«ELSE»«this.root»«ENDIF», 
 				stackChildren: true,
 				text: { name: "«js_page»"}
 			}
@@ -205,7 +345,7 @@ class XeniaGenerator extends AbstractGenerator {
 						</ul>
 						
 						<img src="./img/logo.png" class="xenia-logo">
-						<span class="xenia-logo-title">«this.appName»</span>
+						<span class="xenia-logo-title «IF this.mode.equals('DEV')»dev«ENDIF»">«this.appName»</span>
 						<ul class="right hide-on-med-and-down">
 							<li><a href="#"><i class="icon ion-ios-heart-empty"></i></a></li>
 							<li><a href="#"><i class="icon ion-md-attach"></i></a></li>
@@ -298,7 +438,7 @@ class XeniaGenerator extends AbstractGenerator {
 							</a>
 						</li>
 						<li>
-							<a class="btn-floating orange darken-1" href="./pages/tutorial.html">
+							<a class="btn-floating orange darken-1" href="./doc/tutorial">
 								<i class="icon ion-md-laptop"></i>
 							</a>
 						</li>

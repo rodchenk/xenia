@@ -152,3 +152,15 @@ span.xenia-logo-title{
     vertical-align: top;
     line-height: initial;
 }
+span.xenia-logo-title.dev:after{
+	display: inline-block;
+	content: "dev";
+	font-size:small;
+	font-weight:500;
+	color: #f6f2f2;
+	vertical-align: top;
+	background-color: #f88f88;
+	border-radius: 4px;
+	padding: 0px 4px 2px 4px;
+	margin-left: 2px;
+}
