@@ -6,7 +6,7 @@ Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
 
 ### Get started
 
-1. Die Erstellung des Programms in *xenia* beginnt mit Schlusselword `app` gefolgt von dem Namen der Webseite:
+1. Die Erstellung des Programms in *xenia* beginnt mit Schlusselword `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
 
 ```ruby
 app MyFirstApp
@@ -47,6 +47,8 @@ mode: development
 # oder
 mode: production
 ```
+Im Entwicklermodus werden einige Werkzeuge angezeigt, wie z.B. `Sitemap Vizualizer`.
+![image](https://user-images.githubusercontent.com/30366483/65917246-3cdb7580-e3d7-11e9-85ab-2699a3ef49b3.png)
 
 Ein Beispiel der generierten Webseite ist auf [Github Page](https://rodchenk.github.io/xenia) zu finden.
 
