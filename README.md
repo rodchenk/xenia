@@ -3,8 +3,7 @@
 ```
 Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
 ```
-
-Die Sprache ist mit Xtext-Framework v. 2.18 erstellt. Die Sprache erzeugt nach der Ausfuhrung native `html` Seiten, CSS und JS Files, `htaccess` und Bilder. Im weiteren Verlauf wird die Unterstutzung von anderen Sprachen und/oder Frameworks (z.B. PHP, Angular) realisiert. 
+<img src="https://raw.githubusercontent.com/rodchenk/xenia/master/com.foliage.xenia.resources/img/logo.png" alt="drawing" width="200"/> Die Sprache ist mit Xtext-Framework v. 2.18 erstellt. Die Sprache erzeugt nach der Ausfuhrung native `html` Seiten, CSS und JS Files, `htaccess` und Bilder. Im weiteren Verlauf wird die Unterstutzung von anderen Sprachen und/oder Frameworks (z.B. PHP, Angular) realisiert. 
 
 ### Get started
 
