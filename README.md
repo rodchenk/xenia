@@ -4,7 +4,7 @@
 Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
 ```
 <img src="https://raw.githubusercontent.com/rodchenk/xenia/master/com.foliage.xenia.resources/img/logo.png" align="right" width="200"/> Die Sprache ist mit Xtext-Framework v. 2.18 erstellt. Die Sprache erzeugt nach der Ausfuhrung native `html` Seiten, CSS und JS Files, `htaccess` und Bilder. Im weiteren Verlauf wird die Unterstutzung von anderen Sprachen und/oder Frameworks (z.B. PHP, Angular) realisiert. 
-
+In [Github Page](https://rodchenk.github.io/xenia) findet man ein Demo.
 ### Get started
 
 1. Die Erstellung des Programms in *xenia* beginnt mit Schlusselword `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
