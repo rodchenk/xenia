@@ -7,6 +7,7 @@ var root = {};
 
 var Home = {
 	parent: root, 
+	HTMLclass: 'root-node',
 	stackChildren: true,
 	text: { name: "Home"}
 }
@@ -21,7 +22,7 @@ var Contact = {
 	text: { name: "Contact"}
 }
 var Admin = {
-	parent: Home, 
+	parent: root, 
 	stackChildren: true,
 	text: { name: "Admin"}
 }
