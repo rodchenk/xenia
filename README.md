@@ -1,4 +1,4 @@
-# Xenia language
+# Xenia language - just another domain specific language
 
 ```
 Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
