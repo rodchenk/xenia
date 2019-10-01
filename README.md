@@ -7,7 +7,7 @@ Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
 In [Github Page](https://rodchenk.github.io/xenia) findet man ein Demo.
 ### Get started
 
-1. Die Erstellung des Programms in *xenia* beginnt mit Schlusselword `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
+1. Die Erstellung des Programms in *xenia* beginnt mit Schlüsselwort `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
 
 ```ruby
 app MyFirstApp
@@ -27,7 +27,7 @@ app MyFirstApp has pages[@Home, @News, @Contact, @Admin]
 
 4. Semantik der Sprache bestimmt, dass die erste Seite, die in der Liste angegeben wird, wird als Root-Seite gekennzeichnet und entsprechend in `.htaccess` geschrieben.
 
-5. Um die Verzweigungen zu definieren, muss man ein zusatzliches Block mit dem Wort `map` erstellen:
+5. Um die Verzweigungen zu definieren, muss man ein zusätzliches Block mit dem Wort `map` erstellen:
 
 ```ruby
 map: [
@@ -37,11 +37,11 @@ map: [
 ]
 ```
 
-6. Es ist zu beachten, dass die Seitenname nun ohne `@` angegeben werden und konnen zu den im ersten Block angegebenen Seiten referenziert werden. Die Eingabe einer nicht definierten Seite in `map`-Section wird eine Fehlermeldung auslosen.
+6. Es ist zu beachten, dass die Seitenname nun ohne `@` angegeben werden und können zu den im ersten Block angegebenen Seiten referenziert werden. Die Eingabe einer nicht definierten Seite in `map`-Section wird eine Fehlermeldung auslösen.
 
 ![image](https://user-images.githubusercontent.com/30366483/65834656-8e073e80-e2dd-11e9-939d-fbd5a94b03d0.PNG)
 
-7. Es stehen zwei Modi zur Verfugung: Entwickler- und Produktionsmodus:
+7. Es stehen zwei Modi zur Verfügung: Entwickler- und Produktionsmodus:
 
 ```ruby
 mode: development
@@ -52,7 +52,7 @@ Im Entwicklermodus werden einige Werkzeuge angezeigt, wie z.B. `Sitemap Visualiz
 
 ![image](https://user-images.githubusercontent.com/30366483/65917246-3cdb7580-e3d7-11e9-85ab-2699a3ef49b3.png)
 
-Ein Beispiel der generierten Webseite ist auf [Github Page](https://rodchenk.github.io/xenia) zu finden.
+Ein Beispiel der frisch generierten Webseite ist auf [Github Page](https://rodchenk.github.io/xenia) zu finden.
 
 ***
 
