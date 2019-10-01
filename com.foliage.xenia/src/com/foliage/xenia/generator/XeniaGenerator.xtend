@@ -18,6 +18,7 @@ import java.util.List
 import com.foliage.xenia.xenia.LinkedProperty
 import java.util.Map
 import com.foliage.xenia.xenia.Site
+import java.util.Set
 
 /**
  * Generates code from your model files on save.
@@ -80,7 +81,7 @@ class XeniaGenerator extends AbstractGenerator {
 			for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 				this.appName = e.appName;
 				for(page: e.sites){
-					if(name_switch){//edit here, deleted list.add('index');
+					if(name_switch){
 						name_switch = false;
 						root = page.name;
 					}
@@ -90,12 +91,16 @@ class XeniaGenerator extends AbstractGenerator {
 			}
 		}
 		
+		var Set<String> surfablePages = newHashSet;
+		
 		for( redirect: resource.allContents.toIterable.filter(LinkedProperty)){
 			println(redirect.name);
 			page_map.put(redirect.name.name, redirect.page.site);
+			for( _site : redirect.page.site){
+				surfablePages.add(_site.name)
+			}
 		}
 		
-		//name_switch = true;
 		
 		for(e: resource.allContents.toIterable.filter(Header)){ //get all pages
 			for(page: e.sites){
@@ -104,7 +109,6 @@ class XeniaGenerator extends AbstractGenerator {
 		}
 		
 		if(this.mode.equals('DEV')){
-			//fsa.generateFile('./Tutorial.html', 		new FileInputStream(new File(path + './pages/tutorial.html')));
 			fsa.generateFile('./doc/Tutorial.html', '''
 				<!DOCTYPE html>
 				<html>
@@ -267,7 +271,7 @@ class XeniaGenerator extends AbstractGenerator {
 				RewriteRule ^([^.]+)$ $1.html [NC,L]
 			''');
 		}
-		
+
 		fsa.generateFile('./js/xenia.map.js', '''
 		var config = {
 			container: "#stats",
@@ -278,7 +282,8 @@ class XeniaGenerator extends AbstractGenerator {
 		
 		«FOR js_page : list»
 			var «js_page» = {
-				parent: «IF js_page.equals(this.root)»root«ELSE»«this.root»«ENDIF», 
+				parent: «IF js_page.equals(this.root) || !surfablePages.contains(js_page)»root«ELSE»«this.root»«ENDIF», 
+				«IF js_page.equals(this.root)»HTMLclass: 'root-node',«ENDIF»
 				stackChildren: true,
 				text: { name: "«js_page»"}
 			}

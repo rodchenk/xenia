@@ -164,3 +164,9 @@ span.xenia-logo-title.dev:after{
 	padding: 0px 4px 2px 4px;
 	margin-left: 2px;
 }
+.Treant > .node.root-node{
+	background-color: #ee6e73 !important;
+}
+.Treant > .root-node>p{
+	color: white !important;
+}

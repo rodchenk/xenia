@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import javax.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -138,11 +139,16 @@ public class XeniaGenerator extends AbstractGenerator {
           }
         }
       }
+      Set<String> surfablePages = CollectionLiterals.<String>newHashSet();
       Iterable<LinkedProperty> _filter_2 = Iterables.<LinkedProperty>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), LinkedProperty.class);
       for (final LinkedProperty redirect : _filter_2) {
         {
           InputOutput.<Site>println(redirect.getName());
           this.page_map.put(redirect.getName().getName(), redirect.getPage().getSite());
+          EList<Site> _site = redirect.getPage().getSite();
+          for (final Site _site_1 : _site) {
+            surfablePages.add(_site_1.getName());
+          }
         }
       }
       Iterable<Header> _filter_3 = Iterables.<Header>filter(IteratorExtensions.<EObject>toIterable(resource.getAllContents()), Header.class);
@@ -629,14 +635,21 @@ public class XeniaGenerator extends AbstractGenerator {
           _builder_3.append("\t");
           _builder_3.append("parent: ");
           {
-            boolean _equals_1 = js_page.equals(this.root);
-            if (_equals_1) {
+            if ((js_page.equals(this.root) || (!surfablePages.contains(js_page)))) {
               _builder_3.append("root");
             } else {
               _builder_3.append(this.root, "\t");
             }
           }
           _builder_3.append(", ");
+          _builder_3.newLineIfNotEmpty();
+          _builder_3.append("\t");
+          {
+            boolean _equals_1 = js_page.equals(this.root);
+            if (_equals_1) {
+              _builder_3.append("HTMLclass: \'root-node\',");
+            }
+          }
           _builder_3.newLineIfNotEmpty();
           _builder_3.append("\t");
           _builder_3.append("stackChildren: true,");
