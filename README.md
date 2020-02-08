@@ -1,13 +1,13 @@
 # Xenia language - just another domain specific language
 
 ```
-Die DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
+Eine DSL-Sprache, mit der sich die Webseiten in 2 Minuten erstellen lassen
 ```
-<img src="https://raw.githubusercontent.com/rodchenk/xenia/master/com.foliage.xenia.resources/img/logo.png" align="right" width="200"/> Die Sprache ist mit Xtext-Framework v. 2.18 erstellt. Die Sprache erzeugt nach der Ausfuhrung native `html` Seiten, CSS und JS Files, `htaccess` und Bilder. Im weiteren Verlauf wird die Unterstutzung von anderen Sprachen und/oder Frameworks (z.B. PHP, Angular) realisiert. 
-In [Github Page](https://rodchenk.github.io/xenia) findet man ein Demo.
+<img src="https://raw.githubusercontent.com/rodchenk/xenia/master/com.foliage.xenia.resources/img/logo.png" align="right" width="200"/> Die xenia-Sprache ist mit Xtext-Framework v. 2.18 erstellt. Die Sprache erzeugt nach der Ausfuhrung native `html` Seiten, CSS und JS Files, `htaccess` und Bilder. Im weiteren Verlauf wird die Unterstutzung von anderen Sprachen und/oder Frameworks (z.B. PHP, Angular) realisiert. 
+Unter [Github Page](https://rodchenk.github.io/xenia) findet man ein Demo.
 ### Get started
 
-1. Die Erstellung des Programms in *xenia* beginnt mit Schlüsselwort `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
+1. Die Erstellung einer Anwendung in *xenia* beginnt mit Schlüsselwort `app` gefolgt von dem Namen der Webseite, die auch im Logo erscheint:
 
 ```ruby
 app MyFirstApp
@@ -19,15 +19,15 @@ app MyFirstApp
 app MyFirstApp has pages[]
 ```
 
-3. Die Namen der Seiten sind mit `@` At-Zeichen definiert werden:
+3. Die Namen der Seiten sind mit `@` At-Zeichen zu definieren:
 
 ```ruby
 app MyFirstApp has pages[@Home, @News, @Contact, @Admin]
 ```
 
-4. Semantik der Sprache bestimmt, dass die erste Seite, die in der Liste angegeben wird, wird als Root-Seite gekennzeichnet und entsprechend in `.htaccess` geschrieben.
+4. Semantik der Sprache bestimmt, dass die erste Seite, die in der Liste angegeben wird, als Root-Seite gekennzeichnet und entsprechend in `.htaccess` geschrieben wird.
 
-5. Um die Verzweigungen zu definieren, muss man ein zusätzliches Block mit dem Wort `map` erstellen:
+5. Um die Verzweigungen zu definieren, muss man ein zusätzliches Block mit Schlusselwort `map` angeben:
 
 ```ruby
 map: [
@@ -37,7 +37,7 @@ map: [
 ]
 ```
 
-6. Es ist zu beachten, dass die Seitenname nun ohne `@` angegeben werden und können zu den im ersten Block angegebenen Seiten referenziert werden. Die Eingabe einer nicht definierten Seite in `map`-Section wird eine Fehlermeldung auslösen.
+6. Es ist zu beachten, dass die Seitennamen nun ohne `@` angegeben werden und zu den im ersten Block angegebenen Seiten referenziert werden können. Die Eingabe einer nicht definierten Seite in `map`-Section wird eine Fehlermeldung auslösen.
 
 ![image](https://user-images.githubusercontent.com/30366483/65834656-8e073e80-e2dd-11e9-939d-fbd5a94b03d0.PNG)
 
@@ -52,7 +52,7 @@ Im Entwicklermodus werden einige Werkzeuge angezeigt, wie z.B. `Sitemap Visualiz
 
 ![image](https://user-images.githubusercontent.com/30366483/65917246-3cdb7580-e3d7-11e9-85ab-2699a3ef49b3.png)
 
-Ein Beispiel der frisch generierten Webseite ist auf [Github Page](https://rodchenk.github.io/xenia) zu finden.
+Ein Beispiel der frisch generierten Webseite ist unter [Github Page](https://rodchenk.github.io/xenia) zu finden.
 
 ***
 
@@ -85,3 +85,5 @@ app foliage has pages [@Home, @News, @Contact]
 map: Contact -> (Home, News)
 ```
 ![image](https://user-images.githubusercontent.com/30366483/65375895-5889a200-dc9a-11e9-89f1-4f194d310626.png)
+
+Die xenia-Sprache wurde im Rahmen der Abschlussarbeit an der [Technische Hochschule Brandenburg](https://th-brandenburg.de) entwickelt.
