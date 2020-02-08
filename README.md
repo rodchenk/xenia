@@ -86,4 +86,4 @@ map: Contact -> (Home, News)
 ```
 ![image](https://user-images.githubusercontent.com/30366483/65375895-5889a200-dc9a-11e9-89f1-4f194d310626.png)
 
-Die xenia-Sprache wurde im Rahmen der Abschlussarbeit an der [Technische Hochschule Brandenburg](https://th-brandenburg.de) entwickelt.
+Die xenia-Sprache wurde im Rahmen der Abschlussarbeit an der [Technischen Hochschule Brandenburg](https://th-brandenburg.de) entwickelt.
